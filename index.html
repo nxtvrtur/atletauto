@@ -503,6 +503,27 @@
       transition: transform 0.5s ease;
     }
     .car-card:hover .car-card__img img { transform: scale(1.05); }
+    .car-card__play {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 54px; height: 54px;
+      background: rgba(255,255,255,0.92);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      pointer-events: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transition: transform 0.2s, background 0.2s;
+    }
+    .car-card__play::after {
+      content: '';
+      border: 0 solid transparent;
+      border-top: 9px solid transparent;
+      border-bottom: 9px solid transparent;
+      border-left: 16px solid #014983;
+      margin-left: 4px;
+    }
+    .car-card__img:hover .car-card__play { background: #fff; transform: translate(-50%, -50%) scale(1.1); }
     .car-card__origin {
       position: absolute;
       top: 12px;
@@ -1159,10 +1180,13 @@
     <div class="cars-grid">
 
       <div class="car-card">
+        <a href="https://kinescope.io/embed/rhSbTwgrmwaRNNE5h5T1rr" target="_blank" rel="noopener" style="display:block">
         <div class="car-card__img">
-          <img src="images/tild3039-6265-4266-a132-353531326163_Screenshot_6.png" alt="Hyundai Palisade">
+          <img src="https://player-metrics.kinescope.io/posters/60450571-b19d-4303-961f-8e7d2078cf21/poster_lg/019d1aa7-21a6-78a6-ad8a-18970a6a1471.jpg" alt="Hyundai Palisade">
+          <div class="car-card__play"></div>
           <span class="car-card__origin">Корея</span>
         </div>
+        </a>
         <div class="car-card__body">
           <div class="car-card__specs">
             <div class="car-card__spec"><i class="fa-regular fa-calendar"></i> 2023 г.</div>
@@ -1180,10 +1204,13 @@
       </div>
 
       <div class="car-card">
+        <a href="https://kinescope.io/embed/gwfHj217sBxykgx6L6ww3z" target="_blank" rel="noopener" style="display:block">
         <div class="car-card__img">
-          <img src="images/tild3631-3938-4337-a661-626264363035_Screenshot_2.png" alt="KIA K5 Signature">
+          <img src="https://player-metrics.kinescope.io/posters/f7ef41f1-242b-474e-aa41-5f6dfccb06a6/poster_lg/019d1aaf-fdea-7ed8-85d9-fd1902b85778.jpg" alt="KIA K5 Signature">
+          <div class="car-card__play"></div>
           <span class="car-card__origin">Корея</span>
         </div>
+        </a>
         <div class="car-card__body">
           <div class="car-card__specs">
             <div class="car-card__spec"><i class="fa-regular fa-calendar"></i> 2021 г.</div>
@@ -1201,10 +1228,13 @@
       </div>
 
       <div class="car-card">
+        <a href="https://kinescope.io/embed/7uYVibcGKWkUbxKpiM5mSA" target="_blank" rel="noopener" style="display:block">
         <div class="car-card__img">
-          <img src="images/tild3633-6464-4264-a430-666364323064_Screenshot_3.png" alt="BMW 1-series">
+          <img src="https://player-metrics.kinescope.io/posters/4bbc25a8-356a-427e-bde3-cf7840443773/poster_lg/9aee36c0-9380-4609-8de7-a175f788b803.jpg" alt="BMW 1-series">
+          <div class="car-card__play"></div>
           <span class="car-card__origin">Европа</span>
         </div>
+        </a>
         <div class="car-card__body">
           <div class="car-card__specs">
             <div class="car-card__spec"><i class="fa-regular fa-calendar"></i> 2022 г.</div>
@@ -1222,10 +1252,13 @@
       </div>
 
       <div class="car-card">
+        <a href="https://kinescope.io/embed/afrZmaRxssyhJCVotNUJdz" target="_blank" rel="noopener" style="display:block">
         <div class="car-card__img">
-          <img src="images/tild3139-6539-4635-a130-353961336162_Screenshot_4.png" alt="Tank 300">
+          <img src="https://player-metrics.kinescope.io/posters/09c4cc1d-86c1-4e87-b993-c9cdd2963bf5/poster_lg/019d1aaa-39df-7d27-a3b9-c912433b4905.jpg" alt="Tank 300">
+          <div class="car-card__play"></div>
           <span class="car-card__origin">Китай</span>
         </div>
+        </a>
         <div class="car-card__body">
           <div class="car-card__specs">
             <div class="car-card__spec"><i class="fa-regular fa-calendar"></i> 2022 г.</div>
@@ -1243,10 +1276,13 @@
       </div>
 
       <div class="car-card">
+        <a href="https://kinescope.io/embed/ibz77W32WUUhsWxT3gjZG2" target="_blank" rel="noopener" style="display:block">
         <div class="car-card__img">
-          <img src="images/tild6639-6365-4663-b535-313466643639_Screenshot_7.png" alt="Li8 ULTRA">
+          <img src="https://player-metrics.kinescope.io/posters/84f015d0-c388-44dc-9713-db62aef1313d/poster_lg/019d229a-a8d2-74c6-8318-69d6cb38535e.jpg" alt="Li8 ULTRA">
+          <div class="car-card__play"></div>
           <span class="car-card__origin">Китай</span>
         </div>
+        </a>
         <div class="car-card__body">
           <div class="car-card__specs">
             <div class="car-card__spec"><i class="fa-regular fa-calendar"></i> 2024 г.</div>
@@ -1264,10 +1300,13 @@
       </div>
 
       <div class="car-card">
+        <a href="https://kinescope.io/embed/0Wq7c4XmJv2d39XvVmP9qH" target="_blank" rel="noopener" style="display:block">
         <div class="car-card__img">
-          <img src="images/tild3263-3534-4665-b362-626437373338_Screenshot_13.png" alt="Mercedes-Benz G400d">
+          <img src="https://player-metrics.kinescope.io/posters/b2c2106d-3111-48a9-94d5-a24cf9738710/poster_lg/019d1aad-a94a-74ba-ac60-ad76f08dd30a.jpg" alt="Mercedes-Benz G400d">
+          <div class="car-card__play"></div>
           <span class="car-card__origin">Европа</span>
         </div>
+        </a>
         <div class="car-card__body">
           <div class="car-card__specs">
             <div class="car-card__spec"><i class="fa-regular fa-calendar"></i> 2024 г.</div>
@@ -1306,44 +1345,44 @@
     </div>
 
     <div id="panel-chinese" class="catalog-panel active">
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">BYD</span></div><div class="car-card__body"><h3>BYD</h3><p class="car-card__desc">Электромобили и гибриды от ведущего китайского производителя</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Chery</span></div><div class="car-card__body"><h3>Chery / Exeed</h3><p class="car-card__desc">Широкий модельный ряд SUV и кроссоверов</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Haval</span></div><div class="car-card__body"><h3>Haval</h3><p class="car-card__desc">Популярные кроссоверы: Jolion, F7, Dargo</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Tank</span></div><div class="car-card__body"><h3>Tank 300 / 400 / 500</h3><p class="car-card__desc">Внедорожники премиум-класса с мощными двигателями</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Li Auto</span></div><div class="car-card__body"><h3>Li Auto (Li8 / L9 / L7)</h3><p class="car-card__desc">Гибридные SUV с запасом хода 1000+ км</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Nio / Geely</span></div><div class="car-card__body"><h3>Nio / Geely / BAIC</h3><p class="car-card__desc">Электромобили и другие марки под заказ</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild3536-3838-4730-a437-633661616234_11.jpeg" alt="BYD"></div><div class="car-card__body"><h3>BYD</h3><p class="car-card__desc">Электромобили и гибриды от ведущего китайского производителя</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild6535-6233-4435-b233-303330616430_22.jpeg" alt="Chery"></div><div class="car-card__body"><h3>Chery / Exeed</h3><p class="car-card__desc">Широкий модельный ряд SUV и кроссоверов</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild6331-3736-4934-b339-383833313934_111.jpeg" alt="Haval"></div><div class="car-card__body"><h3>Haval</h3><p class="car-card__desc">Популярные кроссоверы: Jolion, F7, Dargo</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild3530-6662-4836-b835-306162613362_222.jpeg" alt="Tank"></div><div class="car-card__body"><h3>Tank 300 / 400 / 500</h3><p class="car-card__desc">Внедорожники премиум-класса с мощными двигателями</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild3030-3434-4162-b031-366230666563_scene_3.jpeg" alt="Li Auto"></div><div class="car-card__body"><h3>Li Auto (Li8 / L9 / L7)</h3><p class="car-card__desc">Гибридные SUV с запасом хода 1000+ км</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild6230-3136-4138-b931-653935323264_scene_4.jpeg" alt="Nio / Geely"></div><div class="car-card__body"><h3>Nio / Geely / BAIC</h3><p class="car-card__desc">Электромобили и другие марки под заказ</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
     </div>
 
     <div id="panel-korean" class="catalog-panel">
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Hyundai</span></div><div class="car-card__body"><h3>Hyundai</h3><p class="car-card__desc">Palisade, Tucson, Santa Fe, Sonata и другие модели</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">KIA</span></div><div class="car-card__body"><h3>KIA</h3><p class="car-card__desc">K5, Sorento, Sportage, Carnival и весь модельный ряд</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Genesis</span></div><div class="car-card__body"><h3>Genesis</h3><p class="car-card__desc">G80, GV80, GV70 — корейский люкс по честной цене</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild6638-6261-4738-a337-353531386166_scene_5.jpeg" alt="Hyundai"></div><div class="car-card__body"><h3>Hyundai</h3><p class="car-card__desc">Palisade, Tucson, Santa Fe, Sonata и другие модели</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild6137-3931-4266-a636-336139303934_scene_7.jpeg" alt="KIA"></div><div class="car-card__body"><h3>KIA</h3><p class="car-card__desc">K5, Sorento, Sportage, Carnival и весь модельный ряд</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild3262-3264-4538-a432-323938616239_photo_2026-01-26_10-.jpg" alt="Genesis"></div><div class="car-card__body"><h3>Genesis</h3><p class="car-card__desc">G80, GV80, GV70 — корейский люкс по честной цене</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
     </div>
 
     <div id="panel-japanese" class="catalog-panel">
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Toyota</span></div><div class="car-card__body"><h3>Toyota</h3><p class="car-card__desc">Camry, RAV4, Land Cruiser, Alphard и другие</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Lexus</span></div><div class="car-card__body"><h3>Lexus</h3><p class="car-card__desc">ES, RX, LX, GX — японский люкс с гарантией качества</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Honda</span></div><div class="car-card__body"><h3>Honda</h3><p class="car-card__desc">Civic, CR-V, Vezel, Accord — надёжные японские авто</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Nissan / Mazda</span></div><div class="car-card__body"><h3>Nissan / Mazda / Subaru</h3><p class="car-card__desc">Широкий выбор японских марок под заказ</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild3863-6230-4932-a132-383462353965_photo_2026-01-26_10-.jpg" alt="Toyota"></div><div class="car-card__body"><h3>Toyota</h3><p class="car-card__desc">Camry, RAV4, Land Cruiser, Alphard и другие</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild6164-3835-4430-b430-303761313834_photo_2026-01-26_10-.jpg" alt="Lexus"></div><div class="car-card__body"><h3>Lexus</h3><p class="car-card__desc">ES, RX, LX, GX — японский люкс с гарантией качества</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild6364-3330-4038-b135-346161613264_photo_2026-01-26_10-.jpg" alt="Honda"></div><div class="car-card__body"><h3>Honda</h3><p class="car-card__desc">Civic, CR-V, Vezel, Accord — надёжные японские авто</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild6466-6437-4663-b164-383638323938_photo_2026-01-26_10-.jpg" alt="Nissan / Mazda"></div><div class="car-card__body"><h3>Nissan / Mazda / Subaru</h3><p class="car-card__desc">Широкий выбор японских марок под заказ</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
     </div>
 
     <div id="panel-european" class="catalog-panel">
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">BMW</span></div><div class="car-card__body"><h3>BMW</h3><p class="car-card__desc">Вся линейка BMW: 1, 3, 5, 7 серии, X3, X5, X7 и другие</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Mercedes-Benz</span></div><div class="car-card__body"><h3>Mercedes-Benz</h3><p class="car-card__desc">C, E, S-класс, GLC, GLE, GLS, G-класс и другие</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Audi</span></div><div class="car-card__body"><h3>Audi</h3><p class="car-card__desc">A4, A6, Q5, Q7, Q8 — немецкое качество без переплат</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Porsche / Volvo</span></div><div class="car-card__body"><h3>Porsche / Volvo / VW</h3><p class="car-card__desc">Cayenne, Macan, XC90, Tiguan и другие европейские марки</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild6333-3833-4636-b261-336361333935_photo_2026-01-26_10-.jpg" alt="BMW"></div><div class="car-card__body"><h3>BMW</h3><p class="car-card__desc">Вся линейка BMW: 1, 3, 5, 7 серии, X3, X5, X7 и другие</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild3163-3839-4333-a261-616138616334_photo.jpeg" alt="Mercedes-Benz"></div><div class="car-card__body"><h3>Mercedes-Benz</h3><p class="car-card__desc">C, E, S-класс, GLC, GLE, GLS, G-класс и другие</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild3366-3963-4838-a231-363235393664_photo.jpeg" alt="Audi"></div><div class="car-card__body"><h3>Audi</h3><p class="car-card__desc">A4, A6, Q5, Q7, Q8 — немецкое качество без переплат</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild6535-6233-4435-b233-303330616430_22.jpeg" alt="Porsche / Volvo"></div><div class="car-card__body"><h3>Porsche / Volvo / VW</h3><p class="car-card__desc">Cayenne, Macan, XC90, Tiguan и другие европейские марки</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
     </div>
 
     <div id="panel-american" class="catalog-panel">
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Cadillac</span></div><div class="car-card__body"><h3>Cadillac</h3><p class="car-card__desc">Escalade, XT5, XT6 — американский люкс высшего уровня</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Tesla</span></div><div class="car-card__body"><h3>Tesla</h3><p class="car-card__desc">Model 3, Model Y, Model S, Model X — электромобили</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Ford / Lincoln</span></div><div class="car-card__body"><h3>Ford / Lincoln / Jeep</h3><p class="car-card__desc">Explorer, Expedition, Navigator и другие американские авто</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild3536-3838-4730-a437-633661616234_11.jpeg" alt="Cadillac"></div><div class="car-card__body"><h3>Cadillac</h3><p class="car-card__desc">Escalade, XT5, XT6 — американский люкс высшего уровня</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild6331-3736-4934-b339-383833313934_111.jpeg" alt="Tesla"></div><div class="car-card__body"><h3>Tesla</h3><p class="car-card__desc">Model 3, Model Y, Model S, Model X — электромобили</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild3530-6662-4836-b835-306162613362_222.jpeg" alt="Ford / Lincoln"></div><div class="car-card__body"><h3>Ford / Lincoln / Jeep</h3><p class="car-card__desc">Explorer, Expedition, Navigator и другие американские авто</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
     </div>
 
     <div id="panel-special" class="catalog-panel">
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:20px;color:#014983">XCMG</span></div><div class="car-card__body"><h3>XCMG</h3><p class="car-card__desc">Экскаваторы, погрузчики, краны и другая спецтехника</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:20px;color:#014983">SANY</span></div><div class="car-card__body"><h3>SANY</h3><p class="car-card__desc">Бетонные насосы, экскаваторы, краны и буровые установки</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:20px;color:#014983">Liugong / SDLG</span></div><div class="car-card__body"><h3>Liugong / SDLG</h3><p class="car-card__desc">Фронтальные погрузчики, грейдеры, дорожная техника</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild6230-3136-4138-b931-653935323264_scene_4.jpeg" alt="XCMG"></div><div class="car-card__body"><h3>XCMG</h3><p class="car-card__desc">Экскаваторы, погрузчики, краны и другая спецтехника</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild6638-6261-4738-a337-353531386166_scene_5.jpeg" alt="SANY"></div><div class="car-card__body"><h3>SANY</h3><p class="car-card__desc">Бетонные насосы, экскаваторы, краны и буровые установки</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img"><img src="images/tild6137-3931-4266-a636-336139303934_scene_7.jpeg" alt="Liugong / SDLG"></div><div class="car-card__body"><h3>Liugong / SDLG</h3><p class="car-card__desc">Фронтальные погрузчики, грейдеры, дорожная техника</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
     </div>
 
     <div id="panel-instock" class="catalog-panel">
