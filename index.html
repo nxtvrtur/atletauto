@@ -3,667 +3,1795 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Атлет-Авто — Автомобили из Китая, Японии, Кореи, Европы, США</title>
-  <meta name="description" content="Атлет-Авто — ваш эксперт в выборе автомобиля. Купим, доставим в Россию, растаможим и отправим в ваш город.">
+  <title>Атлет-Авто — Автомобили под заказ Китай || Япония || Корея</title>
+  <meta name="description" content="Импорт автомобилей из Японии, Кореи и Китая. Автомобили в наличии и под заказ. Доставка до Владивостока и по всей России">
+  <meta name="keywords" content="Автомобиль под заказ, Импорт автомобилей, Купить авто, Доставка автомобилей по России">
+  <link rel="icon" href="images/tild6436-3536-4334-b835-393235303734_favicon-32x32.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ==============================
+       RESET & BASE
+    ============================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Roboto Slab', serif;
+      font-weight: 400;
+      background: #fff;
+      color: #222;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { cursor: pointer; font: inherit; border: none; background: none; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #014983; }
+    ::-webkit-scrollbar-thumb { background: #f5914f; border-radius: 4px; }
+
+    /* ==============================
+       VARIABLES
+    ============================== */
+    :root {
+      --blue: #014983;
+      --blue-dark: #013567;
+      --blue-light: rgba(1,73,131,0.08);
+      --orange: #f5914f;
+      --orange-dark: #e07a38;
+      --white: #ffffff;
+      --text: #222222;
+      --text-muted: #666;
+      --border: rgba(1,73,131,0.15);
+      --nav-h: 70px;
+    }
+
+    /* ==============================
+       LAYOUT
+    ============================== */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 80px 0; }
+    @media (max-width: 768px) { .section { padding: 50px 0; } }
+
+    /* ==============================
+       TYPOGRAPHY
+    ============================== */
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .section-title span { color: var(--blue); }
+    .section-subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 680px;
+    }
+    .section-head { margin-bottom: 50px; }
+
+    /* ==============================
+       BUTTONS
+    ============================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      letter-spacing: 0.05em;
+      padding: 14px 32px;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .btn-orange {
+      background: var(--orange);
+      color: #fff;
+      border: 2px solid var(--orange);
+    }
+    .btn-orange:hover {
+      background: var(--orange-dark);
+      border-color: var(--orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(245,145,79,0.4);
+    }
+    .btn-blue {
+      background: var(--blue);
+      color: #fff;
+      border: 2px solid var(--blue);
+    }
+    .btn-blue:hover {
+      background: var(--blue-dark);
+      border-color: var(--blue-dark);
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--blue);
+    }
+
+    /* ==============================
+       NAVIGATION
+    ============================== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: var(--blue);
+      box-shadow: 0 4px 20px rgba(0,11,48,0.4);
+      height: var(--nav-h);
+      transition: background 0.3s;
+    }
+    .nav__inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .nav__logo { flex-shrink: 0; margin-right: 30px; }
+    .nav__logo img { height: 44px; width: auto; object-fit: contain; }
+
+    .nav__menu {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      height: 100%;
+    }
+    .nav__item {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .nav__link {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      padding: 0 14px;
+      height: 100%;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .nav__link:hover { color: #fff; }
+    .nav__link i { font-size: 10px; transition: transform 0.2s; }
+    .nav__item:hover .nav__link i { transform: rotate(180deg); }
+
+    .nav__dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      background: var(--blue-dark);
+      border-top: 3px solid var(--orange);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      padding: 8px 0;
+      display: none;
+      z-index: 100;
+    }
+    .nav__item:hover .nav__dropdown { display: block; }
+    .nav__dropdown a {
+      display: block;
+      padding: 10px 20px;
+      font-family: 'Roboto Slab', serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.8);
+      transition: all 0.15s;
+    }
+    .nav__dropdown a:hover {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      padding-left: 26px;
+    }
+
+    .nav__right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-left: auto;
+    }
+    .nav__phone {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .nav__phone i { color: var(--orange); }
+
+    .nav__burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px;
+      margin-left: auto;
+    }
+    .nav__burger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ==============================
+       HERO
+    ============================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/tild3936-3565-4037-a133-623364386263_IMG_0868.PNG');
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.05);
+      transition: transform 8s ease;
+    }
+    .hero__bg.loaded { transform: scale(1); }
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(1,53,103,0.92) 0%,
+        rgba(1,73,131,0.75) 50%,
+        rgba(1,73,131,0.40) 100%
+      );
+    }
+    .hero .container { position: relative; z-index: 1; }
+    .hero__content {
+      max-width: 640px;
+      padding: calc(var(--nav-h) + 60px) 0 80px;
+    }
+    .hero__label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 8px 18px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .hero__title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(38px, 6vw, 72px);
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      line-height: 1.05;
+      letter-spacing: 0.01em;
+      margin-bottom: 12px;
+    }
+    .hero__title .accent { color: var(--orange); }
+    .hero__origins {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 16px;
+      margin-bottom: 24px;
+    }
+    .hero__origins span {
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+    }
+    .hero__origins .sep { color: var(--orange); font-size: 12px; }
+    .hero__desc {
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+    .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero__scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      z-index: 1;
+      animation: bounce 2s ease-in-out infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+    .hero__scroll span {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .hero__scroll i { color: var(--orange); font-size: 20px; }
+
+    /* ==============================
+       STATS BAR
+    ============================== */
+    .stats-bar {
+      background: var(--blue);
+      padding: 36px 0;
+    }
+    .stats-bar__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .stat {
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.15);
+      padding: 0 20px;
+    }
+    .stat:last-child { border-right: none; }
+    .stat__num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--orange);
+      line-height: 1;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .stat__label {
+      font-family: 'Roboto Slab', serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* ==============================
+       WHY US
+    ============================== */
+    .whyus { background: #f8f9fc; }
+    .whyus__title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(24px, 3.5vw, 36px);
+      font-weight: 600;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 40px;
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 24px;
+    }
+    .benefit-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px 24px;
+      text-align: center;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .benefit-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--blue);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    .benefit-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(1,73,131,0.12);
+    }
+    .benefit-card:hover::after { transform: scaleX(1); }
+    .benefit-card__icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .benefit-card__icon img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+    .benefit-card h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 10px;
+      letter-spacing: 0.03em;
+    }
+    .benefit-card p {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--text-muted);
+    }
+
+    /* ==============================
+       CAR REVIEWS (DELIVERED CARS)
+    ============================== */
+    .car-reviews { background: #fff; }
+    .car-reviews__header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .car-reviews__header p {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+    .cars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+    }
+    .car-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .car-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(1,73,131,0.14);
+      border-color: var(--blue);
+    }
+    .car-card__img {
+      position: relative;
+      height: 220px;
+      background: #e8f0f8;
+      overflow: hidden;
+    }
+    .car-card__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.5s ease;
+    }
+    .car-card:hover .car-card__img img { transform: scale(1.05); }
+    .car-card__origin {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--orange);
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+    }
+    .car-card__body { padding: 20px 22px 22px; }
+    .car-card__specs {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+    .car-card__spec {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .car-card__spec i { color: var(--blue); font-size: 11px; }
+    .car-card h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 6px;
+    }
+    .car-card__desc {
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .car-card__price {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 14px;
+    }
+    .car-card__price span { font-size: 14px; font-weight: 400; color: var(--text-muted); }
+    .car-card__footer {
+      display: flex;
+      gap: 10px;
+    }
+
+    /* ==============================
+       CATALOG
+    ============================== */
+    .catalog { background: #f8f9fc; }
+    .catalog-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+    .catalog-tab {
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 10px 20px;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+      transition: all 0.2s;
+    }
+    .catalog-tab:hover { border-color: var(--blue); color: var(--blue); }
+    .catalog-tab.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+    }
+    .catalog-panel { display: none; }
+    .catalog-panel.active {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; } }
+    .catalog-cta { text-align: center; margin-top: 40px; }
+    .catalog-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 14px;
+      font-style: italic;
+    }
+
+    /* ==============================
+       DELIVERY GALLERY
+    ============================== */
+    .gallery { background: var(--blue); }
+    .gallery .section-title { color: #fff; }
+    .gallery .section-subtitle { color: rgba(255,255,255,0.7); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 8px;
+    }
+    .gallery-item {
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.08); }
+
+    /* ==============================
+       REVIEWS
+    ============================== */
+    .reviews-section { background: #fff; }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .review-img {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: transform 0.3s ease;
+    }
+    .review-img:hover { transform: scale(1.02); }
+    .review-img img { width: 100%; display: block; }
+
+    /* ==============================
+       TEAM
+    ============================== */
+    .team { background: #f8f9fc; }
+    .team__title { text-align: center; }
+    .team__sub {
+      text-align: center;
+      font-size: 16px;
+      color: var(--text-muted);
+      margin: 10px 0 50px;
+    }
+    .managers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .manager-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+    .manager-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 36px rgba(1,73,131,0.12);
+    }
+    .manager-card__photo {
+      height: 200px;
+      overflow: hidden;
+      background: var(--blue);
+    }
+    .manager-card__photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.4s ease;
+    }
+    .manager-card:hover .manager-card__photo img { transform: scale(1.05); }
+    .manager-card__info {
+      padding: 16px;
+      text-align: center;
+    }
+    .manager-card__info a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--blue);
+      letter-spacing: 0.03em;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+    .manager-card__info a:hover { color: var(--orange); }
+    .manager-card__info a i { color: var(--orange); font-size: 12px; }
+    .manager-card__info .btn {
+      width: 100%;
+      justify-content: center;
+      padding: 10px 16px;
+      font-size: 13px;
+      border-radius: 6px;
+    }
+    .socials-row {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .social-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: #fff;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .social-btn:hover { transform: scale(1.15); opacity: 0.9; }
+    .social-btn--tg { background: #29b5e8; }
+    .social-btn--wa { background: #25d366; }
+
+    /* ==============================
+       CONTACT
+    ============================== */
+    .contact { background: var(--blue); }
+    .contact .section-title { color: #fff; }
+    .contact__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .contact__info p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .contact-detail__icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--orange);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .contact-detail__text span {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 4px;
+    }
+    .contact-detail__text strong, .contact-detail__text a {
+      display: block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 0.02em;
+    }
+    .contact-detail__text a:hover { color: var(--orange); }
+
+    .contact__form {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 16px;
+      padding: 36px;
+    }
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-family: 'Roboto Slab', serif;
+      font-size: 14px;
+      color: #fff;
+      transition: border-color 0.2s, background 0.2s;
+      outline: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.35); }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--orange);
+      background: rgba(255,255,255,0.12);
+    }
+    .form-group textarea { resize: vertical; }
+    .form-note {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 12px;
+      text-align: center;
+    }
+    .form-success {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      background: rgba(37,211,102,0.15);
+      border: 1px solid rgba(37,211,102,0.4);
+      border-radius: 8px;
+      padding: 16px;
+      color: #4ade80;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .form-success.show { display: flex; }
+
+    /* ==============================
+       FOOTER
+    ============================== */
+    .footer {
+      background: var(--blue-dark);
+      padding: 60px 0 30px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+    .footer__logo { margin-bottom: 16px; }
+    .footer__logo img { height: 48px; width: auto; object-fit: contain; }
+    .footer__brand p {
+      font-size: 13px;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 20px;
+    }
+    .footer__socials {
+      display: flex;
+      gap: 10px;
+    }
+    .footer__socials a {
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 16px;
+      transition: all 0.2s;
+    }
+    .footer__socials a:hover {
+      background: var(--orange);
+      color: #fff;
+    }
+    .footer__nav h4 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .footer__nav ul { display: flex; flex-direction: column; gap: 8px; }
+    .footer__nav a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      transition: color 0.2s;
+    }
+    .footer__nav a:hover { color: var(--orange); }
+    .footer__contacts h4 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .footer__contacts p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .footer__contacts a { color: #fff; font-weight: 600; }
+    .footer__contacts a:hover { color: var(--orange); }
+    .footer__bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+    }
+    .footer__bottom p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.6;
+      margin-bottom: 6px;
+    }
+
+    /* ==============================
+       MOBILE
+    ============================== */
+    @media (max-width: 1024px) {
+      .contact__grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 768px) {
+      .nav__menu { display: none; }
+      .nav__right .nav__phone { display: none; }
+      .nav__right .btn { display: none; }
+      .nav__burger { display: flex; }
+      .nav__menu.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: var(--nav-h);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--blue-dark);
+        padding: 24px 20px;
+        gap: 4px;
+        overflow-y: auto;
+        z-index: 999;
+      }
+      .nav__menu.open .nav__item {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav__menu.open .nav__link {
+        padding: 14px 0;
+        font-size: 20px;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        height: auto;
+      }
+      .nav__dropdown { display: none !important; }
+      .stats-bar__grid { grid-template-columns: repeat(2, 1fr); }
+      .benefits-grid { grid-template-columns: 1fr 1fr; }
+      .cars-grid { grid-template-columns: 1fr; }
+      .managers-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer__grid { grid-template-columns: 1fr; }
+      .hero__actions { flex-direction: column; }
+    }
+    @media (max-width: 480px) {
+      .benefits-grid { grid-template-columns: 1fr; }
+      .managers-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- NAV -->
-  <nav class="nav" id="navbar">
-    <div class="nav__inner">
-      <a href="#" class="nav__logo">АТЛЕТ<span>АВТО</span></a>
-      <div class="nav__menu" id="navMenu">
-        <a href="#about" class="nav__link">О нас</a>
-        <a href="#catalog" class="nav__link">Каталог</a>
-        <a href="#process" class="nav__link">Как работаем</a>
-        <a href="#reviews" class="nav__link">Отзывы</a>
-        <a href="#contact" class="nav__link">Контакты</a>
-      </div>
-      <div class="nav__right">
-        <a href="tel:+78006001838" class="nav__phone">
-          <i class="fa-solid fa-phone"></i>
-          8 (800) 600-18-38
-        </a>
-        <a href="#contact" class="btn btn--gold nav__cta">Заказать авто</a>
-      </div>
-      <button class="nav__burger" id="burgerBtn" aria-label="Меню">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+<!-- =================== NAV =================== -->
+<nav class="nav" id="navbar">
+  <div class="nav__inner">
+    <a href="#" class="nav__logo">
+      <img src="images/tild6366-6165-4432-b831-663033633230_LOGO.PNG" alt="Атлет-Авто">
+    </a>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero__bg">
-      <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920&q=85" alt="" aria-hidden="true" class="hero__img" onerror="this.style.display='none'">
+    <div class="nav__menu" id="navMenu">
+      <div class="nav__item">
+        <a href="#whyus" class="nav__link">О нас <i class="fa-solid fa-chevron-down"></i></a>
+        <div class="nav__dropdown">
+          <a href="#whyus">Почему мы</a>
+          <a href="#team">Наша команда</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#contacts">Контакты</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="#auto" class="nav__link">Авто под заказ <i class="fa-solid fa-chevron-down"></i></a>
+        <div class="nav__dropdown">
+          <a href="#auto" onclick="switchTab('chinese')">Китайские марки</a>
+          <a href="#auto" onclick="switchTab('korean')">Корейские марки</a>
+          <a href="#auto" onclick="switchTab('japanese')">Японские марки</a>
+          <a href="#auto" onclick="switchTab('european')">Европейские марки</a>
+          <a href="#auto" onclick="switchTab('american')">Американские марки</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="#auto" onclick="switchTab('special')" class="nav__link">Спецтехника</a>
+      </div>
+      <div class="nav__item">
+        <a href="#auto" onclick="switchTab('instock')" class="nav__link">Авто в наличии</a>
+      </div>
+      <div class="nav__item">
+        <a href="#news" class="nav__link">Новости</a>
+      </div>
     </div>
-    <div class="hero__overlay"></div>
-    <div class="container">
-      <div class="hero__content reveal">
-        <div class="hero__badge">
-          <span class="pulse-dot"></span>
-          Официальный импортёр
+
+    <div class="nav__right">
+      <a href="tel:+78006001838" class="nav__phone">
+        <i class="fa-solid fa-phone"></i>
+        8 800 600 18 38
+      </a>
+      <a href="#form" class="btn btn-orange">Оставить заявку</a>
+    </div>
+
+    <button class="nav__burger" id="burgerBtn" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- =================== HERO =================== -->
+<section class="hero" id="home">
+  <div class="hero__bg" id="heroBg"></div>
+  <div class="hero__overlay"></div>
+  <div class="container">
+    <div class="hero__content">
+      <div class="hero__label">
+        <i class="fa-solid fa-circle-dot" style="color:var(--orange)"></i>
+        Официальный импортёр
+      </div>
+      <h1 class="hero__title">
+        Авто в наличии,<br>
+        <span class="accent">под заказ.</span><br>
+        Спецтехника
+      </h1>
+      <div class="hero__origins">
+        <span>Китай</span><span class="sep">||</span>
+        <span>Япония</span><span class="sep">||</span>
+        <span>Корея</span><span class="sep">||</span>
+        <span>Европа</span><span class="sep">||</span>
+        <span>США</span>
+      </div>
+      <p class="hero__desc">
+        «Атлет-Авто» — ваш эксперт в выборе автомобиля.<br>
+        Купим. Доставим в Россию. Растаможим. Отправим в ваш город.
+      </p>
+      <div class="hero__actions">
+        <a href="#auto" class="btn btn-orange">
+          <i class="fa-solid fa-car"></i>
+          Смотреть каталог
+        </a>
+        <a href="#form" class="btn btn-outline">Оставить заявку</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero__scroll">
+    <span>Вниз</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </div>
+</section>
+
+<!-- =================== STATS =================== -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-bar__grid">
+      <div class="stat">
+        <span class="stat__num"><span class="counter" data-to="1000">0</span>+</span>
+        <div class="stat__label">Авто доставлено</div>
+      </div>
+      <div class="stat">
+        <span class="stat__num">от <span class="counter" data-to="14">0</span> дней</span>
+        <div class="stat__label">Срок до Владивостока</div>
+      </div>
+      <div class="stat">
+        <span class="stat__num"><span class="counter" data-to="5">0</span> стран</span>
+        <div class="stat__label">Источников поставок</div>
+      </div>
+      <div class="stat">
+        <span class="stat__num">24/7</span>
+        <div class="stat__label">Поддержка клиентов</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== WHY US =================== -->
+<section class="whyus section" id="whyus">
+  <div class="container">
+    <h2 class="whyus__title">Почему выгодно привозить автомобили под заказ?</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-card__icon">
+          <img src="images/tild3331-6438-4432-b861-646138343530_clock.png" alt="Сроки">
         </div>
-        <h1 class="hero__title">
-          Автомобили<br>
-          <em>под заказ</em>
-        </h1>
-        <div class="hero__origins">
-          <span>Китай</span>
-          <i class="fa-solid fa-diamond" aria-hidden="true"></i>
-          <span>Япония</span>
-          <i class="fa-solid fa-diamond" aria-hidden="true"></i>
-          <span>Корея</span>
-          <i class="fa-solid fa-diamond" aria-hidden="true"></i>
-          <span>Европа</span>
-          <i class="fa-solid fa-diamond" aria-hidden="true"></i>
-          <span>США</span>
+        <h3>Реальные сроки</h3>
+        <p>От момента заключения договора до поставки в наш порт — от 14 дней до Владивостока</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-card__icon">
+          <img src="images/tild3730-3838-4166-a638-653461356363_discount.png" alt="Цена">
         </div>
-        <p class="hero__desc">
-          Ваш эксперт в выборе автомобиля.<br>
-          Купим. Доставим в Россию. Растаможим. Отправим в ваш город.
-        </p>
-        <div class="hero__actions">
-          <a href="#catalog" class="btn btn--gold btn--lg">
-            Смотреть каталог
-            <i class="fa-solid fa-arrow-right"></i>
+        <h3>Цена ниже рыночной</h3>
+        <p>Вам не придётся оплачивать повышенные сборы и завышенные комиссии продавцов</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-card__icon">
+          <img src="images/tild6237-6266-4861-a538-343263336139_delivery-car.png" alt="Доставка">
+        </div>
+        <h3>Чистая история</h3>
+        <p>Перед покупкой проверяем юридическую чистоту, состояние ЛКП и техническую составляющую</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-card__icon">
+          <img src="images/tild6263-3966-4237-b234-363438376336_support.png" alt="Гарантия">
+        </div>
+        <h3>Гарантия сотрудничества</h3>
+        <p>Работаем строго по договору, где прописаны все условия. Всё официально и прозрачно</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-card__icon">
+          <img src="images/tild6433-3936-4339-a661-633662613337_gift.png" alt="Бонусы">
+        </div>
+        <h3>Выгодные условия</h3>
+        <p>Низкие комиссионные, реферальные и бонусные системы для наших клиентов</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CAR REVIEWS =================== -->
+<section class="car-reviews section" id="car-reviews">
+  <div class="container">
+    <div class="car-reviews__header">
+      <h2 class="section-title">Обзоры автомобилей</h2>
+      <p>Автомобили, привезённые нашим дорогим клиентам — смотрите, выбирайте и заказывайте у наших менеджеров!</p>
+    </div>
+    <div class="cars-grid">
+
+      <div class="car-card">
+        <div class="car-card__img">
+          <img src="images/tild3039-6265-4266-a132-353531326163_Screenshot_6.png" alt="Hyundai Palisade">
+          <span class="car-card__origin">Корея</span>
+        </div>
+        <div class="car-card__body">
+          <div class="car-card__specs">
+            <div class="car-card__spec"><i class="fa-regular fa-calendar"></i> 2023 г.</div>
+            <div class="car-card__spec"><i class="fa-solid fa-gauge-high"></i> 47 000 км</div>
+            <div class="car-card__spec"><i class="fa-solid fa-cog"></i> 2.2л, 202 л.с.</div>
+          </div>
+          <h3>Hyundai Palisade</h3>
+          <p class="car-card__desc">Двигатель 2.2л, 202 л.с. · Привод 4WD · АКПП · Для клиента Ольги из Москвы</p>
+          <div class="car-card__price">от 5 600 000 ₽ <span>под ключ до Владивостока</span></div>
+          <div class="car-card__footer">
+            <a href="#form" class="btn btn-blue">Заказать</a>
+            <a href="#form" class="btn btn-orange">Подробнее</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <div class="car-card__img">
+          <img src="images/tild3631-3938-4337-a661-626264363035_Screenshot_2.png" alt="KIA K5 Signature">
+          <span class="car-card__origin">Корея</span>
+        </div>
+        <div class="car-card__body">
+          <div class="car-card__specs">
+            <div class="car-card__spec"><i class="fa-regular fa-calendar"></i> 2021 г.</div>
+            <div class="car-card__spec"><i class="fa-solid fa-gauge-high"></i> 31 500 км</div>
+            <div class="car-card__spec"><i class="fa-solid fa-cog"></i> 2.0л, 160 л.с.</div>
+          </div>
+          <h3>KIA K5 Signature</h3>
+          <p class="car-card__desc">Двигатель 2.0л, 160 л.с., бензин · Привод 2WD · Для клиента Анастасии из Москвы</p>
+          <div class="car-card__price">от 2 300 000 ₽ <span>под ключ до Владивостока</span></div>
+          <div class="car-card__footer">
+            <a href="#form" class="btn btn-blue">Заказать</a>
+            <a href="#form" class="btn btn-orange">Подробнее</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <div class="car-card__img">
+          <img src="images/tild3633-6464-4264-a430-666364323064_Screenshot_3.png" alt="BMW 1-series">
+          <span class="car-card__origin">Европа</span>
+        </div>
+        <div class="car-card__body">
+          <div class="car-card__specs">
+            <div class="car-card__spec"><i class="fa-regular fa-calendar"></i> 2022 г.</div>
+            <div class="car-card__spec"><i class="fa-solid fa-gauge-high"></i> 18 000 км</div>
+            <div class="car-card__spec"><i class="fa-solid fa-cog"></i> 1.5л, 140 л.с.</div>
+          </div>
+          <h3>BMW 1-series</h3>
+          <p class="car-card__desc">Двигатель 1.5л, 140 л.с. · Привод передний · Для клиента Ирины из Москвы</p>
+          <div class="car-card__price">от 1 500 000 ₽ <span>под ключ до Владивостока</span></div>
+          <div class="car-card__footer">
+            <a href="#form" class="btn btn-blue">Заказать</a>
+            <a href="#form" class="btn btn-orange">Подробнее</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <div class="car-card__img">
+          <img src="images/tild3139-6539-4635-a130-353961336162_Screenshot_4.png" alt="Tank 300">
+          <span class="car-card__origin">Китай</span>
+        </div>
+        <div class="car-card__body">
+          <div class="car-card__specs">
+            <div class="car-card__spec"><i class="fa-regular fa-calendar"></i> 2022 г.</div>
+            <div class="car-card__spec"><i class="fa-solid fa-gauge-high"></i> 50 000 км</div>
+            <div class="car-card__spec"><i class="fa-solid fa-cog"></i> 2.0л, 227 л.с.</div>
+          </div>
+          <h3>Tank 300</h3>
+          <p class="car-card__desc">Двигатель 2.0л, 227 л.с. · Привод 4WD · АКПП 8 · Off-Road Conqueror · Для Павла из Кавалерово</p>
+          <div class="car-card__price">от 3 600 000 ₽ <span>под ключ до Владивостока</span></div>
+          <div class="car-card__footer">
+            <a href="#form" class="btn btn-blue">Заказать</a>
+            <a href="#form" class="btn btn-orange">Подробнее</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <div class="car-card__img">
+          <img src="images/tild6639-6365-4663-b535-313466643639_Screenshot_7.png" alt="Li8 ULTRA">
+          <span class="car-card__origin">Китай</span>
+        </div>
+        <div class="car-card__body">
+          <div class="car-card__specs">
+            <div class="car-card__spec"><i class="fa-regular fa-calendar"></i> 2024 г.</div>
+            <div class="car-card__spec"><i class="fa-solid fa-gauge-high"></i> 12 000 км</div>
+            <div class="car-card__spec"><i class="fa-solid fa-bolt"></i> гибрид 449 л.с.</div>
+          </div>
+          <h3>Li8 ULTRA</h3>
+          <p class="car-card__desc">Двигатель 1.5л, 449 л.с., последовательный гибрид · Для клиента Дениса</p>
+          <div class="car-card__price">от 6 000 000 ₽ <span>под ключ до Владивостока</span></div>
+          <div class="car-card__footer">
+            <a href="#form" class="btn btn-blue">Заказать</a>
+            <a href="#form" class="btn btn-orange">Подробнее</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <div class="car-card__img">
+          <img src="images/tild3263-3534-4665-b362-626437373338_Screenshot_13.png" alt="Mercedes-Benz G400d">
+          <span class="car-card__origin">Европа</span>
+        </div>
+        <div class="car-card__body">
+          <div class="car-card__specs">
+            <div class="car-card__spec"><i class="fa-regular fa-calendar"></i> 2024 г.</div>
+            <div class="car-card__spec"><i class="fa-solid fa-gauge-high"></i> 12 800 км</div>
+            <div class="car-card__spec"><i class="fa-solid fa-cog"></i> 2.9л, 330 л.с.</div>
+          </div>
+          <h3>Mercedes-Benz G400d</h3>
+          <p class="car-card__desc">Двигатель 2.9л, 330 л.с., дизель · Привод 4WD · Для Андрея из Санкт-Петербурга</p>
+          <div class="car-card__price">от 15 000 000 ₽ <span>под ключ до Владивостока</span></div>
+          <div class="car-card__footer">
+            <a href="#form" class="btn btn-blue">Заказать</a>
+            <a href="#form" class="btn btn-orange">Подробнее</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =================== CATALOG =================== -->
+<section class="catalog section" id="auto">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">Каталог <span>автомобилей</span></h2>
+      <p class="section-subtitle">Выберите категорию интересующих вас автомобилей. По любой модели сделаем расчёт стоимости.</p>
+    </div>
+    <div class="catalog-tabs">
+      <button class="catalog-tab active" onclick="switchTab('chinese')">Китайские марки</button>
+      <button class="catalog-tab" onclick="switchTab('korean')">Корейские марки</button>
+      <button class="catalog-tab" onclick="switchTab('japanese')">Японские марки</button>
+      <button class="catalog-tab" onclick="switchTab('european')">Европейские марки</button>
+      <button class="catalog-tab" onclick="switchTab('american')">Американские марки</button>
+      <button class="catalog-tab" onclick="switchTab('special')">Спецтехника</button>
+      <button class="catalog-tab" onclick="switchTab('instock')">Авто в наличии</button>
+    </div>
+
+    <div id="panel-chinese" class="catalog-panel active">
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">BYD</span></div><div class="car-card__body"><h3>BYD</h3><p class="car-card__desc">Электромобили и гибриды от ведущего китайского производителя</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Chery</span></div><div class="car-card__body"><h3>Chery / Exeed</h3><p class="car-card__desc">Широкий модельный ряд SUV и кроссоверов</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Haval</span></div><div class="car-card__body"><h3>Haval</h3><p class="car-card__desc">Популярные кроссоверы: Jolion, F7, Dargo</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Tank</span></div><div class="car-card__body"><h3>Tank 300 / 400 / 500</h3><p class="car-card__desc">Внедорожники премиум-класса с мощными двигателями</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Li Auto</span></div><div class="car-card__body"><h3>Li Auto (Li8 / L9 / L7)</h3><p class="car-card__desc">Гибридные SUV с запасом хода 1000+ км</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Nio / Geely</span></div><div class="car-card__body"><h3>Nio / Geely / BAIC</h3><p class="car-card__desc">Электромобили и другие марки под заказ</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+    </div>
+
+    <div id="panel-korean" class="catalog-panel">
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Hyundai</span></div><div class="car-card__body"><h3>Hyundai</h3><p class="car-card__desc">Palisade, Tucson, Santa Fe, Sonata и другие модели</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">KIA</span></div><div class="car-card__body"><h3>KIA</h3><p class="car-card__desc">K5, Sorento, Sportage, Carnival и весь модельный ряд</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Genesis</span></div><div class="car-card__body"><h3>Genesis</h3><p class="car-card__desc">G80, GV80, GV70 — корейский люкс по честной цене</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+    </div>
+
+    <div id="panel-japanese" class="catalog-panel">
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Toyota</span></div><div class="car-card__body"><h3>Toyota</h3><p class="car-card__desc">Camry, RAV4, Land Cruiser, Alphard и другие</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Lexus</span></div><div class="car-card__body"><h3>Lexus</h3><p class="car-card__desc">ES, RX, LX, GX — японский люкс с гарантией качества</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Honda</span></div><div class="car-card__body"><h3>Honda</h3><p class="car-card__desc">Civic, CR-V, Vezel, Accord — надёжные японские авто</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Nissan / Mazda</span></div><div class="car-card__body"><h3>Nissan / Mazda / Subaru</h3><p class="car-card__desc">Широкий выбор японских марок под заказ</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+    </div>
+
+    <div id="panel-european" class="catalog-panel">
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">BMW</span></div><div class="car-card__body"><h3>BMW</h3><p class="car-card__desc">Вся линейка BMW: 1, 3, 5, 7 серии, X3, X5, X7 и другие</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Mercedes-Benz</span></div><div class="car-card__body"><h3>Mercedes-Benz</h3><p class="car-card__desc">C, E, S-класс, GLC, GLE, GLS, G-класс и другие</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Audi</span></div><div class="car-card__body"><h3>Audi</h3><p class="car-card__desc">A4, A6, Q5, Q7, Q8 — немецкое качество без переплат</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Porsche / Volvo</span></div><div class="car-card__body"><h3>Porsche / Volvo / VW</h3><p class="car-card__desc">Cayenne, Macan, XC90, Tiguan и другие европейские марки</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+    </div>
+
+    <div id="panel-american" class="catalog-panel">
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Cadillac</span></div><div class="car-card__body"><h3>Cadillac</h3><p class="car-card__desc">Escalade, XT5, XT6 — американский люкс высшего уровня</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Tesla</span></div><div class="car-card__body"><h3>Tesla</h3><p class="car-card__desc">Model 3, Model Y, Model S, Model X — электромобили</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:24px;color:#014983">Ford / Lincoln</span></div><div class="car-card__body"><h3>Ford / Lincoln / Jeep</h3><p class="car-card__desc">Explorer, Expedition, Navigator и другие американские авто</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+    </div>
+
+    <div id="panel-special" class="catalog-panel">
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:20px;color:#014983">XCMG</span></div><div class="car-card__body"><h3>XCMG</h3><p class="car-card__desc">Экскаваторы, погрузчики, краны и другая спецтехника</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:20px;color:#014983">SANY</span></div><div class="car-card__body"><h3>SANY</h3><p class="car-card__desc">Бетонные насосы, экскаваторы, краны и буровые установки</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+      <div class="car-card"><div class="car-card__img" style="background:#e8f0f8;display:flex;align-items:center;justify-content:center;"><span style="font-family:Oswald;font-size:20px;color:#014983">Liugong / SDLG</span></div><div class="car-card__body"><h3>Liugong / SDLG</h3><p class="car-card__desc">Фронтальные погрузчики, грейдеры, дорожная техника</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
+    </div>
+
+    <div id="panel-instock" class="catalog-panel">
+      <div class="car-card"><div class="car-card__img" style="background:#014983;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:20px;"><i class="fa-solid fa-car" style="font-size:48px;color:rgba(255,255,255,0.3)"></i></div><div class="car-card__body"><h3>Авто в наличии</h3><p class="car-card__desc">Для просмотра актуального наличия свяжитесь с нашими менеджерами — список обновляется ежедневно</p><a href="#contacts" class="btn btn-orange" style="margin-top:10px">Узнать наличие</a></div></div>
+      <div class="car-card"><div class="car-card__img" style="background:#f0f4f8;display:flex;align-items:center;justify-content:center;flex-direction:column;"><img src="images/tild3932-3439-4735-a439-386333303234_IMG_3125.JPEG" alt="Manager" style="width:100%;height:100%;object-fit:cover;"></div><div class="car-card__body"><h3>Быстрый отклик</h3><p class="car-card__desc">Менеджер перезвонит в течение 5 минут и расскажет о наличии нужной вам модели</p><a href="#form" class="btn btn-blue" style="margin-top:10px">Оставить заявку</a></div></div>
+    </div>
+
+    <div class="catalog-cta">
+      <a href="#form" class="btn btn-orange">
+        <i class="fa-solid fa-paper-plane"></i>
+        Не нашли нужную модель? Оставьте заявку
+      </a>
+      <p class="catalog-note">* Цены носят ознакомительный характер и уточняются на дату подтверждения заказа с учётом курса валют.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================== GALLERY =================== -->
+<section class="gallery section" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title" style="color:#fff">Мы привезли <span style="color:var(--orange)">тысячи</span> автомобилей</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,0.7)">Наши менеджеры вручают автомобили клиентам по всей России</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/tild6333-3833-4636-b261-336361333935_photo_2026-01-26_10-.jpg" alt="Вручение авто"></div>
+      <div class="gallery-item"><img src="images/tild3536-3838-4730-a437-633661616234_11.jpeg" alt="Авто клиенту"></div>
+      <div class="gallery-item"><img src="images/tild3163-3839-4333-a261-616138616334_photo.jpeg" alt="Вручение авто"></div>
+      <div class="gallery-item"><img src="images/tild3530-6662-4836-b835-306162613362_222.jpeg" alt="Авто клиенту"></div>
+      <div class="gallery-item"><img src="images/tild6535-6233-4435-b233-303330616430_22.jpeg" alt="Вручение авто"></div>
+      <div class="gallery-item"><img src="images/tild6466-6437-4663-b164-383638323938_photo_2026-01-26_10-.jpg" alt="Авто клиенту"></div>
+      <div class="gallery-item"><img src="images/tild3366-3963-4838-a231-363235393664_photo.jpeg" alt="Вручение авто"></div>
+      <div class="gallery-item"><img src="images/tild6364-3330-4038-b135-346161613264_photo_2026-01-26_10-.jpg" alt="Авто клиенту"></div>
+      <div class="gallery-item"><img src="images/tild3262-3264-4538-a432-323938616239_photo_2026-01-26_10-.jpg" alt="Вручение авто"></div>
+      <div class="gallery-item"><img src="images/tild6164-3835-4430-b430-303761313834_photo_2026-01-26_10-.jpg" alt="Авто клиенту"></div>
+      <div class="gallery-item"><img src="images/tild3863-6230-4932-a132-383462353965_photo_2026-01-26_10-.jpg" alt="Вручение авто"></div>
+      <div class="gallery-item"><img src="images/tild6331-3736-4934-b339-383833313934_111.jpeg" alt="Авто клиенту"></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== REVIEWS =================== -->
+<section class="reviews-section section" id="reviews">
+  <div class="container">
+    <div class="section-head" style="text-align:center">
+      <h2 class="section-title">Реальные отзывы клиентов</h2>
+      <p class="section-subtitle" style="margin:0 auto">С 2ГИС и Яндекс — наши любимые клиенты оставляют настоящие отзывы</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-img"><img src="images/tild3237-6666-4461-a235-386562323931_photo_2026-03-18_11-.jpg" alt="Отзыв"></div>
+      <div class="review-img"><img src="images/tild6639-6365-4663-b535-313466643639_Screenshot_7.png" alt="Отзыв"></div>
+      <div class="review-img"><img src="images/tild6362-3964-4738-b639-323833386530_photo_2026-03-18_11-.jpg" alt="Отзыв"></div>
+      <div class="review-img"><img src="images/tild3263-3534-4665-b362-626437373338_Screenshot_13.png" alt="Отзыв"></div>
+      <div class="review-img"><img src="images/tild3232-3862-4037-b361-363432303638_photo_2026-03-18_11-.jpg" alt="Отзыв"></div>
+      <div class="review-img"><img src="images/tild6233-3562-4666-b066-383830376635_photo_2026-03-18_11-.jpg" alt="Отзыв"></div>
+      <div class="review-img"><img src="images/tild3861-3733-4363-b161-353631303235_Screenshot_1.png" alt="Отзыв"></div>
+      <div class="review-img"><img src="images/tild3931-3932-4034-a266-343536323265_photo_2026-03-18_11-.jpg" alt="Отзыв"></div>
+      <div class="review-img"><img src="images/tild3562-3035-4639-a666-663431303738_photo_2026-03-18_11-.jpg" alt="Отзыв"></div>
+      <div class="review-img"><img src="images/tild3031-3139-4364-b461-666634623036_photo_2026-03-18_11-.jpg" alt="Отзыв"></div>
+      <div class="review-img"><img src="images/tild6362-6538-4666-b335-323163356636_photo_2026-03-18_11-.jpg" alt="Отзыв"></div>
+      <div class="review-img"><img src="images/tild6133-6233-4236-b339-363836386361_Screenshot_2.png" alt="Отзыв"></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== TEAM =================== -->
+<section class="team section" id="team">
+  <div class="container">
+    <h2 class="section-title team__title">Наша <span>команда</span></h2>
+    <p class="team__sub">Написать своему менеджеру — нажмите на кнопку для быстрой связи</p>
+    <div class="managers-grid">
+
+      <div class="manager-card">
+        <div class="manager-card__photo">
+          <img src="images/tild3932-3439-4735-a439-386333303234_IMG_3125.JPEG" alt="Менеджер">
+        </div>
+        <div class="manager-card__info">
+          <a href="tel:+79510127198"><i class="fa-solid fa-phone"></i>+7 (951) 012-71-98</a>
+          <div class="socials-row">
+            <a href="https://t.me/+79510127198" target="_blank" class="social-btn social-btn--tg"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://wa.me/79510127198" target="_blank" class="social-btn social-btn--wa"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="manager-card">
+        <div class="manager-card__photo">
+          <img src="images/tild3030-3434-4162-b031-366230666563_scene_3.jpeg" alt="Менеджер">
+        </div>
+        <div class="manager-card__info">
+          <a href="tel:+79510165278"><i class="fa-solid fa-phone"></i>+7 (951) 016-52-78</a>
+          <div class="socials-row">
+            <a href="https://t.me/+79510165278" target="_blank" class="social-btn social-btn--tg"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://wa.me/79510165278" target="_blank" class="social-btn social-btn--wa"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="manager-card">
+        <div class="manager-card__photo">
+          <img src="images/tild6230-3136-4138-b931-653935323264_scene_4.jpeg" alt="Менеджер">
+        </div>
+        <div class="manager-card__info">
+          <a href="tel:+79084517439"><i class="fa-solid fa-phone"></i>+7 (908) 451-74-39</a>
+          <div class="socials-row">
+            <a href="https://t.me/+79084517439" target="_blank" class="social-btn social-btn--tg"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://wa.me/79084517439" target="_blank" class="social-btn social-btn--wa"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="manager-card">
+        <div class="manager-card__photo">
+          <img src="images/tild3131-3562-4933-a337-373563373434_IMG_0864.jpg" alt="Менеджер">
+        </div>
+        <div class="manager-card__info">
+          <a href="tel:+79510257566"><i class="fa-solid fa-phone"></i>+7 (951) 025-75-66</a>
+          <div class="socials-row">
+            <a href="https://t.me/+79510257566" target="_blank" class="social-btn social-btn--tg"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://wa.me/79510257566" target="_blank" class="social-btn social-btn--wa"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="manager-card">
+        <div class="manager-card__photo">
+          <img src="images/tild6638-6261-4738-a337-353531386166_scene_5.jpeg" alt="Менеджер">
+        </div>
+        <div class="manager-card__info">
+          <a href="tel:+79510248574"><i class="fa-solid fa-phone"></i>+7 (951) 024-85-74</a>
+          <div class="socials-row">
+            <a href="https://t.me/+79510248574" target="_blank" class="social-btn social-btn--tg"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://wa.me/79510248574" target="_blank" class="social-btn social-btn--wa"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="manager-card">
+        <div class="manager-card__photo">
+          <img src="images/tild3564-6631-4163-a238-616335356236_IMG_2887.JPEG" alt="Менеджер">
+        </div>
+        <div class="manager-card__info">
+          <a href="tel:+79510196894"><i class="fa-solid fa-phone"></i>+7 (951) 019-68-94</a>
+          <div class="socials-row">
+            <a href="https://t.me/+79510196894" target="_blank" class="social-btn social-btn--tg"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://wa.me/79510196894" target="_blank" class="social-btn social-btn--wa"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="manager-card">
+        <div class="manager-card__photo">
+          <img src="images/tild6137-3931-4266-a636-336139303934_scene_7.jpeg" alt="Менеджер">
+        </div>
+        <div class="manager-card__info">
+          <a href="tel:+79510256414"><i class="fa-solid fa-phone"></i>+7 (951) 025-64-14</a>
+          <div class="socials-row">
+            <a href="https://t.me/+79510256414" target="_blank" class="social-btn social-btn--tg"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://wa.me/79510256414" target="_blank" class="social-btn social-btn--wa"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="manager-card">
+        <div class="manager-card__photo">
+          <img src="images/tild3530-6637-4139-a138-353561636336_IMG_2888.JPEG" alt="Менеджер">
+        </div>
+        <div class="manager-card__info">
+          <a href="tel:+79084545022"><i class="fa-solid fa-phone"></i>+7 (908) 454-50-22</a>
+          <div class="socials-row">
+            <a href="https://t.me/+79084545022" target="_blank" class="social-btn social-btn--tg"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://wa.me/79084545022" target="_blank" class="social-btn social-btn--wa"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="manager-card">
+        <div class="manager-card__photo">
+          <img src="images/tild6262-6338-4635-b230-643966626462_IMG_2886.JPEG" alt="Менеджер">
+        </div>
+        <div class="manager-card__info">
+          <a href="tel:+79084541022"><i class="fa-solid fa-phone"></i>+7 (908) 454-10-22</a>
+          <div class="socials-row">
+            <a href="https://t.me/+79084541022" target="_blank" class="social-btn social-btn--tg"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://wa.me/79084541022" target="_blank" class="social-btn social-btn--wa"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =================== CONTACT =================== -->
+<section class="contact section" id="contacts">
+  <div class="container">
+    <div class="contact__grid">
+      <div class="contact__info">
+        <h2 class="section-title" style="color:#fff;margin-bottom:20px">Оставить заявку</h2>
+        <p>После отправки вашего заказа наш менеджер свяжется с вами в самое ближайшее время.</p>
+        <div class="contact-detail">
+          <div class="contact-detail__icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="contact-detail__text">
+            <span>Звонок бесплатный</span>
+            <a href="tel:+78006001838">8 800 600 18 38</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail__icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="contact-detail__text">
+            <span>Адрес офиса</span>
+            <strong>Запорожская, 87а, офис 8</strong>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail__icon"><i class="fa-solid fa-clock"></i></div>
+          <div class="contact-detail__text">
+            <span>Режим работы</span>
+            <strong>Пн–Пт: 10:00–18:00</strong>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;">
+          <a href="https://t.me/atletauto" target="_blank" style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:12px 20px;border-radius:8px;font-family:Oswald;font-size:14px;letter-spacing:0.05em;transition:all 0.2s" onmouseover="this.style.background='#29b5e8'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+            <i class="fa-brands fa-telegram" style="font-size:18px"></i> Telegram
           </a>
-          <a href="#contact" class="btn btn--ghost btn--lg">Получить консультацию</a>
+          <a href="https://wa.me/78006001838" target="_blank" style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:12px 20px;border-radius:8px;font-family:Oswald;font-size:14px;letter-spacing:0.05em;transition:all 0.2s" onmouseover="this.style.background='#25d366'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+            <i class="fa-brands fa-whatsapp" style="font-size:18px"></i> WhatsApp
+          </a>
+          <a href="https://vk.com/atletauto" target="_blank" style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:12px 20px;border-radius:8px;font-family:Oswald;font-size:14px;letter-spacing:0.05em;transition:all 0.2s" onmouseover="this.style.background='#4a76a8'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+            <i class="fa-brands fa-vk" style="font-size:18px"></i> ВКонтакте
+          </a>
         </div>
       </div>
-    </div>
-    <div class="hero__scroll-hint">
-      <span>Прокрутите</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- STATS BAR -->
-  <section class="stats-bar">
-    <div class="container">
-      <div class="stats-bar__grid">
-        <div class="stat reveal-up">
-          <div class="stat__num"><span class="counter" data-to="500">0</span>+</div>
-          <div class="stat__label">Авто доставлено</div>
-        </div>
-        <div class="stat reveal-up" style="--delay:0.1s">
-          <div class="stat__num"><span class="counter" data-to="14">0</span> дней</div>
-          <div class="stat__label">До Владивостока</div>
-        </div>
-        <div class="stat reveal-up" style="--delay:0.2s">
-          <div class="stat__num"><span class="counter" data-to="5">0</span> стран</div>
-          <div class="stat__label">Источников</div>
-        </div>
-        <div class="stat reveal-up" style="--delay:0.3s">
-          <div class="stat__num">24/7</div>
-          <div class="stat__label">Поддержка</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY US -->
-  <section class="benefits section" id="about">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="section-label">Почему мы</span>
-        <h2 class="section-title">Ваши преимущества<br>с <em>Атлет-Авто</em></h2>
-      </div>
-      <div class="benefits__grid">
-        <div class="benefit-card reveal-up" style="--delay:0s">
-          <div class="benefit-card__icon">
-            <i class="fa-solid fa-shield-halved"></i>
-          </div>
-          <h3>Чистая история</h3>
-          <p>Проверяем юридическую чистоту, состояние кузова и технические характеристики до покупки</p>
-        </div>
-        <div class="benefit-card reveal-up" style="--delay:0.08s">
-          <div class="benefit-card__icon">
-            <i class="fa-solid fa-tag"></i>
-          </div>
-          <h3>Цена ниже рыночной</h3>
-          <p>Работаем без накрученных комиссий посредников — платите только реальную цену автомобиля</p>
-        </div>
-        <div class="benefit-card reveal-up" style="--delay:0.16s">
-          <div class="benefit-card__icon">
-            <i class="fa-solid fa-bolt"></i>
-          </div>
-          <h3>Сроки от 14 дней</h3>
-          <p>Реальные временные рамки от подписания договора до доставки автомобиля в порт Владивостока</p>
-        </div>
-        <div class="benefit-card reveal-up" style="--delay:0.24s">
-          <div class="benefit-card__icon">
-            <i class="fa-solid fa-file-contract"></i>
-          </div>
-          <h3>Гарантия сотрудничества</h3>
-          <p>Работаем по договору с чёткими и прозрачными условиями для обеих сторон. Всё письменно</p>
-        </div>
-        <div class="benefit-card reveal-up" style="--delay:0.32s">
-          <div class="benefit-card__icon">
-            <i class="fa-solid fa-percent"></i>
-          </div>
-          <h3>Выгодные условия</h3>
-          <p>Низкие комиссионные, реферальные программы и бонусы для постоянных клиентов</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BRANDS -->
-  <section class="brands section" id="brands">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="section-label">Ассортимент</span>
-        <h2 class="section-title">Автомобили<br>на <em>любой вкус</em></h2>
-      </div>
-      <div class="brand-tabs">
-        <button class="brand-tab brand-tab--active" data-panel="chinese">
-          <i class="fa-solid fa-flag"></i> Китай
-        </button>
-        <button class="brand-tab" data-panel="korean">Корея</button>
-        <button class="brand-tab" data-panel="japanese">Япония</button>
-        <button class="brand-tab" data-panel="european">Европа</button>
-        <button class="brand-tab" data-panel="american">Америка</button>
-        <button class="brand-tab" data-panel="special">Спецтехника</button>
-      </div>
-      <div class="brand-panels">
-        <div class="brand-panel brand-panel--active" id="panel-chinese">
-          <div class="brand-list">
-            <div class="brand-item">BYD</div>
-            <div class="brand-item">Chery</div>
-            <div class="brand-item">Haval</div>
-            <div class="brand-item">Tank</div>
-            <div class="brand-item">Li Auto</div>
-            <div class="brand-item">Nio</div>
-            <div class="brand-item">Geely</div>
-            <div class="brand-item">Exeed</div>
-            <div class="brand-item">Jetour</div>
-            <div class="brand-item">BAIC</div>
-          </div>
-        </div>
-        <div class="brand-panel" id="panel-korean">
-          <div class="brand-list">
-            <div class="brand-item">Hyundai</div>
-            <div class="brand-item">KIA</div>
-            <div class="brand-item">Genesis</div>
-            <div class="brand-item">SsangYong</div>
-          </div>
-        </div>
-        <div class="brand-panel" id="panel-japanese">
-          <div class="brand-list">
-            <div class="brand-item">Toyota</div>
-            <div class="brand-item">Lexus</div>
-            <div class="brand-item">Honda</div>
-            <div class="brand-item">Nissan</div>
-            <div class="brand-item">Mazda</div>
-            <div class="brand-item">Subaru</div>
-            <div class="brand-item">Mitsubishi</div>
-          </div>
-        </div>
-        <div class="brand-panel" id="panel-european">
-          <div class="brand-list">
-            <div class="brand-item">BMW</div>
-            <div class="brand-item">Mercedes-Benz</div>
-            <div class="brand-item">Audi</div>
-            <div class="brand-item">Volkswagen</div>
-            <div class="brand-item">Porsche</div>
-            <div class="brand-item">Volvo</div>
-            <div class="brand-item">Land Rover</div>
-          </div>
-        </div>
-        <div class="brand-panel" id="panel-american">
-          <div class="brand-list">
-            <div class="brand-item">Cadillac</div>
-            <div class="brand-item">Ford</div>
-            <div class="brand-item">Lincoln</div>
-            <div class="brand-item">Tesla</div>
-            <div class="brand-item">Jeep</div>
-            <div class="brand-item">Chevrolet</div>
-          </div>
-        </div>
-        <div class="brand-panel" id="panel-special">
-          <div class="brand-list">
-            <div class="brand-item">XCMG</div>
-            <div class="brand-item">SANY</div>
-            <div class="brand-item">Liugong</div>
-            <div class="brand-item">SDLG</div>
-            <div class="brand-item">Lonking</div>
-          </div>
-        </div>
-      </div>
-      <div class="brands__cta reveal">
-        <a href="#contact" class="btn btn--gold">Узнать цену на любую марку</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="process section" id="process">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="section-label">Процесс</span>
-        <h2 class="section-title">Как мы работаем</h2>
-      </div>
-      <div class="process__steps">
-        <div class="step reveal-up" style="--delay:0s">
-          <div class="step__num">01</div>
-          <div class="step__body">
-            <h3>Консультация</h3>
-            <p>Обсуждаем пожелания, бюджет и сроки. Подбираем оптимальные варианты из актуальных предложений на рынках Азии и Европы</p>
-          </div>
-        </div>
-        <div class="step reveal-up" style="--delay:0.1s">
-          <div class="step__num">02</div>
-          <div class="step__body">
-            <h3>Выбор и проверка</h3>
-            <p>Проверяем историю автомобиля, состояние кузова, техническое состояние. Фото и видео с осмотра — вам на телефон</p>
-          </div>
-        </div>
-        <div class="step reveal-up" style="--delay:0.2s">
-          <div class="step__num">03</div>
-          <div class="step__body">
-            <h3>Договор и оплата</h3>
-            <p>Подписываем договор с чёткими условиями. Прозрачная структура платежей без скрытых комиссий и неожиданных расходов</p>
-          </div>
-        </div>
-        <div class="step reveal-up" style="--delay:0.3s">
-          <div class="step__num">04</div>
-          <div class="step__body">
-            <h3>Доставка и таможня</h3>
-            <p>Организуем логистику, оформляем все документы, растаможиваем автомобиль и отправляем его в ваш город по всей России</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CATALOG -->
-  <section class="catalog section" id="catalog">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="section-label">Каталог</span>
-        <h2 class="section-title">Автомобили<br><em>в наличии</em></h2>
-        <p class="section-note">Цены носят ознакомительный характер и могут изменяться в зависимости от курса валют на дату подтверждения заказа</p>
-      </div>
-      <div class="catalog__grid">
-
-        <article class="car-card reveal-up" style="--delay:0s">
-          <div class="car-card__img" style="--src:url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=600&q=80')">
-            <span class="car-card__origin">Корея</span>
-          </div>
-          <div class="car-card__body">
-            <div class="car-card__meta">
-              <span><i class="fa-regular fa-calendar"></i> 2023 г.</span>
-              <span><i class="fa-solid fa-gauge-high"></i> 47 000 км</span>
-            </div>
-            <h3>Hyundai Palisade</h3>
-            <div class="car-card__price">от 5 600 000 ₽</div>
-            <a href="#contact" class="btn btn--outline btn--sm">Заказать</a>
-          </div>
-        </article>
-
-        <article class="car-card reveal-up" style="--delay:0.08s">
-          <div class="car-card__img" style="--src:url('https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=600&q=80')">
-            <span class="car-card__origin">Корея</span>
-          </div>
-          <div class="car-card__body">
-            <div class="car-card__meta">
-              <span><i class="fa-regular fa-calendar"></i> 2021 г.</span>
-              <span><i class="fa-solid fa-gauge-high"></i> 31 500 км</span>
-            </div>
-            <h3>KIA K5 Signature</h3>
-            <div class="car-card__price">от 2 300 000 ₽</div>
-            <a href="#contact" class="btn btn--outline btn--sm">Заказать</a>
-          </div>
-        </article>
-
-        <article class="car-card reveal-up" style="--delay:0.16s">
-          <div class="car-card__img" style="--src:url('https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&q=80')">
-            <span class="car-card__origin">Европа</span>
-          </div>
-          <div class="car-card__body">
-            <div class="car-card__meta">
-              <span><i class="fa-regular fa-calendar"></i> 2022 г.</span>
-              <span><i class="fa-solid fa-gauge-high"></i> 18 000 км</span>
-            </div>
-            <h3>BMW 1-Series</h3>
-            <div class="car-card__price">от 1 500 000 ₽</div>
-            <a href="#contact" class="btn btn--outline btn--sm">Заказать</a>
-          </div>
-        </article>
-
-        <article class="car-card reveal-up" style="--delay:0.24s">
-          <div class="car-card__img" style="--src:url('https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600&q=80')">
-            <span class="car-card__origin">Китай</span>
-          </div>
-          <div class="car-card__body">
-            <div class="car-card__meta">
-              <span><i class="fa-regular fa-calendar"></i> 2022 г.</span>
-              <span><i class="fa-solid fa-gauge-high"></i> 50 000 км</span>
-            </div>
-            <h3>Tank 300</h3>
-            <div class="car-card__price">от 3 600 000 ₽</div>
-            <a href="#contact" class="btn btn--outline btn--sm">Заказать</a>
-          </div>
-        </article>
-
-        <article class="car-card reveal-up" style="--delay:0.32s">
-          <div class="car-card__img" style="--src:url('https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=600&q=80')">
-            <span class="car-card__origin">Китай</span>
-          </div>
-          <div class="car-card__body">
-            <div class="car-card__meta">
-              <span><i class="fa-regular fa-calendar"></i> 2024 г.</span>
-              <span><i class="fa-solid fa-gauge-high"></i> 12 000 км</span>
-            </div>
-            <h3>Li8 ULTRA</h3>
-            <div class="car-card__price">от 6 000 000 ₽</div>
-            <a href="#contact" class="btn btn--outline btn--sm">Заказать</a>
-          </div>
-        </article>
-
-        <article class="car-card reveal-up" style="--delay:0.4s">
-          <div class="car-card__img" style="--src:url('https://images.unsplash.com/photo-1618843479619-f3d0d81e4d10?w=600&q=80')">
-            <span class="car-card__origin">Европа</span>
-          </div>
-          <div class="car-card__body">
-            <div class="car-card__meta">
-              <span><i class="fa-regular fa-calendar"></i> 2024 г.</span>
-              <span><i class="fa-solid fa-gauge-high"></i> 12 800 км</span>
-            </div>
-            <h3>Mercedes-Benz G400d</h3>
-            <div class="car-card__price">от 15 000 000 ₽</div>
-            <a href="#contact" class="btn btn--outline btn--sm">Заказать</a>
-          </div>
-        </article>
-
-      </div>
-      <div class="catalog__foot reveal">
-        <a href="#contact" class="btn btn--gold btn--lg">
-          Заказать любую модель
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="reviews section" id="reviews">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="section-label">Отзывы</span>
-        <h2 class="section-title">Что говорят<br><em>клиенты</em></h2>
-      </div>
-      <div class="reviews__grid">
-        <div class="review-card reveal-up" style="--delay:0s">
-          <div class="review-card__stars">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <blockquote>
-            "Заказывал BMW из Европы. Всё прошло чисто и быстро. Менеджер всегда был на связи, отвечал на все вопросы. Машина пришла в отличном состоянии, полностью соответствует описанию."
-          </blockquote>
-          <div class="review-card__author">
-            <div class="review-card__avatar">АМ</div>
-            <div>
-              <strong>Андрей М.</strong>
-              <span>Новосибирск</span>
-            </div>
-          </div>
-        </div>
-        <div class="review-card reveal-up" style="--delay:0.1s">
-          <div class="review-card__stars">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <blockquote>
-            "Взял Hyundai Palisade через Атлет-Авто. Ребята помогли с подбором, проверили историю, всё растаможили и доставили. Рекомендую без сомнений — профессионалы своего дела!"
-          </blockquote>
-          <div class="review-card__author">
-            <div class="review-card__avatar">СК</div>
-            <div>
-              <strong>Сергей К.</strong>
-              <span>Москва</span>
-            </div>
-          </div>
-        </div>
-        <div class="review-card reveal-up" style="--delay:0.2s">
-          <div class="review-card__stars">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <blockquote>
-            "Брали Tank 300 из Китая. Цена вышла значительно ниже дилерской. Доставка заняла чуть меньше месяца. Все документы оформили быстро, никаких проблем с таможней."
-          </blockquote>
-          <div class="review-card__author">
-            <div class="review-card__avatar">ОН</div>
-            <div>
-              <strong>Ольга Н.</strong>
-              <span>Екатеринбург</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MANAGERS -->
-  <section class="managers section" id="managers">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="section-label">Команда</span>
-        <h2 class="section-title">Наши менеджеры</h2>
-        <p class="section-note">Свяжитесь напрямую с любым из наших специалистов</p>
-      </div>
-      <div class="managers__grid">
-        <a href="tel:+79510127198" class="manager-card reveal-up" style="--delay:0s">
-          <div class="manager-card__avatar"><i class="fa-solid fa-user"></i></div>
-          <div class="manager-card__info">
-            <span>Менеджер</span>
-            <strong>+7 (951) 012-71-98</strong>
-          </div>
-          <i class="fa-solid fa-phone manager-card__icon"></i>
-        </a>
-        <a href="tel:+79510165278" class="manager-card reveal-up" style="--delay:0.07s">
-          <div class="manager-card__avatar"><i class="fa-solid fa-user"></i></div>
-          <div class="manager-card__info">
-            <span>Менеджер</span>
-            <strong>+7 (951) 016-52-78</strong>
-          </div>
-          <i class="fa-solid fa-phone manager-card__icon"></i>
-        </a>
-        <a href="tel:+79084517439" class="manager-card reveal-up" style="--delay:0.14s">
-          <div class="manager-card__avatar"><i class="fa-solid fa-user"></i></div>
-          <div class="manager-card__info">
-            <span>Менеджер</span>
-            <strong>+7 (908) 451-74-39</strong>
-          </div>
-          <i class="fa-solid fa-phone manager-card__icon"></i>
-        </a>
-        <a href="tel:+79510257566" class="manager-card reveal-up" style="--delay:0.21s">
-          <div class="manager-card__avatar"><i class="fa-solid fa-user"></i></div>
-          <div class="manager-card__info">
-            <span>Менеджер</span>
-            <strong>+7 (951) 025-75-66</strong>
-          </div>
-          <i class="fa-solid fa-phone manager-card__icon"></i>
-        </a>
-        <a href="tel:+79510248574" class="manager-card reveal-up" style="--delay:0.28s">
-          <div class="manager-card__avatar"><i class="fa-solid fa-user"></i></div>
-          <div class="manager-card__info">
-            <span>Менеджер</span>
-            <strong>+7 (951) 024-85-74</strong>
-          </div>
-          <i class="fa-solid fa-phone manager-card__icon"></i>
-        </a>
-        <a href="tel:+79510196894" class="manager-card reveal-up" style="--delay:0.35s">
-          <div class="manager-card__avatar"><i class="fa-solid fa-user"></i></div>
-          <div class="manager-card__info">
-            <span>Менеджер</span>
-            <strong>+7 (951) 019-68-94</strong>
-          </div>
-          <i class="fa-solid fa-phone manager-card__icon"></i>
-        </a>
-        <a href="tel:+79510256414" class="manager-card reveal-up" style="--delay:0.42s">
-          <div class="manager-card__avatar"><i class="fa-solid fa-user"></i></div>
-          <div class="manager-card__info">
-            <span>Менеджер</span>
-            <strong>+7 (951) 025-64-14</strong>
-          </div>
-          <i class="fa-solid fa-phone manager-card__icon"></i>
-        </a>
-        <a href="tel:+79084545022" class="manager-card reveal-up" style="--delay:0.49s">
-          <div class="manager-card__avatar"><i class="fa-solid fa-user"></i></div>
-          <div class="manager-card__info">
-            <span>Менеджер</span>
-            <strong>+7 (908) 454-50-22</strong>
-          </div>
-          <i class="fa-solid fa-phone manager-card__icon"></i>
-        </a>
-        <a href="tel:+79084541022" class="manager-card reveal-up" style="--delay:0.56s">
-          <div class="manager-card__avatar"><i class="fa-solid fa-user"></i></div>
-          <div class="manager-card__info">
-            <span>Менеджер</span>
-            <strong>+7 (908) 454-10-22</strong>
-          </div>
-          <i class="fa-solid fa-phone manager-card__icon"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact section" id="contact">
-    <div class="container">
-      <div class="contact__grid">
-        <div class="contact__info reveal-up">
-          <span class="section-label">Связаться</span>
-          <h2 class="section-title">Бесплатная<br><em>консультация</em></h2>
-          <p>Наши менеджеры ответят на все вопросы и помогут подобрать идеальный автомобиль под ваш запрос и бюджет.</p>
-          <div class="contact-details">
-            <div class="contact-detail">
-              <div class="contact-detail__icon"><i class="fa-solid fa-phone"></i></div>
-              <div>
-                <span>Бесплатный звонок</span>
-                <a href="tel:+78006001838">8 (800) 600-18-38</a>
-              </div>
-            </div>
-            <div class="contact-detail">
-              <div class="contact-detail__icon"><i class="fa-solid fa-location-dot"></i></div>
-              <div>
-                <span>Адрес</span>
-                <strong>Запорожская, 87а, офис 8</strong>
-              </div>
-            </div>
-            <div class="contact-detail">
-              <div class="contact-detail__icon"><i class="fa-solid fa-clock"></i></div>
-              <div>
-                <span>Режим работы</span>
-                <strong>Пн–Пт, 10:00–18:00</strong>
-              </div>
-            </div>
-          </div>
-          <div class="socials">
-            <a href="#" class="social social--tg" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
-            <a href="#" class="social social--wa" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#" class="social social--vk" aria-label="VKontakte"><i class="fa-brands fa-vk"></i></a>
-            <a href="#" class="social social--ig" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="social social--yt" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          </div>
-        </div>
-        <div class="contact__form-wrap reveal-up" style="--delay:0.15s">
-          <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Имя</label>
-                <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
-              </div>
-              <div class="form-group">
-                <label for="phone">Телефон</label>
-                <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
-              </div>
+      <div id="form">
+        <div class="contact__form">
+          <form onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label>Ваше имя</label>
+              <input type="text" name="name" placeholder="Иван Иванов" required>
             </div>
             <div class="form-group">
-              <label for="car">Желаемый автомобиль</label>
-              <input type="text" id="car" name="car" placeholder="Например: BMW X5 2023, Haval Jolion, Tesla Model Y...">
+              <label>Номер телефона</label>
+              <input type="tel" id="phone-input" name="phone" placeholder="+7 (___) ___-__-__" required>
             </div>
             <div class="form-group">
-              <label for="message">Комментарий</label>
-              <textarea id="message" name="message" rows="4" placeholder="Укажите бюджет, сроки, особые пожелания..."></textarea>
+              <label>Желаемый автомобиль</label>
+              <input type="text" name="car" placeholder="Например: BMW X5 2023, Tank 300, KIA K5...">
             </div>
-            <button type="submit" class="btn btn--gold btn--full">
-              <span>Отправить заявку</span>
+            <div class="form-group">
+              <label>Комментарий</label>
+              <textarea name="message" rows="3" placeholder="Укажите бюджет, сроки и особые пожелания..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-orange" style="width:100%;justify-content:center;font-size:17px;padding:16px">
               <i class="fa-solid fa-paper-plane"></i>
+              Отправить заявку
             </button>
-            <p class="form-note">
-              <i class="fa-solid fa-lock"></i>
-              Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
-            </p>
+            <p class="form-note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
             <div class="form-success" id="formSuccess">
-              <i class="fa-solid fa-circle-check"></i>
-              Заявка отправлена! Мы свяжемся с вами в ближайшее время.
+              <i class="fa-solid fa-circle-check" style="font-size:22px"></i>
+              Заявка отправлена! Менеджер свяжется с вами в ближайшее время.
             </div>
           </form>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <a href="#" class="nav__logo">АТЛЕТ<span>АВТО</span></a>
-          <p>Надёжный партнёр в импорте автомобилей из Китая, Японии, Кореи, Европы и США</p>
-          <div class="socials socials--sm">
-            <a href="#" class="social social--tg" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
-            <a href="#" class="social social--wa" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#" class="social social--vk" aria-label="VKontakte"><i class="fa-brands fa-vk"></i></a>
-            <a href="#" class="social social--yt" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          </div>
+<!-- =================== FOOTER =================== -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <img src="images/tild6366-6165-4432-b831-663033633230_LOGO.PNG" alt="Атлет-Авто">
         </div>
-        <div class="footer__nav">
-          <h4>Навигация</h4>
-          <ul>
-            <li><a href="#about">О компании</a></li>
-            <li><a href="#catalog">Каталог авто</a></li>
-            <li><a href="#process">Как работаем</a></li>
-            <li><a href="#reviews">Отзывы</a></li>
-            <li><a href="#contact">Контакты</a></li>
-          </ul>
-        </div>
-        <div class="footer__nav">
-          <h4>Марки авто</h4>
-          <ul>
-            <li><a href="#brands">Китайские марки</a></li>
-            <li><a href="#brands">Корейские марки</a></li>
-            <li><a href="#brands">Японские марки</a></li>
-            <li><a href="#brands">Европейские марки</a></li>
-            <li><a href="#brands">Американские марки</a></li>
-            <li><a href="#brands">Спецтехника</a></li>
-          </ul>
-        </div>
-        <div class="footer__contacts">
-          <h4>Контакты</h4>
-          <p><a href="tel:+78006001838">8 (800) 600-18-38</a></p>
-          <p>Запорожская, 87а, офис 8</p>
-          <p>Пн–Пт: 10:00–18:00</p>
-          <p class="footer__24">
-            <span class="pulse-dot"></span>
-            Доступны 24/7
-          </p>
+        <p>Надёжный партнёр в импорте автомобилей из Китая, Японии, Кореи, Европы и США. Работаем с 2024 года.</p>
+        <div class="footer__socials">
+          <a href="https://t.me/atletauto" target="_blank" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+          <a href="https://wa.me/78006001838" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://vk.com/atletauto" target="_blank" title="ВКонтакте"><i class="fa-brands fa-vk"></i></a>
+          <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
       </div>
-      <div class="footer__bottom">
-        <p>© 2024 ООО «АТЛЕТ АВТО» &nbsp;|&nbsp; ИНН: 2540285298 &nbsp;|&nbsp; ОГРН: 1242500012810 &nbsp;|&nbsp; КПП: 254001001</p>
-        <p class="footer__disclaimer">* Цены в каталоге носят ознакомительный характер и являются ориентировочными. Актуальная стоимость уточняется на дату подтверждения заказа с учётом курса валют.</p>
+      <div class="footer__nav">
+        <h4>Навигация</h4>
+        <ul>
+          <li><a href="#whyus">О компании</a></li>
+          <li><a href="#auto">Каталог авто</a></li>
+          <li><a href="#team">Наша команда</a></li>
+          <li><a href="#reviews">Отзывы клиентов</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="footer__nav">
+        <h4>Марки авто</h4>
+        <ul>
+          <li><a href="#auto" onclick="switchTab('chinese')">Китайские марки</a></li>
+          <li><a href="#auto" onclick="switchTab('korean')">Корейские марки</a></li>
+          <li><a href="#auto" onclick="switchTab('japanese')">Японские марки</a></li>
+          <li><a href="#auto" onclick="switchTab('european')">Европейские марки</a></li>
+          <li><a href="#auto" onclick="switchTab('american')">Американские марки</a></li>
+          <li><a href="#auto" onclick="switchTab('special')">Спецтехника</a></li>
+        </ul>
+      </div>
+      <div class="footer__contacts">
+        <h4>Контакты</h4>
+        <p><a href="tel:+78006001838">8 800 600 18 38</a></p>
+        <p>Запорожская, 87а, офис 8</p>
+        <p>Пн–Пт: 10:00–18:00</p>
+        <p style="color:var(--orange);font-weight:600">● Доступны 24/7</p>
       </div>
     </div>
-  </footer>
+    <div class="footer__bottom">
+      <p>© 2024 ООО «АТЛЕТ АВТО» &nbsp;|&nbsp; ИНН: 2540285298 &nbsp;|&nbsp; ОГРН: 1242500012810 &nbsp;|&nbsp; КПП: 254001001</p>
+      <p>* Цены в каталоге носят ознакомительный характер и являются ориентировочными. Актуальная стоимость уточняется на дату подтверждения заказа с учётом курса валют на момент оформления.</p>
+    </div>
+  </div>
+</footer>
 
-  <script src="js/main.js"></script>
+<script>
+// ---- Navbar ----
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.5)';
+  } else {
+    navbar.style.boxShadow = '0 4px 20px rgba(0,11,48,0.4)';
+  }
+}, { passive: true });
+
+// ---- Hero BG parallax load ----
+const heroBg = document.getElementById('heroBg');
+setTimeout(() => heroBg && heroBg.classList.add('loaded'), 100);
+
+// ---- Mobile burger ----
+const burger = document.getElementById('burgerBtn');
+const navMenu = document.getElementById('navMenu');
+burger.addEventListener('click', () => {
+  const open = navMenu.classList.toggle('open');
+  burger.style.opacity = open ? '0.7' : '1';
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+navMenu.querySelectorAll('.nav__link').forEach(l => l.addEventListener('click', () => {
+  navMenu.classList.remove('open');
+  document.body.style.overflow = '';
+}));
+
+// ---- Catalog tabs ----
+function switchTab(name) {
+  document.querySelectorAll('.catalog-tab').forEach((btn, i) => {
+    const panels = ['chinese','korean','japanese','european','american','special','instock'];
+    btn.classList.toggle('active', panels[i] === name);
+  });
+  document.querySelectorAll('.catalog-panel').forEach(p => {
+    p.classList.toggle('active', p.id === 'panel-' + name);
+  });
+}
+
+// ---- Counter animation ----
+function animateCounter(el, to, dur = 1400) {
+  const start = performance.now();
+  const update = (now) => {
+    const t = Math.min((now - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - t, 3);
+    el.textContent = Math.round(ease * to).toLocaleString('ru');
+    if (t < 1) requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+}
+const counterObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateCounter(e.target, parseInt(e.target.dataset.to));
+      counterObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
+
+// ---- Scroll reveal ----
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.benefit-card, .car-card, .manager-card, .review-img, .gallery-item, .step').forEach((el, i) => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(24px)';
+  el.style.transition = `opacity 0.5s ease ${(i % 6) * 0.07}s, transform 0.5s ease ${(i % 6) * 0.07}s`;
+  revealObs.observe(el);
+});
+
+// ---- Form submit ----
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type=submit]');
+  const success = document.getElementById('formSuccess');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Отправка...';
+  setTimeout(() => {
+    e.target.reset();
+    btn.style.display = 'none';
+    success.classList.add('show');
+    setTimeout(() => {
+      btn.style.display = '';
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Отправить заявку';
+      success.classList.remove('show');
+    }, 6000);
+  }, 1200);
+}
+
+// ---- Phone mask ----
+const phoneInput = document.getElementById('phone-input');
+if (phoneInput) {
+  phoneInput.addEventListener('input', e => {
+    let v = e.target.value.replace(/\D/g, '');
+    if (v.startsWith('8')) v = '7' + v.slice(1);
+    if (v.length === 0) { e.target.value = ''; return; }
+    let fmt = '+7';
+    if (v.length > 1) fmt += ' (' + v.slice(1, 4);
+    if (v.length >= 4) fmt += ') ' + v.slice(4, 7);
+    if (v.length >= 7) fmt += '-' + v.slice(7, 9);
+    if (v.length >= 9) fmt += '-' + v.slice(9, 11);
+    e.target.value = fmt;
+  });
+}
+
+// ---- Smooth scroll ----
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href').slice(1);
+    if (!id) return;
+    const target = document.getElementById(id);
+    if (target) {
+      e.preventDefault();
+      const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 70;
+      window.scrollTo({ top: target.getBoundingClientRect().top + scrollY - navH - 10, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+
 </body>
 </html>
