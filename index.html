@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Атлет-Авто — Автомобили из Китая, Японии, Кореи, Европы, США</title>
+  <meta name="description" content="Атлет-Авто — ваш эксперт в выборе автомобиля. Купим, доставим в Россию, растаможим и отправим в ваш город.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">АТЛЕТ<span>АВТО</span></a>
+      <div class="nav__menu" id="navMenu">
+        <a href="#about" class="nav__link">О нас</a>
+        <a href="#catalog" class="nav__link">Каталог</a>
+        <a href="#process" class="nav__link">Как работаем</a>
+        <a href="#reviews" class="nav__link">Отзывы</a>
+        <a href="#contact" class="nav__link">Контакты</a>
+      </div>
+      <div class="nav__right">
+        <a href="tel:+78006001838" class="nav__phone">
+          <i class="fa-solid fa-phone"></i>
+          8 (800) 600-18-38
+        </a>
+        <a href="#contact" class="btn btn--gold nav__cta">Заказать авто</a>
+      </div>
+      <button class="nav__burger" id="burgerBtn" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero__bg">
+      <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920&q=85" alt="" aria-hidden="true" class="hero__img" onerror="this.style.display='none'">
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="container">
+      <div class="hero__content reveal">
+        <div class="hero__badge">
+          <span class="pulse-dot"></span>
+          Официальный импортёр
+        </div>
+        <h1 class="hero__title">
+          Автомобили<br>
+          <em>под заказ</em>
+        </h1>
+        <div class="hero__origins">
+          <span>Китай</span>
+          <i class="fa-solid fa-diamond" aria-hidden="true"></i>
+          <span>Япония</span>
+          <i class="fa-solid fa-diamond" aria-hidden="true"></i>
+          <span>Корея</span>
+          <i class="fa-solid fa-diamond" aria-hidden="true"></i>
+          <span>Европа</span>
+          <i class="fa-solid fa-diamond" aria-hidden="true"></i>
+          <span>США</span>
+        </div>
+        <p class="hero__desc">
+          Ваш эксперт в выборе автомобиля.<br>
+          Купим. Доставим в Россию. Растаможим. Отправим в ваш город.
+        </p>
+        <div class="hero__actions">
+          <a href="#catalog" class="btn btn--gold btn--lg">
+            Смотреть каталог
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn btn--ghost btn--lg">Получить консультацию</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll-hint">
+      <span>Прокрутите</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-bar__grid">
+        <div class="stat reveal-up">
+          <div class="stat__num"><span class="counter" data-to="500">0</span>+</div>
+          <div class="stat__label">Авто доставлено</div>
+        </div>
+        <div class="stat reveal-up" style="--delay:0.1s">
+          <div class="stat__num"><span class="counter" data-to="14">0</span> дней</div>
+          <div class="stat__label">До Владивостока</div>
+        </div>
+        <div class="stat reveal-up" style="--delay:0.2s">
+          <div class="stat__num"><span class="counter" data-to="5">0</span> стран</div>
+          <div class="stat__label">Источников</div>
+        </div>
+        <div class="stat reveal-up" style="--delay:0.3s">
+          <div class="stat__num">24/7</div>
+          <div class="stat__label">Поддержка</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="benefits section" id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-label">Почему мы</span>
+        <h2 class="section-title">Ваши преимущества<br>с <em>Атлет-Авто</em></h2>
+      </div>
+      <div class="benefits__grid">
+        <div class="benefit-card reveal-up" style="--delay:0s">
+          <div class="benefit-card__icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3>Чистая история</h3>
+          <p>Проверяем юридическую чистоту, состояние кузова и технические характеристики до покупки</p>
+        </div>
+        <div class="benefit-card reveal-up" style="--delay:0.08s">
+          <div class="benefit-card__icon">
+            <i class="fa-solid fa-tag"></i>
+          </div>
+          <h3>Цена ниже рыночной</h3>
+          <p>Работаем без накрученных комиссий посредников — платите только реальную цену автомобиля</p>
+        </div>
+        <div class="benefit-card reveal-up" style="--delay:0.16s">
+          <div class="benefit-card__icon">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <h3>Сроки от 14 дней</h3>
+          <p>Реальные временные рамки от подписания договора до доставки автомобиля в порт Владивостока</p>
+        </div>
+        <div class="benefit-card reveal-up" style="--delay:0.24s">
+          <div class="benefit-card__icon">
+            <i class="fa-solid fa-file-contract"></i>
+          </div>
+          <h3>Гарантия сотрудничества</h3>
+          <p>Работаем по договору с чёткими и прозрачными условиями для обеих сторон. Всё письменно</p>
+        </div>
+        <div class="benefit-card reveal-up" style="--delay:0.32s">
+          <div class="benefit-card__icon">
+            <i class="fa-solid fa-percent"></i>
+          </div>
+          <h3>Выгодные условия</h3>
+          <p>Низкие комиссионные, реферальные программы и бонусы для постоянных клиентов</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANDS -->
+  <section class="brands section" id="brands">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-label">Ассортимент</span>
+        <h2 class="section-title">Автомобили<br>на <em>любой вкус</em></h2>
+      </div>
+      <div class="brand-tabs">
+        <button class="brand-tab brand-tab--active" data-panel="chinese">
+          <i class="fa-solid fa-flag"></i> Китай
+        </button>
+        <button class="brand-tab" data-panel="korean">Корея</button>
+        <button class="brand-tab" data-panel="japanese">Япония</button>
+        <button class="brand-tab" data-panel="european">Европа</button>
+        <button class="brand-tab" data-panel="american">Америка</button>
+        <button class="brand-tab" data-panel="special">Спецтехника</button>
+      </div>
+      <div class="brand-panels">
+        <div class="brand-panel brand-panel--active" id="panel-chinese">
+          <div class="brand-list">
+            <div class="brand-item">BYD</div>
+            <div class="brand-item">Chery</div>
+            <div class="brand-item">Haval</div>
+            <div class="brand-item">Tank</div>
+            <div class="brand-item">Li Auto</div>
+            <div class="brand-item">Nio</div>
+            <div class="brand-item">Geely</div>
+            <div class="brand-item">Exeed</div>
+            <div class="brand-item">Jetour</div>
+            <div class="brand-item">BAIC</div>
+          </div>
+        </div>
+        <div class="brand-panel" id="panel-korean">
+          <div class="brand-list">
+            <div class="brand-item">Hyundai</div>
+            <div class="brand-item">KIA</div>
+            <div class="brand-item">Genesis</div>
+            <div class="brand-item">SsangYong</div>
+          </div>
+        </div>
+        <div class="brand-panel" id="panel-japanese">
+          <div class="brand-list">
+            <div class="brand-item">Toyota</div>
+            <div class="brand-item">Lexus</div>
+            <div class="brand-item">Honda</div>
+            <div class="brand-item">Nissan</div>
+            <div class="brand-item">Mazda</div>
+            <div class="brand-item">Subaru</div>
+            <div class="brand-item">Mitsubishi</div>
+          </div>
+        </div>
+        <div class="brand-panel" id="panel-european">
+          <div class="brand-list">
+            <div class="brand-item">BMW</div>
+            <div class="brand-item">Mercedes-Benz</div>
+            <div class="brand-item">Audi</div>
+            <div class="brand-item">Volkswagen</div>
+            <div class="brand-item">Porsche</div>
+            <div class="brand-item">Volvo</div>
+            <div class="brand-item">Land Rover</div>
+          </div>
+        </div>
+        <div class="brand-panel" id="panel-american">
+          <div class="brand-list">
+            <div class="brand-item">Cadillac</div>
+            <div class="brand-item">Ford</div>
+            <div class="brand-item">Lincoln</div>
+            <div class="brand-item">Tesla</div>
+            <div class="brand-item">Jeep</div>
+            <div class="brand-item">Chevrolet</div>
+          </div>
+        </div>
+        <div class="brand-panel" id="panel-special">
+          <div class="brand-list">
+            <div class="brand-item">XCMG</div>
+            <div class="brand-item">SANY</div>
+            <div class="brand-item">Liugong</div>
+            <div class="brand-item">SDLG</div>
+            <div class="brand-item">Lonking</div>
+          </div>
+        </div>
+      </div>
+      <div class="brands__cta reveal">
+        <a href="#contact" class="btn btn--gold">Узнать цену на любую марку</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process section" id="process">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-label">Процесс</span>
+        <h2 class="section-title">Как мы работаем</h2>
+      </div>
+      <div class="process__steps">
+        <div class="step reveal-up" style="--delay:0s">
+          <div class="step__num">01</div>
+          <div class="step__body">
+            <h3>Консультация</h3>
+            <p>Обсуждаем пожелания, бюджет и сроки. Подбираем оптимальные варианты из актуальных предложений на рынках Азии и Европы</p>
+          </div>
+        </div>
+        <div class="step reveal-up" style="--delay:0.1s">
+          <div class="step__num">02</div>
+          <div class="step__body">
+            <h3>Выбор и проверка</h3>
+            <p>Проверяем историю автомобиля, состояние кузова, техническое состояние. Фото и видео с осмотра — вам на телефон</p>
+          </div>
+        </div>
+        <div class="step reveal-up" style="--delay:0.2s">
+          <div class="step__num">03</div>
+          <div class="step__body">
+            <h3>Договор и оплата</h3>
+            <p>Подписываем договор с чёткими условиями. Прозрачная структура платежей без скрытых комиссий и неожиданных расходов</p>
+          </div>
+        </div>
+        <div class="step reveal-up" style="--delay:0.3s">
+          <div class="step__num">04</div>
+          <div class="step__body">
+            <h3>Доставка и таможня</h3>
+            <p>Организуем логистику, оформляем все документы, растаможиваем автомобиль и отправляем его в ваш город по всей России</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALOG -->
+  <section class="catalog section" id="catalog">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-label">Каталог</span>
+        <h2 class="section-title">Автомобили<br><em>в наличии</em></h2>
+        <p class="section-note">Цены носят ознакомительный характер и могут изменяться в зависимости от курса валют на дату подтверждения заказа</p>
+      </div>
+      <div class="catalog__grid">
+
+        <article class="car-card reveal-up" style="--delay:0s">
+          <div class="car-card__img" style="--src:url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=600&q=80')">
+            <span class="car-card__origin">Корея</span>
+          </div>
+          <div class="car-card__body">
+            <div class="car-card__meta">
+              <span><i class="fa-regular fa-calendar"></i> 2023 г.</span>
+              <span><i class="fa-solid fa-gauge-high"></i> 47 000 км</span>
+            </div>
+            <h3>Hyundai Palisade</h3>
+            <div class="car-card__price">от 5 600 000 ₽</div>
+            <a href="#contact" class="btn btn--outline btn--sm">Заказать</a>
+          </div>
+        </article>
+
+        <article class="car-card reveal-up" style="--delay:0.08s">
+          <div class="car-card__img" style="--src:url('https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=600&q=80')">
+            <span class="car-card__origin">Корея</span>
+          </div>
+          <div class="car-card__body">
+            <div class="car-card__meta">
+              <span><i class="fa-regular fa-calendar"></i> 2021 г.</span>
+              <span><i class="fa-solid fa-gauge-high"></i> 31 500 км</span>
+            </div>
+            <h3>KIA K5 Signature</h3>
+            <div class="car-card__price">от 2 300 000 ₽</div>
+            <a href="#contact" class="btn btn--outline btn--sm">Заказать</a>
+          </div>
+        </article>
+
+        <article class="car-card reveal-up" style="--delay:0.16s">
+          <div class="car-card__img" style="--src:url('https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&q=80')">
+            <span class="car-card__origin">Европа</span>
+          </div>
+          <div class="car-card__body">
+            <div class="car-card__meta">
+              <span><i class="fa-regular fa-calendar"></i> 2022 г.</span>
+              <span><i class="fa-solid fa-gauge-high"></i> 18 000 км</span>
+            </div>
+            <h3>BMW 1-Series</h3>
+            <div class="car-card__price">от 1 500 000 ₽</div>
+            <a href="#contact" class="btn btn--outline btn--sm">Заказать</a>
+          </div>
+        </article>
+
+        <article class="car-card reveal-up" style="--delay:0.24s">
+          <div class="car-card__img" style="--src:url('https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600&q=80')">
+            <span class="car-card__origin">Китай</span>
+          </div>
+          <div class="car-card__body">
+            <div class="car-card__meta">
+              <span><i class="fa-regular fa-calendar"></i> 2022 г.</span>
+              <span><i class="fa-solid fa-gauge-high"></i> 50 000 км</span>
+            </div>
+            <h3>Tank 300</h3>
+            <div class="car-card__price">от 3 600 000 ₽</div>
+            <a href="#contact" class="btn btn--outline btn--sm">Заказать</a>
+          </div>
+        </article>
+
+        <article class="car-card reveal-up" style="--delay:0.32s">
+          <div class="car-card__img" style="--src:url('https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=600&q=80')">
+            <span class="car-card__origin">Китай</span>
+          </div>
+          <div class="car-card__body">
+            <div class="car-card__meta">
+              <span><i class="fa-regular fa-calendar"></i> 2024 г.</span>
+              <span><i class="fa-solid fa-gauge-high"></i> 12 000 км</span>
+            </div>
+            <h3>Li8 ULTRA</h3>
+            <div class="car-card__price">от 6 000 000 ₽</div>
+            <a href="#contact" class="btn btn--outline btn--sm">Заказать</a>
+          </div>
+        </article>
+
+        <article class="car-card reveal-up" style="--delay:0.4s">
+          <div class="car-card__img" style="--src:url('https://images.unsplash.com/photo-1618843479619-f3d0d81e4d10?w=600&q=80')">
+            <span class="car-card__origin">Европа</span>
+          </div>
+          <div class="car-card__body">
+            <div class="car-card__meta">
+              <span><i class="fa-regular fa-calendar"></i> 2024 г.</span>
+              <span><i class="fa-solid fa-gauge-high"></i> 12 800 км</span>
+            </div>
+            <h3>Mercedes-Benz G400d</h3>
+            <div class="car-card__price">от 15 000 000 ₽</div>
+            <a href="#contact" class="btn btn--outline btn--sm">Заказать</a>
+          </div>
+        </article>
+
+      </div>
+      <div class="catalog__foot reveal">
+        <a href="#contact" class="btn btn--gold btn--lg">
+          Заказать любую модель
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="reviews section" id="reviews">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-label">Отзывы</span>
+        <h2 class="section-title">Что говорят<br><em>клиенты</em></h2>
+      </div>
+      <div class="reviews__grid">
+        <div class="review-card reveal-up" style="--delay:0s">
+          <div class="review-card__stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <blockquote>
+            "Заказывал BMW из Европы. Всё прошло чисто и быстро. Менеджер всегда был на связи, отвечал на все вопросы. Машина пришла в отличном состоянии, полностью соответствует описанию."
+          </blockquote>
+          <div class="review-card__author">
+            <div class="review-card__avatar">АМ</div>
+            <div>
+              <strong>Андрей М.</strong>
+              <span>Новосибирск</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card reveal-up" style="--delay:0.1s">
+          <div class="review-card__stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <blockquote>
+            "Взял Hyundai Palisade через Атлет-Авто. Ребята помогли с подбором, проверили историю, всё растаможили и доставили. Рекомендую без сомнений — профессионалы своего дела!"
+          </blockquote>
+          <div class="review-card__author">
+            <div class="review-card__avatar">СК</div>
+            <div>
+              <strong>Сергей К.</strong>
+              <span>Москва</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card reveal-up" style="--delay:0.2s">
+          <div class="review-card__stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <blockquote>
+            "Брали Tank 300 из Китая. Цена вышла значительно ниже дилерской. Доставка заняла чуть меньше месяца. Все документы оформили быстро, никаких проблем с таможней."
+          </blockquote>
+          <div class="review-card__author">
+            <div class="review-card__avatar">ОН</div>
+            <div>
+              <strong>Ольга Н.</strong>
+              <span>Екатеринбург</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANAGERS -->
+  <section class="managers section" id="managers">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-label">Команда</span>
+        <h2 class="section-title">Наши менеджеры</h2>
+        <p class="section-note">Свяжитесь напрямую с любым из наших специалистов</p>
+      </div>
+      <div class="managers__grid">
+        <a href="tel:+79510127198" class="manager-card reveal-up" style="--delay:0s">
+          <div class="manager-card__avatar"><i class="fa-solid fa-user"></i></div>
+          <div class="manager-card__info">
+            <span>Менеджер</span>
+            <strong>+7 (951) 012-71-98</strong>
+          </div>
+          <i class="fa-solid fa-phone manager-card__icon"></i>
+        </a>
+        <a href="tel:+79510165278" class="manager-card reveal-up" style="--delay:0.07s">
+          <div class="manager-card__avatar"><i class="fa-solid fa-user"></i></div>
+          <div class="manager-card__info">
+            <span>Менеджер</span>
+            <strong>+7 (951) 016-52-78</strong>
+          </div>
+          <i class="fa-solid fa-phone manager-card__icon"></i>
+        </a>
+        <a href="tel:+79084517439" class="manager-card reveal-up" style="--delay:0.14s">
+          <div class="manager-card__avatar"><i class="fa-solid fa-user"></i></div>
+          <div class="manager-card__info">
+            <span>Менеджер</span>
+            <strong>+7 (908) 451-74-39</strong>
+          </div>
+          <i class="fa-solid fa-phone manager-card__icon"></i>
+        </a>
+        <a href="tel:+79510257566" class="manager-card reveal-up" style="--delay:0.21s">
+          <div class="manager-card__avatar"><i class="fa-solid fa-user"></i></div>
+          <div class="manager-card__info">
+            <span>Менеджер</span>
+            <strong>+7 (951) 025-75-66</strong>
+          </div>
+          <i class="fa-solid fa-phone manager-card__icon"></i>
+        </a>
+        <a href="tel:+79510248574" class="manager-card reveal-up" style="--delay:0.28s">
+          <div class="manager-card__avatar"><i class="fa-solid fa-user"></i></div>
+          <div class="manager-card__info">
+            <span>Менеджер</span>
+            <strong>+7 (951) 024-85-74</strong>
+          </div>
+          <i class="fa-solid fa-phone manager-card__icon"></i>
+        </a>
+        <a href="tel:+79510196894" class="manager-card reveal-up" style="--delay:0.35s">
+          <div class="manager-card__avatar"><i class="fa-solid fa-user"></i></div>
+          <div class="manager-card__info">
+            <span>Менеджер</span>
+            <strong>+7 (951) 019-68-94</strong>
+          </div>
+          <i class="fa-solid fa-phone manager-card__icon"></i>
+        </a>
+        <a href="tel:+79510256414" class="manager-card reveal-up" style="--delay:0.42s">
+          <div class="manager-card__avatar"><i class="fa-solid fa-user"></i></div>
+          <div class="manager-card__info">
+            <span>Менеджер</span>
+            <strong>+7 (951) 025-64-14</strong>
+          </div>
+          <i class="fa-solid fa-phone manager-card__icon"></i>
+        </a>
+        <a href="tel:+79084545022" class="manager-card reveal-up" style="--delay:0.49s">
+          <div class="manager-card__avatar"><i class="fa-solid fa-user"></i></div>
+          <div class="manager-card__info">
+            <span>Менеджер</span>
+            <strong>+7 (908) 454-50-22</strong>
+          </div>
+          <i class="fa-solid fa-phone manager-card__icon"></i>
+        </a>
+        <a href="tel:+79084541022" class="manager-card reveal-up" style="--delay:0.56s">
+          <div class="manager-card__avatar"><i class="fa-solid fa-user"></i></div>
+          <div class="manager-card__info">
+            <span>Менеджер</span>
+            <strong>+7 (908) 454-10-22</strong>
+          </div>
+          <i class="fa-solid fa-phone manager-card__icon"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__info reveal-up">
+          <span class="section-label">Связаться</span>
+          <h2 class="section-title">Бесплатная<br><em>консультация</em></h2>
+          <p>Наши менеджеры ответят на все вопросы и помогут подобрать идеальный автомобиль под ваш запрос и бюджет.</p>
+          <div class="contact-details">
+            <div class="contact-detail">
+              <div class="contact-detail__icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <span>Бесплатный звонок</span>
+                <a href="tel:+78006001838">8 (800) 600-18-38</a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail__icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <span>Адрес</span>
+                <strong>Запорожская, 87а, офис 8</strong>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail__icon"><i class="fa-solid fa-clock"></i></div>
+              <div>
+                <span>Режим работы</span>
+                <strong>Пн–Пт, 10:00–18:00</strong>
+              </div>
+            </div>
+          </div>
+          <div class="socials">
+            <a href="#" class="social social--tg" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+            <a href="#" class="social social--wa" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="social social--vk" aria-label="VKontakte"><i class="fa-brands fa-vk"></i></a>
+            <a href="#" class="social social--ig" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social social--yt" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="contact__form-wrap reveal-up" style="--delay:0.15s">
+          <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Имя</label>
+                <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="car">Желаемый автомобиль</label>
+              <input type="text" id="car" name="car" placeholder="Например: BMW X5 2023, Haval Jolion, Tesla Model Y...">
+            </div>
+            <div class="form-group">
+              <label for="message">Комментарий</label>
+              <textarea id="message" name="message" rows="4" placeholder="Укажите бюджет, сроки, особые пожелания..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--gold btn--full">
+              <span>Отправить заявку</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+            <p class="form-note">
+              <i class="fa-solid fa-lock"></i>
+              Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+            </p>
+            <div class="form-success" id="formSuccess">
+              <i class="fa-solid fa-circle-check"></i>
+              Заявка отправлена! Мы свяжемся с вами в ближайшее время.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#" class="nav__logo">АТЛЕТ<span>АВТО</span></a>
+          <p>Надёжный партнёр в импорте автомобилей из Китая, Японии, Кореи, Европы и США</p>
+          <div class="socials socials--sm">
+            <a href="#" class="social social--tg" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+            <a href="#" class="social social--wa" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="social social--vk" aria-label="VKontakte"><i class="fa-brands fa-vk"></i></a>
+            <a href="#" class="social social--yt" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer__nav">
+          <h4>Навигация</h4>
+          <ul>
+            <li><a href="#about">О компании</a></li>
+            <li><a href="#catalog">Каталог авто</a></li>
+            <li><a href="#process">Как работаем</a></li>
+            <li><a href="#reviews">Отзывы</a></li>
+            <li><a href="#contact">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="footer__nav">
+          <h4>Марки авто</h4>
+          <ul>
+            <li><a href="#brands">Китайские марки</a></li>
+            <li><a href="#brands">Корейские марки</a></li>
+            <li><a href="#brands">Японские марки</a></li>
+            <li><a href="#brands">Европейские марки</a></li>
+            <li><a href="#brands">Американские марки</a></li>
+            <li><a href="#brands">Спецтехника</a></li>
+          </ul>
+        </div>
+        <div class="footer__contacts">
+          <h4>Контакты</h4>
+          <p><a href="tel:+78006001838">8 (800) 600-18-38</a></p>
+          <p>Запорожская, 87а, офис 8</p>
+          <p>Пн–Пт: 10:00–18:00</p>
+          <p class="footer__24">
+            <span class="pulse-dot"></span>
+            Доступны 24/7
+          </p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2024 ООО «АТЛЕТ АВТО» &nbsp;|&nbsp; ИНН: 2540285298 &nbsp;|&nbsp; ОГРН: 1242500012810 &nbsp;|&nbsp; КПП: 254001001</p>
+        <p class="footer__disclaimer">* Цены в каталоге носят ознакомительный характер и являются ориентировочными. Актуальная стоимость уточняется на дату подтверждения заказа с учётом курса валют.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
