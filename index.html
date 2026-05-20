@@ -970,6 +970,111 @@
     }
 
     /* ==============================
+       WOW EFFECTS
+    ============================== */
+
+    /* Gradient hero title accent */
+    .hero__title .accent {
+      background: linear-gradient(90deg, var(--blue) 0%, #a78bfa 50%, var(--orange) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 200% auto;
+      animation: gradientShift 4s linear infinite;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+    /* Hero ambient glow */
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      right: -80px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(61,127,255,0.18) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Dot grid overlay on dark sections */
+    .whyus::before, .catalog::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    .whyus { position: relative; }
+    .catalog { position: relative; }
+
+    /* Brand ticker */
+    .brand-ticker {
+      overflow: hidden;
+      background: var(--bg-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+      white-space: nowrap;
+      user-select: none;
+    }
+    .brand-ticker__track {
+      display: inline-flex;
+      align-items: center;
+      gap: 0;
+      animation: ticker 35s linear infinite;
+    }
+    .brand-ticker__track:hover { animation-play-state: paused; }
+    .brand-ticker__item {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      padding: 0 20px;
+    }
+    .brand-ticker__item span {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(232,236,255,0.35);
+      transition: color 0.2s;
+    }
+    .brand-ticker__item span:hover { color: var(--blue); }
+    .brand-ticker__item .sep {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--blue);
+      opacity: 0.5;
+      flex-shrink: 0;
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* Animated gradient border on stat nums */
+    .stat__num {
+      position: relative;
+    }
+
+    /* Section divider accent line */
+    .section-head::before {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--orange));
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+
+    /* ==============================
        MOBILE
     ============================== */
     @media (max-width: 1024px) {
@@ -1096,9 +1201,7 @@
       <div class="hero__origins">
         <span>Китай</span><span class="sep">||</span>
         <span>Япония</span><span class="sep">||</span>
-        <span>Корея</span><span class="sep">||</span>
-        <span>Европа</span><span class="sep">||</span>
-        <span>США</span>
+        <span>Корея</span>
       </div>
       <p class="hero__desc">
         «Атлет-Авто» — ваш эксперт в выборе автомобиля.<br>
@@ -1140,6 +1243,14 @@
         <div class="stat__label">Поддержка клиентов</div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- =================== BRAND TICKER =================== -->
+<div class="brand-ticker" aria-hidden="true">
+  <div class="brand-ticker__track">
+    <div class="brand-ticker__item"><span>Toyota</span><div class="sep"></div><span>Lexus</span><div class="sep"></div><span>Honda</span><div class="sep"></div><span>Nissan</span><div class="sep"></div><span>Hyundai</span><div class="sep"></div><span>KIA</span><div class="sep"></div><span>Genesis</span><div class="sep"></div><span>BYD</span><div class="sep"></div><span>Haval</span><div class="sep"></div><span>Tank</span><div class="sep"></div><span>Li Auto</span><div class="sep"></div><span>Chery</span><div class="sep"></div><span>Geely</span><div class="sep"></div><span>Mazda</span><div class="sep"></div><span>Subaru</span><div class="sep"></div><span>Mitsubishi</span><div class="sep"></div><span>XCMG</span><div class="sep"></div><span>SANY</span><div class="sep"></div></div>
+    <div class="brand-ticker__item"><span>Toyota</span><div class="sep"></div><span>Lexus</span><div class="sep"></div><span>Honda</span><div class="sep"></div><span>Nissan</span><div class="sep"></div><span>Hyundai</span><div class="sep"></div><span>KIA</span><div class="sep"></div><span>Genesis</span><div class="sep"></div><span>BYD</span><div class="sep"></div><span>Haval</span><div class="sep"></div><span>Tank</span><div class="sep"></div><span>Li Auto</span><div class="sep"></div><span>Chery</span><div class="sep"></div><span>Geely</span><div class="sep"></div><span>Mazda</span><div class="sep"></div><span>Subaru</span><div class="sep"></div><span>Mitsubishi</span><div class="sep"></div><span>XCMG</span><div class="sep"></div><span>SANY</span><div class="sep"></div></div>
   </div>
 </div>
 
@@ -1355,8 +1466,6 @@
       <button class="catalog-tab active" onclick="switchTab('chinese')">Китайские марки</button>
       <button class="catalog-tab" onclick="switchTab('korean')">Корейские марки</button>
       <button class="catalog-tab" onclick="switchTab('japanese')">Японские марки</button>
-      <button class="catalog-tab" onclick="switchTab('european')">Европейские марки</button>
-      <button class="catalog-tab" onclick="switchTab('american')">Американские марки</button>
       <button class="catalog-tab" onclick="switchTab('special')">Спецтехника</button>
       <button class="catalog-tab" onclick="switchTab('instock')">Авто в наличии</button>
     </div>
@@ -1381,19 +1490,6 @@
       <div class="car-card"><div class="car-card__img"><img src="images/catalog/lexus.jpg" alt="Lexus RX"></div><div class="car-card__body"><h3>Lexus</h3><p class="car-card__desc">ES, RX, LX, GX — японский люкс с гарантией качества</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
       <div class="car-card"><div class="car-card__img"><img src="images/catalog/honda.jpg" alt="Honda Vezel"></div><div class="car-card__body"><h3>Honda</h3><p class="car-card__desc">Civic, CR-V, Vezel, Accord — надёжные японские авто</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
       <div class="car-card"><div class="car-card__img"><img src="images/catalog/nissan.jpg" alt="Nissan Altima"></div><div class="car-card__body"><h3>Nissan / Mazda / Subaru</h3><p class="car-card__desc">Широкий выбор японских марок под заказ</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-    </div>
-
-    <div id="panel-european" class="catalog-panel">
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/bmw.jpg" alt="BMW X5"></div><div class="car-card__body"><h3>BMW</h3><p class="car-card__desc">Вся линейка BMW: 1, 3, 5, 7 серии, X3, X5, X7 и другие</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/mercedes.jpg" alt="Mercedes GLC"></div><div class="car-card__body"><h3>Mercedes-Benz</h3><p class="car-card__desc">C, E, S-класс, GLC, GLE, GLS, G-класс и другие</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/audi.jpg" alt="Audi A4"></div><div class="car-card__body"><h3>Audi</h3><p class="car-card__desc">A4, A6, Q5, Q7, Q8 — немецкое качество без переплат</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/porsche.jpg" alt="Porsche Panamera"></div><div class="car-card__body"><h3>Porsche / Volvo / VW</h3><p class="car-card__desc">Cayenne, Macan, XC90, Tiguan и другие европейские марки</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-    </div>
-
-    <div id="panel-american" class="catalog-panel">
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/cadillac.jpg" alt="Cadillac XT4"></div><div class="car-card__body"><h3>Cadillac</h3><p class="car-card__desc">Escalade, XT5, XT6 — американский люкс высшего уровня</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/chevrolet.jpg" alt="Tesla Model Y"></div><div class="car-card__body"><h3>Tesla</h3><p class="car-card__desc">Model 3, Model Y, Model S, Model X — электромобили</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/jeep.jpg" alt="Jeep Wrangler"></div><div class="car-card__body"><h3>Ford / Lincoln / Jeep</h3><p class="car-card__desc">Explorer, Expedition, Navigator и другие американские авто</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
     </div>
 
     <div id="panel-special" class="catalog-panel">
