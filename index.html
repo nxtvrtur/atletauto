@@ -1075,6 +1075,75 @@
     }
 
     /* ==============================
+       ATHLETE MASCOT
+    ============================== */
+    .hero__mascot {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 46%;
+      max-width: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 32px;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .athlete-svg {
+      width: 300px;
+      height: auto;
+      filter: drop-shadow(0 0 28px rgba(61,127,255,0.55))
+              drop-shadow(0 0 6px rgba(61,127,255,0.25));
+      animation: mascotGlow 4s ease-in-out infinite;
+    }
+    @keyframes mascotGlow {
+      0%, 100% {
+        filter: drop-shadow(0 0 28px rgba(61,127,255,0.55))
+                drop-shadow(0 0 6px rgba(61,127,255,0.25));
+      }
+      50% {
+        filter: drop-shadow(0 0 50px rgba(61,127,255,0.8))
+                drop-shadow(0 0 14px rgba(61,127,255,0.45));
+      }
+    }
+    /* Car rocks/bobs slightly */
+    .m-car-group {
+      transform-box: fill-box;
+      transform-origin: center bottom;
+      animation: carRock 4s ease-in-out infinite;
+    }
+    @keyframes carRock {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      25%       { transform: translateY(-6px) rotate(-2deg); }
+      75%       { transform: translateY(-6px) rotate(1.5deg); }
+    }
+    /* Bicep peak flexes */
+    .m-bicep {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: bicepFlex 4s ease-in-out infinite;
+    }
+    @keyframes bicepFlex {
+      0%, 100% { transform: scale(1); }
+      50%       { transform: scaleX(1.12) scaleY(1.22); }
+    }
+    /* Fist follows car */
+    .m-fist-group {
+      animation: carRock 4s ease-in-out infinite;
+    }
+    /* Energy sparks float up */
+    .m-spark  { animation: sparkUp 3s ease-out infinite; }
+    .m-spark2 { animation: sparkUp 4s ease-out infinite 1s; }
+    .m-spark3 { animation: sparkUp 3.5s ease-out infinite 2s; }
+    @keyframes sparkUp {
+      0%   { transform: translateY(0);     opacity: 0.8; }
+      100% { transform: translateY(-50px); opacity: 0;   }
+    }
+    @media (max-width: 1100px) { .hero__mascot { display: none; } }
+
+    /* ==============================
        MOBILE
     ============================== */
     @media (max-width: 1024px) {
@@ -1154,8 +1223,6 @@
           <a href="#auto" onclick="switchTab('chinese')">Китайские марки</a>
           <a href="#auto" onclick="switchTab('korean')">Корейские марки</a>
           <a href="#auto" onclick="switchTab('japanese')">Японские марки</a>
-          <a href="#auto" onclick="switchTab('european')">Европейские марки</a>
-          <a href="#auto" onclick="switchTab('american')">Американские марки</a>
         </div>
       </div>
       <div class="nav__item">
@@ -1216,6 +1283,115 @@
       </div>
     </div>
   </div>
+  <!-- ===== ATHLETE ARM MASCOT ===== -->
+  <div class="hero__mascot" aria-hidden="true">
+    <svg class="athlete-svg" viewBox="0 0 260 430" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="ag" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#1d4ed8"/>
+          <stop offset="100%" stop-color="#60a5fa"/>
+        </linearGradient>
+        <linearGradient id="og" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ff6b35"/>
+          <stop offset="100%" stop-color="#fbbf24"/>
+        </linearGradient>
+        <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="4" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <!-- ===== CAR (positioned above fist, rocks with it) ===== -->
+      <g style="transform: translate(68px, 6px)">
+        <g class="m-car-group">
+          <!-- Body -->
+          <path d="M6 32 Q6 20 17 16 L40 11 L84 11 L107 16 Q118 20 118 32 L118 54 Q118 62 110 62 L14 62 Q6 62 6 54Z"
+                fill="rgba(61,127,255,0.11)" stroke="url(#ag)" stroke-width="2" filter="url(#glow)"/>
+          <!-- Roof / windows -->
+          <path d="M26 16 L42 3 L82 3 L98 16Z"
+                fill="rgba(61,127,255,0.22)" stroke="url(#ag)" stroke-width="1.5"/>
+          <!-- Window highlight -->
+          <path d="M34 14 L44 6 L80 6 L90 14Z" fill="rgba(255,255,255,0.06)"/>
+          <!-- Wheels -->
+          <circle cx="30" cy="65" r="13" fill="rgba(61,127,255,0.08)" stroke="url(#ag)" stroke-width="2"/>
+          <circle cx="94" cy="65" r="13" fill="rgba(61,127,255,0.08)" stroke="url(#ag)" stroke-width="2"/>
+          <circle cx="30" cy="65" r="5" fill="#3d7fff" opacity="0.5"/>
+          <circle cx="94" cy="65" r="5" fill="#3d7fff" opacity="0.5"/>
+          <!-- Headlights (orange glow) -->
+          <rect x="108" y="27" width="9" height="7" rx="2" fill="#ff6b35" opacity="0.85" filter="url(#glow)"/>
+          <rect x="7"   y="27" width="9" height="7" rx="2" fill="rgba(255,107,53,0.35)"/>
+          <!-- Speed stripe on car -->
+          <line x1="20" y1="40" x2="100" y2="40" stroke="url(#ag)" stroke-width="0.8" opacity="0.25"/>
+        </g>
+      </g>
+
+      <!-- ===== FIST (moves with car) ===== -->
+      <g class="m-fist-group">
+        <rect x="118" y="82" width="48" height="33" rx="9"
+              fill="rgba(61,127,255,0.2)" stroke="url(#ag)" stroke-width="2.5" filter="url(#glow)"/>
+        <line x1="130" y1="82" x2="130" y2="115" stroke="url(#ag)" stroke-width="1" opacity="0.45"/>
+        <line x1="142" y1="82" x2="142" y2="115" stroke="url(#ag)" stroke-width="1" opacity="0.45"/>
+        <line x1="154" y1="82" x2="154" y2="115" stroke="url(#ag)" stroke-width="1" opacity="0.45"/>
+      </g>
+
+      <!-- ===== FOREARM ===== -->
+      <!-- fill tube -->
+      <path d="M142 115 C154 158 166 200 170 238"
+            stroke="url(#ag)" stroke-width="34" stroke-linecap="round" fill="none" opacity="0.13"/>
+      <!-- outline -->
+      <path d="M142 115 C154 158 166 200 170 238"
+            stroke="url(#ag)" stroke-width="2" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+      <!-- forearm muscle line -->
+      <path d="M134 125 C148 165 162 206 164 234"
+            stroke="url(#ag)" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.22"/>
+
+      <!-- ===== ELBOW ===== -->
+      <circle cx="173" cy="243" r="20" fill="rgba(61,127,255,0.08)" stroke="url(#ag)" stroke-width="2" filter="url(#glow)"/>
+
+      <!-- ===== UPPER ARM (horizontal) ===== -->
+      <!-- fill tube -->
+      <path d="M170 236 C132 228 84 225 28 228"
+            stroke="url(#ag)" stroke-width="40" stroke-linecap="round" fill="none" opacity="0.13"/>
+      <!-- outline -->
+      <path d="M170 236 C132 228 84 225 28 228"
+            stroke="url(#ag)" stroke-width="2" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+
+      <!-- ===== BICEP PEAK ===== -->
+      <ellipse class="m-bicep" cx="97" cy="207" rx="45" ry="27"
+               fill="rgba(61,127,255,0.24)" stroke="url(#ag)" stroke-width="2.5" filter="url(#glow)"/>
+      <!-- Bicep definition line -->
+      <path d="M68 202 Q97 188 126 202" fill="none" stroke="url(#ag)" stroke-width="1.8" opacity="0.55"/>
+      <!-- Tricep line (bottom) -->
+      <path d="M55 246 Q100 256 148 250" fill="none" stroke="url(#ag)" stroke-width="1" opacity="0.22"/>
+
+      <!-- ===== SHOULDER ===== -->
+      <circle cx="26" cy="228" r="31" fill="rgba(61,127,255,0.1)" stroke="url(#ag)" stroke-width="2" filter="url(#glow)"/>
+      <!-- Deltoid curve -->
+      <path d="M4 218 Q16 208 28 202" fill="none" stroke="url(#ag)" stroke-width="2" opacity="0.45"/>
+      <!-- Trapezius hint -->
+      <path d="M22 216 Q60 196 98 188"
+            fill="none" stroke="url(#ag)" stroke-width="1.5" stroke-dasharray="5,6" opacity="0.22"/>
+
+      <!-- ===== SPEED LINES (power effect) ===== -->
+      <line x1="1" y1="215" x2="18" y2="215" stroke="#3d7fff" stroke-width="2"   opacity="0.35"/>
+      <line x1="1" y1="225" x2="14" y2="225" stroke="#3d7fff" stroke-width="1.5" opacity="0.25"/>
+      <line x1="1" y1="235" x2="16" y2="235" stroke="#3d7fff" stroke-width="1.5" opacity="0.2"/>
+      <line x1="1" y1="245" x2="11" y2="245" stroke="#3d7fff" stroke-width="1"   opacity="0.15"/>
+
+      <!-- ===== ENERGY SPARKS ===== -->
+      <circle class="m-spark"  cx="183" cy="168" r="3"   fill="#3d7fff"/>
+      <circle class="m-spark2" cx="98"  cy="172" r="2.5" fill="#ff6b35"/>
+      <circle class="m-spark3" cx="155" cy="148" r="2"   fill="#60a5fa"/>
+      <circle class="m-spark"  cx="210" cy="185" r="2"   fill="#3d7fff"  style="animation-delay:1.5s"/>
+      <circle class="m-spark2" cx="68"  cy="178" r="1.5" fill="#ff6b35"  style="animation-delay:2.5s"/>
+
+      <!-- ===== "АТЛЕТ" TATTOO on bicep ===== -->
+      <text x="97" y="213" text-anchor="middle" font-family="Exo 2, sans-serif"
+            font-size="9" font-weight="800" fill="rgba(255,255,255,0.25)"
+            letter-spacing="3">АТЛЕТ</text>
+    </svg>
+  </div>
+
   <div class="hero__scroll">
     <span>Вниз</span>
     <i class="fa-solid fa-chevron-down"></i>
