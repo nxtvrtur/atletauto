@@ -10,7 +10,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Raleway:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -64,7 +64,7 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse at 50% 40%, rgba(196,30,58,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 50% 40%, rgba(201,169,110,0.12) 0%, transparent 60%),
         radial-gradient(ellipse at 60% 70%, rgba(201,169,110,0.07) 0%, transparent 50%);
       pointer-events: none;
     }
@@ -77,11 +77,11 @@
       animation: loaderGlow 2s ease-in-out infinite;
     }
     @keyframes loaderGlow {
-      0%, 100% { filter: drop-shadow(0 0 18px rgba(196,30,58,0.55)); transform: scale(1); }
-      50%       { filter: drop-shadow(0 0 38px rgba(196,30,58,0.95)); transform: scale(1.04); }
+      0%, 100% { filter: drop-shadow(0 0 18px rgba(201,169,110,0.55)); transform: scale(1); }
+      50%       { filter: drop-shadow(0 0 38px rgba(201,169,110,0.95)); transform: scale(1.04); }
     }
     .loader__title {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: clamp(26px, 4vw, 36px);
       font-weight: 900;
       letter-spacing: 0.18em;
@@ -113,7 +113,7 @@
       box-shadow: 0 0 14px rgba(201,169,110,0.7);
     }
     .loader__sub {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 10px;
       letter-spacing: 0.28em;
       text-transform: uppercase;
@@ -127,7 +127,7 @@
     button { cursor: pointer; font: inherit; border: none; background: none; }
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: #090807; }
-    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #c41e3a, #c9a96e); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #f0c060, #a07830); border-radius: 4px; }
 
     /* ==============================
        VARIABLES
@@ -137,19 +137,19 @@
       --bg-2: #110f0d;
       --bg-card: #181410;
       --bg-card-hover: #1e1a15;
-      --blue: #c41e3a;
-      --blue-dark: #9e1730;
-      --blue-light: rgba(196,30,58,0.10);
-      --orange: #c9a96e;
-      --orange-dark: #a8874a;
+      --blue: #c9a96e;
+      --blue-dark: #a8874a;
+      --blue-light: rgba(201,169,110,0.10);
+      --orange: #f0c060;
+      --orange-dark: #d4a030;
       --white: #f6f2ed;
       --text: #ede8de;
       --text-muted: rgba(220,210,190,0.52);
-      --border: rgba(255,255,255,0.06);
-      --border-hover: rgba(196,30,58,0.35);
+      --border: rgba(201,169,110,0.12);
+      --border-hover: rgba(201,169,110,0.45);
       --nav-h: 70px;
-      --glow-blue: 0 0 40px rgba(196,30,58,0.22);
-      --glow-orange: 0 0 40px rgba(201,169,110,0.28);
+      --glow-blue: 0 0 40px rgba(201,169,110,0.25);
+      --glow-orange: 0 0 40px rgba(240,192,96,0.30);
     }
 
     /* ==============================
@@ -163,7 +163,7 @@
        TYPOGRAPHY
     ============================== */
     .section-title {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: clamp(28px, 4vw, 42px);
       font-weight: 800;
       color: var(--text);
@@ -188,7 +188,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-weight: 500;
       font-size: 16px;
       letter-spacing: 0.05em;
@@ -273,7 +273,7 @@
       display: flex;
       align-items: center;
       gap: 5px;
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 14px;
       font-weight: 400;
       letter-spacing: 0.05em;
@@ -325,7 +325,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 16px;
       font-weight: 600;
       color: #fff;
@@ -380,7 +380,7 @@
           rgba(9,8,7,0.88) 52%,
           rgba(9,8,7,0.35) 72%,
           rgba(9,8,7,0.05) 100%),
-        radial-gradient(ellipse at 80% 40%, rgba(196,30,58,0.13) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 40%, rgba(201,169,110,0.13) 0%, transparent 50%),
         radial-gradient(ellipse at 20% 90%, rgba(201,169,110,0.09) 0%, transparent 40%);
     }
     /* Ambient particle canvas */
@@ -397,13 +397,13 @@
       position: absolute;
       bottom: -30px;
       right: -20px;
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: clamp(130px, 20vw, 260px);
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: transparent;
-      -webkit-text-stroke: 1.5px rgba(196,30,58,0.07);
+      -webkit-text-stroke: 1.5px rgba(201,169,110,0.07);
       user-select: none;
       pointer-events: none;
       z-index: 0;
@@ -411,8 +411,8 @@
       animation: watermarkPulse 8s ease-in-out infinite;
     }
     @keyframes watermarkPulse {
-      0%, 100% { -webkit-text-stroke-color: rgba(196,30,58,0.07); }
-      50%       { -webkit-text-stroke-color: rgba(196,30,58,0.13); }
+      0%, 100% { -webkit-text-stroke-color: rgba(201,169,110,0.07); }
+      50%       { -webkit-text-stroke-color: rgba(201,169,110,0.13); }
     }
     .hero .container { position: relative; z-index: 1; }
     .hero__content {
@@ -423,7 +423,7 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 11px;
       font-weight: 500;
       letter-spacing: 0.22em;
@@ -445,7 +445,7 @@
 
     /* Title — three distinct line styles for WOW */
     .hero__title {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: clamp(54px, 9vw, 118px);
       font-weight: 700;
       font-style: italic;
@@ -471,7 +471,7 @@
 
     /* Gradient gold shimmer line */
     .t-gradient {
-      background: linear-gradient(90deg, #c9a96e 0%, #e8d5a3 40%, #c9a96e 70%, #f0e0b0 100%);
+      background: linear-gradient(90deg, #a07830 0%, #f0d070 28%, #e8b84b 52%, #f5e090 75%, #c9a96e 100%);
       background-size: 200% 100%;
       -webkit-background-clip: text;
       background-clip: text;
@@ -526,7 +526,7 @@
       animation: heroReveal 0.6s ease forwards 0.82s;
     }
     .hero__origins span {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 14px;
       font-weight: 400;
       letter-spacing: 0.14em;
@@ -567,7 +567,7 @@
       50% { transform: translateX(-50%) translateY(8px); }
     }
     .hero__scroll span {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 11px;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -596,7 +596,7 @@
     }
     .stat:last-child { border-right: none; }
     .stat__num {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 42px;
       font-weight: 700;
       color: var(--orange);
@@ -615,7 +615,7 @@
     ============================== */
     .whyus { background: var(--bg-2); }
     .whyus__title {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: clamp(24px, 3.5vw, 36px);
       font-weight: 700;
       color: var(--text);
@@ -668,7 +668,7 @@
       object-fit: contain;
     }
     .benefit-card h3 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 15px;
       font-weight: 700;
       text-transform: uppercase;
@@ -754,7 +754,7 @@
       left: 12px;
       background: var(--orange);
       color: #fff;
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 11px;
       font-weight: 600;
       letter-spacing: 0.1em;
@@ -777,7 +777,7 @@
     }
     .car-card__spec i { color: var(--blue); font-size: 11px; }
     .car-card h3 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 20px;
       font-weight: 700;
       color: var(--text);
@@ -792,7 +792,7 @@
       margin-bottom: 14px;
     }
     .car-card__price {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 22px;
       font-weight: 700;
       color: var(--orange);
@@ -815,7 +815,7 @@
       margin-bottom: 36px;
     }
     .catalog-tab {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 0.05em;
@@ -943,7 +943,7 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 15px;
       font-weight: 600;
       color: var(--text);
@@ -1026,7 +1026,7 @@
     }
     .contact-detail__text strong, .contact-detail__text a {
       display: block;
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 18px;
       font-weight: 600;
       color: #fff;
@@ -1043,7 +1043,7 @@
     .form-group { margin-bottom: 18px; }
     .form-group label {
       display: block;
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 12px;
       font-weight: 500;
       letter-spacing: 0.1em;
@@ -1135,7 +1135,7 @@
       color: #fff;
     }
     .footer__nav h4 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 0.12em;
@@ -1151,7 +1151,7 @@
     }
     .footer__nav a:hover { color: var(--orange); }
     .footer__contacts h4 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 0.12em;
@@ -1192,7 +1192,7 @@
       right: -80px;
       width: 500px;
       height: 500px;
-      background: radial-gradient(circle, rgba(196,30,58,0.18) 0%, transparent 65%);
+      background: radial-gradient(circle, rgba(201,169,110,0.18) 0%, transparent 65%);
       pointer-events: none;
       z-index: 1;
     }
@@ -1233,7 +1233,7 @@
       padding: 0 20px;
     }
     .brand-ticker__item span {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.2em;
@@ -2099,7 +2099,7 @@ setTimeout(() => heroBg && heroBg.classList.add('loaded'), 100);
         const d = Math.sqrt(dx * dx + dy * dy);
         if (d < CONNECTION_DIST) {
           const lineA = (1 - d / CONNECTION_DIST) * 0.10;
-          ctx.strokeStyle = `rgba(196,30,58,${lineA})`;
+          ctx.strokeStyle = `rgba(201,169,110,${lineA})`;
           ctx.lineWidth = 0.6;
           ctx.beginPath();
           ctx.moveTo(px, py);
@@ -2109,7 +2109,7 @@ setTimeout(() => heroBg && heroBg.classList.add('loaded'), 100);
       }
 
       // Particle dot
-      const color = p.isAccent ? '201,169,110' : '196,30,58';
+      const color = p.isAccent ? '240,192,96' : '201,169,110';
       ctx.beginPath();
       ctx.arc(px, py, p.r, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(${color},${0.35 * pulseA})`;
