@@ -27,6 +27,89 @@
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
+
+    /* ==============================
+       LOADER
+    ============================== */
+    #loader {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: #080a10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      transition: transform 1s cubic-bezier(.76,0,.24,1), opacity 0.4s ease;
+      will-change: transform;
+    }
+    #loader.hide {
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+    .loader__bg-glow {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 40%, rgba(61,127,255,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 60% 70%, rgba(255,107,53,0.07) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .loader__logo {
+      height: 88px;
+      width: auto;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 20px;
+      animation: loaderGlow 2s ease-in-out infinite;
+    }
+    @keyframes loaderGlow {
+      0%, 100% { filter: drop-shadow(0 0 18px rgba(61,127,255,0.55)); transform: scale(1); }
+      50%       { filter: drop-shadow(0 0 38px rgba(61,127,255,0.95)); transform: scale(1.04); }
+    }
+    .loader__title {
+      font-family: 'Exo 2', sans-serif;
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      color: #fff;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 40px;
+    }
+    .loader__title em {
+      font-style: normal;
+      color: var(--orange);
+    }
+    .loader__track {
+      width: 220px;
+      height: 2px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 2px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 14px;
+    }
+    .loader__bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--blue), var(--orange));
+      border-radius: 2px;
+      box-shadow: 0 0 14px rgba(255,107,53,0.7);
+    }
+    .loader__sub {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.28);
+      position: relative;
+      z-index: 1;
+    }
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
     ul { list-style: none; }
@@ -269,7 +352,7 @@
     .hero__bg {
       position: absolute;
       inset: 0;
-      background-image: url('images/tild3936-3565-4037-a133-623364386263_IMG_0868.PNG');
+      background-image: url('images/catalog/chery.jpg');
       background-size: cover;
       background-position: 70% center;
       transform: scale(1.05);
@@ -1234,6 +1317,15 @@
 
 <body>
 
+<!-- =================== LOADER =================== -->
+<div id="loader">
+  <div class="loader__bg-glow"></div>
+  <img class="loader__logo" src="images/tild6366-6165-4432-b831-663033633230_LOGO.PNG" alt="Атлет-Авто">
+  <div class="loader__title">АТЛЕТ <em>АВТО</em></div>
+  <div class="loader__track"><div class="loader__bar" id="loaderBar"></div></div>
+  <div class="loader__sub">Официальный импортёр</div>
+</div>
+
 <!-- =================== NAV =================== -->
 <nav class="nav" id="navbar">
   <div class="nav__inner">
@@ -2140,6 +2232,34 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
+
+  /* ===================== LOADER JS ===================== */
+  (function(){
+    const loader = document.getElementById('loader');
+    const bar    = document.getElementById('loaderBar');
+    if (!loader || !bar) return;
+
+    let w = 0;
+    const tick = setInterval(() => {
+      if      (w < 70) w += 3.5;
+      else if (w < 90) w += 1.2;
+      else if (w < 98) w += 0.4;
+      bar.style.width = w + '%';
+    }, 40);
+
+    function dismiss() {
+      clearInterval(tick);
+      bar.style.transition = 'width 0.3s ease';
+      bar.style.width = '100%';
+      setTimeout(() => {
+        loader.classList.add('hide');
+        setTimeout(() => { loader.style.display = 'none'; }, 1100);
+      }, 320);
+    }
+
+    window.addEventListener('load', dismiss);
+    setTimeout(dismiss, 3500); // failsafe
+  })();
 </script>
 
 </body>
