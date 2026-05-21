@@ -279,12 +279,41 @@
     .hero__overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        105deg,
-        rgba(11,13,20,0.92) 0%,
-        rgba(11,13,20,0.72) 55%,
-        rgba(61,127,255,0.18) 100%
-      );
+      background:
+        linear-gradient(105deg, rgba(11,13,20,0.96) 0%, rgba(11,13,20,0.78) 50%, rgba(11,13,20,0.45) 100%),
+        radial-gradient(ellipse at 75% 45%, rgba(61,127,255,0.14) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 85%, rgba(255,107,53,0.10) 0%, transparent 45%);
+    }
+    /* Ambient particle canvas */
+    .hero__particles {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+    /* Ghost watermark */
+    .hero__watermark {
+      position: absolute;
+      bottom: -30px;
+      right: -20px;
+      font-family: 'Exo 2', sans-serif;
+      font-size: clamp(130px, 20vw, 260px);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(61,127,255,0.07);
+      user-select: none;
+      pointer-events: none;
+      z-index: 0;
+      line-height: 1;
+      animation: watermarkPulse 8s ease-in-out infinite;
+    }
+    @keyframes watermarkPulse {
+      0%, 100% { -webkit-text-stroke-color: rgba(61,127,255,0.07); }
+      50%       { -webkit-text-stroke-color: rgba(61,127,255,0.13); }
     }
     .hero .container { position: relative; z-index: 1; }
     .hero__content {
@@ -1074,78 +1103,6 @@
       margin-bottom: 20px;
     }
 
-    /* ==============================
-       ATHLETE MASCOT
-    ============================== */
-    .hero__mascot {
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      width: 46%;
-      max-width: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding-right: 32px;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .athlete-svg {
-      width: 360px;
-      height: auto;
-      filter: drop-shadow(0 0 32px rgba(61,127,255,0.60))
-              drop-shadow(0 0 8px rgba(61,127,255,0.28));
-      animation: mascotGlow 4s ease-in-out infinite;
-    }
-    @keyframes mascotGlow {
-      0%, 100% {
-        filter: drop-shadow(0 0 28px rgba(61,127,255,0.55))
-                drop-shadow(0 0 6px rgba(61,127,255,0.25));
-      }
-      50% {
-        filter: drop-shadow(0 0 50px rgba(61,127,255,0.8))
-                drop-shadow(0 0 14px rgba(61,127,255,0.45));
-      }
-    }
-    /* Car rocks above fist */
-    .m-car-group {
-      transform-box: fill-box;
-      transform-origin: center bottom;
-      animation: carRock 4s ease-in-out infinite;
-    }
-    @keyframes carRock {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      30%       { transform: translateY(-8px) rotate(-2.5deg); }
-      70%       { transform: translateY(-8px) rotate(1.5deg); }
-    }
-    /* Bicep overlay pulses (flex effect) */
-    .m-bicep-anim {
-      transform-box: fill-box;
-      transform-origin: center;
-      animation: bicepFlex 4s ease-in-out infinite;
-    }
-    @keyframes bicepFlex {
-      0%, 100% { transform: scale(1);           opacity: 0.22; }
-      50%       { transform: scale(1.14, 1.12); opacity: 0.38; }
-    }
-    /* Vein pulses */
-    .m-vein {
-      animation: veinPulse 4s ease-in-out infinite;
-    }
-    @keyframes veinPulse {
-      0%, 100% { opacity: 0.45; stroke-width: 1.8; }
-      50%       { opacity: 0.75; stroke-width: 2.5; }
-    }
-    /* Energy sparks float up */
-    .m-spark  { animation: sparkUp 3s   ease-out infinite; }
-    .m-spark2 { animation: sparkUp 4s   ease-out infinite 1s; }
-    .m-spark3 { animation: sparkUp 3.5s ease-out infinite 2s; }
-    @keyframes sparkUp {
-      0%   { transform: translateY(0);     opacity: 0.85; }
-      100% { transform: translateY(-55px); opacity: 0;    }
-    }
-    @media (max-width: 1100px) { .hero__mascot { display: none; } }
 
     /* ==============================
        MOBILE
@@ -1258,6 +1215,8 @@
 <section class="hero" id="home">
   <div class="hero__bg" id="heroBg"></div>
   <div class="hero__overlay"></div>
+  <canvas class="hero__particles" id="heroParticles"></canvas>
+  <div class="hero__watermark" aria-hidden="true">АТЛЕТ</div>
   <div class="container">
     <div class="hero__content">
       <div class="hero__label">
@@ -1287,141 +1246,6 @@
       </div>
     </div>
   </div>
-  <!-- ===== ATHLETE ARM MASCOT ===== -->
-  <div class="hero__mascot" aria-hidden="true">
-    <svg class="athlete-svg" viewBox="0 0 260 430" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="ag" x1="30%" y1="0%" x2="70%" y2="100%">
-          <stop offset="0%" stop-color="#5a9bff"/>
-          <stop offset="45%" stop-color="#2d6fe0"/>
-          <stop offset="100%" stop-color="#142d80"/>
-        </linearGradient>
-        <linearGradient id="aghl" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="rgba(160,210,255,0.45)"/>
-          <stop offset="100%" stop-color="rgba(61,127,255,0.0)"/>
-        </linearGradient>
-        <linearGradient id="og" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#ff6b35"/>
-          <stop offset="100%" stop-color="#fbbf24"/>
-        </linearGradient>
-        <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
-          <feGaussianBlur stdDeviation="3" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-      </defs>
-
-      <!-- ===== LAYER 1 — SHOULDER CAP ===== -->
-      <ellipse cx="130" cy="374" rx="92" ry="50" fill="url(#ag)" opacity="0.80"/>
-
-      <!-- ===== LAYER 2 — UPPER ARM BODY (tapered, connects bicep→shoulder) ===== -->
-      <path d="M 56 260 C 52 286, 50 314, 54 340 C 58 362, 72 378, 95 384
-               L 172 384 C 195 378, 207 362, 210 340 C 214 314, 212 286, 208 260 Z"
-            fill="url(#ag)" opacity="0.86"/>
-
-      <!-- ===== LAYER 3 — BICEP BALL (the dramatic muscle mass) ===== -->
-      <!-- Big oval protruding far LEFT from the forearm — this IS the bicep -->
-      <ellipse cx="70" cy="256" rx="64" ry="76" fill="url(#ag)" opacity="0.94"/>
-
-      <!-- Bicep inner-face highlight (light catches the front of the muscle) -->
-      <ellipse cx="56" cy="238" rx="34" ry="40" fill="url(#aghl)" opacity="0.62"/>
-
-      <!-- Bicep peak animated glow overlay -->
-      <ellipse class="m-bicep-anim" cx="66" cy="250" rx="48" ry="58"
-               fill="rgba(61,127,255,0.14)"/>
-
-      <!-- Muscle separation crease (bicep peak line) -->
-      <path d="M 14 256 C 28 244, 48 238, 70 242 C 88 246, 102 256, 114 266"
-            stroke="rgba(8,18,70,0.55)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-
-      <!-- Secondary crease (lower bicep head) -->
-      <path d="M 20 278 C 36 270, 56 268, 76 272"
-            stroke="rgba(8,18,70,0.35)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-
-      <!-- Vein running up the bicep -->
-      <path class="m-vein" d="M 10 268 C 20 258, 34 248, 50 242 C 62 238, 72 240, 80 248"
-            stroke="rgba(110,175,255,0.65)" stroke-width="2" stroke-linecap="round" fill="none"/>
-
-      <!-- "АТЛЕТ" tattoo on bicep -->
-      <text transform="rotate(-62,66,256)" x="66" y="261" text-anchor="middle"
-            font-family="'Exo 2', sans-serif" font-size="9" font-weight="900"
-            fill="rgba(255,255,255,0.30)" letter-spacing="2.5">АТЛЕТ</text>
-
-      <!-- Speed lines (power effect, bursting left) -->
-      <line x1="1"  y1="248" x2="12" y2="248" stroke="#3d7fff" stroke-width="2.2" opacity="0.44"/>
-      <line x1="1"  y1="260" x2="9"  y2="260" stroke="#3d7fff" stroke-width="1.5" opacity="0.30"/>
-      <line x1="1"  y1="272" x2="11" y2="272" stroke="#3d7fff" stroke-width="1.5" opacity="0.22"/>
-      <line x1="2"  y1="236" x2="12" y2="236" stroke="#3d7fff" stroke-width="1.2" opacity="0.18"/>
-
-      <!-- ===== LAYER 4 — FOREARM ===== -->
-      <path d="M 102 154 C 100 172, 99 192, 99 212 C 98 232, 98 252, 100 268
-               C 101 274, 105 278, 112 278 L 172 278
-               C 178 278, 182 274, 183 268 C 185 252, 184 232, 183 212
-               C 182 192, 181 172, 180 154 Z"
-            fill="url(#ag)" opacity="0.96"/>
-
-      <!-- Forearm highlight (lit front face) -->
-      <path d="M 102 154 C 114 172, 118 202, 116 234 C 115 252, 113 266, 111 278
-               L 102 278 C 100 266, 99 248, 99 228 C 99 198, 100 172, 102 154 Z"
-            fill="url(#aghl)" opacity="0.52"/>
-
-      <!-- Forearm muscle lines (extensor tendons) -->
-      <path d="M 116 168 C 118 200, 118 238, 116 270"
-            stroke="rgba(180,215,255,0.22)" stroke-width="1.2" stroke-linecap="round" fill="none"/>
-      <path d="M 132 162 C 134 196, 133 236, 131 268"
-            stroke="rgba(180,215,255,0.16)" stroke-width="1" stroke-linecap="round" fill="none"/>
-
-      <!-- ===== LAYER 5 — FIST ===== -->
-      <path d="M 93 88 C 108 76, 125 72, 141 72 C 157 72, 172 76, 188 88
-               L 190 128 C 190 140, 186 148, 180 153 L 168 155 L 112 155
-               L 103 153 C 97 148, 93 140, 93 128 Z"
-            fill="url(#ag)" opacity="0.98"/>
-
-      <!-- Fist top highlight (knuckle gloss) -->
-      <path d="M 104 80 C 122 72, 150 70, 176 80 C 184 84, 189 90, 190 98
-               C 179 88, 162 80, 141 78 C 121 76, 106 78, 100 84 Z"
-            fill="rgba(165,210,255,0.38)"/>
-
-      <!-- Knuckle finger separations -->
-      <line x1="122" y1="77" x2="120" y2="152" stroke="rgba(8,18,70,0.42)" stroke-width="1.5"/>
-      <line x1="141" y1="74" x2="140" y2="152" stroke="rgba(8,18,70,0.42)" stroke-width="1.5"/>
-      <line x1="161" y1="75" x2="160" y2="152" stroke="rgba(8,18,70,0.42)" stroke-width="1.5"/>
-
-      <!-- Knuckle arcs (bone bumps on top) -->
-      <path d="M 106 84 Q 114 77, 121 81" fill="none" stroke="rgba(8,18,70,0.28)" stroke-width="2"/>
-      <path d="M 122 79 Q 131 73, 140 77" fill="none" stroke="rgba(8,18,70,0.28)" stroke-width="2"/>
-      <path d="M 141 75 Q 151 70, 160 74" fill="none" stroke="rgba(8,18,70,0.28)" stroke-width="2"/>
-      <path d="M 161 75 Q 171 71, 180 77" fill="none" stroke="rgba(8,18,70,0.28)" stroke-width="2"/>
-
-      <!-- Thumb nub (left side) -->
-      <path d="M 93 112 C 86 108, 83 116, 87 122 C 89 126, 93 126, 93 122"
-            fill="url(#ag)" opacity="0.98"/>
-
-      <!-- ===== CAR (rocking above fist) ===== -->
-      <g style="transform: translate(64px, 6px)">
-        <g class="m-car-group">
-          <path d="M6 30 Q6 18 17 14 L38 9 L84 9 L107 14 Q118 18 118 30 L118 52 Q118 60 110 60 L14 60 Q6 60 6 52Z"
-                fill="rgba(61,127,255,0.13)" stroke="url(#ag)" stroke-width="2" filter="url(#glow)"/>
-          <path d="M26 14 L42 2 L82 2 L98 14Z" fill="rgba(61,127,255,0.24)" stroke="url(#ag)" stroke-width="1.5"/>
-          <path d="M34 13 L44 5 L80 5 L90 13Z" fill="rgba(255,255,255,0.07)"/>
-          <circle cx="30" cy="63" r="13" fill="rgba(61,127,255,0.09)" stroke="url(#ag)" stroke-width="2"/>
-          <circle cx="92" cy="63" r="13" fill="rgba(61,127,255,0.09)" stroke="url(#ag)" stroke-width="2"/>
-          <circle cx="30" cy="63" r="5"  fill="#3d7fff" opacity="0.55"/>
-          <circle cx="92" cy="63" r="5"  fill="#3d7fff" opacity="0.55"/>
-          <rect x="108" y="25" width="9" height="7" rx="2" fill="#ff6b35" opacity="0.9" filter="url(#glow)"/>
-          <rect x="7"   y="25" width="9" height="7" rx="2" fill="rgba(255,107,53,0.35)"/>
-        </g>
-      </g>
-
-      <!-- ===== ENERGY SPARKS ===== -->
-      <circle class="m-spark"  cx="198" cy="162" r="3"   fill="#3d7fff"/>
-      <circle class="m-spark2" cx="88"  cy="150" r="2.5" fill="#ff6b35"/>
-      <circle class="m-spark3" cx="160" cy="140" r="2"   fill="#60a5fa"/>
-      <circle class="m-spark"  cx="222" cy="178" r="2"   fill="#3d7fff"  style="animation-delay:1.5s"/>
-      <circle class="m-spark2" cx="74"  cy="168" r="1.5" fill="#ff6b35"  style="animation-delay:2.5s"/>
-      <circle class="m-spark3" cx="18"  cy="216" r="2"   fill="#60a5fa"  style="animation-delay:0.8s"/>
-    </svg>
-  </div>
-
   <div class="hero__scroll">
     <span>Вниз</span>
     <i class="fa-solid fa-chevron-down"></i>
@@ -2037,6 +1861,96 @@ window.addEventListener('scroll', () => {
 // ---- Hero BG parallax load ----
 const heroBg = document.getElementById('heroBg');
 setTimeout(() => heroBg && heroBg.classList.add('loaded'), 100);
+
+// ---- Hero particle canvas ----
+(function() {
+  const canvas = document.getElementById('heroParticles');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  // Build particles
+  const N = 75;
+  const particles = Array.from({length: N}, () => ({
+    x: Math.random(),
+    y: Math.random(),
+    r: Math.random() * 2 + 0.4,
+    vx: (Math.random() - 0.5) * 0.00018,
+    vy: (Math.random() - 0.5) * 0.00018,
+    // orange accent ~12% of particles
+    isAccent: Math.random() < 0.12,
+    phase: Math.random() * Math.PI * 2,
+    speed: 0.6 + Math.random() * 0.8
+  }));
+
+  let t = 0;
+
+  function draw() {
+    const W = canvas.width, H = canvas.height;
+    ctx.clearRect(0, 0, W, H);
+    t += 0.016;
+
+    // Move particles (stored as 0-1 fractions so resize is free)
+    particles.forEach(p => {
+      p.x += p.vx * p.speed;
+      p.y += p.vy * p.speed;
+      if (p.x < 0) p.x = 1; if (p.x > 1) p.x = 0;
+      if (p.y < 0) p.y = 1; if (p.y > 1) p.y = 0;
+    });
+
+    const CONNECTION_DIST = 0.12; // fraction of width
+
+    for (let i = 0; i < N; i++) {
+      const p = particles[i];
+      const px = p.x * W, py = p.y * H;
+      const pulseA = 0.65 + 0.35 * Math.sin(t * p.speed + p.phase);
+
+      // Connection lines
+      for (let j = i + 1; j < N; j++) {
+        const q = particles[j];
+        const dx = p.x - q.x, dy = (p.y - q.y) * (H / W);
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < CONNECTION_DIST) {
+          const lineA = (1 - d / CONNECTION_DIST) * 0.10;
+          ctx.strokeStyle = `rgba(61,127,255,${lineA})`;
+          ctx.lineWidth = 0.6;
+          ctx.beginPath();
+          ctx.moveTo(px, py);
+          ctx.lineTo(q.x * W, q.y * H);
+          ctx.stroke();
+        }
+      }
+
+      // Particle dot
+      const color = p.isAccent ? '255,107,53' : '61,127,255';
+      ctx.beginPath();
+      ctx.arc(px, py, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${color},${0.35 * pulseA})`;
+      ctx.fill();
+
+      // Tiny glow halo on bigger particles
+      if (p.r > 1.4) {
+        const grd = ctx.createRadialGradient(px, py, 0, px, py, p.r * 4);
+        grd.addColorStop(0, `rgba(${color},${0.08 * pulseA})`);
+        grd.addColorStop(1, `rgba(${color},0)`);
+        ctx.fillStyle = grd;
+        ctx.beginPath();
+        ctx.arc(px, py, p.r * 4, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+})();
 
 // ---- Mobile burger ----
 const burger = document.getElementById('burgerBtn');
