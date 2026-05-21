@@ -271,7 +271,7 @@
       inset: 0;
       background-image: url('images/tild3936-3565-4037-a133-623364386263_IMG_0868.PNG');
       background-size: cover;
-      background-position: center;
+      background-position: 70% center;
       transform: scale(1.05);
       transition: transform 8s ease;
     }
@@ -280,9 +280,14 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(105deg, rgba(11,13,20,0.96) 0%, rgba(11,13,20,0.78) 50%, rgba(11,13,20,0.45) 100%),
-        radial-gradient(ellipse at 75% 45%, rgba(61,127,255,0.14) 0%, transparent 55%),
-        radial-gradient(ellipse at 15% 85%, rgba(255,107,53,0.10) 0%, transparent 45%);
+        linear-gradient(95deg,
+          rgba(11,13,20,1.00)  0%,
+          rgba(11,13,20,1.00) 30%,
+          rgba(11,13,20,0.88) 52%,
+          rgba(11,13,20,0.35) 72%,
+          rgba(11,13,20,0.05) 100%),
+        radial-gradient(ellipse at 80% 40%, rgba(61,127,255,0.13) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 90%, rgba(255,107,53,0.09) 0%, transparent 40%);
     }
     /* Ambient particle canvas */
     .hero__particles {
@@ -317,59 +322,139 @@
     }
     .hero .container { position: relative; z-index: 1; }
     .hero__content {
-      max-width: 640px;
-      padding: calc(var(--nav-h) + 60px) 0 80px;
+      max-width: 720px;
+      padding: calc(var(--nav-h) + 50px) 0 80px;
     }
     .hero__label {
       display: inline-flex;
       align-items: center;
       gap: 10px;
       font-family: 'Exo 2', sans-serif;
-      font-size: 12px;
-      font-weight: 400;
-      letter-spacing: 0.2em;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
-      border: 1px solid rgba(255,255,255,0.25);
-      padding: 8px 18px;
+      color: rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,107,53,0.45);
+      padding: 8px 20px;
       border-radius: 100px;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
+      background: rgba(255,107,53,0.06);
+      opacity: 0;
+      animation: heroReveal 0.6s ease forwards 0.05s;
     }
+    .hero__label i { animation: labelDot 2s ease-in-out infinite; }
+    @keyframes labelDot {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    /* Title — three distinct line styles for WOW */
     .hero__title {
       font-family: 'Exo 2', sans-serif;
-      font-size: clamp(38px, 6vw, 72px);
-      font-weight: 700;
-      color: #fff;
+      font-size: clamp(44px, 7.2vw, 96px);
+      font-weight: 900;
       text-transform: uppercase;
-      line-height: 1.05;
-      letter-spacing: 0.01em;
-      margin-bottom: 12px;
+      line-height: 0.98;
+      letter-spacing: -0.01em;
+      margin-bottom: 0;
     }
-    .hero__title .accent { color: var(--orange); }
+    .hero__title-line {
+      display: block;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .hero__title-line:nth-child(1) { animation: heroReveal 0.7s cubic-bezier(.22,1,.36,1) forwards 0.2s; }
+    .hero__title-line:nth-child(2) { animation: heroReveal 0.7s cubic-bezier(.22,1,.36,1) forwards 0.38s; }
+    .hero__title-line:nth-child(3) { animation: heroReveal 0.7s cubic-bezier(.22,1,.36,1) forwards 0.55s; }
+    @keyframes heroReveal {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Solid white line */
+    .t-solid { color: #fff; }
+
+    /* Gradient orange-fire line */
+    .t-gradient {
+      background: linear-gradient(90deg, #ff6b35 0%, #fbbf24 40%, #ff6b35 100%);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: heroReveal 0.7s cubic-bezier(.22,1,.36,1) forwards 0.38s,
+                 gradientPan 3s ease-in-out infinite 1.2s;
+    }
+    @keyframes gradientPan {
+      0%,100% { background-position: 0% 50%; }
+      50%      { background-position: 100% 50%; }
+    }
+
+    /* Outline / ghost line */
+    .t-outline {
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(255,255,255,0.28);
+      font-size: 0.88em;
+      letter-spacing: 0.06em;
+    }
+
+    /* Glow divider under title */
+    .hero__divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 22px 0 20px;
+      opacity: 0;
+      animation: heroReveal 0.6s ease forwards 0.72s;
+    }
+    .hero__divider-line {
+      height: 2px;
+      width: 72px;
+      background: linear-gradient(90deg, var(--orange), var(--blue));
+      border-radius: 2px;
+      box-shadow: 0 0 10px rgba(255,107,53,0.6);
+    }
+    .hero__divider-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 8px rgba(255,107,53,0.9);
+      animation: labelDot 2s ease-in-out infinite 0.5s;
+    }
+
     .hero__origins {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       gap: 8px 16px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: heroReveal 0.6s ease forwards 0.82s;
     }
     .hero__origins span {
       font-family: 'Exo 2', sans-serif;
-      font-size: 16px;
-      font-weight: 300;
-      letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.55);
       text-transform: uppercase;
     }
-    .hero__origins .sep { color: var(--orange); font-size: 12px; }
+    .hero__origins .sep { color: var(--orange); font-size: 11px; opacity: 0.6; }
     .hero__desc {
-      font-size: 16px;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.85);
+      font-size: 15px;
+      line-height: 1.72;
+      color: rgba(255,255,255,0.72);
       margin-bottom: 36px;
-      max-width: 480px;
+      max-width: 500px;
+      opacity: 0;
+      animation: heroReveal 0.6s ease forwards 0.9s;
     }
-    .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero__actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: heroReveal 0.6s ease forwards 1.05s;
+    }
     .hero__scroll {
       position: absolute;
       bottom: 36px;
@@ -1002,19 +1087,7 @@
        WOW EFFECTS
     ============================== */
 
-    /* Gradient hero title accent */
-    .hero__title .accent {
-      background: linear-gradient(90deg, var(--blue) 0%, #a78bfa 50%, var(--orange) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      background-size: 200% auto;
-      animation: gradientShift 4s linear infinite;
-    }
-    @keyframes gradientShift {
-      0% { background-position: 0% center; }
-      100% { background-position: 200% center; }
-    }
+    /* (accent class removed — using .t-gradient on hero title now) */
 
     /* Hero ambient glow */
     .hero::after {
@@ -1224,10 +1297,14 @@
         Официальный импортёр
       </div>
       <h1 class="hero__title">
-        Авто в наличии,<br>
-        <span class="accent">под заказ.</span><br>
-        Спецтехника
+        <span class="hero__title-line t-solid">Авто в наличии,</span>
+        <span class="hero__title-line t-gradient">Под заказ.</span>
+        <span class="hero__title-line t-outline">Спецтехника</span>
       </h1>
+      <div class="hero__divider">
+        <div class="hero__divider-line"></div>
+        <div class="hero__divider-dot"></div>
+      </div>
       <div class="hero__origins">
         <span>Китай</span><span class="sep">||</span>
         <span>Япония</span><span class="sep">||</span>
