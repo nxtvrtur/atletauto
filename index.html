@@ -10,7 +10,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -20,12 +20,23 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Manrope', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 400;
       background: var(--bg);
       color: var(--text);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+    }
+    /* Premium grain overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      background-size: 300px 300px;
+      opacity: 0.028;
+      pointer-events: none;
+      z-index: 99990;
     }
 
     /* ==============================
@@ -53,8 +64,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse at 50% 40%, rgba(61,127,255,0.12) 0%, transparent 60%),
-        radial-gradient(ellipse at 60% 70%, rgba(255,107,53,0.07) 0%, transparent 50%);
+        radial-gradient(ellipse at 50% 40%, rgba(37,87,247,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 60% 70%, rgba(201,169,110,0.07) 0%, transparent 50%);
       pointer-events: none;
     }
     .loader__logo {
@@ -66,11 +77,11 @@
       animation: loaderGlow 2s ease-in-out infinite;
     }
     @keyframes loaderGlow {
-      0%, 100% { filter: drop-shadow(0 0 18px rgba(61,127,255,0.55)); transform: scale(1); }
-      50%       { filter: drop-shadow(0 0 38px rgba(61,127,255,0.95)); transform: scale(1.04); }
+      0%, 100% { filter: drop-shadow(0 0 18px rgba(37,87,247,0.55)); transform: scale(1); }
+      50%       { filter: drop-shadow(0 0 38px rgba(37,87,247,0.95)); transform: scale(1.04); }
     }
     .loader__title {
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: clamp(26px, 4vw, 36px);
       font-weight: 900;
       letter-spacing: 0.18em;
@@ -99,10 +110,10 @@
       width: 0%;
       background: linear-gradient(90deg, var(--blue), var(--orange));
       border-radius: 2px;
-      box-shadow: 0 0 14px rgba(255,107,53,0.7);
+      box-shadow: 0 0 14px rgba(201,169,110,0.7);
     }
     .loader__sub {
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: 10px;
       letter-spacing: 0.28em;
       text-transform: uppercase;
@@ -114,31 +125,31 @@
     a { color: inherit; text-decoration: none; }
     ul { list-style: none; }
     button { cursor: pointer; font: inherit; border: none; background: none; }
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #0b0d14; }
-    ::-webkit-scrollbar-thumb { background: #3d7fff; border-radius: 4px; }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #060810; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #2557f7, #c9a96e); border-radius: 4px; }
 
     /* ==============================
        VARIABLES
     ============================== */
     :root {
-      --bg: #0b0d14;
-      --bg-2: #13151f;
-      --bg-card: #1a1d2e;
-      --bg-card-hover: #1f2337;
-      --blue: #3d7fff;
-      --blue-dark: #2563eb;
-      --blue-light: rgba(61,127,255,0.12);
-      --orange: #ff6b35;
-      --orange-dark: #e55a24;
-      --white: #ffffff;
-      --text: #e8ecff;
-      --text-muted: rgba(232,236,255,0.5);
-      --border: rgba(255,255,255,0.08);
-      --border-hover: rgba(61,127,255,0.4);
+      --bg: #060810;
+      --bg-2: #0c0f1c;
+      --bg-card: #101320;
+      --bg-card-hover: #151828;
+      --blue: #2557f7;
+      --blue-dark: #1840cc;
+      --blue-light: rgba(37,87,247,0.10);
+      --orange: #c9a96e;
+      --orange-dark: #a8874a;
+      --white: #f4f6fc;
+      --text: #e6ebff;
+      --text-muted: rgba(200,210,240,0.50);
+      --border: rgba(255,255,255,0.06);
+      --border-hover: rgba(37,87,247,0.35);
       --nav-h: 70px;
-      --glow-blue: 0 0 30px rgba(61,127,255,0.25);
-      --glow-orange: 0 0 30px rgba(255,107,53,0.35);
+      --glow-blue: 0 0 40px rgba(37,87,247,0.20);
+      --glow-orange: 0 0 40px rgba(201,169,110,0.28);
     }
 
     /* ==============================
@@ -152,7 +163,7 @@
        TYPOGRAPHY
     ============================== */
     .section-title {
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: clamp(28px, 4vw, 42px);
       font-weight: 800;
       color: var(--text);
@@ -177,7 +188,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-weight: 500;
       font-size: 16px;
       letter-spacing: 0.05em;
@@ -227,7 +238,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 1000;
-      background: rgba(11,13,20,0.85);
+      background: rgba(6,8,16,0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
@@ -262,7 +273,7 @@
       display: flex;
       align-items: center;
       gap: 5px;
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: 14px;
       font-weight: 400;
       letter-spacing: 0.05em;
@@ -282,7 +293,7 @@
       top: 100%;
       left: 0;
       min-width: 220px;
-      background: #13151f;
+      background: #0c0f1c;
       border-top: 2px solid var(--blue);
       box-shadow: 0 8px 30px rgba(0,0,0,0.3);
       padding: 8px 0;
@@ -293,7 +304,7 @@
     .nav__dropdown a {
       display: block;
       padding: 10px 20px;
-      font-family: 'Manrope', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 13px;
       color: rgba(255,255,255,0.8);
       transition: all 0.15s;
@@ -314,7 +325,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: 16px;
       font-weight: 600;
       color: #fff;
@@ -364,13 +375,13 @@
       inset: 0;
       background:
         linear-gradient(95deg,
-          rgba(11,13,20,1.00)  0%,
-          rgba(11,13,20,1.00) 30%,
-          rgba(11,13,20,0.88) 52%,
-          rgba(11,13,20,0.35) 72%,
-          rgba(11,13,20,0.05) 100%),
-        radial-gradient(ellipse at 80% 40%, rgba(61,127,255,0.13) 0%, transparent 50%),
-        radial-gradient(ellipse at 20% 90%, rgba(255,107,53,0.09) 0%, transparent 40%);
+          rgba(6,8,16,1.00)  0%,
+          rgba(6,8,16,1.00) 30%,
+          rgba(6,8,16,0.88) 52%,
+          rgba(6,8,16,0.35) 72%,
+          rgba(6,8,16,0.05) 100%),
+        radial-gradient(ellipse at 80% 40%, rgba(37,87,247,0.13) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 90%, rgba(201,169,110,0.09) 0%, transparent 40%);
     }
     /* Ambient particle canvas */
     .hero__particles {
@@ -386,13 +397,13 @@
       position: absolute;
       bottom: -30px;
       right: -20px;
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: clamp(130px, 20vw, 260px);
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: transparent;
-      -webkit-text-stroke: 1.5px rgba(61,127,255,0.07);
+      -webkit-text-stroke: 1.5px rgba(37,87,247,0.07);
       user-select: none;
       pointer-events: none;
       z-index: 0;
@@ -400,8 +411,8 @@
       animation: watermarkPulse 8s ease-in-out infinite;
     }
     @keyframes watermarkPulse {
-      0%, 100% { -webkit-text-stroke-color: rgba(61,127,255,0.07); }
-      50%       { -webkit-text-stroke-color: rgba(61,127,255,0.13); }
+      0%, 100% { -webkit-text-stroke-color: rgba(37,87,247,0.07); }
+      50%       { -webkit-text-stroke-color: rgba(37,87,247,0.13); }
     }
     .hero .container { position: relative; z-index: 1; }
     .hero__content {
@@ -412,17 +423,17 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: 11px;
       font-weight: 500;
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: rgba(255,255,255,0.8);
-      border: 1px solid rgba(255,107,53,0.45);
+      border: 1px solid rgba(201,169,110,0.45);
       padding: 8px 20px;
       border-radius: 100px;
       margin-bottom: 28px;
-      background: rgba(255,107,53,0.06);
+      background: rgba(201,169,110,0.06);
       opacity: 0;
       animation: heroReveal 0.6s ease forwards 0.05s;
     }
@@ -434,12 +445,13 @@
 
     /* Title — three distinct line styles for WOW */
     .hero__title {
-      font-family: 'Exo 2', sans-serif;
-      font-size: clamp(44px, 7.2vw, 96px);
-      font-weight: 900;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(54px, 9vw, 118px);
+      font-weight: 700;
+      font-style: italic;
       text-transform: uppercase;
-      line-height: 0.98;
-      letter-spacing: -0.01em;
+      line-height: 0.90;
+      letter-spacing: 0.04em;
       margin-bottom: 0;
     }
     .hero__title-line {
@@ -457,9 +469,9 @@
     /* Solid white line */
     .t-solid { color: #fff; }
 
-    /* Gradient orange-fire line */
+    /* Gradient gold shimmer line */
     .t-gradient {
-      background: linear-gradient(90deg, #ff6b35 0%, #fbbf24 40%, #ff6b35 100%);
+      background: linear-gradient(90deg, #c9a96e 0%, #e8d5a3 40%, #c9a96e 70%, #f0e0b0 100%);
       background-size: 200% 100%;
       -webkit-background-clip: text;
       background-clip: text;
@@ -494,13 +506,13 @@
       width: 72px;
       background: linear-gradient(90deg, var(--orange), var(--blue));
       border-radius: 2px;
-      box-shadow: 0 0 10px rgba(255,107,53,0.6);
+      box-shadow: 0 0 10px rgba(201,169,110,0.6);
     }
     .hero__divider-dot {
       width: 6px; height: 6px;
       border-radius: 50%;
       background: var(--orange);
-      box-shadow: 0 0 8px rgba(255,107,53,0.9);
+      box-shadow: 0 0 8px rgba(201,169,110,0.9);
       animation: labelDot 2s ease-in-out infinite 0.5s;
     }
 
@@ -514,7 +526,7 @@
       animation: heroReveal 0.6s ease forwards 0.82s;
     }
     .hero__origins span {
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: 14px;
       font-weight: 400;
       letter-spacing: 0.14em;
@@ -555,7 +567,7 @@
       50% { transform: translateX(-50%) translateY(8px); }
     }
     .hero__scroll span {
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: 11px;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -584,7 +596,7 @@
     }
     .stat:last-child { border-right: none; }
     .stat__num {
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: 42px;
       font-weight: 700;
       color: var(--orange);
@@ -593,7 +605,7 @@
       margin-bottom: 6px;
     }
     .stat__label {
-      font-family: 'Manrope', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 13px;
       color: rgba(255,255,255,0.7);
     }
@@ -603,7 +615,7 @@
     ============================== */
     .whyus { background: var(--bg-2); }
     .whyus__title {
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: clamp(24px, 3.5vw, 36px);
       font-weight: 700;
       color: var(--text);
@@ -656,7 +668,7 @@
       object-fit: contain;
     }
     .benefit-card h3 {
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: 15px;
       font-weight: 700;
       text-transform: uppercase;
@@ -742,7 +754,7 @@
       left: 12px;
       background: var(--orange);
       color: #fff;
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: 11px;
       font-weight: 600;
       letter-spacing: 0.1em;
@@ -765,7 +777,7 @@
     }
     .car-card__spec i { color: var(--blue); font-size: 11px; }
     .car-card h3 {
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: 20px;
       font-weight: 700;
       color: var(--text);
@@ -780,7 +792,7 @@
       margin-bottom: 14px;
     }
     .car-card__price {
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: 22px;
       font-weight: 700;
       color: var(--orange);
@@ -803,7 +815,7 @@
       margin-bottom: 36px;
     }
     .catalog-tab {
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 0.05em;
@@ -931,7 +943,7 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: 15px;
       font-weight: 600;
       color: var(--text);
@@ -1014,7 +1026,7 @@
     }
     .contact-detail__text strong, .contact-detail__text a {
       display: block;
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: 18px;
       font-weight: 600;
       color: #fff;
@@ -1031,7 +1043,7 @@
     .form-group { margin-bottom: 18px; }
     .form-group label {
       display: block;
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: 12px;
       font-weight: 500;
       letter-spacing: 0.1em;
@@ -1046,7 +1058,7 @@
       border: 1px solid rgba(255,255,255,0.2);
       border-radius: 8px;
       padding: 14px 16px;
-      font-family: 'Manrope', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 14px;
       color: #fff;
       transition: border-color 0.2s, background 0.2s;
@@ -1123,7 +1135,7 @@
       color: #fff;
     }
     .footer__nav h4 {
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 0.12em;
@@ -1139,7 +1151,7 @@
     }
     .footer__nav a:hover { color: var(--orange); }
     .footer__contacts h4 {
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 0.12em;
@@ -1180,7 +1192,7 @@
       right: -80px;
       width: 500px;
       height: 500px;
-      background: radial-gradient(circle, rgba(61,127,255,0.18) 0%, transparent 65%);
+      background: radial-gradient(circle, rgba(37,87,247,0.18) 0%, transparent 65%);
       pointer-events: none;
       z-index: 1;
     }
@@ -1221,7 +1233,7 @@
       padding: 0 20px;
     }
     .brand-ticker__item span {
-      font-family: 'Exo 2', sans-serif;
+      font-family: 'Syne', sans-serif;
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.2em;
@@ -1280,7 +1292,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: #0b0d14;
+        background: #060810;
         padding: 24px 20px;
         gap: 4px;
         overflow-y: auto;
@@ -2087,7 +2099,7 @@ setTimeout(() => heroBg && heroBg.classList.add('loaded'), 100);
         const d = Math.sqrt(dx * dx + dy * dy);
         if (d < CONNECTION_DIST) {
           const lineA = (1 - d / CONNECTION_DIST) * 0.10;
-          ctx.strokeStyle = `rgba(61,127,255,${lineA})`;
+          ctx.strokeStyle = `rgba(37,87,247,${lineA})`;
           ctx.lineWidth = 0.6;
           ctx.beginPath();
           ctx.moveTo(px, py);
@@ -2097,7 +2109,7 @@ setTimeout(() => heroBg && heroBg.classList.add('loaded'), 100);
       }
 
       // Particle dot
-      const color = p.isAccent ? '255,107,53' : '61,127,255';
+      const color = p.isAccent ? '201,169,110' : '37,87,247';
       ctx.beginPath();
       ctx.arc(px, py, p.r, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(${color},${0.35 * pulseA})`;
