@@ -46,7 +46,7 @@
       position: fixed;
       inset: 0;
       z-index: 99999;
-      background: #080a10;
+      background: #090807;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -64,7 +64,7 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse at 50% 40%, rgba(37,87,247,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 50% 40%, rgba(196,30,58,0.12) 0%, transparent 60%),
         radial-gradient(ellipse at 60% 70%, rgba(201,169,110,0.07) 0%, transparent 50%);
       pointer-events: none;
     }
@@ -77,8 +77,8 @@
       animation: loaderGlow 2s ease-in-out infinite;
     }
     @keyframes loaderGlow {
-      0%, 100% { filter: drop-shadow(0 0 18px rgba(37,87,247,0.55)); transform: scale(1); }
-      50%       { filter: drop-shadow(0 0 38px rgba(37,87,247,0.95)); transform: scale(1.04); }
+      0%, 100% { filter: drop-shadow(0 0 18px rgba(196,30,58,0.55)); transform: scale(1); }
+      50%       { filter: drop-shadow(0 0 38px rgba(196,30,58,0.95)); transform: scale(1.04); }
     }
     .loader__title {
       font-family: 'Syne', sans-serif;
@@ -126,29 +126,29 @@
     ul { list-style: none; }
     button { cursor: pointer; font: inherit; border: none; background: none; }
     ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: #060810; }
-    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #2557f7, #c9a96e); border-radius: 4px; }
+    ::-webkit-scrollbar-track { background: #090807; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #c41e3a, #c9a96e); border-radius: 4px; }
 
     /* ==============================
        VARIABLES
     ============================== */
     :root {
-      --bg: #060810;
-      --bg-2: #0c0f1c;
-      --bg-card: #101320;
-      --bg-card-hover: #151828;
-      --blue: #2557f7;
-      --blue-dark: #1840cc;
-      --blue-light: rgba(37,87,247,0.10);
+      --bg: #090807;
+      --bg-2: #110f0d;
+      --bg-card: #181410;
+      --bg-card-hover: #1e1a15;
+      --blue: #c41e3a;
+      --blue-dark: #9e1730;
+      --blue-light: rgba(196,30,58,0.10);
       --orange: #c9a96e;
       --orange-dark: #a8874a;
-      --white: #f4f6fc;
-      --text: #e6ebff;
-      --text-muted: rgba(200,210,240,0.50);
+      --white: #f6f2ed;
+      --text: #ede8de;
+      --text-muted: rgba(220,210,190,0.52);
       --border: rgba(255,255,255,0.06);
-      --border-hover: rgba(37,87,247,0.35);
+      --border-hover: rgba(196,30,58,0.35);
       --nav-h: 70px;
-      --glow-blue: 0 0 40px rgba(37,87,247,0.20);
+      --glow-blue: 0 0 40px rgba(196,30,58,0.22);
       --glow-orange: 0 0 40px rgba(201,169,110,0.28);
     }
 
@@ -238,7 +238,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 1000;
-      background: rgba(6,8,16,0.85);
+      background: rgba(9,8,7,0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
@@ -293,7 +293,7 @@
       top: 100%;
       left: 0;
       min-width: 220px;
-      background: #0c0f1c;
+      background: #110f0d;
       border-top: 2px solid var(--blue);
       box-shadow: 0 8px 30px rgba(0,0,0,0.3);
       padding: 8px 0;
@@ -375,12 +375,12 @@
       inset: 0;
       background:
         linear-gradient(95deg,
-          rgba(6,8,16,1.00)  0%,
-          rgba(6,8,16,1.00) 30%,
-          rgba(6,8,16,0.88) 52%,
-          rgba(6,8,16,0.35) 72%,
-          rgba(6,8,16,0.05) 100%),
-        radial-gradient(ellipse at 80% 40%, rgba(37,87,247,0.13) 0%, transparent 50%),
+          rgba(9,8,7,1.00)  0%,
+          rgba(9,8,7,1.00) 30%,
+          rgba(9,8,7,0.88) 52%,
+          rgba(9,8,7,0.35) 72%,
+          rgba(9,8,7,0.05) 100%),
+        radial-gradient(ellipse at 80% 40%, rgba(196,30,58,0.13) 0%, transparent 50%),
         radial-gradient(ellipse at 20% 90%, rgba(201,169,110,0.09) 0%, transparent 40%);
     }
     /* Ambient particle canvas */
@@ -403,7 +403,7 @@
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: transparent;
-      -webkit-text-stroke: 1.5px rgba(37,87,247,0.07);
+      -webkit-text-stroke: 1.5px rgba(196,30,58,0.07);
       user-select: none;
       pointer-events: none;
       z-index: 0;
@@ -411,8 +411,8 @@
       animation: watermarkPulse 8s ease-in-out infinite;
     }
     @keyframes watermarkPulse {
-      0%, 100% { -webkit-text-stroke-color: rgba(37,87,247,0.07); }
-      50%       { -webkit-text-stroke-color: rgba(37,87,247,0.13); }
+      0%, 100% { -webkit-text-stroke-color: rgba(196,30,58,0.07); }
+      50%       { -webkit-text-stroke-color: rgba(196,30,58,0.13); }
     }
     .hero .container { position: relative; z-index: 1; }
     .hero__content {
@@ -1096,7 +1096,7 @@
        FOOTER
     ============================== */
     .footer {
-      background: #080a10;
+      background: #090807;
       padding: 60px 0 30px;
       border-top: 1px solid var(--border);
     }
@@ -1192,7 +1192,7 @@
       right: -80px;
       width: 500px;
       height: 500px;
-      background: radial-gradient(circle, rgba(37,87,247,0.18) 0%, transparent 65%);
+      background: radial-gradient(circle, rgba(196,30,58,0.18) 0%, transparent 65%);
       pointer-events: none;
       z-index: 1;
     }
@@ -1292,7 +1292,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: #060810;
+        background: #090807;
         padding: 24px 20px;
         gap: 4px;
         overflow-y: auto;
@@ -2099,7 +2099,7 @@ setTimeout(() => heroBg && heroBg.classList.add('loaded'), 100);
         const d = Math.sqrt(dx * dx + dy * dy);
         if (d < CONNECTION_DIST) {
           const lineA = (1 - d / CONNECTION_DIST) * 0.10;
-          ctx.strokeStyle = `rgba(37,87,247,${lineA})`;
+          ctx.strokeStyle = `rgba(196,30,58,${lineA})`;
           ctx.lineWidth = 0.6;
           ctx.beginPath();
           ctx.moveTo(px, py);
@@ -2109,7 +2109,7 @@ setTimeout(() => heroBg && heroBg.classList.add('loaded'), 100);
       }
 
       // Particle dot
-      const color = p.isAccent ? '201,169,110' : '37,87,247';
+      const color = p.isAccent ? '201,169,110' : '196,30,58';
       ctx.beginPath();
       ctx.arc(px, py, p.r, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(${color},${0.35 * pulseA})`;
