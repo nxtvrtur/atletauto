@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Атлет-Авто — Авто из Китая, Кореи, Японии под ключ</title>
-  <meta name="description" content="Официальный импортёр с 2018 года. Авто из Китая, Кореи, Японии, ОАЭ, Европы. Под ключ от 14 дней. Владивосток — вся Россия.">
+  <meta name="description" content="Официальный импортёр с 2018 года. Авто из Китая, Кореи, Японии под ключ от 14 дней. Владивосток — вся Россия.">
   <link rel="icon" href="images/tild6436-3536-4334-b835-393235303734_favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -171,21 +171,22 @@
     .nav-mobile a:hover { color: var(--or); }
 
     /* ── HERO ── */
-    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; padding-top: var(--nh); }
+    .hero { position: relative; min-height: 100vh; overflow: hidden; padding-top: var(--nh); display: flex; }
     .hero-bg {
       position: absolute; inset: 0;
       background-image: url('images/catalog/mercedes.jpg');
-      background-size: cover; background-position: 65% center;
+      background-size: cover; background-position: 78% center;
       transform: scale(1.06); transition: transform 8s ease;
     }
     .hero-bg.loaded { transform: scale(1); }
     .hero-vignette {
       position: absolute; inset: 0;
       background:
-        linear-gradient(90deg, var(--bg) 0%, var(--bg) 28%, rgba(13,11,10,.9) 48%, rgba(13,11,10,.4) 68%, transparent 100%),
-        linear-gradient(180deg, transparent 55%, rgba(13,11,10,.8) 100%);
+        linear-gradient(90deg, rgba(13,11,10,.98) 0%, rgba(13,11,10,.92) 32%, rgba(13,11,10,.55) 52%, rgba(13,11,10,.12) 68%, transparent 85%),
+        linear-gradient(180deg, transparent 50%, rgba(13,11,10,.9) 100%);
     }
-    .hero-content { position: relative; z-index: 1; max-width: 700px; padding: 60px 0 100px; }
+    .hero .container { display: grid; grid-template-columns: 1fr 1fr; align-items: center; min-height: calc(100vh - var(--nh)); }
+    .hero-content { position: relative; z-index: 1; padding: 60px 0 100px; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 10px;
       font-family: var(--fm); font-size: 11px; letter-spacing: .2em; text-transform: uppercase;
@@ -328,7 +329,8 @@
     .quiz-step, .quiz-result { display: none; }
     .quiz-step.active, .quiz-result.active { display: block; }
     .quiz-q { font-family: var(--fd); font-size: clamp(28px,4vw,44px); font-weight: 800; text-transform: uppercase; letter-spacing: .02em; color: var(--w); margin-bottom: 36px; }
-    .quiz-opts { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+    .quiz-opts { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; }
+    .quiz-opts--3 { grid-template-columns: repeat(3,1fr); }
     .quiz-opt {
       padding: 20px 14px; border: 1px solid var(--b); border-radius: var(--r);
       background: var(--bg); text-align: center; transition: all .2s;
@@ -427,36 +429,83 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
+      .hero .container { grid-template-columns: 3fr 2fr; }
       .utp-grid { grid-template-columns: repeat(2,1fr); }
       .tl-steps { grid-template-columns: repeat(3,1fr); }
       .tab-pane.active { grid-template-columns: repeat(2,1fr); }
       .vid-grid { grid-template-columns: repeat(2,1fr); }
       .mgr-grid { grid-template-columns: repeat(2,1fr); }
       .footer-top { grid-template-columns: 1fr 1fr; }
-      .quiz-opts { grid-template-columns: repeat(2,1fr); }
     }
     @media (max-width: 768px) {
-      section { padding: 72px 0; }
-      .container { padding: 0 20px; }
-      h1.hero-title { font-size: clamp(56px,14vw,88px); }
+      :root { --nh: 60px; }
+      section { padding: 64px 0; }
+      .container { padding: 0 16px; }
+
+      /* Hero — full-width single column on mobile */
+      .hero .container { grid-template-columns: 1fr; }
+      .hero-content { padding: 40px 0 80px; }
+      h1.hero-title { font-size: clamp(48px,13vw,80px); line-height: .9; }
+      .hero-badge { font-size: 10px; padding: 6px 12px; margin-bottom: 22px; }
+      .hero-sub { font-size: 15px; margin-bottom: 22px; }
+      .hero-chips { gap: 6px; margin-bottom: 28px; }
+      .chip { font-size: 11px; padding: 6px 12px; }
+      .hero-ctas { flex-direction: column; gap: 10px; }
+      .hero-ctas .btn { justify-content: center; }
+      .hero-stats { gap: 18px; margin-top: 40px; padding-top: 28px; flex-wrap: wrap; }
+      .hstat-n { font-size: 36px; }
+
+      /* Nav */
+      .nav-links, .nav-phone { display: none; }
+      .nav-actions .btn { display: none; }
+      .burger { display: flex; }
+      .nav-inner { gap: 16px; }
+
+      /* Sections */
       .utp-grid { grid-template-columns: 1fr; }
-      .tl-steps { grid-template-columns: 1fr; }
+      .section-title { font-size: clamp(28px,8vw,46px); margin-bottom: 36px; }
+
+      /* Timeline */
+      .tl-steps { grid-template-columns: 1fr; gap: 32px; }
       .tl-steps::before, .tl-line { display: none; }
+      .step { flex-direction: row; text-align: left; gap: 18px; align-items: flex-start; }
+      .step-dot { flex-shrink: 0; margin-bottom: 0; }
+      .step-b { max-width: none; }
+
+      /* Catalog */
+      .tabs-bar { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
       .tab-pane.active { grid-template-columns: 1fr; }
+      .car-photo { height: 190px; }
+
+      /* Quiz */
+      .quiz-opts { grid-template-columns: 1fr 1fr; }
+      .quiz-opts--3 { grid-template-columns: 1fr 1fr 1fr; }
+      .quiz-q { font-size: clamp(22px,6vw,34px); margin-bottom: 24px; }
+      .result-box { padding: 28px 16px; }
+      .res-price { font-size: clamp(26px,7vw,44px); }
+
+      /* Reviews */
       .vid-grid { grid-template-columns: 1fr; }
-      .mgr-grid { grid-template-columns: 1fr; }
       .ratings-row { flex-direction: column; width: 100%; }
+      .rat-block { padding: 16px 20px; }
       .rat-block + .rat-block { border-left: none; border-top: 1px solid var(--b); }
-      .footer-top { grid-template-columns: 1fr; }
+      .rat-num { font-size: 24px; }
+
+      /* Managers */
+      .mgr-grid { grid-template-columns: 1fr; }
+      .addr-strip { flex-direction: column; align-items: flex-start; gap: 16px; padding: 20px; }
+
+      /* Footer */
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
       .ft-links { grid-template-columns: repeat(2,1fr); }
       .ft-soc { justify-content: flex-start; }
-      .footer-bot { flex-direction: column; align-items: flex-start; }
-      .nav-links, .nav-actions { display: none; }
-      .burger { display: flex; }
-      .hero-stats { gap: 24px; }
-      .quiz-opts { grid-template-columns: 1fr 1fr; }
-      .result-box { padding: 28px 20px; }
-      .addr-strip { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .footer-bot { flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+    @media (max-width: 480px) {
+      h1.hero-title { font-size: clamp(40px,12vw,66px); }
+      .quiz-opts { grid-template-columns: 1fr; }
+      .quiz-opts--3 { grid-template-columns: 1fr; }
+      .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     }
   </style>
 </head>
@@ -520,8 +569,6 @@
         <span class="chip">🇨🇳 Китай</span>
         <span class="chip">🇰🇷 Корея</span>
         <span class="chip">🇯🇵 Япония</span>
-        <span class="chip">🇦🇪 ОАЭ</span>
-        <span class="chip">🇪🇺 Европа</span>
       </div>
       <div class="hero-ctas">
         <a href="#quiz" class="btn btn-primary">
@@ -694,7 +741,7 @@
       <div class="car-card reveal" style="transition-delay:.24s">
         <div class="car-photo">
           <img src="images/catalog/mercedes.jpg" alt="Mercedes-Benz E 350">
-          <span class="car-bd">🇪🇺 Европа</span>
+          <span class="car-bd">🇯🇵 Япония</span>
         </div>
         <div class="car-body">
           <div class="car-model">Mercedes-Benz E 350</div>
@@ -711,7 +758,7 @@
       <div class="car-card reveal" style="transition-delay:.32s">
         <div class="car-photo">
           <img src="images/catalog/bmw.jpg" alt="BMW 5 серии">
-          <span class="car-bd">🇪🇺 Европа</span>
+          <span class="car-bd">🇰🇷 Корея</span>
         </div>
         <div class="car-body">
           <div class="car-model">BMW 5 серии</div>
@@ -846,7 +893,7 @@
       <!-- Step 1: Country -->
       <div class="quiz-step active" id="qs1">
         <div class="quiz-q">Из какой страны везём?</div>
-        <div class="quiz-opts">
+        <div class="quiz-opts quiz-opts--3">
           <button class="quiz-opt" data-step="1" data-key="country" data-val="china">
             <div class="qoi">🇨🇳</div><div class="qol">Китай</div><div class="qos">LiAuto, Haval, BYD, Tank</div>
           </button>
@@ -855,15 +902,6 @@
           </button>
           <button class="quiz-opt" data-step="1" data-key="country" data-val="japan">
             <div class="qoi">🇯🇵</div><div class="qol">Япония</div><div class="qos">Toyota, Lexus, Nissan</div>
-          </button>
-          <button class="quiz-opt" data-step="1" data-key="country" data-val="uae">
-            <div class="qoi">🇦🇪</div><div class="qol">ОАЭ</div><div class="qos">Европейские б/у авто</div>
-          </button>
-          <button class="quiz-opt" data-step="1" data-key="country" data-val="europe">
-            <div class="qoi">🇪🇺</div><div class="qol">Европа</div><div class="qos">BMW, Mercedes, Audi</div>
-          </button>
-          <button class="quiz-opt" data-step="1" data-key="country" data-val="china">
-            <div class="qoi">🌐</div><div class="qol">Другая</div><div class="qos">Уточним индивидуально</div>
           </button>
         </div>
       </div>
