@@ -3,2276 +3,2144 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Атлет-Авто — Автомобили под заказ Китай || Япония || Корея</title>
-  <meta name="description" content="Импорт автомобилей из Японии, Кореи и Китая. Автомобили в наличии и под заказ. Доставка до Владивостока и по всей России">
-  <meta name="keywords" content="Автомобиль под заказ, Импорт автомобилей, Купить авто, Доставка автомобилей по России">
+  <title>Атлет-Авто — Авто из Китая, Кореи, Японии под ключ</title>
+  <meta name="description" content="Официальный импортёр автомобилей с 2018 года. Доставка из Китая, Кореи, Японии, ОАЭ, Европы во Владивосток и по всей России. От 14 дней. Таможня под ключ.">
+  <meta name="keywords" content="авто из Китая, автомобиль под заказ, импорт авто Владивосток, растаможка авто, Атлет-Авто">
   <link rel="icon" href="images/tild6436-3536-4334-b835-393235303734_favicon-32x32.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Raleway:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    /* ==============================
+    /* ============================
        RESET & BASE
-    ============================== */
+    ============================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #00e5a0;
+      --accent-dim: rgba(0,229,160,0.15);
+      --accent-glow: rgba(0,229,160,0.2);
+      --blue: #4f8ef7;
+      --bg: #090909;
+      --bg-card: #141414;
+      --bg-mid: #0f0f0f;
+      --bg-footer: #060606;
+      --text: #e8e8e8;
+      --text-muted: #7a7a8a;
+      --text-dim: #555566;
+      --border: rgba(255,255,255,0.07);
+      --border-accent: rgba(0,229,160,0.3);
+      --font-head: 'Rajdhani', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-price: 'Bebas Neue', cursive;
+    }
+
     html { scroll-behavior: smooth; }
+
     body {
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 400;
+      font-family: var(--font-body);
       background: var(--bg);
       color: var(--text);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
-    /* Premium grain overlay */
+
     body::after {
       content: '';
       position: fixed;
       inset: 0;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
       background-size: 300px 300px;
-      opacity: 0.028;
+      opacity: 0.025;
       pointer-events: none;
       z-index: 99990;
     }
 
-    /* ==============================
-       LOADER
-    ============================== */
-    #loader {
-      position: fixed;
-      inset: 0;
-      z-index: 99999;
-      background: #090807;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0;
-      transition: transform 1s cubic-bezier(.76,0,.24,1), opacity 0.4s ease;
-      will-change: transform;
-    }
-    #loader.hide {
-      transform: translateY(-100%);
-      opacity: 0;
-      pointer-events: none;
-    }
-    .loader__bg-glow {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse at 50% 40%, rgba(201,169,110,0.12) 0%, transparent 60%),
-        radial-gradient(ellipse at 60% 70%, rgba(201,169,110,0.07) 0%, transparent 50%);
-      pointer-events: none;
-    }
-    .loader__logo {
-      height: 88px;
-      width: auto;
-      position: relative;
-      z-index: 1;
-      margin-bottom: 20px;
-      animation: loaderGlow 2s ease-in-out infinite;
-    }
-    @keyframes loaderGlow {
-      0%, 100% { filter: drop-shadow(0 0 18px rgba(201,169,110,0.55)); transform: scale(1); }
-      50%       { filter: drop-shadow(0 0 38px rgba(201,169,110,0.95)); transform: scale(1.04); }
-    }
-    .loader__title {
-      font-family: 'Raleway', sans-serif;
-      font-size: clamp(26px, 4vw, 36px);
-      font-weight: 900;
-      letter-spacing: 0.18em;
-      color: #fff;
-      text-transform: uppercase;
-      position: relative;
-      z-index: 1;
-      margin-bottom: 40px;
-    }
-    .loader__title em {
-      font-style: normal;
-      color: var(--orange);
-    }
-    .loader__track {
-      width: 220px;
-      height: 2px;
-      background: rgba(255,255,255,0.07);
-      border-radius: 2px;
-      overflow: hidden;
-      position: relative;
-      z-index: 1;
-      margin-bottom: 14px;
-    }
-    .loader__bar {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, var(--blue), var(--orange));
-      border-radius: 2px;
-      box-shadow: 0 0 14px rgba(201,169,110,0.7);
-    }
-    .loader__sub {
-      font-family: 'Raleway', sans-serif;
-      font-size: 10px;
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ============================
+       TYPOGRAPHY
+    ============================ */
+    .eyebrow {
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 600;
       letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.28);
-      position: relative;
-      z-index: 1;
-    }
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-    ul { list-style: none; }
-    button { cursor: pointer; font: inherit; border: none; background: none; }
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: #090807; }
-    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #f0c060, #a07830); border-radius: 4px; }
-
-    /* ==============================
-       VARIABLES
-    ============================== */
-    :root {
-      --bg: #090807;
-      --bg-2: #110f0d;
-      --bg-card: #181410;
-      --bg-card-hover: #1e1a15;
-      --blue: #c9a96e;
-      --blue-dark: #a8874a;
-      --blue-light: rgba(201,169,110,0.10);
-      --orange: #f0c060;
-      --orange-dark: #d4a030;
-      --white: #f6f2ed;
-      --text: #ede8de;
-      --text-muted: rgba(220,210,190,0.52);
-      --border: rgba(201,169,110,0.12);
-      --border-hover: rgba(201,169,110,0.45);
-      --nav-h: 70px;
-      --glow-blue: 0 0 40px rgba(201,169,110,0.25);
-      --glow-orange: 0 0 40px rgba(240,192,96,0.30);
+      color: var(--accent);
+      margin-bottom: 16px;
     }
 
-    /* ==============================
-       LAYOUT
-    ============================== */
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    .section { padding: 80px 0; }
-    @media (max-width: 768px) { .section { padding: 50px 0; } }
-
-    /* ==============================
-       TYPOGRAPHY
-    ============================== */
     .section-title {
-      font-family: 'Raleway', sans-serif;
-      font-size: clamp(28px, 4vw, 42px);
-      font-weight: 800;
-      color: var(--text);
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
+      font-family: var(--font-head);
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 700;
       line-height: 1.1;
-      margin-bottom: 14px;
+      letter-spacing: 0.02em;
+      color: #fff;
+      margin-bottom: 48px;
     }
-    .section-title span { color: var(--blue); }
-    .section-subtitle {
-      font-size: 16px;
-      color: var(--text-muted);
-      line-height: 1.6;
-      max-width: 680px;
-    }
-    .section-head { margin-bottom: 50px; }
 
-    /* ==============================
+    .price-text {
+      font-family: var(--font-price);
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+
+    /* ============================
+       LAYOUT HELPERS
+    ============================ */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    /* ============================
+       GLASS CARD
+    ============================ */
+    .glass-card {
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+    .glass-card:hover {
+      border-color: rgba(0,229,160,0.25);
+      box-shadow: 0 0 40px rgba(0,229,160,0.08), 0 20px 60px rgba(0,0,0,0.4);
+      background: rgba(0,229,160,0.03);
+    }
+
+    /* ============================
+       REVEAL ANIMATION
+    ============================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ============================
        BUTTONS
-    ============================== */
+    ============================ */
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-family: 'Raleway', sans-serif;
-      font-weight: 500;
-      font-size: 16px;
-      letter-spacing: 0.05em;
-      padding: 14px 32px;
+      padding: 14px 28px;
       border-radius: 8px;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.04em;
       transition: all 0.25s ease;
       cursor: pointer;
-      text-transform: uppercase;
       white-space: nowrap;
     }
-    .btn-orange {
-      background: var(--orange);
-      color: #fff;
-      border: 2px solid var(--orange);
+    .btn-accent {
+      background: var(--accent);
+      color: #000;
+      border: 1px solid var(--accent);
     }
-    .btn-orange:hover {
-      background: var(--orange-dark);
-      border-color: var(--orange-dark);
-      transform: translateY(-2px);
-      box-shadow: var(--glow-orange);
-    }
-    .btn-blue {
-      background: var(--blue);
-      color: #fff;
-      border: 2px solid var(--blue);
-    }
-    .btn-blue:hover {
-      background: var(--blue-dark);
-      border-color: var(--blue-dark);
-      transform: translateY(-2px);
-      box-shadow: var(--glow-blue);
+    .btn-accent:hover {
+      background: #00ffb3;
+      box-shadow: 0 0 30px rgba(0,229,160,0.4);
+      transform: translateY(-1px);
     }
     .btn-outline {
       background: transparent;
-      color: var(--white);
-      border: 2px solid var(--white);
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.2);
     }
     .btn-outline:hover {
-      background: var(--white);
-      color: var(--blue);
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+    .btn-sm {
+      padding: 9px 18px;
+      font-size: 13px;
     }
 
-    /* ==============================
-       NAVIGATION
-    ============================== */
+    /* ============================
+       LOADER
+    ============================ */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: #090909;
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+    #loader.hide {
+      transform: translateY(-100%);
+    }
+    .loader-logo {
+      width: 160px;
+      filter: drop-shadow(0 0 20px rgba(0,229,160,0.5));
+      animation: logoPulse 2s ease-in-out infinite;
+      margin-bottom: 48px;
+    }
+    @keyframes logoPulse {
+      0%, 100% { filter: drop-shadow(0 0 15px rgba(0,229,160,0.4)); }
+      50% { filter: drop-shadow(0 0 35px rgba(0,229,160,0.8)); }
+    }
+    .loader-bar-wrap {
+      width: 260px;
+      height: 2px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .loader-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), #4f8ef7);
+      border-radius: 2px;
+      transition: width 0.1s linear;
+      box-shadow: 0 0 10px rgba(0,229,160,0.6);
+    }
+    .loader-pct {
+      font-family: var(--font-price);
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 12px;
+      letter-spacing: 0.1em;
+    }
+
+    /* ============================
+       NAVBAR
+    ============================ */
     .nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      background: rgba(9,8,7,0.85);
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      z-index: 9000;
+      background: rgba(9,9,9,0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      height: var(--nav-h);
-      transition: background 0.3s;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease, background 0.3s ease;
     }
-    .nav__inner {
+    .nav.scrolled {
+      border-bottom-color: rgba(0,229,160,0.15);
+      background: rgba(9,9,9,0.95);
+    }
+    .nav-inner {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 32px;
       height: 100%;
       display: flex;
       align-items: center;
-      gap: 0;
+      justify-content: space-between;
+      gap: 24px;
     }
-    .nav__logo { flex-shrink: 0; margin-right: 30px; }
-    .nav__logo img { height: 44px; width: auto; object-fit: contain; }
-
-    .nav__menu {
+    .nav-logo img {
+      height: 38px;
+      width: auto;
+    }
+    .nav-links {
       display: flex;
       align-items: center;
-      flex: 1;
-      height: 100%;
+      gap: 36px;
+      list-style: none;
     }
-    .nav__item {
-      position: relative;
-      height: 100%;
-      display: flex;
-      align-items: center;
-    }
-    .nav__link {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-family: 'Raleway', sans-serif;
-      font-size: 14px;
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.85);
-      padding: 0 14px;
-      height: 100%;
-      transition: color 0.2s;
-      white-space: nowrap;
-    }
-    .nav__link:hover { color: #fff; }
-    .nav__link i { font-size: 10px; transition: transform 0.2s; }
-    .nav__item:hover .nav__link i { transform: rotate(180deg); }
-
-    .nav__dropdown {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 220px;
-      background: #110f0d;
-      border-top: 2px solid var(--blue);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-      padding: 8px 0;
-      display: none;
-      z-index: 100;
-    }
-    .nav__item:hover .nav__dropdown { display: block; }
-    .nav__dropdown a {
-      display: block;
-      padding: 10px 20px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 13px;
-      color: rgba(255,255,255,0.8);
-      transition: all 0.15s;
-    }
-    .nav__dropdown a:hover {
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-      padding-left: 26px;
-    }
-
-    .nav__right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-left: auto;
-    }
-    .nav__phone {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'Raleway', sans-serif;
-      font-size: 16px;
+    .nav-links a {
+      font-family: var(--font-head);
       font-weight: 600;
-      color: #fff;
-      letter-spacing: 0.02em;
-      white-space: nowrap;
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
     }
-    .nav__phone i { color: var(--orange); }
-
-    .nav__burger {
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta { flex-shrink: 0; }
+    .burger {
       display: none;
       flex-direction: column;
       gap: 5px;
-      padding: 8px;
-      margin-left: auto;
+      cursor: pointer;
+      padding: 4px;
     }
-    .nav__burger span {
+    .burger span {
       display: block;
       width: 24px;
       height: 2px;
-      background: #fff;
+      background: var(--text);
       border-radius: 2px;
-      transition: all 0.3s;
+      transition: all 0.3s ease;
     }
+    .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    /* ==============================
+    /* Mobile nav */
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: rgba(9,9,9,0.98);
+      backdrop-filter: blur(20px);
+      padding: 24px 32px;
+      border-bottom: 1px solid var(--border);
+      z-index: 8999;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s;
+    }
+    .nav-mobile a:hover { color: var(--accent); }
+
+    /* ============================
        HERO
-    ============================== */
-    .hero {
+    ============================ */
+    #hero {
       position: relative;
-      min-height: 100vh;
+      height: 100vh;
+      min-height: 600px;
       display: flex;
       align-items: center;
       overflow: hidden;
     }
-    .hero__bg {
+    .hero-bg {
       position: absolute;
       inset: 0;
-      background-image: url('images/catalog/chery.jpg');
+      background-image: url('images/catalog/liauto.jpg');
+      background-position: 65% center;
       background-size: cover;
-      background-position: 70% center;
       transform: scale(1.05);
-      transition: transform 8s ease;
+      transition: transform 1.2s ease;
     }
-    .hero__bg.loaded { transform: scale(1); }
-    .hero__overlay {
+    .hero-bg.loaded { transform: scale(1); }
+    .hero-overlay {
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(95deg,
-          rgba(9,8,7,1.00)  0%,
-          rgba(9,8,7,1.00) 30%,
-          rgba(9,8,7,0.88) 52%,
-          rgba(9,8,7,0.35) 72%,
-          rgba(9,8,7,0.05) 100%),
-        radial-gradient(ellipse at 80% 40%, rgba(201,169,110,0.13) 0%, transparent 50%),
-        radial-gradient(ellipse at 20% 90%, rgba(201,169,110,0.09) 0%, transparent 40%);
+      background: linear-gradient(90deg,
+        rgba(9,9,9,0.97) 0%,
+        rgba(9,9,9,0.7) 50%,
+        transparent 85%
+      );
     }
-    /* Ambient particle canvas */
-    .hero__particles {
-      position: absolute;
-      inset: 0;
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+      padding-top: 72px;
+      max-width: 680px;
       width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
+      padding-left: 32px;
     }
-    /* Ghost watermark */
-    .hero__watermark {
-      position: absolute;
-      bottom: -30px;
-      right: -20px;
-      font-family: 'Raleway', sans-serif;
-      font-size: clamp(130px, 20vw, 260px);
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: transparent;
-      -webkit-text-stroke: 1.5px rgba(201,169,110,0.07);
-      user-select: none;
-      pointer-events: none;
-      z-index: 0;
-      line-height: 1;
-      animation: watermarkPulse 8s ease-in-out infinite;
-    }
-    @keyframes watermarkPulse {
-      0%, 100% { -webkit-text-stroke-color: rgba(201,169,110,0.07); }
-      50%       { -webkit-text-stroke-color: rgba(201,169,110,0.13); }
-    }
-    .hero .container { position: relative; z-index: 1; }
-    .hero__content {
-      max-width: 720px;
-      padding: calc(var(--nav-h) + 50px) 0 80px;
-    }
-    .hero__label {
+    .hero-eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      font-family: 'Raleway', sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.8);
-      border: 1px solid rgba(201,169,110,0.45);
-      padding: 8px 20px;
+      gap: 8px;
+      padding: 6px 14px;
+      border: 1px solid rgba(0,229,160,0.4);
       border-radius: 100px;
-      margin-bottom: 28px;
-      background: rgba(201,169,110,0.06);
-      opacity: 0;
-      animation: heroReveal 0.6s ease forwards 0.05s;
-    }
-    .hero__label i { animation: labelDot 2s ease-in-out infinite; }
-    @keyframes labelDot {
-      0%,100% { opacity: 1; transform: scale(1); }
-      50%      { opacity: 0.5; transform: scale(0.7); }
-    }
-
-    /* Title — three distinct line styles for WOW */
-    .hero__title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(54px, 9vw, 118px);
-      font-weight: 700;
-      font-style: italic;
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      line-height: 0.90;
-      letter-spacing: 0.04em;
-      margin-bottom: 0;
-    }
-    .hero__title-line {
-      display: block;
+      color: var(--accent);
+      margin-bottom: 28px;
       opacity: 0;
       transform: translateY(30px);
+      animation: heroReveal 0.8s ease 0.1s forwards;
     }
-    .hero__title-line:nth-child(1) { animation: heroReveal 0.7s cubic-bezier(.22,1,.36,1) forwards 0.2s; }
-    .hero__title-line:nth-child(2) { animation: heroReveal 0.7s cubic-bezier(.22,1,.36,1) forwards 0.38s; }
-    .hero__title-line:nth-child(3) { animation: heroReveal 0.7s cubic-bezier(.22,1,.36,1) forwards 0.55s; }
+    .hero-headline {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: clamp(52px, 9vw, 120px);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 24px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: heroReveal 0.8s ease 0.25s forwards;
+    }
+    .hero-headline .accent { color: var(--accent); }
+    .hero-subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(15px, 1.8vw, 18px);
+      font-weight: 300;
+      color: rgba(232,232,232,0.75);
+      line-height: 1.6;
+      margin-bottom: 28px;
+      max-width: 480px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: heroReveal 0.8s ease 0.4s forwards;
+    }
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 36px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: heroReveal 0.8s ease 0.55s forwards;
+    }
+    .chip {
+      padding: 6px 14px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 100px;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.04);
+      transition: all 0.25s ease;
+    }
+    .chip:hover {
+      border-color: rgba(0,229,160,0.3);
+      color: var(--accent);
+    }
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: heroReveal 0.8s ease 0.7s forwards;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 0;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+      padding-top: 28px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: heroReveal 0.8s ease 0.85s forwards;
+    }
+    .hero-stat {
+      padding: 0 28px 0 0;
+      margin-right: 28px;
+      border-right: 1px solid var(--border);
+    }
+    .hero-stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+    .hero-stat-val {
+      font-family: var(--font-price);
+      font-size: 28px;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
     @keyframes heroReveal {
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Solid white line */
-    .t-solid { color: #fff; }
-
-    /* Gradient gold shimmer line */
-    .t-gradient {
-      background: linear-gradient(90deg, #a07830 0%, #f0d070 28%, #e8b84b 52%, #f5e090 75%, #c9a96e 100%);
-      background-size: 200% 100%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: heroReveal 0.7s cubic-bezier(.22,1,.36,1) forwards 0.38s,
-                 gradientPan 3s ease-in-out infinite 1.2s;
-    }
-    @keyframes gradientPan {
-      0%,100% { background-position: 0% 50%; }
-      50%      { background-position: 100% 50%; }
-    }
-
-    /* Outline / ghost line */
-    .t-outline {
-      color: transparent;
-      -webkit-text-stroke: 2px rgba(255,255,255,0.28);
-      font-size: 0.88em;
-      letter-spacing: 0.06em;
-    }
-
-    /* Glow divider under title */
-    .hero__divider {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 22px 0 20px;
-      opacity: 0;
-      animation: heroReveal 0.6s ease forwards 0.72s;
-    }
-    .hero__divider-line {
-      height: 2px;
-      width: 72px;
-      background: linear-gradient(90deg, var(--orange), var(--blue));
-      border-radius: 2px;
-      box-shadow: 0 0 10px rgba(201,169,110,0.6);
-    }
-    .hero__divider-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--orange);
-      box-shadow: 0 0 8px rgba(201,169,110,0.9);
-      animation: labelDot 2s ease-in-out infinite 0.5s;
-    }
-
-    .hero__origins {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px 16px;
-      margin-bottom: 20px;
-      opacity: 0;
-      animation: heroReveal 0.6s ease forwards 0.82s;
-    }
-    .hero__origins span {
-      font-family: 'Raleway', sans-serif;
-      font-size: 14px;
-      font-weight: 400;
-      letter-spacing: 0.14em;
-      color: rgba(255,255,255,0.55);
-      text-transform: uppercase;
-    }
-    .hero__origins .sep { color: var(--orange); font-size: 11px; opacity: 0.6; }
-    .hero__desc {
-      font-size: 15px;
-      line-height: 1.72;
-      color: rgba(255,255,255,0.72);
-      margin-bottom: 36px;
-      max-width: 500px;
-      opacity: 0;
-      animation: heroReveal 0.6s ease forwards 0.9s;
-    }
-    .hero__actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: heroReveal 0.6s ease forwards 1.05s;
-    }
-    .hero__scroll {
-      position: absolute;
-      bottom: 36px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      z-index: 1;
-      animation: bounce 2s ease-in-out infinite;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(8px); }
-    }
-    .hero__scroll span {
-      font-family: 'Raleway', sans-serif;
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
-    }
-    .hero__scroll i { color: var(--orange); font-size: 20px; }
-
-    /* ==============================
-       STATS BAR
-    ============================== */
-    .stats-bar {
-      background: var(--bg-2);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 36px 0;
-    }
-    .stats-bar__grid {
+    /* ============================
+       UTP / TRUST
+    ============================ */
+    #utp { background: var(--bg); }
+    .utp-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
-    .stat {
-      text-align: center;
-      border-right: 1px solid rgba(255,255,255,0.15);
-      padding: 0 20px;
+    .utp-card {
+      padding: 32px;
     }
-    .stat:last-child { border-right: none; }
-    .stat__num {
-      font-family: 'Raleway', sans-serif;
-      font-size: 42px;
-      font-weight: 700;
-      color: var(--orange);
-      line-height: 1;
-      display: block;
-      margin-bottom: 6px;
-    }
-    .stat__label {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 13px;
-      color: rgba(255,255,255,0.7);
-    }
-
-    /* ==============================
-       WHY US
-    ============================== */
-    .whyus { background: var(--bg-2); }
-    .whyus__title {
-      font-family: 'Raleway', sans-serif;
-      font-size: clamp(24px, 3.5vw, 36px);
-      font-weight: 700;
-      color: var(--text);
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-      margin-bottom: 40px;
-    }
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 24px;
-    }
-    .benefit-card {
-      background: var(--bg-card);
-      border-radius: 16px;
-      padding: 32px 24px;
-      text-align: center;
-      border: 1px solid var(--border);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .benefit-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--blue), var(--orange));
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-    .benefit-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--border-hover);
-      box-shadow: var(--glow-blue);
-      background: var(--bg-card-hover);
-    }
-    .benefit-card:hover::after { transform: scaleX(1); }
-    .benefit-card__icon {
-      width: 72px;
-      height: 72px;
-      margin: 0 auto 20px;
+    .utp-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: rgba(0,229,160,0.08);
+      border: 1px solid rgba(0,229,160,0.2);
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 22px;
+      color: var(--accent);
+      margin-bottom: 20px;
     }
-    .benefit-card__icon img {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
-    }
-    .benefit-card h3 {
-      font-family: 'Raleway', sans-serif;
-      font-size: 15px;
+    .utp-title {
+      font-family: var(--font-head);
       font-weight: 700;
-      text-transform: uppercase;
-      color: var(--text);
+      font-size: 18px;
+      color: #fff;
       margin-bottom: 10px;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.02em;
     }
-    .benefit-card p {
-      font-size: 13px;
+    .utp-body {
+      font-family: var(--font-body);
+      font-size: 14px;
       line-height: 1.65;
       color: var(--text-muted);
     }
 
-    /* ==============================
-       CAR REVIEWS (DELIVERED CARS)
-    ============================== */
-    .car-reviews { background: var(--bg); }
-    .car-reviews__header {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-    .car-reviews__header p {
-      font-size: 16px;
-      color: var(--text-muted);
-      margin-top: 10px;
-    }
-    .cars-grid {
+    /* ============================
+       HOW IT WORKS
+    ============================ */
+    #how { background: var(--bg-mid); }
+    .timeline {
+      position: relative;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+    }
+    .timeline-line {
+      position: absolute;
+      top: 40px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--border);
+      overflow: hidden;
+    }
+    .timeline-line-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), #4f8ef7);
+      transition: width 1.5s ease;
+      box-shadow: 0 0 10px rgba(0,229,160,0.4);
+    }
+    .timeline-line-fill.animated { width: 100%; }
+    .timeline-step {
+      padding: 0 20px;
+      text-align: center;
+      position: relative;
+    }
+    .step-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--bg-mid);
+      border: 2px solid var(--border);
+      margin: 0 auto 24px;
+      position: relative;
+      z-index: 1;
+      transition: border-color 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+    }
+    .timeline-step.active .step-dot {
+      border-color: var(--accent);
+      background: var(--accent);
+      box-shadow: 0 0 14px rgba(0,229,160,0.5);
+    }
+    .step-num {
+      font-family: var(--font-price);
+      font-size: 60px;
+      color: rgba(0,229,160,0.12);
+      line-height: 1;
+      margin-bottom: 12px;
+      transition: color 0.4s ease;
+    }
+    .timeline-step.active .step-num { color: rgba(0,229,160,0.4); }
+    .step-title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 16px;
+      color: #fff;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .step-desc {
+      font-family: var(--font-body);
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    /* ============================
+       CATALOG
+    ============================ */
+    #catalog { background: var(--bg); }
+    .tabs-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 40px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 5px;
+      width: fit-content;
+    }
+    .tab-btn {
+      padding: 10px 24px;
+      border-radius: 100px;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .tab-btn.active {
+      background: var(--accent);
+      color: #000;
+    }
+    .tab-btn:hover:not(.active) { color: var(--text); }
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; }
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
     .car-card {
       background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 14px;
       overflow: hidden;
-      transition: all 0.3s ease;
+      border: 1px solid var(--border);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     }
     .car-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--glow-blue);
-      border-color: var(--border-hover);
-      background: var(--bg-card-hover);
+      border-color: var(--border-accent);
+      box-shadow: 0 0 40px rgba(0,229,160,0.15), 0 20px 60px rgba(0,0,0,0.5);
+      transform: translateY(-4px);
     }
-    .car-card__img {
+    .car-img-wrap {
       position: relative;
       height: 220px;
-      background: #0d1020;
       overflow: hidden;
     }
-    .car-card__img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      transition: transform 0.5s ease;
-    }
-    .car-card:hover .car-card__img img { transform: scale(1.05); }
-    .car-card__play {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 54px; height: 54px;
-      background: rgba(255,255,255,0.92);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      pointer-events: none;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      transition: transform 0.2s, background 0.2s;
-    }
-    .car-card__play::after {
-      content: '';
-      border: 0 solid transparent;
-      border-top: 9px solid transparent;
-      border-bottom: 9px solid transparent;
-      border-left: 16px solid var(--blue);
-      margin-left: 4px;
-    }
-    .car-card__img:hover .car-card__play { background: #fff; transform: translate(-50%, -50%) scale(1.1); }
-    .car-card__origin {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: var(--orange);
-      color: #fff;
-      font-family: 'Raleway', sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: 100px;
-    }
-    .car-card__body { padding: 20px 22px 22px; }
-    .car-card__specs {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 10px;
-    }
-    .car-card__spec {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-    .car-card__spec i { color: var(--blue); font-size: 11px; }
-    .car-card h3 {
-      font-family: 'Raleway', sans-serif;
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--text);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 6px;
-    }
-    .car-card__desc {
-      font-size: 12px;
-      line-height: 1.6;
-      color: var(--text-muted);
-      margin-bottom: 14px;
-    }
-    .car-card__price {
-      font-family: 'Raleway', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--orange);
-      margin-bottom: 14px;
-    }
-    .car-card__price span { font-size: 14px; font-weight: 400; color: var(--text-muted); }
-    .car-card__footer {
-      display: flex;
-      gap: 10px;
-    }
-
-    /* ==============================
-       CATALOG
-    ============================== */
-    .catalog { background: var(--bg-2); }
-    .catalog-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 36px;
-    }
-    .catalog-tab {
-      font-family: 'Raleway', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      padding: 10px 22px;
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      background: var(--bg-card);
-      transition: all 0.2s;
-    }
-    .catalog-tab:hover { border-color: var(--blue); color: var(--blue); }
-    .catalog-tab.active {
-      background: var(--blue);
-      border-color: var(--blue);
-      color: #fff;
-      box-shadow: var(--glow-blue);
-    }
-    .catalog-panel { display: none; }
-    .catalog-panel.active {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 20px;
-      animation: fadeIn 0.3s ease;
-    }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; } }
-    .catalog-cta { text-align: center; margin-top: 40px; }
-    .catalog-note {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-top: 14px;
-      font-style: italic;
-    }
-
-    /* ==============================
-       DELIVERY GALLERY
-    ============================== */
-    .gallery { background: var(--bg-2); }
-    .gallery .section-title { color: var(--text); }
-    .gallery .section-subtitle { color: var(--text-muted); }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 8px;
-    }
-    .gallery-item {
-      aspect-ratio: 3/4;
-      overflow: hidden;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .gallery-item img {
+    .car-img-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.4s ease;
     }
-    .gallery-item:hover img { transform: scale(1.08); }
-
-    /* ==============================
-       REVIEWS
-    ============================== */
-    .reviews-section { background: var(--bg); }
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 16px;
-    }
-    .review-img {
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      transition: transform 0.3s ease;
-    }
-    .review-img:hover { transform: scale(1.02); }
-    .review-img img { width: 100%; display: block; }
-
-    /* ==============================
-       TEAM
-    ============================== */
-    .team { background: var(--bg-2); }
-    .team__title { text-align: center; }
-    .team__sub {
-      text-align: center;
-      font-size: 16px;
-      color: var(--text-muted);
-      margin: 10px 0 50px;
-    }
-    .managers-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
-    }
-    .manager-card {
-      background: var(--bg-card);
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      transition: all 0.3s ease;
-    }
-    .manager-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--border-hover);
-      box-shadow: var(--glow-blue);
-    }
-    .manager-card__photo {
-      height: 200px;
-      overflow: hidden;
-      background: #0d1020;
-    }
-    .manager-card__photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      transition: transform 0.4s ease;
-    }
-    .manager-card:hover .manager-card__photo img { transform: scale(1.05); }
-    .manager-card__info {
-      padding: 16px;
-      text-align: center;
-    }
-    .manager-card__info a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-family: 'Raleway', sans-serif;
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text);
-      letter-spacing: 0.03em;
-      margin-bottom: 10px;
-      transition: color 0.2s;
-    }
-    .manager-card__info a:hover { color: var(--orange); }
-    .manager-card__info a i { color: var(--orange); font-size: 12px; }
-    .manager-card__info .btn {
-      width: 100%;
-      justify-content: center;
-      padding: 10px 16px;
-      font-size: 13px;
-      border-radius: 6px;
-    }
-    .socials-row {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 10px;
-    }
-    .social-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      color: #fff;
-      transition: transform 0.2s, opacity 0.2s;
-    }
-    .social-btn:hover { transform: scale(1.15); opacity: 0.9; }
-    .social-btn--tg { background: #29b5e8; }
-    .social-btn--wa { background: #25d366; }
-
-    /* ==============================
-       CONTACT
-    ============================== */
-    .contact { background: var(--bg); }
-    .contact .section-title { color: var(--text); }
-    .contact__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: start;
-    }
-    .contact__info p {
-      font-size: 16px;
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 30px;
-    }
-    .contact-detail {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      margin-bottom: 20px;
-    }
-    .contact-detail__icon {
-      width: 44px;
-      height: 44px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--orange);
-      font-size: 18px;
-      flex-shrink: 0;
-    }
-    .contact-detail__text span {
-      display: block;
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 4px;
-    }
-    .contact-detail__text strong, .contact-detail__text a {
-      display: block;
-      font-family: 'Raleway', sans-serif;
-      font-size: 18px;
-      font-weight: 600;
-      color: #fff;
-      letter-spacing: 0.02em;
-    }
-    .contact-detail__text a:hover { color: var(--orange); }
-
-    .contact__form {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 36px;
-    }
-    .form-group { margin-bottom: 18px; }
-    .form-group label {
-      display: block;
-      font-family: 'Raleway', sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.6);
-      margin-bottom: 8px;
-    }
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 8px;
-      padding: 14px 16px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 14px;
-      color: #fff;
-      transition: border-color 0.2s, background 0.2s;
-      outline: none;
-    }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder { color: rgba(255,255,255,0.35); }
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--orange);
-      background: rgba(255,255,255,0.12);
-    }
-    .form-group textarea { resize: vertical; }
-    .form-note {
-      font-size: 12px;
-      color: rgba(255,255,255,0.4);
-      margin-top: 12px;
-      text-align: center;
-    }
-    .form-success {
-      display: none;
-      align-items: center;
-      gap: 10px;
-      background: rgba(37,211,102,0.15);
-      border: 1px solid rgba(37,211,102,0.4);
-      border-radius: 8px;
-      padding: 16px;
-      color: #4ade80;
-      font-size: 14px;
-      font-weight: 500;
-    }
-    .form-success.show { display: flex; }
-
-    /* ==============================
-       FOOTER
-    ============================== */
-    .footer {
-      background: #090807;
-      padding: 60px 0 30px;
-      border-top: 1px solid var(--border);
-    }
-    .footer__grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.5fr;
-      gap: 40px;
-      margin-bottom: 50px;
-    }
-    .footer__logo { margin-bottom: 16px; }
-    .footer__logo img { height: 48px; width: auto; object-fit: contain; }
-    .footer__brand p {
-      font-size: 13px;
-      line-height: 1.65;
-      color: rgba(255,255,255,0.55);
-      margin-bottom: 20px;
-    }
-    .footer__socials {
-      display: flex;
-      gap: 10px;
-    }
-    .footer__socials a {
-      width: 36px;
-      height: 36px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,0.6);
-      font-size: 16px;
-      transition: all 0.2s;
-    }
-    .footer__socials a:hover {
-      background: var(--orange);
-      color: #fff;
-    }
-    .footer__nav h4 {
-      font-family: 'Raleway', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #fff;
-      margin-bottom: 16px;
-    }
-    .footer__nav ul { display: flex; flex-direction: column; gap: 8px; }
-    .footer__nav a {
-      font-size: 13px;
-      color: rgba(255,255,255,0.55);
-      transition: color 0.2s;
-    }
-    .footer__nav a:hover { color: var(--orange); }
-    .footer__contacts h4 {
-      font-family: 'Raleway', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #fff;
-      margin-bottom: 16px;
-    }
-    .footer__contacts p {
-      font-size: 13px;
-      color: rgba(255,255,255,0.55);
-      margin-bottom: 8px;
-      line-height: 1.4;
-    }
-    .footer__contacts a { color: #fff; font-weight: 600; }
-    .footer__contacts a:hover { color: var(--orange); }
-    .footer__bottom {
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding-top: 24px;
-    }
-    .footer__bottom p {
-      font-size: 12px;
-      color: rgba(255,255,255,0.35);
-      line-height: 1.6;
-      margin-bottom: 6px;
-    }
-
-    /* ==============================
-       WOW EFFECTS
-    ============================== */
-
-    /* (accent class removed — using .t-gradient on hero title now) */
-
-    /* Hero ambient glow */
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -80px;
-      right: -80px;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(201,169,110,0.18) 0%, transparent 65%);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    /* Dot grid overlay on dark sections */
-    .whyus::before, .catalog::before {
+    .car-card:hover .car-img-wrap img { transform: scale(1.05); }
+    .car-img-wrap::after {
       content: '';
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
-      background-size: 28px 28px;
+      background: linear-gradient(to top, rgba(20,20,20,0.8) 0%, transparent 50%);
       pointer-events: none;
     }
-    .whyus { position: relative; }
-    .catalog { position: relative; }
-
-    /* Brand ticker */
-    .brand-ticker {
-      overflow: hidden;
-      background: var(--bg-2);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 16px 0;
-      white-space: nowrap;
-      user-select: none;
+    .car-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 2;
+      padding: 4px 10px;
+      border-radius: 100px;
+      background: rgba(0,0,0,0.75);
+      border: 1px solid rgba(0,229,160,0.4);
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      backdrop-filter: blur(6px);
     }
-    .brand-ticker__track {
-      display: inline-flex;
-      align-items: center;
-      gap: 0;
-      animation: ticker 35s linear infinite;
+    .car-badge-avail {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 2;
+      padding: 4px 10px;
+      border-radius: 100px;
+      background: rgba(0,229,160,0.2);
+      border: 1px solid rgba(0,229,160,0.5);
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.08em;
     }
-    .brand-ticker__track:hover { animation-play-state: paused; }
-    .brand-ticker__item {
-      display: inline-flex;
-      align-items: center;
-      gap: 20px;
-      padding: 0 20px;
+    .car-body {
+      padding: 20px;
     }
-    .brand-ticker__item span {
-      font-family: 'Raleway', sans-serif;
-      font-size: 12px;
+    .car-name {
+      font-family: var(--font-head);
       font-weight: 700;
+      font-size: 20px;
+      color: #fff;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .car-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .tag {
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: rgba(79,142,247,0.12);
+      border: 1px solid rgba(79,142,247,0.25);
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--blue);
+    }
+    .car-price-label {
+      font-family: var(--font-head);
+      font-size: 10px;
+      font-weight: 600;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: rgba(232,236,255,0.35);
-      transition: color 0.2s;
+      color: var(--text-dim);
+      margin-bottom: 4px;
     }
-    .brand-ticker__item span:hover { color: var(--blue); }
-    .brand-ticker__item .sep {
-      width: 4px;
-      height: 4px;
+    .car-price {
+      font-family: var(--font-price);
+      font-size: 30px;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+    .car-actions { display: flex; gap: 10px; }
+
+    /* ============================
+       QUIZ
+    ============================ */
+    #quiz { background: var(--bg-mid); }
+    .quiz-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .quiz-dots {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+    .quiz-dot {
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background: var(--blue);
-      opacity: 0.5;
+      background: var(--border);
+      transition: all 0.3s ease;
+    }
+    .quiz-dot.active {
+      background: var(--accent);
+      box-shadow: 0 0 8px rgba(0,229,160,0.6);
+      width: 24px;
+      border-radius: 4px;
+    }
+    .quiz-step {
+      display: none;
+      animation: slideIn 0.4s ease;
+    }
+    .quiz-step.active { display: block; }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .quiz-question {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: clamp(22px, 3vw, 32px);
+      color: #fff;
+      text-align: center;
+      margin-bottom: 40px;
+      letter-spacing: 0.02em;
+    }
+    .quiz-options {
+      display: grid;
+      gap: 12px;
+    }
+    .quiz-options.grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .quiz-options.grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .quiz-option {
+      padding: 20px 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.25s ease;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--text);
+    }
+    .quiz-option:hover,
+    .quiz-option.selected {
+      border-color: var(--accent);
+      background: rgba(0,229,160,0.08);
+      color: var(--accent);
+      box-shadow: 0 0 20px rgba(0,229,160,0.1);
+    }
+    .quiz-option .opt-emoji {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    .quiz-result-box {
+      background: rgba(0,229,160,0.04);
+      border: 1px solid rgba(0,229,160,0.2);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .quiz-result-label {
+      font-family: var(--font-head);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .quiz-result-price {
+      font-family: var(--font-price);
+      font-size: 56px;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .quiz-disclaimer {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .quiz-result-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-back {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: var(--font-head);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .btn-back:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ============================
+       REVIEWS
+    ============================ */
+    #reviews { background: var(--bg); }
+    .ratings-bar {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 40px;
+      margin-bottom: 60px;
+    }
+    .rating-block {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex: 1;
+    }
+    .rating-platform {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 20px;
+      color: #fff;
+      letter-spacing: 0.04em;
+    }
+    .rating-stars {
+      color: #ffd700;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+    .rating-num {
+      font-family: var(--font-price);
+      font-size: 48px;
+      color: #fff;
+      letter-spacing: 0.02em;
+      line-height: 1;
+    }
+    .rating-count {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .ratings-sep {
+      width: 1px;
+      height: 60px;
+      background: var(--border);
+      margin: 0 48px;
       flex-shrink: 0;
     }
-    @keyframes ticker {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
-
-    /* Animated gradient border on stat nums */
-    .stat__num {
+    .video-card {
+      border-radius: 12px;
+      overflow: hidden;
       position: relative;
+      cursor: pointer;
+      border: 1px solid var(--border);
+    }
+    .video-thumb {
+      height: 260px;
+      position: relative;
+      overflow: hidden;
+    }
+    .video-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+    .video-card:hover .video-thumb img {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      transition: background 0.3s ease;
+    }
+    .video-card:hover .video-overlay { background: rgba(0,0,0,0.2); }
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+    .video-card:hover .play-btn {
+      border-color: var(--accent);
+      box-shadow: 0 0 24px rgba(0,229,160,0.5);
+      color: var(--accent);
+    }
+    .video-info {
+      padding: 14px 16px;
+      background: var(--bg-card);
+    }
+    .video-name {
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 15px;
+      color: #fff;
     }
 
-    /* Section divider accent line */
-    .section-head::before {
-      content: '';
-      display: block;
-      width: 48px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--blue), var(--orange));
-      border-radius: 2px;
+    /* ============================
+       MANAGERS
+    ============================ */
+    #contacts { background: var(--bg-mid); }
+    .managers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .manager-card {
+      padding: 32px;
+      text-align: center;
+    }
+    .manager-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--blue));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 28px;
+      color: #000;
+      margin: 0 auto 16px;
+    }
+    .manager-name {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 22px;
+      color: #fff;
+      margin-bottom: 4px;
+      letter-spacing: 0.02em;
+    }
+    .manager-role {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--text-muted);
       margin-bottom: 20px;
     }
+    .manager-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .manager-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 16px;
+      border-radius: 8px;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+    .btn-tg {
+      background: rgba(38,167,255,0.12);
+      border: 1px solid rgba(38,167,255,0.35);
+      color: #26a7ff;
+    }
+    .btn-tg:hover {
+      background: rgba(38,167,255,0.22);
+      box-shadow: 0 0 16px rgba(38,167,255,0.2);
+    }
+    .btn-wa {
+      background: rgba(37,211,102,0.12);
+      border: 1px solid rgba(37,211,102,0.35);
+      color: #25d366;
+    }
+    .btn-wa:hover {
+      background: rgba(37,211,102,0.22);
+      box-shadow: 0 0 16px rgba(37,211,102,0.2);
+    }
+    .address-strip {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .address-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+    .address-item i { color: var(--accent); }
+    .address-item a { color: var(--text-muted); transition: color 0.2s; }
+    .address-item a:hover { color: var(--accent); }
 
+    /* ============================
+       FOOTER
+    ============================ */
+    footer {
+      background: var(--bg-footer);
+      border-top: 1px solid var(--border);
+    }
+    .footer-top {
+      padding: 40px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .footer-logo img { height: 34px; width: auto; }
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .footer-links a {
+      font-family: var(--font-head);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-socials {
+      display: flex;
+      gap: 12px;
+    }
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 16px;
+      transition: all 0.25s ease;
+    }
+    .social-icon:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: 0 0 16px rgba(0,229,160,0.2);
+    }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-legal {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+    .footer-copyright {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--text-dim);
+      text-align: right;
+    }
+    .footer-disclaimer {
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 11px;
+      color: var(--text-dim);
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+      margin-top: 4px;
+    }
 
-    /* ==============================
-       MOBILE
-    ============================== */
+    /* ============================
+       RESPONSIVE
+    ============================ */
+    @media (max-width: 1200px) {
+      .utp-grid { grid-template-columns: repeat(2, 1fr); }
+      .catalog-grid { grid-template-columns: repeat(2, 1fr); }
+      .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 1024px) {
-      .contact__grid { grid-template-columns: 1fr; gap: 40px; }
-      .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .timeline { grid-template-columns: 1fr; gap: 32px; }
+      .timeline-line { display: none; }
+      .timeline-step { text-align: left; padding: 0; }
+      .step-dot { margin: 0 0 16px; }
+      .step-num { font-size: 42px; }
+      .managers-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 768px) {
-      .nav__menu { display: none; }
-      .nav__right .nav__phone { display: none; }
-      .nav__right .btn { display: none; }
-      .nav__burger { display: flex; }
-      .nav__menu.open {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: var(--nav-h);
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: #090807;
-        padding: 24px 20px;
-        gap: 4px;
-        overflow-y: auto;
-        z-index: 999;
-      }
-      .nav__menu.open .nav__item {
-        height: auto;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .nav__menu.open .nav__link {
-        padding: 14px 0;
-        font-size: 20px;
-        width: 100%;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-        height: auto;
-      }
-      .nav__dropdown { display: none !important; }
-      .stats-bar__grid { grid-template-columns: repeat(2, 1fr); }
-      .benefits-grid { grid-template-columns: 1fr 1fr; }
-      .cars-grid { grid-template-columns: 1fr; }
-      .managers-grid { grid-template-columns: repeat(2, 1fr); }
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-      .reviews-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer__grid { grid-template-columns: 1fr; }
-      .hero__actions { flex-direction: column; }
+      .container { padding: 0 20px; }
+      section { padding: 72px 0; }
+      .nav-links, .nav-cta { display: none; }
+      .burger { display: flex; }
+      .hero-content { max-width: 100%; padding: 0 20px; padding-top: 72px; }
+      .hero-stats { gap: 0; }
+      .hero-stat { padding: 0 16px 0 0; margin-right: 16px; }
+      .utp-grid { grid-template-columns: 1fr; }
+      .catalog-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .managers-grid { grid-template-columns: 1fr; }
+      .ratings-bar { flex-direction: column; gap: 24px; padding: 24px; }
+      .ratings-sep { width: 80%; height: 1px; margin: 0 auto; }
+      .footer-top { flex-direction: column; align-items: flex-start; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .footer-copyright { text-align: left; }
+      .quiz-options.grid-2,
+      .quiz-options.grid-3 { grid-template-columns: 1fr 1fr; }
+      .address-strip { padding: 20px; gap: 20px; flex-direction: column; align-items: flex-start; }
+      .hero-btns { flex-direction: column; }
+      .hero-btns .btn { width: 100%; justify-content: center; }
     }
     @media (max-width: 480px) {
-      .benefits-grid { grid-template-columns: 1fr; }
-      .managers-grid { grid-template-columns: 1fr; }
+      .quiz-options.grid-2,
+      .quiz-options.grid-3 { grid-template-columns: 1fr; }
     }
   </style>
 </head>
-
 <body>
 
-<!-- =================== LOADER =================== -->
-<div id="loader">
-  <div class="loader__bg-glow"></div>
-  <img class="loader__logo" src="images/tild6366-6165-4432-b831-663033633230_LOGO.PNG" alt="Атлет-Авто">
-  <div class="loader__title">АТЛЕТ <em>АВТО</em></div>
-  <div class="loader__track"><div class="loader__bar" id="loaderBar"></div></div>
-  <div class="loader__sub">Официальный импортёр</div>
-</div>
-
-<!-- =================== NAV =================== -->
-<nav class="nav" id="navbar">
-  <div class="nav__inner">
-    <a href="#" class="nav__logo">
-      <img src="images/tild6366-6165-4432-b831-663033633230_LOGO.PNG" alt="Атлет-Авто">
-    </a>
-
-    <div class="nav__menu" id="navMenu">
-      <div class="nav__item">
-        <a href="#whyus" class="nav__link">О нас <i class="fa-solid fa-chevron-down"></i></a>
-        <div class="nav__dropdown">
-          <a href="#whyus">Почему мы</a>
-          <a href="#team">Наша команда</a>
-          <a href="#reviews">Отзывы</a>
-          <a href="#contacts">Контакты</a>
-        </div>
-      </div>
-      <div class="nav__item">
-        <a href="#auto" class="nav__link">Авто под заказ <i class="fa-solid fa-chevron-down"></i></a>
-        <div class="nav__dropdown">
-          <a href="#auto" onclick="switchTab('chinese')">Китайские марки</a>
-          <a href="#auto" onclick="switchTab('korean')">Корейские марки</a>
-          <a href="#auto" onclick="switchTab('japanese')">Японские марки</a>
-        </div>
-      </div>
-      <div class="nav__item">
-        <a href="#auto" onclick="switchTab('special')" class="nav__link">Спецтехника</a>
-      </div>
-      <div class="nav__item">
-        <a href="#auto" onclick="switchTab('instock')" class="nav__link">Авто в наличии</a>
-      </div>
-      <div class="nav__item">
-        <a href="#news" class="nav__link">Новости</a>
-      </div>
+  <!-- ============================
+       LOADER
+  ============================ -->
+  <div id="loader">
+    <img src="images/tild6366-6165-4432-b831-663033633230_LOGO.PNG" alt="Атлет-Авто" class="loader-logo">
+    <div class="loader-bar-wrap">
+      <div class="loader-bar" id="loaderBar"></div>
     </div>
-
-    <div class="nav__right">
-      <a href="tel:+78006001838" class="nav__phone">
-        <i class="fa-solid fa-phone"></i>
-        8 800 600 18 38
-      </a>
-      <a href="#form" class="btn btn-orange">Оставить заявку</a>
-    </div>
-
-    <button class="nav__burger" id="burgerBtn" aria-label="Меню">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="loader-pct" id="loaderPct">0%</div>
   </div>
-</nav>
 
-<!-- =================== HERO =================== -->
-<section class="hero" id="home">
-  <div class="hero__bg" id="heroBg"></div>
-  <div class="hero__overlay"></div>
-  <canvas class="hero__particles" id="heroParticles"></canvas>
-  <div class="hero__watermark" aria-hidden="true">АТЛЕТ</div>
-  <div class="container">
-    <div class="hero__content">
-      <div class="hero__label">
-        <i class="fa-solid fa-circle-dot" style="color:var(--orange)"></i>
-        Официальный импортёр
+  <!-- ============================
+       NAVBAR
+  ============================ -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="images/tild6366-6165-4432-b831-663033633230_LOGO.PNG" alt="Атлет-Авто">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#catalog">Каталог</a></li>
+        <li><a href="#how">Как работаем</a></li>
+        <li><a href="#reviews">Отзывы</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#quiz" class="btn btn-accent btn-sm">Рассчитать стоимость</a>
       </div>
-      <h1 class="hero__title">
-        <span class="hero__title-line t-solid">Авто в наличии,</span>
-        <span class="hero__title-line t-gradient">Под заказ.</span>
-        <span class="hero__title-line t-outline">Спецтехника</span>
+      <div class="burger" id="burgerBtn">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nav-mobile" id="navMobile">
+    <a href="#catalog">Каталог</a>
+    <a href="#how">Как работаем</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#contacts">Контакты</a>
+    <a href="#quiz" class="btn btn-accent" style="text-align:center;margin-top:8px;">Рассчитать стоимость</a>
+  </div>
+
+  <!-- ============================
+       HERO
+  ============================ -->
+  <section id="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content" style="max-width:1280px;padding-left:max(32px,(100vw - 1280px)/2 + 32px);">
+      <div class="hero-eyebrow">
+        <i class="fa-solid fa-circle" style="font-size:6px;"></i>
+        Официальный импортёр с 2018 года
+      </div>
+      <h1 class="hero-headline">
+        Авто из Китая,<br>
+        Кореи, Японии<br>
+        <span class="accent">Под ключ</span>
       </h1>
-      <div class="hero__divider">
-        <div class="hero__divider-line"></div>
-        <div class="hero__divider-dot"></div>
+      <p class="hero-subtitle">Поставим любой автомобиль за 14–45 дней. Владивосток — центр России.</p>
+      <div class="hero-chips">
+        <span class="chip">🇨🇳 Китай</span>
+        <span class="chip">🇰🇷 Корея</span>
+        <span class="chip">🇯🇵 Япония</span>
+        <span class="chip">🇦🇪 ОАЭ</span>
+        <span class="chip">🇪🇺 Европа</span>
       </div>
-      <div class="hero__origins">
-        <span>Китай</span><span class="sep">||</span>
-        <span>Япония</span><span class="sep">||</span>
-        <span>Корея</span>
+      <div class="hero-btns">
+        <a href="#quiz" class="btn btn-accent">Рассчитать за 1 минуту →</a>
+        <a href="#catalog" class="btn btn-outline">Смотреть каталог</a>
       </div>
-      <p class="hero__desc">
-        «Атлет-Авто» — ваш эксперт в выборе автомобиля.<br>
-        Купим. Доставим в Россию. Растаможим. Отправим в ваш город.
-      </p>
-      <div class="hero__actions">
-        <a href="#auto" class="btn btn-orange">
-          <i class="fa-solid fa-car"></i>
-          Смотреть каталог
-        </a>
-        <a href="#form" class="btn btn-outline">Оставить заявку</a>
-      </div>
-    </div>
-  </div>
-  <div class="hero__scroll">
-    <span>Вниз</span>
-    <i class="fa-solid fa-chevron-down"></i>
-  </div>
-</section>
-
-<!-- =================== STATS =================== -->
-<div class="stats-bar">
-  <div class="container">
-    <div class="stats-bar__grid">
-      <div class="stat">
-        <span class="stat__num"><span class="counter" data-to="1000">0</span>+</span>
-        <div class="stat__label">Авто доставлено</div>
-      </div>
-      <div class="stat">
-        <span class="stat__num">от <span class="counter" data-to="14">0</span> дней</span>
-        <div class="stat__label">Срок до Владивостока</div>
-      </div>
-      <div class="stat">
-        <span class="stat__num"><span class="counter" data-to="5">0</span> стран</span>
-        <div class="stat__label">Источников поставок</div>
-      </div>
-      <div class="stat">
-        <span class="stat__num">24/7</span>
-        <div class="stat__label">Поддержка клиентов</div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-val">500+</div>
+          <div class="hero-stat-label">автомобилей</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">6 лет</div>
+          <div class="hero-stat-label">на рынке</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">от 14</div>
+          <div class="hero-stat-label">дней</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">РФ</div>
+          <div class="hero-stat-label">по всей России</div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- =================== BRAND TICKER =================== -->
-<div class="brand-ticker" aria-hidden="true">
-  <div class="brand-ticker__track">
-    <div class="brand-ticker__item"><span>Toyota</span><div class="sep"></div><span>Lexus</span><div class="sep"></div><span>Honda</span><div class="sep"></div><span>Nissan</span><div class="sep"></div><span>Hyundai</span><div class="sep"></div><span>KIA</span><div class="sep"></div><span>Genesis</span><div class="sep"></div><span>BYD</span><div class="sep"></div><span>Haval</span><div class="sep"></div><span>Tank</span><div class="sep"></div><span>Li Auto</span><div class="sep"></div><span>Chery</span><div class="sep"></div><span>Geely</span><div class="sep"></div><span>Mazda</span><div class="sep"></div><span>Subaru</span><div class="sep"></div><span>Mitsubishi</span><div class="sep"></div><span>XCMG</span><div class="sep"></div><span>SANY</span><div class="sep"></div></div>
-    <div class="brand-ticker__item"><span>Toyota</span><div class="sep"></div><span>Lexus</span><div class="sep"></div><span>Honda</span><div class="sep"></div><span>Nissan</span><div class="sep"></div><span>Hyundai</span><div class="sep"></div><span>KIA</span><div class="sep"></div><span>Genesis</span><div class="sep"></div><span>BYD</span><div class="sep"></div><span>Haval</span><div class="sep"></div><span>Tank</span><div class="sep"></div><span>Li Auto</span><div class="sep"></div><span>Chery</span><div class="sep"></div><span>Geely</span><div class="sep"></div><span>Mazda</span><div class="sep"></div><span>Subaru</span><div class="sep"></div><span>Mitsubishi</span><div class="sep"></div><span>XCMG</span><div class="sep"></div><span>SANY</span><div class="sep"></div></div>
-  </div>
-</div>
-
-<!-- =================== WHY US =================== -->
-<section class="whyus section" id="whyus">
-  <div class="container">
-    <h2 class="whyus__title">Почему выгодно привозить автомобили под заказ?</h2>
-    <div class="benefits-grid">
-      <div class="benefit-card">
-        <div class="benefit-card__icon">
-          <img src="images/tild3331-6438-4432-b861-646138343530_clock.png" alt="Сроки">
+  <!-- ============================
+       UTP / TRUST
+  ============================ -->
+  <section id="utp">
+    <div class="container">
+      <div class="eyebrow">Почему Атлет-Авто</div>
+      <h2 class="section-title">Четыре гарантии, которые важны</h2>
+      <div class="utp-grid">
+        <div class="glass-card utp-card reveal" style="transition-delay:0s">
+          <div class="utp-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="utp-title">Проверка истории</div>
+          <div class="utp-body">Полный отчёт по ВИН + фотоотчёт ЛКП перед отправкой. Никаких сюрпризов.</div>
         </div>
-        <h3>Реальные сроки</h3>
-        <p>От момента заключения договора до поставки в наш порт — от 14 дней до Владивостока</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-card__icon">
-          <img src="images/tild3730-3838-4166-a638-653461356363_discount.png" alt="Цена">
+        <div class="glass-card utp-card reveal" style="transition-delay:0.1s">
+          <div class="utp-icon"><i class="fa-solid fa-bolt"></i></div>
+          <div class="utp-title">14 дней до Владивостока</div>
+          <div class="utp-body">Кратчайший срок от подписания договора до передачи авто в порту.</div>
         </div>
-        <h3>Цена ниже рыночной</h3>
-        <p>Вам не придётся оплачивать повышенные сборы и завышенные комиссии продавцов</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-card__icon">
-          <img src="images/tild6237-6266-4861-a538-343263336139_delivery-car.png" alt="Доставка">
+        <div class="glass-card utp-card reveal" style="transition-delay:0.2s">
+          <div class="utp-icon"><i class="fa-solid fa-file-contract"></i></div>
+          <div class="utp-title">Работаем по договору</div>
+          <div class="utp-body">Полная юридическая защита. ООО с ИНН, официальная оплата, гарантия в документах.</div>
         </div>
-        <h3>Чистая история</h3>
-        <p>Перед покупкой проверяем юридическую чистоту, состояние ЛКП и техническую составляющую</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-card__icon">
-          <img src="images/tild6263-3966-4237-b234-363438376336_support.png" alt="Гарантия">
+        <div class="glass-card utp-card reveal" style="transition-delay:0.3s">
+          <div class="utp-icon"><i class="fa-solid fa-circle-dollar-to-slot"></i></div>
+          <div class="utp-title">Без скрытых комиссий</div>
+          <div class="utp-body">Фиксированная ставка + реферальная программа. Цена — это цена. Точка.</div>
         </div>
-        <h3>Гарантия сотрудничества</h3>
-        <p>Работаем строго по договору, где прописаны все условия. Всё официально и прозрачно</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-card__icon">
-          <img src="images/tild6433-3936-4339-a661-633662613337_gift.png" alt="Бонусы">
-        </div>
-        <h3>Выгодные условия</h3>
-        <p>Низкие комиссионные, реферальные и бонусные системы для наших клиентов</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- =================== CAR REVIEWS =================== -->
-<section class="car-reviews section" id="car-reviews">
-  <div class="container">
-    <div class="car-reviews__header">
-      <h2 class="section-title">Обзоры автомобилей</h2>
-      <p>Автомобили, привезённые нашим дорогим клиентам — смотрите, выбирайте и заказывайте у наших менеджеров!</p>
+  <!-- ============================
+       HOW IT WORKS
+  ============================ -->
+  <section id="how">
+    <div class="container">
+      <div class="eyebrow">Как мы работаем</div>
+      <h2 class="section-title">5 шагов от заявки до ключей</h2>
+      <div style="position:relative;">
+        <div class="timeline" id="timeline">
+          <div class="timeline-line">
+            <div class="timeline-line-fill" id="timelineFill"></div>
+          </div>
+          <div class="timeline-step reveal" style="transition-delay:0s">
+            <div class="step-dot"></div>
+            <div class="step-num">01</div>
+            <div class="step-title">Заявка</div>
+            <div class="step-desc">Бесплатный подбор под ваш запрос и бюджет. Созвон с менеджером.</div>
+          </div>
+          <div class="timeline-step reveal" style="transition-delay:0.1s">
+            <div class="step-dot"></div>
+            <div class="step-num">02</div>
+            <div class="step-title">Выкуп</div>
+            <div class="step-desc">Осмотр, проверка истории, ВИН и ЛКП. Оплата и оформление договора.</div>
+          </div>
+          <div class="timeline-step reveal" style="transition-delay:0.2s">
+            <div class="step-dot"></div>
+            <div class="step-num">03</div>
+            <div class="step-title">Доставка</div>
+            <div class="step-desc">Перегон до порта отправки. Контейнерная или RO-RO доставка во Владивосток.</div>
+          </div>
+          <div class="timeline-step reveal" style="transition-delay:0.3s">
+            <div class="step-dot"></div>
+            <div class="step-num">04</div>
+            <div class="step-title">Таможня</div>
+            <div class="step-desc">Растаможка «под ключ». Уплата утильсбора и таможенных пошлин.</div>
+          </div>
+          <div class="timeline-step reveal" style="transition-delay:0.4s">
+            <div class="step-dot"></div>
+            <div class="step-num">05</div>
+            <div class="step-title">Ваше авто</div>
+            <div class="step-desc">Передача документов. Постановка на учёт. Доставка по России.</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="cars-grid">
+  </section>
 
-      <div class="car-card">
-        <a href="https://kinescope.io/embed/rhSbTwgrmwaRNNE5h5T1rr" target="_blank" rel="noopener" style="display:block">
-        <div class="car-card__img">
-          <img src="images/previews/preview_1.jpg" alt="Hyundai Palisade">
-          <div class="car-card__play"></div>
-          <span class="car-card__origin">Корея</span>
-        </div>
-        </a>
-        <div class="car-card__body">
-          <div class="car-card__specs">
-            <div class="car-card__spec"><i class="fa-regular fa-calendar"></i> 2023 г.</div>
-            <div class="car-card__spec"><i class="fa-solid fa-gauge-high"></i> 47 000 км</div>
-            <div class="car-card__spec"><i class="fa-solid fa-cog"></i> 2.2л, 202 л.с.</div>
-          </div>
-          <h3>Hyundai Palisade</h3>
-          <p class="car-card__desc">Двигатель 2.2л, 202 л.с. · Привод 4WD · АКПП · Для клиента Ольги из Москвы</p>
-          <div class="car-card__price">от 5 600 000 ₽ <span>под ключ до Владивостока</span></div>
-          <div class="car-card__footer">
-            <a href="#form" class="btn btn-blue">Заказать</a>
-            <a href="#form" class="btn btn-orange">Подробнее</a>
-          </div>
-        </div>
+  <!-- ============================
+       CATALOG
+  ============================ -->
+  <section id="catalog">
+    <div class="container">
+      <div class="eyebrow">Каталог</div>
+      <h2 class="section-title">Авто под любой запрос и бюджет</h2>
+      <div class="tabs-bar">
+        <button class="tab-btn active" data-tab="tab-order">Под заказ</button>
+        <button class="tab-btn" data-tab="tab-stock">В наличии</button>
+        <button class="tab-btn" data-tab="tab-spec">Спецтехника</button>
       </div>
 
-      <div class="car-card">
-        <a href="https://kinescope.io/embed/gwfHj217sBxykgx6L6ww3z" target="_blank" rel="noopener" style="display:block">
-        <div class="car-card__img">
-          <img src="images/previews/preview_2.jpg" alt="KIA K5 Signature">
-          <div class="car-card__play"></div>
-          <span class="car-card__origin">Корея</span>
-        </div>
-        </a>
-        <div class="car-card__body">
-          <div class="car-card__specs">
-            <div class="car-card__spec"><i class="fa-regular fa-calendar"></i> 2021 г.</div>
-            <div class="car-card__spec"><i class="fa-solid fa-gauge-high"></i> 31 500 км</div>
-            <div class="car-card__spec"><i class="fa-solid fa-cog"></i> 2.0л, 160 л.с.</div>
-          </div>
-          <h3>KIA K5 Signature</h3>
-          <p class="car-card__desc">Двигатель 2.0л, 160 л.с., бензин · Привод 2WD · Для клиента Анастасии из Москвы</p>
-          <div class="car-card__price">от 2 300 000 ₽ <span>под ключ до Владивостока</span></div>
-          <div class="car-card__footer">
-            <a href="#form" class="btn btn-blue">Заказать</a>
-            <a href="#form" class="btn btn-orange">Подробнее</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="car-card">
-        <a href="https://kinescope.io/embed/7uYVibcGKWkUbxKpiM5mSA" target="_blank" rel="noopener" style="display:block">
-        <div class="car-card__img">
-          <img src="images/previews/preview_3.jpg" alt="BMW 1-series">
-          <div class="car-card__play"></div>
-          <span class="car-card__origin">Европа</span>
-        </div>
-        </a>
-        <div class="car-card__body">
-          <div class="car-card__specs">
-            <div class="car-card__spec"><i class="fa-regular fa-calendar"></i> 2022 г.</div>
-            <div class="car-card__spec"><i class="fa-solid fa-gauge-high"></i> 18 000 км</div>
-            <div class="car-card__spec"><i class="fa-solid fa-cog"></i> 1.5л, 140 л.с.</div>
-          </div>
-          <h3>BMW 1-series</h3>
-          <p class="car-card__desc">Двигатель 1.5л, 140 л.с. · Привод передний · Для клиента Ирины из Москвы</p>
-          <div class="car-card__price">от 1 500 000 ₽ <span>под ключ до Владивостока</span></div>
-          <div class="car-card__footer">
-            <a href="#form" class="btn btn-blue">Заказать</a>
-            <a href="#form" class="btn btn-orange">Подробнее</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="car-card">
-        <a href="https://kinescope.io/embed/afrZmaRxssyhJCVotNUJdz" target="_blank" rel="noopener" style="display:block">
-        <div class="car-card__img">
-          <img src="images/previews/preview_4.jpg" alt="Tank 300">
-          <div class="car-card__play"></div>
-          <span class="car-card__origin">Китай</span>
-        </div>
-        </a>
-        <div class="car-card__body">
-          <div class="car-card__specs">
-            <div class="car-card__spec"><i class="fa-regular fa-calendar"></i> 2022 г.</div>
-            <div class="car-card__spec"><i class="fa-solid fa-gauge-high"></i> 50 000 км</div>
-            <div class="car-card__spec"><i class="fa-solid fa-cog"></i> 2.0л, 227 л.с.</div>
-          </div>
-          <h3>Tank 300</h3>
-          <p class="car-card__desc">Двигатель 2.0л, 227 л.с. · Привод 4WD · АКПП 8 · Off-Road Conqueror · Для Павла из Кавалерово</p>
-          <div class="car-card__price">от 3 600 000 ₽ <span>под ключ до Владивостока</span></div>
-          <div class="car-card__footer">
-            <a href="#form" class="btn btn-blue">Заказать</a>
-            <a href="#form" class="btn btn-orange">Подробнее</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="car-card">
-        <a href="https://kinescope.io/embed/ibz77W32WUUhsWxT3gjZG2" target="_blank" rel="noopener" style="display:block">
-        <div class="car-card__img">
-          <img src="images/previews/preview_5.jpg" alt="Li8 ULTRA">
-          <div class="car-card__play"></div>
-          <span class="car-card__origin">Китай</span>
-        </div>
-        </a>
-        <div class="car-card__body">
-          <div class="car-card__specs">
-            <div class="car-card__spec"><i class="fa-regular fa-calendar"></i> 2024 г.</div>
-            <div class="car-card__spec"><i class="fa-solid fa-gauge-high"></i> 12 000 км</div>
-            <div class="car-card__spec"><i class="fa-solid fa-bolt"></i> гибрид 449 л.с.</div>
-          </div>
-          <h3>Li8 ULTRA</h3>
-          <p class="car-card__desc">Двигатель 1.5л, 449 л.с., последовательный гибрид · Для клиента Дениса</p>
-          <div class="car-card__price">от 6 000 000 ₽ <span>под ключ до Владивостока</span></div>
-          <div class="car-card__footer">
-            <a href="#form" class="btn btn-blue">Заказать</a>
-            <a href="#form" class="btn btn-orange">Подробнее</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="car-card">
-        <a href="https://kinescope.io/embed/0Wq7c4XmJv2d39XvVmP9qH" target="_blank" rel="noopener" style="display:block">
-        <div class="car-card__img">
-          <img src="images/previews/preview_6.jpg" alt="Mercedes-Benz G400d">
-          <div class="car-card__play"></div>
-          <span class="car-card__origin">Европа</span>
-        </div>
-        </a>
-        <div class="car-card__body">
-          <div class="car-card__specs">
-            <div class="car-card__spec"><i class="fa-regular fa-calendar"></i> 2024 г.</div>
-            <div class="car-card__spec"><i class="fa-solid fa-gauge-high"></i> 12 800 км</div>
-            <div class="car-card__spec"><i class="fa-solid fa-cog"></i> 2.9л, 330 л.с.</div>
-          </div>
-          <h3>Mercedes-Benz G400d</h3>
-          <p class="car-card__desc">Двигатель 2.9л, 330 л.с., дизель · Привод 4WD · Для Андрея из Санкт-Петербурга</p>
-          <div class="car-card__price">от 15 000 000 ₽ <span>под ключ до Владивостока</span></div>
-          <div class="car-card__footer">
-            <a href="#form" class="btn btn-blue">Заказать</a>
-            <a href="#form" class="btn btn-orange">Подробнее</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- =================== CATALOG =================== -->
-<section class="catalog section" id="auto">
-  <div class="container">
-    <div class="section-head">
-      <h2 class="section-title">Каталог <span>автомобилей</span></h2>
-      <p class="section-subtitle">Выберите категорию интересующих вас автомобилей. По любой модели сделаем расчёт стоимости.</p>
-    </div>
-    <div class="catalog-tabs">
-      <button class="catalog-tab active" onclick="switchTab('chinese')">Китайские марки</button>
-      <button class="catalog-tab" onclick="switchTab('korean')">Корейские марки</button>
-      <button class="catalog-tab" onclick="switchTab('japanese')">Японские марки</button>
-      <button class="catalog-tab" onclick="switchTab('special')">Спецтехника</button>
-      <button class="catalog-tab" onclick="switchTab('instock')">Авто в наличии</button>
-    </div>
-
-    <div id="panel-chinese" class="catalog-panel active">
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/byd.jpg" alt="BYD Han"></div><div class="car-card__body"><h3>BYD</h3><p class="car-card__desc">Электромобили и гибриды от ведущего китайского производителя</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/chery.jpg" alt="Chery Exeed"></div><div class="car-card__body"><h3>Chery / Exeed</h3><p class="car-card__desc">Широкий модельный ряд SUV и кроссоверов</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/haval.jpg" alt="Haval H6"></div><div class="car-card__body"><h3>Haval</h3><p class="car-card__desc">Популярные кроссоверы: Jolion, F7, Dargo</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/tank.jpg" alt="Tank 300"></div><div class="car-card__body"><h3>Tank 300 / 400 / 500</h3><p class="car-card__desc">Внедорожники премиум-класса с мощными двигателями</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/liauto.jpg" alt="Li Auto L9"></div><div class="car-card__body"><h3>Li Auto (Li8 / L9 / L7)</h3><p class="car-card__desc">Гибридные SUV с запасом хода 1000+ км</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/geely.jpg" alt="Geely Coolray"></div><div class="car-card__body"><h3>Nio / Geely / BAIC</h3><p class="car-card__desc">Электромобили и другие марки под заказ</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-    </div>
-
-    <div id="panel-korean" class="catalog-panel">
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/hyundai.jpg" alt="Hyundai Palisade"></div><div class="car-card__body"><h3>Hyundai</h3><p class="car-card__desc">Palisade, Tucson, Santa Fe, Sonata и другие модели</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/kia.jpg" alt="Kia Sorento"></div><div class="car-card__body"><h3>KIA</h3><p class="car-card__desc">K5, Sorento, Sportage, Carnival и весь модельный ряд</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/genesis.jpg" alt="Genesis GV80"></div><div class="car-card__body"><h3>Genesis</h3><p class="car-card__desc">G80, GV80, GV70 — корейский люкс по честной цене</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-    </div>
-
-    <div id="panel-japanese" class="catalog-panel">
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/toyota.jpg" alt="Toyota Camry"></div><div class="car-card__body"><h3>Toyota</h3><p class="car-card__desc">Camry, RAV4, Land Cruiser, Alphard и другие</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/lexus.jpg" alt="Lexus RX"></div><div class="car-card__body"><h3>Lexus</h3><p class="car-card__desc">ES, RX, LX, GX — японский люкс с гарантией качества</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/honda.jpg" alt="Honda Vezel"></div><div class="car-card__body"><h3>Honda</h3><p class="car-card__desc">Civic, CR-V, Vezel, Accord — надёжные японские авто</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/nissan.jpg" alt="Nissan Altima"></div><div class="car-card__body"><h3>Nissan / Mazda / Subaru</h3><p class="car-card__desc">Широкий выбор японских марок под заказ</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-    </div>
-
-    <div id="panel-special" class="catalog-panel">
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/excavator.jpg" alt="XCMG экскаватор"></div><div class="car-card__body"><h3>XCMG</h3><p class="car-card__desc">Экскаваторы, погрузчики, краны и другая спецтехника</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/loader.png" alt="SANY погрузчик"></div><div class="car-card__body"><h3>SANY</h3><p class="car-card__desc">Бетонные насосы, экскаваторы, краны и буровые установки</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-      <div class="car-card"><div class="car-card__img"><img src="images/catalog/excavator.jpg" alt="Спецтехника Liugong"></div><div class="car-card__body"><h3>Liugong / SDLG</h3><p class="car-card__desc">Фронтальные погрузчики, грейдеры, дорожная техника</p><a href="#form" class="btn btn-orange" style="margin-top:10px">Узнать цену</a></div></div>
-    </div>
-
-    <div id="panel-instock" class="catalog-panel">
-      <div class="car-card"><div class="car-card__img" style="background:#014983;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:20px;"><i class="fa-solid fa-car" style="font-size:48px;color:rgba(255,255,255,0.3)"></i></div><div class="car-card__body"><h3>Авто в наличии</h3><p class="car-card__desc">Для просмотра актуального наличия свяжитесь с нашими менеджерами — список обновляется ежедневно</p><a href="#contacts" class="btn btn-orange" style="margin-top:10px">Узнать наличие</a></div></div>
-      <div class="car-card"><div class="car-card__img" style="background:#f0f4f8;display:flex;align-items:center;justify-content:center;flex-direction:column;"><img src="images/tild3932-3439-4735-a439-386333303234_IMG_3125.JPEG" alt="Manager" style="width:100%;height:100%;object-fit:cover;"></div><div class="car-card__body"><h3>Быстрый отклик</h3><p class="car-card__desc">Менеджер перезвонит в течение 5 минут и расскажет о наличии нужной вам модели</p><a href="#form" class="btn btn-blue" style="margin-top:10px">Оставить заявку</a></div></div>
-    </div>
-
-    <div class="catalog-cta">
-      <a href="#form" class="btn btn-orange">
-        <i class="fa-solid fa-paper-plane"></i>
-        Не нашли нужную модель? Оставьте заявку
-      </a>
-      <p class="catalog-note">* Цены носят ознакомительный характер и уточняются на дату подтверждения заказа с учётом курса валют.</p>
-    </div>
-  </div>
-</section>
-
-<!-- =================== GALLERY =================== -->
-<section class="gallery section" id="gallery">
-  <div class="container">
-    <div class="section-head">
-      <h2 class="section-title" style="color:#fff">Мы привезли <span style="color:var(--orange)">тысячи</span> автомобилей</h2>
-      <p class="section-subtitle" style="color:rgba(255,255,255,0.7)">Наши менеджеры вручают автомобили клиентам по всей России</p>
-    </div>
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="images/tild6333-3833-4636-b261-336361333935_photo_2026-01-26_10-.jpg" alt="Вручение авто"></div>
-      <div class="gallery-item"><img src="images/tild3536-3838-4730-a437-633661616234_11.jpeg" alt="Авто клиенту"></div>
-      <div class="gallery-item"><img src="images/tild3163-3839-4333-a261-616138616334_photo.jpeg" alt="Вручение авто"></div>
-      <div class="gallery-item"><img src="images/tild3530-6662-4836-b835-306162613362_222.jpeg" alt="Авто клиенту"></div>
-      <div class="gallery-item"><img src="images/tild6535-6233-4435-b233-303330616430_22.jpeg" alt="Вручение авто"></div>
-      <div class="gallery-item"><img src="images/tild6466-6437-4663-b164-383638323938_photo_2026-01-26_10-.jpg" alt="Авто клиенту"></div>
-      <div class="gallery-item"><img src="images/tild3366-3963-4838-a231-363235393664_photo.jpeg" alt="Вручение авто"></div>
-      <div class="gallery-item"><img src="images/tild6364-3330-4038-b135-346161613264_photo_2026-01-26_10-.jpg" alt="Авто клиенту"></div>
-      <div class="gallery-item"><img src="images/tild3262-3264-4538-a432-323938616239_photo_2026-01-26_10-.jpg" alt="Вручение авто"></div>
-      <div class="gallery-item"><img src="images/tild6164-3835-4430-b430-303761313834_photo_2026-01-26_10-.jpg" alt="Авто клиенту"></div>
-      <div class="gallery-item"><img src="images/tild3863-6230-4932-a132-383462353965_photo_2026-01-26_10-.jpg" alt="Вручение авто"></div>
-      <div class="gallery-item"><img src="images/tild6331-3736-4934-b339-383833313934_111.jpeg" alt="Авто клиенту"></div>
-    </div>
-  </div>
-</section>
-
-<!-- =================== REVIEWS =================== -->
-<section class="reviews-section section" id="reviews">
-  <div class="container">
-    <div class="section-head" style="text-align:center">
-      <h2 class="section-title">Реальные отзывы клиентов</h2>
-      <p class="section-subtitle" style="margin:0 auto">С 2ГИС и Яндекс — наши любимые клиенты оставляют настоящие отзывы</p>
-    </div>
-    <div class="reviews-grid">
-      <div class="review-img"><img src="images/tild3237-6666-4461-a235-386562323931_photo_2026-03-18_11-.jpg" alt="Отзыв"></div>
-      <div class="review-img"><img src="images/tild6639-6365-4663-b535-313466643639_Screenshot_7.png" alt="Отзыв"></div>
-      <div class="review-img"><img src="images/tild6362-3964-4738-b639-323833386530_photo_2026-03-18_11-.jpg" alt="Отзыв"></div>
-      <div class="review-img"><img src="images/tild3263-3534-4665-b362-626437373338_Screenshot_13.png" alt="Отзыв"></div>
-      <div class="review-img"><img src="images/tild3232-3862-4037-b361-363432303638_photo_2026-03-18_11-.jpg" alt="Отзыв"></div>
-      <div class="review-img"><img src="images/tild6233-3562-4666-b066-383830376635_photo_2026-03-18_11-.jpg" alt="Отзыв"></div>
-      <div class="review-img"><img src="images/tild3861-3733-4363-b161-353631303235_Screenshot_1.png" alt="Отзыв"></div>
-      <div class="review-img"><img src="images/tild3931-3932-4034-a266-343536323265_photo_2026-03-18_11-.jpg" alt="Отзыв"></div>
-      <div class="review-img"><img src="images/tild3562-3035-4639-a666-663431303738_photo_2026-03-18_11-.jpg" alt="Отзыв"></div>
-      <div class="review-img"><img src="images/tild3031-3139-4364-b461-666634623036_photo_2026-03-18_11-.jpg" alt="Отзыв"></div>
-      <div class="review-img"><img src="images/tild6362-6538-4666-b335-323163356636_photo_2026-03-18_11-.jpg" alt="Отзыв"></div>
-      <div class="review-img"><img src="images/tild6133-6233-4236-b339-363836386361_Screenshot_2.png" alt="Отзыв"></div>
-    </div>
-  </div>
-</section>
-
-<!-- =================== TEAM =================== -->
-<section class="team section" id="team">
-  <div class="container">
-    <h2 class="section-title team__title">Наша <span>команда</span></h2>
-    <p class="team__sub">Написать своему менеджеру — нажмите на кнопку для быстрой связи</p>
-    <div class="managers-grid">
-
-      <div class="manager-card">
-        <div class="manager-card__photo">
-          <img src="images/tild3932-3439-4735-a439-386333303234_IMG_3125.JPEG" alt="Менеджер">
-        </div>
-        <div class="manager-card__info">
-          <a href="tel:+79510127198"><i class="fa-solid fa-phone"></i>+7 (951) 012-71-98</a>
-          <div class="socials-row">
-            <a href="https://t.me/+79510127198" target="_blank" class="social-btn social-btn--tg"><i class="fa-brands fa-telegram"></i></a>
-            <a href="https://wa.me/79510127198" target="_blank" class="social-btn social-btn--wa"><i class="fa-brands fa-whatsapp"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="manager-card">
-        <div class="manager-card__photo">
-          <img src="images/tild3030-3434-4162-b031-366230666563_scene_3.jpeg" alt="Менеджер">
-        </div>
-        <div class="manager-card__info">
-          <a href="tel:+79510165278"><i class="fa-solid fa-phone"></i>+7 (951) 016-52-78</a>
-          <div class="socials-row">
-            <a href="https://t.me/+79510165278" target="_blank" class="social-btn social-btn--tg"><i class="fa-brands fa-telegram"></i></a>
-            <a href="https://wa.me/79510165278" target="_blank" class="social-btn social-btn--wa"><i class="fa-brands fa-whatsapp"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="manager-card">
-        <div class="manager-card__photo">
-          <img src="images/tild6230-3136-4138-b931-653935323264_scene_4.jpeg" alt="Менеджер">
-        </div>
-        <div class="manager-card__info">
-          <a href="tel:+79084517439"><i class="fa-solid fa-phone"></i>+7 (908) 451-74-39</a>
-          <div class="socials-row">
-            <a href="https://t.me/+79084517439" target="_blank" class="social-btn social-btn--tg"><i class="fa-brands fa-telegram"></i></a>
-            <a href="https://wa.me/79084517439" target="_blank" class="social-btn social-btn--wa"><i class="fa-brands fa-whatsapp"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="manager-card">
-        <div class="manager-card__photo">
-          <img src="images/tild3131-3562-4933-a337-373563373434_IMG_0864.jpg" alt="Менеджер">
-        </div>
-        <div class="manager-card__info">
-          <a href="tel:+79510257566"><i class="fa-solid fa-phone"></i>+7 (951) 025-75-66</a>
-          <div class="socials-row">
-            <a href="https://t.me/+79510257566" target="_blank" class="social-btn social-btn--tg"><i class="fa-brands fa-telegram"></i></a>
-            <a href="https://wa.me/79510257566" target="_blank" class="social-btn social-btn--wa"><i class="fa-brands fa-whatsapp"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="manager-card">
-        <div class="manager-card__photo">
-          <img src="images/tild6638-6261-4738-a337-353531386166_scene_5.jpeg" alt="Менеджер">
-        </div>
-        <div class="manager-card__info">
-          <a href="tel:+79510248574"><i class="fa-solid fa-phone"></i>+7 (951) 024-85-74</a>
-          <div class="socials-row">
-            <a href="https://t.me/+79510248574" target="_blank" class="social-btn social-btn--tg"><i class="fa-brands fa-telegram"></i></a>
-            <a href="https://wa.me/79510248574" target="_blank" class="social-btn social-btn--wa"><i class="fa-brands fa-whatsapp"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="manager-card">
-        <div class="manager-card__photo">
-          <img src="images/tild3564-6631-4163-a238-616335356236_IMG_2887.JPEG" alt="Менеджер">
-        </div>
-        <div class="manager-card__info">
-          <a href="tel:+79510196894"><i class="fa-solid fa-phone"></i>+7 (951) 019-68-94</a>
-          <div class="socials-row">
-            <a href="https://t.me/+79510196894" target="_blank" class="social-btn social-btn--tg"><i class="fa-brands fa-telegram"></i></a>
-            <a href="https://wa.me/79510196894" target="_blank" class="social-btn social-btn--wa"><i class="fa-brands fa-whatsapp"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="manager-card">
-        <div class="manager-card__photo">
-          <img src="images/tild6137-3931-4266-a636-336139303934_scene_7.jpeg" alt="Менеджер">
-        </div>
-        <div class="manager-card__info">
-          <a href="tel:+79510256414"><i class="fa-solid fa-phone"></i>+7 (951) 025-64-14</a>
-          <div class="socials-row">
-            <a href="https://t.me/+79510256414" target="_blank" class="social-btn social-btn--tg"><i class="fa-brands fa-telegram"></i></a>
-            <a href="https://wa.me/79510256414" target="_blank" class="social-btn social-btn--wa"><i class="fa-brands fa-whatsapp"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="manager-card">
-        <div class="manager-card__photo">
-          <img src="images/tild3530-6637-4139-a138-353561636336_IMG_2888.JPEG" alt="Менеджер">
-        </div>
-        <div class="manager-card__info">
-          <a href="tel:+79084545022"><i class="fa-solid fa-phone"></i>+7 (908) 454-50-22</a>
-          <div class="socials-row">
-            <a href="https://t.me/+79084545022" target="_blank" class="social-btn social-btn--tg"><i class="fa-brands fa-telegram"></i></a>
-            <a href="https://wa.me/79084545022" target="_blank" class="social-btn social-btn--wa"><i class="fa-brands fa-whatsapp"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="manager-card">
-        <div class="manager-card__photo">
-          <img src="images/tild6262-6338-4635-b230-643966626462_IMG_2886.JPEG" alt="Менеджер">
-        </div>
-        <div class="manager-card__info">
-          <a href="tel:+79084541022"><i class="fa-solid fa-phone"></i>+7 (908) 454-10-22</a>
-          <div class="socials-row">
-            <a href="https://t.me/+79084541022" target="_blank" class="social-btn social-btn--tg"><i class="fa-brands fa-telegram"></i></a>
-            <a href="https://wa.me/79084541022" target="_blank" class="social-btn social-btn--wa"><i class="fa-brands fa-whatsapp"></i></a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- =================== CONTACT =================== -->
-<section class="contact section" id="contacts">
-  <div class="container">
-    <div class="contact__grid">
-      <div class="contact__info">
-        <h2 class="section-title" style="color:#fff;margin-bottom:20px">Оставить заявку</h2>
-        <p>После отправки вашего заказа наш менеджер свяжется с вами в самое ближайшее время.</p>
-        <div class="contact-detail">
-          <div class="contact-detail__icon"><i class="fa-solid fa-phone"></i></div>
-          <div class="contact-detail__text">
-            <span>Звонок бесплатный</span>
-            <a href="tel:+78006001838">8 800 600 18 38</a>
-          </div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail__icon"><i class="fa-solid fa-location-dot"></i></div>
-          <div class="contact-detail__text">
-            <span>Адрес офиса</span>
-            <strong>Запорожская, 87а, офис 8</strong>
-          </div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail__icon"><i class="fa-solid fa-clock"></i></div>
-          <div class="contact-detail__text">
-            <span>Режим работы</span>
-            <strong>Пн–Пт: 10:00–18:00</strong>
-          </div>
-        </div>
-        <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;">
-          <a href="https://t.me/atletauto" target="_blank" style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:12px 20px;border-radius:8px;font-family:Oswald;font-size:14px;letter-spacing:0.05em;transition:all 0.2s" onmouseover="this.style.background='#29b5e8'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
-            <i class="fa-brands fa-telegram" style="font-size:18px"></i> Telegram
-          </a>
-          <a href="https://wa.me/78006001838" target="_blank" style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:12px 20px;border-radius:8px;font-family:Oswald;font-size:14px;letter-spacing:0.05em;transition:all 0.2s" onmouseover="this.style.background='#25d366'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
-            <i class="fa-brands fa-whatsapp" style="font-size:18px"></i> WhatsApp
-          </a>
-          <a href="https://vk.com/atletauto" target="_blank" style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:12px 20px;border-radius:8px;font-family:Oswald;font-size:14px;letter-spacing:0.05em;transition:all 0.2s" onmouseover="this.style.background='#4a76a8'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
-            <i class="fa-brands fa-vk" style="font-size:18px"></i> ВКонтакте
-          </a>
-        </div>
-      </div>
-      <div id="form">
-        <div class="contact__form">
-          <form onsubmit="handleSubmit(event)">
-            <div class="form-group">
-              <label>Ваше имя</label>
-              <input type="text" name="name" placeholder="Иван Иванов" required>
+      <!-- Tab: Под заказ -->
+      <div class="tab-pane active" id="tab-order">
+        <div class="catalog-grid">
+          <!-- Li Auto L9 Ultra -->
+          <div class="car-card reveal" style="transition-delay:0s">
+            <div class="car-img-wrap">
+              <img src="images/catalog/liauto.jpg" alt="Li Auto L9 Ultra" loading="lazy">
+              <div class="car-badge">🇨🇳 КИТАЙ</div>
             </div>
-            <div class="form-group">
-              <label>Номер телефона</label>
-              <input type="tel" id="phone-input" name="phone" placeholder="+7 (___) ___-__-__" required>
+            <div class="car-body">
+              <div class="car-name">Li Auto L9 Ultra</div>
+              <div class="car-tags">
+                <span class="tag">2024</span>
+                <span class="tag">7 мест</span>
+                <span class="tag">Гибрид</span>
+                <span class="tag">449 л.с.</span>
+              </div>
+              <div class="car-price-label">Стоимость под ключ</div>
+              <div class="car-price">от 5 350 000 ₽</div>
+              <div class="car-actions">
+                <a href="https://wa.me/79025408838?text=Интересует%20Li%20Auto%20L9%20Ultra" target="_blank" class="btn btn-outline btn-sm">Узнать подробнее</a>
+              </div>
             </div>
-            <div class="form-group">
-              <label>Желаемый автомобиль</label>
-              <input type="text" name="car" placeholder="Например: BMW X5 2023, Tank 300, KIA K5...">
+          </div>
+          <!-- Haval H9 -->
+          <div class="car-card reveal" style="transition-delay:0.05s">
+            <div class="car-img-wrap">
+              <img src="images/catalog/haval.jpg" alt="Haval H9" loading="lazy">
+              <div class="car-badge">🇨🇳 КИТАЙ</div>
             </div>
-            <div class="form-group">
-              <label>Комментарий</label>
-              <textarea name="message" rows="3" placeholder="Укажите бюджет, сроки и особые пожелания..."></textarea>
+            <div class="car-body">
+              <div class="car-name">Haval H9</div>
+              <div class="car-tags">
+                <span class="tag">2024</span>
+                <span class="tag">4WD</span>
+                <span class="tag">218 л.с.</span>
+              </div>
+              <div class="car-price-label">Стоимость под ключ</div>
+              <div class="car-price">от 3 290 000 ₽</div>
+              <div class="car-actions">
+                <a href="https://wa.me/79025408838?text=Интересует%20Haval%20H9" target="_blank" class="btn btn-outline btn-sm">Узнать подробнее</a>
+              </div>
             </div>
-            <button type="submit" class="btn btn-orange" style="width:100%;justify-content:center;font-size:17px;padding:16px">
-              <i class="fa-solid fa-paper-plane"></i>
-              Отправить заявку
-            </button>
-            <p class="form-note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
-            <div class="form-success" id="formSuccess">
-              <i class="fa-solid fa-circle-check" style="font-size:22px"></i>
-              Заявка отправлена! Менеджер свяжется с вами в ближайшее время.
+          </div>
+          <!-- Genesis GV80 -->
+          <div class="car-card reveal" style="transition-delay:0.1s">
+            <div class="car-img-wrap">
+              <img src="images/catalog/genesis.jpg" alt="Genesis GV80" loading="lazy">
+              <div class="car-badge">🇰🇷 КОРЕЯ</div>
             </div>
-          </form>
+            <div class="car-body">
+              <div class="car-name">Genesis GV80</div>
+              <div class="car-tags">
+                <span class="tag">2024</span>
+                <span class="tag">AWD</span>
+                <span class="tag">277 л.с.</span>
+              </div>
+              <div class="car-price-label">Стоимость под ключ</div>
+              <div class="car-price">от 7 100 000 ₽</div>
+              <div class="car-actions">
+                <a href="https://wa.me/79025408838?text=Интересует%20Genesis%20GV80" target="_blank" class="btn btn-outline btn-sm">Узнать подробнее</a>
+              </div>
+            </div>
+          </div>
+          <!-- Mercedes E 350 -->
+          <div class="car-card reveal" style="transition-delay:0.15s">
+            <div class="car-img-wrap">
+              <img src="images/catalog/mercedes.jpg" alt="Mercedes-Benz E 350" loading="lazy">
+              <div class="car-badge">🇪🇺 ЕВРОПА</div>
+            </div>
+            <div class="car-body">
+              <div class="car-name">Mercedes-Benz E 350</div>
+              <div class="car-tags">
+                <span class="tag">2023</span>
+                <span class="tag">299 л.с.</span>
+              </div>
+              <div class="car-price-label">Стоимость под ключ</div>
+              <div class="car-price">от 9 800 000 ₽</div>
+              <div class="car-actions">
+                <a href="https://wa.me/79025408838?text=Интересует%20Mercedes%20E%20350" target="_blank" class="btn btn-outline btn-sm">Узнать подробнее</a>
+              </div>
+            </div>
+          </div>
+          <!-- BMW 5 Series -->
+          <div class="car-card reveal" style="transition-delay:0.2s">
+            <div class="car-img-wrap">
+              <img src="images/catalog/bmw.jpg" alt="BMW 5 серии" loading="lazy">
+              <div class="car-badge">🇪🇺 ЕВРОПА</div>
+            </div>
+            <div class="car-body">
+              <div class="car-name">BMW 5 серии</div>
+              <div class="car-tags">
+                <span class="tag">2024</span>
+                <span class="tag">252 л.с.</span>
+              </div>
+              <div class="car-price-label">Стоимость под ключ</div>
+              <div class="car-price">от 6 900 000 ₽</div>
+              <div class="car-actions">
+                <a href="https://wa.me/79025408838?text=Интересует%20BMW%205" target="_blank" class="btn btn-outline btn-sm">Узнать подробнее</a>
+              </div>
+            </div>
+          </div>
+          <!-- Tank 300 -->
+          <div class="car-card reveal" style="transition-delay:0.25s">
+            <div class="car-img-wrap">
+              <img src="images/catalog/tank.jpg" alt="Tank 300 Hi4-T" loading="lazy">
+              <div class="car-badge">🇨🇳 КИТАЙ</div>
+            </div>
+            <div class="car-body">
+              <div class="car-name">Tank 300 Hi4-T</div>
+              <div class="car-tags">
+                <span class="tag">2024</span>
+                <span class="tag">4WD</span>
+                <span class="tag">349 л.с.</span>
+              </div>
+              <div class="car-price-label">Стоимость под ключ</div>
+              <div class="car-price">от 4 100 000 ₽</div>
+              <div class="car-actions">
+                <a href="https://wa.me/79025408838?text=Интересует%20Tank%20300" target="_blank" class="btn btn-outline btn-sm">Узнать подробнее</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab: В наличии -->
+      <div class="tab-pane" id="tab-stock">
+        <div class="catalog-grid">
+          <!-- Chery Tiggo 8 Pro -->
+          <div class="car-card reveal" style="transition-delay:0s">
+            <div class="car-img-wrap">
+              <img src="images/catalog/chery.jpg" alt="Chery Tiggo 8 Pro" loading="lazy">
+              <div class="car-badge">🇨🇳 КИТАЙ</div>
+              <div class="car-badge-avail">В НАЛИЧИИ</div>
+            </div>
+            <div class="car-body">
+              <div class="car-name">Chery Tiggo 8 Pro</div>
+              <div class="car-tags">
+                <span class="tag">2023</span>
+                <span class="tag">55 000 км</span>
+              </div>
+              <div class="car-price-label">Цена</div>
+              <div class="car-price">4 100 000 ₽</div>
+              <div class="car-actions">
+                <a href="https://wa.me/79025408838?text=Интересует%20Chery%20Tiggo%208%20Pro%20в%20наличии" target="_blank" class="btn btn-outline btn-sm">Узнать подробнее</a>
+              </div>
+            </div>
+          </div>
+          <!-- KIA K5 -->
+          <div class="car-card reveal" style="transition-delay:0.05s">
+            <div class="car-img-wrap">
+              <img src="images/catalog/kia.jpg" alt="KIA K5" loading="lazy">
+              <div class="car-badge">🇰🇷 КОРЕЯ</div>
+              <div class="car-badge-avail">В НАЛИЧИИ</div>
+            </div>
+            <div class="car-body">
+              <div class="car-name">KIA K5</div>
+              <div class="car-tags">
+                <span class="tag">2022</span>
+                <span class="tag">48 000 км</span>
+              </div>
+              <div class="car-price-label">Цена</div>
+              <div class="car-price">2 890 000 ₽</div>
+              <div class="car-actions">
+                <a href="https://wa.me/79025408838?text=Интересует%20KIA%20K5%20в%20наличии" target="_blank" class="btn btn-outline btn-sm">Узнать подробнее</a>
+              </div>
+            </div>
+          </div>
+          <!-- Geely Monjaro -->
+          <div class="car-card reveal" style="transition-delay:0.1s">
+            <div class="car-img-wrap">
+              <img src="images/catalog/geely.jpg" alt="Geely Monjaro" loading="lazy">
+              <div class="car-badge">🇨🇳 КИТАЙ</div>
+              <div class="car-badge-avail">В НАЛИЧИИ</div>
+            </div>
+            <div class="car-body">
+              <div class="car-name">Geely Monjaro</div>
+              <div class="car-tags">
+                <span class="tag">2023</span>
+                <span class="tag">28 000 км</span>
+              </div>
+              <div class="car-price-label">Цена</div>
+              <div class="car-price">3 450 000 ₽</div>
+              <div class="car-actions">
+                <a href="https://wa.me/79025408838?text=Интересует%20Geely%20Monjaro%20в%20наличии" target="_blank" class="btn btn-outline btn-sm">Узнать подробнее</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab: Спецтехника -->
+      <div class="tab-pane" id="tab-spec">
+        <div class="catalog-grid" style="grid-template-columns:repeat(2,1fr);max-width:860px;">
+          <!-- Excavator XCMG -->
+          <div class="car-card reveal" style="transition-delay:0s">
+            <div class="car-img-wrap">
+              <img src="images/catalog/excavator.jpg" alt="Экскаватор XCMG XE215C" loading="lazy">
+              <div class="car-badge">🇨🇳 КИТАЙ</div>
+            </div>
+            <div class="car-body">
+              <div class="car-name">Экскаватор XCMG XE215C</div>
+              <div class="car-tags">
+                <span class="tag">2023</span>
+                <span class="tag">21 т</span>
+              </div>
+              <div class="car-price-label">Стоимость под ключ</div>
+              <div class="car-price">от 7 200 000 ₽</div>
+              <div class="car-actions">
+                <a href="https://wa.me/79025408838?text=Интересует%20Экскаватор%20XCMG" target="_blank" class="btn btn-outline btn-sm">Узнать подробнее</a>
+              </div>
+            </div>
+          </div>
+          <!-- Loader SDLG -->
+          <div class="car-card reveal" style="transition-delay:0.05s">
+            <div class="car-img-wrap">
+              <img src="images/catalog/loader.png" alt="Погрузчик SDLG LG936" loading="lazy">
+              <div class="car-badge">🇨🇳 КИТАЙ</div>
+            </div>
+            <div class="car-body">
+              <div class="car-name">Погрузчик SDLG LG936</div>
+              <div class="car-tags">
+                <span class="tag">2023</span>
+                <span class="tag">3 т</span>
+              </div>
+              <div class="car-price-label">Стоимость под ключ</div>
+              <div class="car-price">от 4 500 000 ₽</div>
+              <div class="car-actions">
+                <a href="https://wa.me/79025408838?text=Интересует%20Погрузчик%20SDLG" target="_blank" class="btn btn-outline btn-sm">Узнать подробнее</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- =================== FOOTER =================== -->
-<footer class="footer" id="footer">
-  <div class="container">
-    <div class="footer__grid">
-      <div class="footer__brand">
-        <div class="footer__logo">
+  <!-- ============================
+       QUIZ CALCULATOR
+  ============================ -->
+  <section id="quiz">
+    <div class="container">
+      <div class="eyebrow">Калькулятор</div>
+      <h2 class="section-title">Рассчитайте стоимость за 1 минуту</h2>
+      <div class="quiz-wrap">
+        <div class="quiz-dots">
+          <div class="quiz-dot active" id="dot0"></div>
+          <div class="quiz-dot" id="dot1"></div>
+          <div class="quiz-dot" id="dot2"></div>
+          <div class="quiz-dot" id="dot3"></div>
+        </div>
+
+        <!-- Step 1: Country -->
+        <div class="quiz-step active" id="quiz-step-1">
+          <div class="quiz-question">Из какой страны везём?</div>
+          <div class="quiz-options grid-3">
+            <div class="quiz-option" data-value="china" onclick="selectQuizOption(this, 1)">
+              <span class="opt-emoji">🇨🇳</span>Китай
+            </div>
+            <div class="quiz-option" data-value="korea" onclick="selectQuizOption(this, 1)">
+              <span class="opt-emoji">🇰🇷</span>Корея
+            </div>
+            <div class="quiz-option" data-value="japan" onclick="selectQuizOption(this, 1)">
+              <span class="opt-emoji">🇯🇵</span>Япония
+            </div>
+            <div class="quiz-option" data-value="uae" onclick="selectQuizOption(this, 1)">
+              <span class="opt-emoji">🇦🇪</span>ОАЭ
+            </div>
+            <div class="quiz-option" data-value="europe" onclick="selectQuizOption(this, 1)">
+              <span class="opt-emoji">🇪🇺</span>Европа
+            </div>
+            <div class="quiz-option" data-value="other" onclick="selectQuizOption(this, 1)">
+              <span class="opt-emoji">🌐</span>Другая
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Type -->
+        <div class="quiz-step" id="quiz-step-2">
+          <div class="quiz-question">Тип автомобиля?</div>
+          <div class="quiz-options grid-2">
+            <div class="quiz-option" data-value="sedan" onclick="selectQuizOption(this, 2)">
+              <span class="opt-emoji">🚗</span>Седан / Купе
+            </div>
+            <div class="quiz-option" data-value="suv" onclick="selectQuizOption(this, 2)">
+              <span class="opt-emoji">🚙</span>Кроссовер / SUV
+            </div>
+            <div class="quiz-option" data-value="minivan" onclick="selectQuizOption(this, 2)">
+              <span class="opt-emoji">🚐</span>Минивэн
+            </div>
+            <div class="quiz-option" data-value="electric" onclick="selectQuizOption(this, 2)">
+              <span class="opt-emoji">⚡</span>Электромобиль
+            </div>
+            <div class="quiz-option" data-value="special" onclick="selectQuizOption(this, 2)">
+              <span class="opt-emoji">🚛</span>Спецтехника
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Budget -->
+        <div class="quiz-step" id="quiz-step-3">
+          <div class="quiz-question">Бюджет в стране покупки?</div>
+          <div class="quiz-options grid-2">
+            <div class="quiz-option" data-value="budget1" onclick="selectQuizOption(this, 3)">
+              <span class="opt-emoji">💵</span>до $15 000
+            </div>
+            <div class="quiz-option" data-value="budget2" onclick="selectQuizOption(this, 3)">
+              <span class="opt-emoji">💵</span>$15 000 – $25 000
+            </div>
+            <div class="quiz-option" data-value="budget3" onclick="selectQuizOption(this, 3)">
+              <span class="opt-emoji">💰</span>$25 000 – $40 000
+            </div>
+            <div class="quiz-option" data-value="budget4" onclick="selectQuizOption(this, 3)">
+              <span class="opt-emoji">💎</span>от $40 000
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: Result -->
+        <div class="quiz-step" id="quiz-step-4">
+          <div class="quiz-result-box">
+            <div class="quiz-result-label">Ориентировочная стоимость под ключ</div>
+            <div class="quiz-result-price" id="quizResultPrice">от 2.4 до 3.1 млн ₽</div>
+            <div class="quiz-disclaimer">
+              Цены ориентировочные. Зависят от текущего курса валют и утильсбора.<br>
+              Мы не скрываем комиссии — окончательная цена фиксируется в договоре.
+            </div>
+          </div>
+          <div class="quiz-result-btns">
+            <a href="https://wa.me/79025408838?text=Хочу%20получить%20точный%20расчёт%20стоимости%20авто" target="_blank" class="btn btn-accent">Получить точный расчёт →</a>
+            <button class="btn-back" onclick="resetQuiz()">← Считать снова</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       REVIEWS
+  ============================ -->
+  <section id="reviews">
+    <div class="container">
+      <div class="eyebrow">Отзывы</div>
+      <h2 class="section-title">Нам доверяют сотни клиентов</h2>
+
+      <div class="ratings-bar reveal">
+        <div class="rating-block">
+          <div>
+            <div class="rating-platform">2ГИС</div>
+            <div class="rating-stars">★★★★★</div>
+            <div class="rating-count">124 отзыва</div>
+          </div>
+          <div class="rating-num">4.8</div>
+        </div>
+        <div class="ratings-sep"></div>
+        <div class="rating-block">
+          <div>
+            <div class="rating-platform">Яндекс.Карты</div>
+            <div class="rating-stars">★★★★★</div>
+            <div class="rating-count">89 отзывов</div>
+          </div>
+          <div class="rating-num">4.9</div>
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="video-card reveal" style="transition-delay:0s">
+          <div class="video-thumb">
+            <img src="images/previews/preview_1.jpg" alt="Отзыв Любовь М." loading="lazy">
+            <div class="video-overlay"></div>
+            <div class="play-btn"><i class="fa-solid fa-play" style="margin-left:3px;"></i></div>
+          </div>
+          <div class="video-info">
+            <div class="video-name">Любовь М. — Toyota RAV4, Красноярск</div>
+          </div>
+        </div>
+        <div class="video-card reveal" style="transition-delay:0.05s">
+          <div class="video-thumb">
+            <img src="images/previews/preview_2.jpg" alt="Отзыв Юрий К." loading="lazy">
+            <div class="video-overlay"></div>
+            <div class="play-btn"><i class="fa-solid fa-play" style="margin-left:3px;"></i></div>
+          </div>
+          <div class="video-info">
+            <div class="video-name">Юрий К. — Haval H9, Новосибирск</div>
+          </div>
+        </div>
+        <div class="video-card reveal" style="transition-delay:0.1s">
+          <div class="video-thumb">
+            <img src="images/previews/preview_3.jpg" alt="Отзыв Екатерина С." loading="lazy">
+            <div class="video-overlay"></div>
+            <div class="play-btn"><i class="fa-solid fa-play" style="margin-left:3px;"></i></div>
+          </div>
+          <div class="video-info">
+            <div class="video-name">Екатерина С. — KIA Sportage, Москва</div>
+          </div>
+        </div>
+        <div class="video-card reveal" style="transition-delay:0.15s">
+          <div class="video-thumb">
+            <img src="images/previews/preview_4.jpg" alt="Отзыв Алексей Р." loading="lazy">
+            <div class="video-overlay"></div>
+            <div class="play-btn"><i class="fa-solid fa-play" style="margin-left:3px;"></i></div>
+          </div>
+          <div class="video-info">
+            <div class="video-name">Алексей Р. — Mercedes GLE, Краснодар</div>
+          </div>
+        </div>
+        <div class="video-card reveal" style="transition-delay:0.2s">
+          <div class="video-thumb">
+            <img src="images/previews/preview_5.jpg" alt="Отзыв Ирина В." loading="lazy">
+            <div class="video-overlay"></div>
+            <div class="play-btn"><i class="fa-solid fa-play" style="margin-left:3px;"></i></div>
+          </div>
+          <div class="video-info">
+            <div class="video-name">Ирина В. — Li Auto L7, Хабаровск</div>
+          </div>
+        </div>
+        <div class="video-card reveal" style="transition-delay:0.25s">
+          <div class="video-thumb">
+            <img src="images/previews/preview_6.jpg" alt="Отзыв Максим Д." loading="lazy">
+            <div class="video-overlay"></div>
+            <div class="play-btn"><i class="fa-solid fa-play" style="margin-left:3px;"></i></div>
+          </div>
+          <div class="video-info">
+            <div class="video-name">Максим Д. — Tank 300, Владивосток</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       MANAGERS / CONTACTS
+  ============================ -->
+  <section id="contacts">
+    <div class="container">
+      <div class="eyebrow">Команда</div>
+      <h2 class="section-title">Менеджеры на связи 24/7</h2>
+      <div class="managers-grid">
+        <!-- Дмитрий -->
+        <div class="glass-card manager-card reveal" style="transition-delay:0s">
+          <div class="manager-avatar">ДС</div>
+          <div class="manager-name">Дмитрий</div>
+          <div class="manager-role">Старший менеджер</div>
+          <div class="manager-btns">
+            <a href="https://t.me/atletauto_vl" target="_blank" class="manager-btn btn-tg">
+              <i class="fa-brands fa-telegram"></i> Написать в Telegram
+            </a>
+            <a href="https://wa.me/79025408838" target="_blank" class="manager-btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
+            </a>
+          </div>
+        </div>
+        <!-- Анастасия -->
+        <div class="glass-card manager-card reveal" style="transition-delay:0.1s">
+          <div class="manager-avatar">АЛ</div>
+          <div class="manager-name">Анастасия</div>
+          <div class="manager-role">Менеджер по продажам</div>
+          <div class="manager-btns">
+            <a href="https://t.me/atletauto_vl" target="_blank" class="manager-btn btn-tg">
+              <i class="fa-brands fa-telegram"></i> Написать в Telegram
+            </a>
+            <a href="https://wa.me/79025408838" target="_blank" class="manager-btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
+            </a>
+          </div>
+        </div>
+        <!-- Павел -->
+        <div class="glass-card manager-card reveal" style="transition-delay:0.2s">
+          <div class="manager-avatar">ПК</div>
+          <div class="manager-name">Павел</div>
+          <div class="manager-role">Специалист по таможне</div>
+          <div class="manager-btns">
+            <a href="https://t.me/atletauto_vl" target="_blank" class="manager-btn btn-tg">
+              <i class="fa-brands fa-telegram"></i> Написать в Telegram
+            </a>
+            <a href="https://wa.me/79025408838" target="_blank" class="manager-btn btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="address-strip">
+        <div class="address-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Владивосток, ул. Запорожская, 87а, офис 8</span>
+        </div>
+        <div class="address-item">
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:+78006001838">8 (800) 600-18-38</a>
+          <span style="font-size:12px;color:var(--text-dim)">(бесплатно)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       FOOTER
+  ============================ -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <a href="#" class="footer-logo">
           <img src="images/tild6366-6165-4432-b831-663033633230_LOGO.PNG" alt="Атлет-Авто">
-        </div>
-        <p>Надёжный партнёр в импорте автомобилей из Китая, Японии, Кореи, Европы и США. Работаем с 2024 года.</p>
-        <div class="footer__socials">
-          <a href="https://t.me/atletauto" target="_blank" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
-          <a href="https://wa.me/78006001838" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="https://vk.com/atletauto" target="_blank" title="ВКонтакте"><i class="fa-brands fa-vk"></i></a>
-          <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        </div>
-      </div>
-      <div class="footer__nav">
-        <h4>Навигация</h4>
-        <ul>
-          <li><a href="#whyus">О компании</a></li>
-          <li><a href="#auto">Каталог авто</a></li>
-          <li><a href="#team">Наша команда</a></li>
-          <li><a href="#reviews">Отзывы клиентов</a></li>
+        </a>
+        <ul class="footer-links">
+          <li><a href="#catalog">Каталог</a></li>
+          <li><a href="#how">Как работаем</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
           <li><a href="#contacts">Контакты</a></li>
         </ul>
+        <div class="footer-socials">
+          <a href="https://t.me/atletauto_vl" target="_blank" class="social-icon" aria-label="Telegram">
+            <i class="fa-brands fa-telegram"></i>
+          </a>
+          <a href="https://wa.me/79025408838" target="_blank" class="social-icon" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="VK">
+            <i class="fa-brands fa-vk"></i>
+          </a>
+        </div>
       </div>
-      <div class="footer__nav">
-        <h4>Марки авто</h4>
-        <ul>
-          <li><a href="#auto" onclick="switchTab('chinese')">Китайские марки</a></li>
-          <li><a href="#auto" onclick="switchTab('korean')">Корейские марки</a></li>
-          <li><a href="#auto" onclick="switchTab('japanese')">Японские марки</a></li>
-          <li><a href="#auto" onclick="switchTab('european')">Европейские марки</a></li>
-          <li><a href="#auto" onclick="switchTab('american')">Американские марки</a></li>
-          <li><a href="#auto" onclick="switchTab('special')">Спецтехника</a></li>
-        </ul>
-      </div>
-      <div class="footer__contacts">
-        <h4>Контакты</h4>
-        <p><a href="tel:+78006001838">8 800 600 18 38</a></p>
-        <p>Запорожская, 87а, офис 8</p>
-        <p>Пн–Пт: 10:00–18:00</p>
-        <p style="color:var(--orange);font-weight:600">● Доступны 24/7</p>
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          ООО «АТЛЕТ АВТО» &nbsp;|&nbsp; ИНН: 2540285298 &nbsp;|&nbsp; ОГРН: 1232500020180
+        </div>
+        <div class="footer-copyright">
+          © 2025 Атлет-Авто. Все права защищены.
+        </div>
+        <div class="footer-disclaimer">
+          Цены ориентировочны и зависят от курса валют на дату сделки
+        </div>
       </div>
     </div>
-    <div class="footer__bottom">
-      <p>© 2024 ООО «АТЛЕТ АВТО» &nbsp;|&nbsp; ИНН: 2540285298 &nbsp;|&nbsp; ОГРН: 1242500012810 &nbsp;|&nbsp; КПП: 254001001</p>
-      <p>* Цены в каталоге носят ознакомительный характер и являются ориентировочными. Актуальная стоимость уточняется на дату подтверждения заказа с учётом курса валют на момент оформления.</p>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-// ---- Navbar ----
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.5)';
-  } else {
-    navbar.style.boxShadow = '0 4px 20px rgba(0,11,48,0.4)';
-  }
-}, { passive: true });
+  <!-- ============================
+       JAVASCRIPT
+  ============================ -->
+  <script>
+    // ---- LOADER ----
+    (function() {
+      var bar = document.getElementById('loaderBar');
+      var pct = document.getElementById('loaderPct');
+      var loader = document.getElementById('loader');
+      var progress = 0;
+      var done = false;
 
-// ---- Hero BG parallax load ----
-const heroBg = document.getElementById('heroBg');
-setTimeout(() => heroBg && heroBg.classList.add('loaded'), 100);
+      function updateBar(v) {
+        progress = Math.min(v, 100);
+        bar.style.width = progress + '%';
+        pct.textContent = Math.round(progress) + '%';
+      }
 
-// ---- Hero particle canvas ----
-(function() {
-  const canvas = document.getElementById('heroParticles');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
+      var interval = setInterval(function() {
+        if (progress < 70) {
+          updateBar(progress + 3.5);
+        } else if (progress < 90) {
+          updateBar(progress + 1.2);
+        } else if (progress < 98) {
+          updateBar(progress + 0.4);
+        }
+        if (progress >= 98) clearInterval(interval);
+      }, 80);
 
-  function resize() {
-    canvas.width  = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
+      function dismiss() {
+        if (done) return;
+        done = true;
+        clearInterval(interval);
+        updateBar(100);
+        setTimeout(function() {
+          loader.classList.add('hide');
+        }, 300);
+      }
 
-  // Build particles
-  const N = 75;
-  const particles = Array.from({length: N}, () => ({
-    x: Math.random(),
-    y: Math.random(),
-    r: Math.random() * 2 + 0.4,
-    vx: (Math.random() - 0.5) * 0.00018,
-    vy: (Math.random() - 0.5) * 0.00018,
-    // orange accent ~12% of particles
-    isAccent: Math.random() < 0.12,
-    phase: Math.random() * Math.PI * 2,
-    speed: 0.6 + Math.random() * 0.8
-  }));
+      window.addEventListener('load', function() {
+        setTimeout(dismiss, 500);
+      });
 
-  let t = 0;
+      // Failsafe
+      setTimeout(dismiss, 4000);
+    })();
 
-  function draw() {
-    const W = canvas.width, H = canvas.height;
-    ctx.clearRect(0, 0, W, H);
-    t += 0.016;
+    // ---- HERO BG ----
+    (function() {
+      var heroBg = document.getElementById('heroBg');
+      var img = new Image();
+      img.onload = function() { heroBg.classList.add('loaded'); };
+      img.src = 'images/catalog/liauto.jpg';
+    })();
 
-    // Move particles (stored as 0-1 fractions so resize is free)
-    particles.forEach(p => {
-      p.x += p.vx * p.speed;
-      p.y += p.vy * p.speed;
-      if (p.x < 0) p.x = 1; if (p.x > 1) p.x = 0;
-      if (p.y < 0) p.y = 1; if (p.y > 1) p.y = 0;
+    // ---- NAVBAR SCROLL ----
+    var mainNav = document.getElementById('mainNav');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 80) {
+        mainNav.classList.add('scrolled');
+      } else {
+        mainNav.classList.remove('scrolled');
+      }
+    }, { passive: true });
+
+    // ---- BURGER MENU ----
+    var burgerBtn = document.getElementById('burgerBtn');
+    var navMobile = document.getElementById('navMobile');
+    burgerBtn.addEventListener('click', function() {
+      burgerBtn.classList.toggle('open');
+      navMobile.classList.toggle('open');
+    });
+    // Close on mobile link click
+    navMobile.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        burgerBtn.classList.remove('open');
+        navMobile.classList.remove('open');
+      });
     });
 
-    const CONNECTION_DIST = 0.12; // fraction of width
+    // ---- CATALOG TABS ----
+    document.querySelectorAll('.tab-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.tab-pane').forEach(function(p) { p.classList.remove('active'); });
+        btn.classList.add('active');
+        var pane = document.getElementById(btn.dataset.tab);
+        if (pane) pane.classList.add('active');
+      });
+    });
 
-    for (let i = 0; i < N; i++) {
-      const p = particles[i];
-      const px = p.x * W, py = p.y * H;
-      const pulseA = 0.65 + 0.35 * Math.sin(t * p.speed + p.phase);
+    // ---- QUIZ ----
+    var quizState = { country: null, type: null, budget: null };
 
-      // Connection lines
-      for (let j = i + 1; j < N; j++) {
-        const q = particles[j];
-        const dx = p.x - q.x, dy = (p.y - q.y) * (H / W);
-        const d = Math.sqrt(dx * dx + dy * dy);
-        if (d < CONNECTION_DIST) {
-          const lineA = (1 - d / CONNECTION_DIST) * 0.10;
-          ctx.strokeStyle = `rgba(201,169,110,${lineA})`;
-          ctx.lineWidth = 0.6;
-          ctx.beginPath();
-          ctx.moveTo(px, py);
-          ctx.lineTo(q.x * W, q.y * H);
-          ctx.stroke();
+    var countryMults = {
+      china: 1.0,
+      korea: 1.25,
+      japan: 1.30,
+      uae: 1.35,
+      europe: 1.55,
+      other: 1.2
+    };
+
+    var budgetMids = {
+      budget1: 12000,
+      budget2: 20000,
+      budget3: 32000,
+      budget4: 55000
+    };
+
+    function calcPrice(country, budget) {
+      var rate = 90;
+      var mult = countryMults[country] || 1.0;
+      var bud = budgetMids[budget] || 20000;
+      var totalMin = bud * 0.9 * rate * mult;
+      var totalMax = totalMin * 1.25;
+      var minM = (totalMin / 1000000).toFixed(1);
+      var maxM = (totalMax / 1000000).toFixed(1);
+      return 'от ' + minM + ' до ' + maxM + ' млн ₽';
+    }
+
+    function showStep(n) {
+      document.querySelectorAll('.quiz-step').forEach(function(s) { s.classList.remove('active'); });
+      var step = document.getElementById('quiz-step-' + n);
+      if (step) step.classList.add('active');
+
+      // Update dots
+      document.querySelectorAll('.quiz-dot').forEach(function(d, i) {
+        d.classList.toggle('active', i === n - 1);
+      });
+    }
+
+    function selectQuizOption(el, step) {
+      var opts = el.closest('.quiz-options').querySelectorAll('.quiz-option');
+      opts.forEach(function(o) { o.classList.remove('selected'); });
+      el.classList.add('selected');
+
+      var val = el.dataset.value;
+
+      if (step === 1) {
+        quizState.country = val;
+        setTimeout(function() { showStep(2); }, 250);
+      } else if (step === 2) {
+        quizState.type = val;
+        setTimeout(function() { showStep(3); }, 250);
+      } else if (step === 3) {
+        quizState.budget = val;
+        setTimeout(function() {
+          var result = calcPrice(quizState.country, quizState.budget);
+          document.getElementById('quizResultPrice').textContent = result;
+          showStep(4);
+        }, 250);
+      }
+    }
+
+    function resetQuiz() {
+      quizState = { country: null, type: null, budget: null };
+      document.querySelectorAll('.quiz-option').forEach(function(o) { o.classList.remove('selected'); });
+      showStep(1);
+    }
+
+    // ---- SMOOTH SCROLL ----
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        var href = a.getAttribute('href');
+        if (!href || href === '#') return;
+        var t = document.querySelector(href);
+        if (t) {
+          e.preventDefault();
+          t.scrollIntoView({ behavior: 'smooth' });
         }
-      }
+      });
+    });
 
-      // Particle dot
-      const color = p.isAccent ? '240,192,96' : '201,169,110';
-      ctx.beginPath();
-      ctx.arc(px, py, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${color},${0.35 * pulseA})`;
-      ctx.fill();
+    // ---- INTERSECTION OBSERVER (REVEAL) ----
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
 
-      // Tiny glow halo on bigger particles
-      if (p.r > 1.4) {
-        const grd = ctx.createRadialGradient(px, py, 0, px, py, p.r * 4);
-        grd.addColorStop(0, `rgba(${color},${0.08 * pulseA})`);
-        grd.addColorStop(1, `rgba(${color},0)`);
-        ctx.fillStyle = grd;
-        ctx.beginPath();
-        ctx.arc(px, py, p.r * 4, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      obs.observe(el);
+    });
 
-    requestAnimationFrame(draw);
-  }
+    // ---- TIMELINE ANIMATION ----
+    var timelineSection = document.getElementById('how');
+    var timelineFill = document.getElementById('timelineFill');
+    var timelineObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          timelineFill.classList.add('animated');
+          // Activate steps sequentially
+          var steps = document.querySelectorAll('.timeline-step');
+          steps.forEach(function(step, i) {
+            setTimeout(function() {
+              step.classList.add('active');
+            }, i * 280);
+          });
+          timelineObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
 
-  draw();
-})();
-
-// ---- Mobile burger ----
-const burger = document.getElementById('burgerBtn');
-const navMenu = document.getElementById('navMenu');
-burger.addEventListener('click', () => {
-  const open = navMenu.classList.toggle('open');
-  burger.style.opacity = open ? '0.7' : '1';
-  document.body.style.overflow = open ? 'hidden' : '';
-});
-navMenu.querySelectorAll('.nav__link').forEach(l => l.addEventListener('click', () => {
-  navMenu.classList.remove('open');
-  document.body.style.overflow = '';
-}));
-
-// ---- Catalog tabs ----
-function switchTab(name) {
-  document.querySelectorAll('.catalog-tab').forEach((btn, i) => {
-    const panels = ['chinese','korean','japanese','european','american','special','instock'];
-    btn.classList.toggle('active', panels[i] === name);
-  });
-  document.querySelectorAll('.catalog-panel').forEach(p => {
-    p.classList.toggle('active', p.id === 'panel-' + name);
-  });
-}
-
-// ---- Counter animation ----
-function animateCounter(el, to, dur = 1400) {
-  const start = performance.now();
-  const update = (now) => {
-    const t = Math.min((now - start) / dur, 1);
-    const ease = 1 - Math.pow(1 - t, 3);
-    el.textContent = Math.round(ease * to).toLocaleString('ru');
-    if (t < 1) requestAnimationFrame(update);
-  };
-  requestAnimationFrame(update);
-}
-const counterObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      animateCounter(e.target, parseInt(e.target.dataset.to));
-      counterObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
-
-// ---- Scroll reveal ----
-const revealObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.style.opacity = '1';
-      e.target.style.transform = 'translateY(0)';
-      revealObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.benefit-card, .car-card, .manager-card, .review-img, .gallery-item, .step').forEach((el, i) => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(24px)';
-  el.style.transition = `opacity 0.5s ease ${(i % 6) * 0.07}s, transform 0.5s ease ${(i % 6) * 0.07}s`;
-  revealObs.observe(el);
-});
-
-// ---- Form submit ----
-function handleSubmit(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('button[type=submit]');
-  const success = document.getElementById('formSuccess');
-  btn.disabled = true;
-  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Отправка...';
-  setTimeout(() => {
-    e.target.reset();
-    btn.style.display = 'none';
-    success.classList.add('show');
-    setTimeout(() => {
-      btn.style.display = '';
-      btn.disabled = false;
-      btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Отправить заявку';
-      success.classList.remove('show');
-    }, 6000);
-  }, 1200);
-}
-
-// ---- Phone mask ----
-const phoneInput = document.getElementById('phone-input');
-if (phoneInput) {
-  phoneInput.addEventListener('input', e => {
-    let v = e.target.value.replace(/\D/g, '');
-    if (v.startsWith('8')) v = '7' + v.slice(1);
-    if (v.length === 0) { e.target.value = ''; return; }
-    let fmt = '+7';
-    if (v.length > 1) fmt += ' (' + v.slice(1, 4);
-    if (v.length >= 4) fmt += ') ' + v.slice(4, 7);
-    if (v.length >= 7) fmt += '-' + v.slice(7, 9);
-    if (v.length >= 9) fmt += '-' + v.slice(9, 11);
-    e.target.value = fmt;
-  });
-}
-
-// ---- Smooth scroll ----
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const id = a.getAttribute('href').slice(1);
-    if (!id) return;
-    const target = document.getElementById(id);
-    if (target) {
-      e.preventDefault();
-      const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 70;
-      window.scrollTo({ top: target.getBoundingClientRect().top + scrollY - navH - 10, behavior: 'smooth' });
-    }
-  });
-});
-
-  /* ===================== LOADER JS ===================== */
-  (function(){
-    const loader = document.getElementById('loader');
-    const bar    = document.getElementById('loaderBar');
-    if (!loader || !bar) return;
-
-    let w = 0;
-    const tick = setInterval(() => {
-      if      (w < 70) w += 3.5;
-      else if (w < 90) w += 1.2;
-      else if (w < 98) w += 0.4;
-      bar.style.width = w + '%';
-    }, 40);
-
-    function dismiss() {
-      clearInterval(tick);
-      bar.style.transition = 'width 0.3s ease';
-      bar.style.width = '100%';
-      setTimeout(() => {
-        loader.classList.add('hide');
-        setTimeout(() => { loader.style.display = 'none'; }, 1100);
-      }, 320);
-    }
-
-    window.addEventListener('load', dismiss);
-    setTimeout(dismiss, 3500); // failsafe
-  })();
-</script>
+    if (timelineSection) timelineObserver.observe(timelineSection);
+  </script>
 
 </body>
 </html>
