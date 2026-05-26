@@ -174,7 +174,7 @@
     .hero { position: relative; min-height: 100vh; overflow: hidden; padding-top: var(--nh); display: flex; }
     .hero-bg {
       position: absolute; inset: 0;
-      background-image: url('images/catalog/mercedes.jpg');
+      background-image: url('images/catalog/kia.jpg');
       background-size: cover; background-position: 78% center;
       transform: scale(1.06); transition: transform 8s ease;
     }
@@ -825,19 +825,21 @@
     <!-- TAB: ПОД ЗАКАЗ -->
     <div class="tab-pane active" id="t-order">
 
-      <div class="car-card reveal">
+      <div class="car-card reveal" style="border-color:rgba(43,92,230,.35)">
         <div class="car-photo">
-          <img src="images/catalog/liauto.jpg" alt="Li Auto L9 Ultra">
+          <img src="images/catalog/kia.jpg" alt="Kia Mohave">
+          <span class="car-bd">🇰🇷 Корея</span>
+          <span class="car-bd-stock" style="right:12px;top:12px;font-size:10px;padding:4px 10px;background:rgba(43,92,230,.2);border-color:var(--or);color:var(--or)">⭐ Бренд</span>
           <span class="car-bd">🇨🇳 Китай</span>
         </div>
         <div class="car-body">
-          <div class="car-model">Li Auto L9 Ultra</div>
+          <div class="car-model">Kia Mohave</div>
           <div class="car-tags">
             <span class="car-tag">2024</span><span class="car-tag">7 мест</span>
-            <span class="car-tag">Гибрид</span><span class="car-tag">449 л.с.</span>
+            <span class="car-tag">4WD</span><span class="car-tag">260 л.с.</span>
           </div>
           <div class="car-pl">Стоимость под ключ</div>
-          <div class="car-price">от 5 350 000 ₽</div>
+          <div class="car-price">от 6 200 000 ₽</div>
           <a href="#quiz" class="car-cta">Узнать цену →</a>
         </div>
       </div>
@@ -1331,8 +1333,9 @@
         </div>
         <div class="map-frame">
           <iframe
-            src="https://yandex.ru/map-widget/v1/?text=%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%B2%D0%BE%D1%81%D1%82%D0%BE%D0%BA%2C+%D1%83%D0%BB.+%D0%97%D0%B0%D0%BF%D0%BE%D1%80%D0%BE%D0%B6%D1%81%D0%BA%D0%B0%D1%8F+87%D0%B0&z=16&lang=ru_RU"
+            src="https://maps.google.com/maps?q=%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%B2%D0%BE%D1%81%D1%82%D0%BE%D0%BA%2C+%D0%97%D0%B0%D0%BF%D0%BE%D1%80%D0%BE%D0%B6%D1%81%D0%BA%D0%B0%D1%8F+87%D0%B0&output=embed&hl=ru&z=16"
             allowfullscreen="true"
+            referrerpolicy="no-referrer-when-downgrade"
             title="Карта — Атлет-Авто Владивосток"
             loading="lazy">
           </iframe>
@@ -1449,14 +1452,14 @@ mNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ burger.cl
 /* ── HERO BG ── */
 (function(){
   const bg = document.getElementById('heroBg');
-  const src = 'images/catalog/mercedes.jpg';
+  const src = 'images/catalog/kia.jpg';
   bg.style.backgroundImage = "url('"+src+"')";
   const i = new Image(); i.onload=()=>bg.classList.add('loaded'); i.src=src;
 })();
 
 /* ── MARQUEE ── */
 (function(){
-  const brands = ['LI AUTO','MERCEDES-BENZ','BMW','HAVAL','GENESIS','LEXUS','TANK 300','CHERY','BYD','PORSCHE','GEELY','KIA'];
+  const brands = ['KIA MOHAVE','HAVAL','GENESIS','LEXUS','TANK 300','CHERY','BYD','TOYOTA','GEELY','LI AUTO','KIA','NISSAN'];
   const track  = document.getElementById('mqTrack');
   let html = '';
   [brands,brands].forEach(set=>set.forEach(b=>{ html+=`<div class="mq-item"><span class="mq-text">${b}</span><span class="mq-sep"></span></div>`; }));
