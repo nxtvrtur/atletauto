@@ -352,6 +352,63 @@
     .res-reset { font-family: var(--fm); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--m); background: none; border: none; margin-top: 16px; transition: color .2s; display: block; margin: 16px auto 0; }
     .res-reset:hover { color: var(--or); }
 
+    /* ── CALCULATOR ── */
+    .calc-section { background: var(--bg-r); position: relative; overflow: hidden; }
+    .calc-section::before { content: ''; position: absolute; top: -200px; right: -100px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(255,77,0,.05) 0%, transparent 65%); pointer-events: none; }
+    .calc-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .calc-form-wrap { background: var(--bg); border: 1px solid var(--b); border-radius: 16px; padding: 36px 32px; }
+    .calc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .calc-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+    .calc-label { font-family: var(--fm); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--m); }
+    .calc-input, .calc-select {
+      background: var(--bg-r); border: 1px solid var(--b); border-radius: var(--r);
+      padding: 13px 16px; font-family: var(--fm); font-size: 15px; color: var(--w);
+      outline: none; transition: border-color .2s, box-shadow .2s; width: 100%;
+      -webkit-appearance: none;
+    }
+    .calc-input:focus, .calc-select:focus { border-color: var(--or); box-shadow: 0 0 0 3px rgba(255,77,0,.1); }
+    .calc-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B6560' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; background-size: 16px; padding-right: 40px; }
+    .calc-select option { background: #1A1815; }
+    .calc-hint { font-family: var(--fm); font-size: 11px; color: var(--m); margin-top: 3px; letter-spacing: .04em; }
+    .calc-btn { width: 100%; padding: 16px; margin-top: 6px; border-radius: var(--r); background: var(--or); border: none; color: #000; font-family: var(--fd); font-size: 17px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; cursor: none; transition: all .2s; display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .calc-btn:hover:not(:disabled) { background: #FF6633; box-shadow: 0 0 40px var(--or-g); transform: translateY(-2px); }
+    .calc-btn:disabled { opacity: .5; transform: none; cursor: default; }
+
+    /* result */
+    .calc-result { position: sticky; top: calc(var(--nh) + 20px); }
+    .calc-result-empty { background: var(--bg); border: 1px dashed var(--dim); border-radius: 16px; padding: 48px 32px; text-align: center; }
+    .calc-result-empty-icon { font-size: 40px; margin-bottom: 16px; opacity: .4; }
+    .calc-result-empty-t { font-family: var(--fd); font-size: 20px; font-weight: 700; text-transform: uppercase; color: var(--m); margin-bottom: 8px; }
+    .calc-result-empty-s { font-size: 13px; color: var(--dim); }
+    .calc-card { background: var(--bg); border: 1px solid rgba(255,77,0,.25); border-radius: 16px; overflow: hidden; display: none; }
+    .calc-card.show { display: block; }
+    .calc-card-head { background: linear-gradient(135deg, rgba(255,77,0,.12) 0%, transparent 60%); padding: 24px 28px 20px; border-bottom: 1px solid var(--b); }
+    .calc-card-label { font-family: var(--fm); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--m); margin-bottom: 8px; }
+    .calc-card-total { font-family: var(--fm); font-size: clamp(28px,4vw,42px); font-weight: 600; color: var(--or); letter-spacing: .02em; line-height: 1; }
+    .calc-card-rates { font-family: var(--fm); font-size: 11px; color: var(--m); margin-top: 8px; }
+    .calc-lines { padding: 20px 28px; display: flex; flex-direction: column; gap: 0; }
+    .calc-line { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid rgba(245,240,235,.05); }
+    .calc-line:last-child { border-bottom: none; }
+    .calc-line-label { font-size: 13px; color: var(--t); flex: 1; }
+    .calc-line-sub { font-family: var(--fm); font-size: 10px; color: var(--m); margin-top: 2px; letter-spacing: .04em; }
+    .calc-line-amt { font-family: var(--fm); font-size: 14px; font-weight: 500; color: var(--w); text-align: right; white-space: nowrap; margin-left: 16px; }
+    .calc-line.parking .calc-line-amt { color: var(--m); }
+    .calc-line.total-line { padding: 14px 0 2px; border-top: 1px solid var(--or); border-bottom: none; margin-top: 4px; }
+    .calc-line.total-line .calc-line-label { font-family: var(--fd); font-size: 17px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; color: var(--w); }
+    .calc-line.total-line .calc-line-amt { font-size: 20px; color: var(--or); }
+    .calc-extras { padding: 0 28px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .calc-extra-block { background: var(--bg-r); border: 1px solid var(--b); border-radius: 10px; padding: 14px 16px; }
+    .calc-extra-title { font-family: var(--fm); font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--or); margin-bottom: 10px; }
+    .calc-extra-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+    .calc-extra-list li { font-size: 12px; color: var(--t); line-height: 1.4; }
+    .calc-extra-list li::before { content: '·  '; color: var(--or); }
+    .calc-card-cta { padding: 0 28px 24px; }
+    .calc-card-cta .btn { width: 100%; justify-content: center; }
+    .calc-error { color: #ff5555; font-family: var(--fm); font-size: 12px; margin-top: 8px; display: none; }
+    .calc-loading { opacity: .6; font-family: var(--fm); font-size: 12px; color: var(--m); text-align: center; padding: 8px 0; display: none; }
+    @media (max-width: 1024px) { .calc-layout { grid-template-columns: 1fr; } .calc-result { position: static; } .calc-extras { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) { .calc-form-wrap { padding: 24px 18px; } .calc-row { grid-template-columns: 1fr; } .calc-lines { padding: 16px 20px; } .calc-card-head { padding: 20px; } .calc-extras { padding: 0 20px 20px; } .calc-card-cta { padding: 0 20px 20px; } }
+
     /* ── REVIEWS ── */
     .ratings-row { display: flex; gap: 2px; margin-bottom: 52px; border: 1px solid var(--b); border-radius: 12px; overflow: hidden; width: fit-content; }
     .rat-block { display: flex; align-items: center; gap: 16px; padding: 20px 32px; background: var(--bg-r); }
@@ -1101,89 +1158,129 @@
   </div>
 </section>
 
-<!-- ═══════════════ QUIZ ═══════════════ -->
-<section id="quiz" class="quiz-section">
+<!-- ═══════════════ CALCULATOR ═══════════════ -->
+<section id="quiz" class="calc-section">
   <div class="container">
     <div class="eyebrow">Калькулятор</div>
-    <h2 class="section-title">Рассчитайте стоимость<br><em>за 1 минуту</em></h2>
-    <div class="quiz-wrap">
-      <div class="qi-bar">
-        <div class="qi on" id="qi0"></div>
-        <div class="qi" id="qi1"></div>
-        <div class="qi" id="qi2"></div>
-        <div class="qi" id="qi3"></div>
-      </div>
+    <h2 class="section-title reveal">Точная стоимость<br><em>под ключ</em></h2>
+    <div class="calc-layout">
 
-      <!-- Step 1: Country -->
-      <div class="quiz-step active" id="qs1">
-        <div class="quiz-q">Из какой страны везём?</div>
-        <div class="quiz-opts quiz-opts--3">
-          <button class="quiz-opt" data-step="1" data-key="country" data-val="china">
-            <div class="qoi">🇨🇳</div><div class="qol">Китай</div><div class="qos">LiAuto, Haval, BYD, Tank</div>
-          </button>
-          <button class="quiz-opt" data-step="1" data-key="country" data-val="korea">
-            <div class="qoi">🇰🇷</div><div class="qol">Корея</div><div class="qos">Genesis, KIA, Hyundai</div>
-          </button>
-          <button class="quiz-opt" data-step="1" data-key="country" data-val="japan">
-            <div class="qoi">🇯🇵</div><div class="qol">Япония</div><div class="qos">Toyota, Lexus, Nissan</div>
-          </button>
-        </div>
-      </div>
-
-      <!-- Step 2: Type -->
-      <div class="quiz-step" id="qs2">
-        <div class="quiz-q">Тип автомобиля?</div>
-        <div class="quiz-opts">
-          <button class="quiz-opt" data-step="2" data-key="type" data-val="sedan">
-            <div class="qoi">🚗</div><div class="qol">Седан / Купе</div>
-          </button>
-          <button class="quiz-opt" data-step="2" data-key="type" data-val="suv">
-            <div class="qoi">🚙</div><div class="qol">Кроссовер / SUV</div>
-          </button>
-          <button class="quiz-opt" data-step="2" data-key="type" data-val="minivan">
-            <div class="qoi">🚐</div><div class="qol">Минивэн</div>
-          </button>
-          <button class="quiz-opt" data-step="2" data-key="type" data-val="electric">
-            <div class="qoi">⚡</div><div class="qol">Электромобиль</div>
-          </button>
-          <button class="quiz-opt" data-step="2" data-key="type" data-val="special">
-            <div class="qoi">🚛</div><div class="qol">Спецтехника</div>
-          </button>
-        </div>
-      </div>
-
-      <!-- Step 3: Budget -->
-      <div class="quiz-step" id="qs3">
-        <div class="quiz-q">Бюджет в стране покупки?</div>
-        <div class="quiz-opts">
-          <button class="quiz-opt" data-step="3" data-key="budget" data-val="b1">
-            <div class="qol">до $15 000</div><div class="qos">Эконом</div>
-          </button>
-          <button class="quiz-opt" data-step="3" data-key="budget" data-val="b2">
-            <div class="qol">$15 000 — $25 000</div><div class="qos">Средний</div>
-          </button>
-          <button class="quiz-opt" data-step="3" data-key="budget" data-val="b3">
-            <div class="qol">$25 000 — $40 000</div><div class="qos">Бизнес</div>
-          </button>
-          <button class="quiz-opt" data-step="3" data-key="budget" data-val="b4">
-            <div class="qol">от $40 000</div><div class="qos">Премиум</div>
-          </button>
-        </div>
-      </div>
-
-      <!-- Result -->
-      <div class="quiz-result" id="qResult">
-        <div class="result-box">
-          <div class="res-label">Ориентировочная стоимость под ключ</div>
-          <div class="res-price" id="resPrice">—</div>
-          <div class="res-note">
-            <strong>Цены ориентировочные</strong> — зависят от курса валют и ставки утильсбора на дату сделки.
-            Мы не скрываем комиссии: окончательная цена фиксируется в договоре до начала работы.
+      <!-- FORM -->
+      <div class="calc-form-wrap reveal">
+        <form id="calcForm" novalidate autocomplete="off">
+          <div class="calc-group">
+            <label class="calc-label" for="c-country">Страна покупки</label>
+            <select class="calc-select" id="c-country">
+              <option value="korea">🇰🇷 Корея</option>
+              <option value="china">🇨🇳 Китай</option>
+            </select>
           </div>
-          <a href="https://wa.me/79025408838?text=Хочу%20получить%20точный%20расчёт" target="_blank" rel="noopener" class="btn btn-primary">
-            Получить точный расчёт →
-          </a>
-          <button class="res-reset" id="qReset">← Считать снова</button>
+          <div class="calc-group">
+            <label class="calc-label" for="c-price">Цена автомобиля <span id="c-currency-label">в ₩ (корейских вонах)</span></label>
+            <input class="calc-input" type="number" id="c-price" placeholder="например: 25000000" min="1">
+            <span class="calc-hint" id="c-price-hint">Корея: обычно 15 000 000 — 80 000 000 ₩</span>
+          </div>
+          <div class="calc-row">
+            <div class="calc-group">
+              <label class="calc-label" for="c-cc">Объём двигателя (см³)</label>
+              <input class="calc-input" type="number" id="c-cc" placeholder="1600" min="0">
+              <span class="calc-hint">0 = электромобиль</span>
+            </div>
+            <div class="calc-group">
+              <label class="calc-label" for="c-year">Год выпуска</label>
+              <input class="calc-input" type="number" id="c-year" placeholder="2022" min="1990" max="2026">
+            </div>
+          </div>
+          <div class="calc-group">
+            <label class="calc-label" for="c-hp">Мощность (л.с.)</label>
+            <input class="calc-input" type="number" id="c-hp" placeholder="150" min="0">
+            <span class="calc-hint">0 — не знаю / возьмём максимальную ставку утиль</span>
+          </div>
+          <div class="calc-error" id="calcError">Заполните все поля корректно</div>
+          <div class="calc-loading" id="calcLoading">⏳ Загружаем курс ЦБ РФ…</div>
+          <button type="submit" class="calc-btn" id="calcSubmit">
+            Рассчитать стоимость
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <!-- RESULT -->
+      <div class="calc-result">
+        <div class="calc-result-empty" id="calcEmpty">
+          <div class="calc-result-empty-icon">🧮</div>
+          <div class="calc-result-empty-t">Введите данные</div>
+          <p class="calc-result-empty-s">Заполните форму слева<br>и нажмите «Рассчитать»</p>
+        </div>
+
+        <div class="calc-card" id="calcCard">
+          <div class="calc-card-head">
+            <div class="calc-card-label">Итоговая стоимость под ключ до Владивостока</div>
+            <div class="calc-card-total" id="rTotal">—</div>
+            <div class="calc-card-rates" id="rRates"></div>
+          </div>
+          <div class="calc-lines">
+            <div class="calc-line">
+              <div><div class="calc-line-label">Стоимость автомобиля</div><div class="calc-line-sub" id="rPriceSub"></div></div>
+              <div class="calc-line-amt" id="rPrice">—</div>
+            </div>
+            <div class="calc-line">
+              <div><div class="calc-line-label">Расходы по стране</div><div class="calc-line-sub" id="rExpSub"></div></div>
+              <div class="calc-line-amt" id="rExp">—</div>
+            </div>
+            <div class="calc-line">
+              <div><div class="calc-line-label">Таможенная пошлина</div><div class="calc-line-sub" id="rDutySub"></div></div>
+              <div class="calc-line-amt" id="rDuty">—</div>
+            </div>
+            <div class="calc-line">
+              <div><div class="calc-line-label">Утилизационный сбор</div><div class="calc-line-sub" id="rUtilSub"></div></div>
+              <div class="calc-line-amt" id="rUtil">—</div>
+            </div>
+            <div class="calc-line">
+              <div><div class="calc-line-label">Брокер</div></div>
+              <div class="calc-line-amt" id="rBroker">80 000 ₽</div>
+            </div>
+            <div class="calc-line">
+              <div><div class="calc-line-label">Комиссия</div><div class="calc-line-sub" id="rCommSub"></div></div>
+              <div class="calc-line-amt" id="rComm">—</div>
+            </div>
+            <div class="calc-line parking">
+              <div><div class="calc-line-label">Парковка</div><div class="calc-line-sub">не включена в итог</div></div>
+              <div class="calc-line-amt">200 ₽/сут</div>
+            </div>
+            <div class="calc-line total-line">
+              <div class="calc-line-label">ИТОГО</div>
+              <div class="calc-line-amt" id="rTotalLine">—</div>
+            </div>
+          </div>
+          <div class="calc-extras">
+            <div class="calc-extra-block">
+              <div class="calc-extra-title">✅ Включено в стоимость</div>
+              <ul class="calc-extra-list">
+                <li>Отчёт с автовоза</li>
+                <li>Съёмка тонировки</li>
+                <li>Мойка автомобиля</li>
+                <li>Транспортировочные чехлы</li>
+                <li>Полная фотоопись</li>
+                <li>Погрузка в трюме</li>
+              </ul>
+            </div>
+            <div class="calc-extra-block" id="rExtras">
+              <div class="calc-extra-title">🔧 Доп. услуги (Китай)</div>
+              <ul class="calc-extra-list">
+                <li>Русификация</li>
+                <li>Оклейка/окраска</li>
+                <li>Бронеплёнка (зоны / полный кузов)</li>
+                <li>Цифровые панели</li>
+                <li>Подогрев сидений/руля/зеркал</li>
+              </ul>
+            </div>
+          </div>
+          <div class="calc-card-cta">
+            <a href="https://wa.me/79025408838?text=Хочу%20уточнить%20расчёт" target="_blank" rel="noopener" class="btn btn-primary">
+              Уточнить у менеджера →
+            </a>
+          </div>
         </div>
       </div>
 
@@ -1680,68 +1777,6 @@ document.querySelectorAll('.tab-btn').forEach(btn=>{
   });
 });
 
-/* ── QUIZ ── */
-(function(){
-  const CM = {china:1.0, korea:1.25, japan:1.30, uae:1.35, europe:1.55};
-  const TM = {sedan:1.0, suv:1.1, minivan:1.2, electric:1.15, special:1.3};
-  const BG = {b1:{min:8000,max:15000}, b2:{min:15000,max:25000}, b3:{min:25000,max:40000}, b4:{min:40000,max:70000}};
-  const RATE = 90;
-  let state = {country:null, type:null, budget:null, step:1};
-
-  function setIndicators(step){
-    [0,1,2,3].forEach((i,idx)=>{
-      const q = document.getElementById('qi'+idx);
-      q.className = 'qi' + (idx < step-1 ? ' done' : idx === step-1 ? ' on' : '');
-    });
-  }
-
-  function showStep(n){
-    document.querySelectorAll('.quiz-step').forEach(s=>s.classList.remove('active'));
-    document.querySelector('.quiz-result')?.classList.remove('active');
-    if(n<=3){ const el=document.getElementById('qs'+n); if(el) el.classList.add('active'); }
-    else { document.getElementById('qResult').classList.add('active'); }
-    setIndicators(n); state.step=n;
-  }
-
-  function animPrice(el, minV, maxV){
-    const start = performance.now();
-    (function frame(now){
-      const p = Math.min((now-start)/1400,1);
-      const e = 1-Math.pow(1-p,3);
-      el.textContent = 'от '+(minV*e).toFixed(1)+' до '+(maxV*e).toFixed(1)+' млн ₽';
-      if(p<1) requestAnimationFrame(frame);
-    })(start);
-  }
-
-  function calc(){
-    const cm = CM[state.country]||1; const tm = TM[state.type]||1; const bg = BG[state.budget];
-    if(!bg) return;
-    const cu = state.country==='europe'?.25:state.country==='china'?.15:.18;
-    const dl = state.country==='europe'?300000:state.country==='china'?150000:200000;
-    const minR = (bg.min*(1+cu+.03)*cm*tm*RATE)+dl;
-    const maxR = (bg.max*(1+cu+.03)*cm*tm*RATE)+dl;
-    showStep(4);
-    animPrice(document.getElementById('resPrice'), minR/1e6, maxR/1e6);
-  }
-
-  document.querySelectorAll('.quiz-opt').forEach(opt=>{
-    opt.addEventListener('click',()=>{
-      opt.closest('.quiz-opts').querySelectorAll('.quiz-opt').forEach(o=>o.classList.remove('sel'));
-      opt.classList.add('sel');
-      state[opt.dataset.key] = opt.dataset.val;
-      const next = parseInt(opt.dataset.step)+1;
-      setTimeout(()=>{ next>3? calc() : showStep(next); }, 220);
-    });
-  });
-
-  document.getElementById('qReset')?.addEventListener('click',()=>{
-    state={country:null,type:null,budget:null,step:1};
-    document.querySelectorAll('.quiz-opt').forEach(o=>o.classList.remove('sel'));
-    showStep(1);
-  });
-
-  showStep(1);
-})();
 
 /* ── INTERSECTION OBSERVER ── */
 const revObs = new IntersectionObserver(entries=>{
@@ -1855,6 +1890,275 @@ document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
   // Clear error on input
   form.querySelectorAll('.form-input,.form-select').forEach(el=>{
     el.addEventListener('input', ()=>el.classList.remove('err'));
+  });
+})();
+
+/* ── CALCULATOR ── */
+(function(){
+  'use strict';
+
+  // ── CBR Rates ─────────────────────────────────────────────────────────────
+  const FALLBACK = { rubPerKrw: 0.065, rubPerCny: 12.5, rubPerEur: 96 };
+  const CACHE_KEY = 'cbr_rates_v2';
+  const CACHE_MS  = 60 * 60 * 1000;
+
+  async function getRates() {
+    try {
+      const stored = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+      if (stored && Date.now() - stored.ts < CACHE_MS) return stored.r;
+    } catch(_){}
+    for (const url of ['https://www.cbr-xml-daily.ru/latest.js','https://www.cbr-xml-daily.ru/daily_json.js']) {
+      try {
+        const r = await fetch(url);
+        if (!r.ok) continue;
+        const j = await r.json();
+        let rubPerCny=null, rubPerKrw=null, rubPerEur=null, ratesDate;
+        if (j?.rates) {
+          if (typeof j.rates.CNY==='number') rubPerCny = 1/j.rates.CNY;
+          if (typeof j.rates.KRW==='number') rubPerKrw = 1/j.rates.KRW;
+          if (typeof j.rates.EUR==='number') rubPerEur = 1/j.rates.EUR;
+        }
+        if (j?.Valute) {
+          const v = j.Valute;
+          if (v.CNY && !rubPerCny) rubPerCny = v.CNY.Value/(v.CNY.Nominal||1);
+          if (v.KRW && !rubPerKrw) rubPerKrw = v.KRW.Value/(v.KRW.Nominal||1);
+          if (v.EUR && !rubPerEur) rubPerEur = v.EUR.Value/(v.EUR.Nominal||1);
+        }
+        if (j?.Date) ratesDate = String(j.Date).slice(0,10);
+        if (rubPerCny>0 && rubPerKrw>0) {
+          const rates = { rubPerCny, rubPerKrw, rubPerEur: rubPerEur||96, ratesDate };
+          try { localStorage.setItem(CACHE_KEY, JSON.stringify({ts:Date.now(),r:rates})); } catch(_){}
+          return rates;
+        }
+      } catch(_){}
+    }
+    return FALLBACK;
+  }
+
+  // ── ETS Duty Tables ───────────────────────────────────────────────────────
+  const ETS_UP3 = [
+    {maxEur:8500,    pct:.54, minCm3:2.5},
+    {maxEur:16700,   pct:.48, minCm3:3.5},
+    {maxEur:42300,   pct:.48, minCm3:5.5},
+    {maxEur:84500,   pct:.48, minCm3:7.5},
+    {maxEur:169000,  pct:.48, minCm3:15},
+    {maxEur:Infinity,pct:.48, minCm3:20},
+  ];
+  const ETS_3_5 = [
+    {maxEur:8500,    pct:.48, minCm3:3.5},
+    {maxEur:16700,   pct:.48, minCm3:5.5},
+    {maxEur:42300,   pct:.48, minCm3:7.5},
+    {maxEur:84500,   pct:.48, minCm3:15},
+    {maxEur:Infinity,pct:.48, minCm3:20},
+  ];
+  const OLD_TABLE = [
+    {maxCc:1000, r5:3.0, r7:1.5},
+    {maxCc:1500, r5:3.2, r7:1.7},
+    {maxCc:1800, r5:3.5, r7:2.5},
+    {maxCc:2300, r5:4.8, r7:2.7},
+    {maxCc:3000, r5:5.0, r7:3.0},
+    {maxCc:Infinity,r5:5.7,r7:3.6},
+  ];
+
+  function regFee(p) {
+    if(p<=200000)   return 775;
+    if(p<=450000)   return 1550;
+    if(p<=1200000)  return 3100;
+    if(p<=2700000)  return 8530;
+    if(p<=4200000)  return 12000;
+    if(p<=5500000)  return 15500;
+    if(p<=7000000)  return 20000;
+    if(p<=10000000) return 23500;
+    return 30000;
+  }
+
+  const CUR_YEAR = new Date().getFullYear();
+
+  function getDuty(cc, year, priceRub, rubEur) {
+    const age = CUR_YEAR - year;
+    const c   = Math.max(1, cc||1500);
+    const rf  = regFee(priceRub);
+    if (age > 5) {
+      const row = OLD_TABLE.find(r=>c<=r.maxCc)||OLD_TABLE[OLD_TABLE.length-1];
+      const rate = age>7 ? row.r7 : row.r5;
+      const label = age>7?'старше 7 лет':'5–7 лет';
+      return { amt: Math.round(rate*c*rubEur)+rf, desc:`ЕТС ${c} см³ × ${rate} €/см³ (${label})` };
+    }
+    if (!priceRub) {
+      const fb = age<=3?7.5:15;
+      return { amt: Math.round(fb*c*rubEur)+rf, desc:`ЕТС мин. ${fb} €/см³` };
+    }
+    const priceEur = priceRub/rubEur;
+    const tbl = age<=3 ? ETS_UP3 : ETS_3_5;
+    const row = tbl.find(r=>priceEur<=r.maxEur)||tbl[tbl.length-1];
+    const byPct  = Math.round(priceRub*row.pct);
+    const byMin  = Math.round(row.minCm3*c*rubEur);
+    const duty   = Math.max(byPct, byMin);
+    const ageL   = age<=3?'до 3 лет':'3–5 лет';
+    const method = duty===byPct?`${(row.pct*100).toFixed(0)}% от цены`:`мин. ${row.minCm3} €/см³`;
+    return { amt: duty+rf, desc:`ЕТС ${ageL}: ${method}` };
+  }
+
+  // ── Utilization Fee 2026 ──────────────────────────────────────────────────
+  const EV_TBL = [
+    {mxHp:80,  nw:3400,    ol:5200},
+    {mxHp:100, nw:991200,  ol:1641600},
+    {mxHp:130, nw:1317600, ol:1912800},
+    {mxHp:160, nw:1560000, ol:2227200},
+    {mxHp:190, nw:1848000, ol:2594400},
+    {mxHp:220, nw:2193600, ol:3024000},
+    {mxHp:250, nw:2599200, ol:3523200},
+    {mxHp:280, nw:3079200, ol:4104000},
+    {mxHp:Infinity,nw:3648000,ol:4780800},
+  ];
+  const ICE_TBL = [
+    {mxCc:1000, rows:[
+      {mxHp:160,nw:3400,ol:5200},{mxHp:190,nw:307200,ol:568800},{mxHp:220,nw:316800,ol:585600},
+      {mxHp:250,nw:324000,ol:602400},{mxHp:Infinity,nw:345600,ol:602400}]},
+    {mxCc:2000, rows:[
+      {mxHp:160,nw:3400,ol:5200},{mxHp:190,nw:900000,ol:1492800},{mxHp:220,nw:952800,ol:1584000},
+      {mxHp:250,nw:1010400,ol:1677600},{mxHp:280,nw:1142400,ol:1838400},{mxHp:310,nw:1291200,ol:2011200},
+      {mxHp:340,nw:1459200,ol:2203200},{mxHp:370,nw:1663200,ol:2412000},{mxHp:400,nw:1896000,ol:2640000},
+      {mxHp:430,nw:2160000,ol:2892000},{mxHp:460,nw:2464800,ol:3168000},{mxHp:500,nw:2808000,ol:3468000},
+      {mxHp:Infinity,nw:3201600,ol:3796800}]},
+    {mxCc:3000, rows:[
+      {mxHp:160,nw:3400,ol:5200},{mxHp:190,nw:2306800,ol:3456000},{mxHp:220,nw:2364000,ol:3501600},
+      {mxHp:250,nw:2402400,ol:3552000},{mxHp:280,nw:2520000,ol:3660000},{mxHp:310,nw:2620800,ol:3770400},
+      {mxHp:340,nw:2726400,ol:3873600},{mxHp:370,nw:2834400,ol:3981600},{mxHp:400,nw:2949600,ol:4094400},
+      {mxHp:430,nw:3067200,ol:4209600},{mxHp:460,nw:3189600,ol:4327200},{mxHp:500,nw:3316800,ol:4447200},
+      {mxHp:Infinity,nw:3448800,ol:4572000}]},
+    {mxCc:3500, rows:[
+      {mxHp:160,nw:2584000,ol:3956200},{mxHp:190,nw:2635200,ol:4000800},{mxHp:220,nw:2688000,ol:4044000},
+      {mxHp:250,nw:2743200,ol:4087200},{mxHp:280,nw:2810400,ol:4144800},{mxHp:310,nw:2880000,ol:4248000},
+      {mxHp:340,nw:3038400,ol:4356000},{mxHp:370,nw:3206400,ol:4485600},{mxHp:400,nw:3384000,ol:4620000},
+      {mxHp:430,nw:3568800,ol:4759200},{mxHp:460,nw:3765600,ol:4900800},{mxHp:500,nw:3972000,ol:5049600},
+      {mxHp:Infinity,nw:4190400,ol:5200800}]},
+    {mxCc:Infinity, rows:[
+      {mxHp:160,nw:3290600,ol:4325800},{mxHp:190,nw:3345600,ol:4389600},{mxHp:220,nw:3403200,ol:4456800},
+      {mxHp:250,nw:3460800,ol:4524000},{mxHp:280,nw:3530400,ol:4627200},{mxHp:310,nw:3600000,ol:4732800},
+      {mxHp:340,nw:3727200,ol:4992000},{mxHp:370,nw:3857600,ol:5268000},{mxHp:400,nw:3993600,ol:5558400},
+      {mxHp:430,nw:4132800,ol:5863200},{mxHp:460,nw:4276800,ol:6187200},{mxHp:500,nw:4425600,ol:6528000},
+      {mxHp:Infinity,nw:4581600,ol:6885600}]},
+  ];
+
+  function getUtil(hp, year, cc) {
+    const age = CUR_YEAR - year;
+    const isNew = age <= 3;
+    if (!hp || hp <= 0) {
+      const bkt = ICE_TBL.find(b=>(cc||2000)<=b.mxCc)||ICE_TBL[ICE_TBL.length-1];
+      const last = bkt.rows[bkt.rows.length-1];
+      return { amt: isNew?last.nw:last.ol, desc:'мощность не указана, макс. ставка' };
+    }
+    if (!cc || cc<=0) {
+      const row = EV_TBL.find(r=>hp<=r.mxHp)||EV_TBL[EV_TBL.length-1];
+      return { amt: isNew?row.nw:row.ol, desc:`${hp} л.с. — электромобиль` };
+    }
+    const bkt = ICE_TBL.find(b=>cc<=b.mxCc)||ICE_TBL[ICE_TBL.length-1];
+    const row = bkt.rows.find(r=>hp<=r.mxHp)||bkt.rows[bkt.rows.length-1];
+    return { amt: isNew?row.nw:row.ol, desc:`${hp} л.с., ${cc} см³ (${isNew?'до 3 лет':'3+ лет'})` };
+  }
+
+  // ── Constants ─────────────────────────────────────────────────────────────
+  const EXPENSES = { korea:{amt:1700000,cur:'KRW'}, china:{amt:15000,cur:'CNY'} };
+  const BROKER = 80000;
+  const COMM_THRESHOLD = 2500000;
+  const COMM_FIXED = 50000;
+
+  function getComm(price) {
+    return price > COMM_THRESHOLD ? Math.round(price * 0.02) : COMM_FIXED;
+  }
+
+  // ── Format ────────────────────────────────────────────────────────────────
+  function fmt(n) { return Math.round(n).toLocaleString('ru-RU') + ' ₽'; }
+
+  // ── UI ────────────────────────────────────────────────────────────────────
+  const form    = document.getElementById('calcForm');
+  const selCnt  = document.getElementById('c-country');
+  const inpPrc  = document.getElementById('c-price');
+  const inpCc   = document.getElementById('c-cc');
+  const inpYear = document.getElementById('c-year');
+  const inpHp   = document.getElementById('c-hp');
+  const errEl   = document.getElementById('calcError');
+  const loadEl  = document.getElementById('calcLoading');
+  const btnEl   = document.getElementById('calcSubmit');
+  const emptyEl = document.getElementById('calcEmpty');
+  const cardEl  = document.getElementById('calcCard');
+
+  selCnt.addEventListener('change', () => {
+    const kr = selCnt.value === 'korea';
+    document.getElementById('c-currency-label').textContent = kr ? 'в ₩ (корейских вонах)' : 'в ¥ (китайских юанях)';
+    document.getElementById('c-price-hint').textContent = kr
+      ? 'Корея: обычно 15 000 000 — 80 000 000 ₩'
+      : 'Китай: обычно 100 000 — 500 000 ¥';
+    document.getElementById('rExtras').style.display = kr ? 'none' : '';
+  });
+  document.getElementById('rExtras').style.display = 'none'; // default Korea
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    errEl.style.display = 'none';
+
+    const country = selCnt.value;
+    const price   = parseFloat(inpPrc.value);
+    const cc      = parseFloat(inpCc.value) || 0;
+    const year    = parseInt(inpYear.value);
+    const hp      = parseFloat(inpHp.value) || 0;
+
+    if (!price || price <= 0 || !year || year < 1990 || year > CUR_YEAR + 1) {
+      errEl.textContent = 'Укажите цену и корректный год выпуска';
+      errEl.style.display = 'block';
+      return;
+    }
+
+    btnEl.disabled = true;
+    loadEl.style.display = 'block';
+
+    try {
+      const rates = await getRates();
+      const rubPerUnit = country === 'korea' ? rates.rubPerKrw : rates.rubPerCny;
+      const priceRub   = Math.round(price * rubPerUnit);
+      const exp        = EXPENSES[country];
+      const expRub     = Math.round(exp.amt * rubPerUnit);
+      const duty       = getDuty(cc, year, priceRub, rates.rubPerEur);
+      const util       = getUtil(hp, year, cc);
+      const comm       = getComm(priceRub);
+      const total      = priceRub + expRub + duty.amt + util.amt + BROKER + comm;
+      const curSymbol  = country === 'korea' ? '₩' : '¥';
+      const dateStr    = rates.ratesDate ? ` · ЦБ от ${rates.ratesDate}` : '';
+
+      // Fill result
+      document.getElementById('rTotal').textContent     = fmt(total);
+      document.getElementById('rTotalLine').textContent = fmt(total);
+      document.getElementById('rRates').textContent     = `${country==='korea'?'KRW':'CNY'}: ${rubPerUnit.toFixed(4)} ₽ · EUR: ${rates.rubPerEur.toFixed(2)} ₽${dateStr}`;
+      document.getElementById('rPrice').textContent     = fmt(priceRub);
+      document.getElementById('rPriceSub').textContent  = `${price.toLocaleString('ru-RU')} ${curSymbol} × ${rubPerUnit.toFixed(4)}`;
+      document.getElementById('rExp').textContent       = fmt(expRub);
+      document.getElementById('rExpSub').textContent    = `${exp.amt.toLocaleString('ru-RU')} ${exp.cur} — доставка, оформление`;
+      document.getElementById('rDuty').textContent      = fmt(duty.amt);
+      document.getElementById('rDutySub').textContent   = duty.desc;
+      document.getElementById('rUtil').textContent      = fmt(util.amt);
+      document.getElementById('rUtilSub').textContent   = util.desc;
+      document.getElementById('rComm').textContent      = fmt(comm);
+      document.getElementById('rCommSub').textContent   = comm === COMM_FIXED ? `фиксированная (авто до ${(COMM_THRESHOLD/1000000).toFixed(1)} млн ₽)` : '2% от стоимости авто';
+
+      // Show China extras
+      document.getElementById('rExtras').style.display = country === 'china' ? '' : 'none';
+
+      // Build WA message
+      const waMsg = `Расчёт авто:\nСтрана: ${country==='korea'?'Корея':'Китай'}\nЦена: ${price.toLocaleString()} ${curSymbol}\nОбъём: ${cc||'электро'} см³, ${year} г., ${hp||'?'} л.с.\nИТОГО: ${fmt(total)}`;
+      document.querySelector('.calc-card-cta a').href = 'https://wa.me/79025408838?text=' + encodeURIComponent(waMsg);
+
+      emptyEl.style.display = 'none';
+      cardEl.classList.add('show');
+      cardEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    } catch(err) {
+      errEl.textContent = 'Ошибка при загрузке курсов. Попробуйте ещё раз.';
+      errEl.style.display = 'block';
+    } finally {
+      btnEl.disabled = false;
+      loadEl.style.display = 'none';
+    }
   });
 })();
 
