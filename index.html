@@ -167,7 +167,7 @@
       transform: translateX(100%); transition: transform .38s cubic-bezier(.76,0,.24,1); z-index: 8999;
     }
     .nav-mobile.open { transform: translateX(0); }
-    .nav-mobile a { font-family: var(--fd); font-size: 44px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; color: var(--w); transition: color .2s; }
+    .nav-mobile a { font-family: var(--fd); font-size: 28px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; color: var(--w); transition: color .2s; }
     .nav-mobile a:hover { color: var(--or); }
 
     /* ── HERO ── */
@@ -760,7 +760,7 @@
   <a href="#how">Как работаем</a>
   <a href="#reviews">Отзывы</a>
   <a href="#contacts">Контакты</a>
-  <a href="tel:+78006001838" class="btn btn-primary">8 (800) 600-18-38</a>
+  <a href="tel:+78006001838" class="btn btn-primary" style="font-size:16px;padding:14px 28px;">8 (800) 600-18-38</a>
 </div>
 
 <main>
@@ -1259,20 +1259,20 @@
               <ul class="calc-extra-list">
                 <li>Отчёт с автовоза</li>
                 <li>Съёмка тонировки</li>
-                <li>Мойка автомобиля</li>
-                <li>Транспортировочные чехлы</li>
+                <li>Мойка авто</li>
+                <li>Транспортировочные чехлы (руль, сиденье и т.д.)</li>
                 <li>Полная фотоопись</li>
-                <li>Погрузка в трюме</li>
+                <li>Погрузка в трюме, не на палубе</li>
               </ul>
             </div>
             <div class="calc-extra-block" id="rExtras">
               <div class="calc-extra-title">🔧 Доп. услуги (Китай)</div>
               <ul class="calc-extra-list">
                 <li>Русификация</li>
-                <li>Оклейка/окраска</li>
-                <li>Бронеплёнка (зоны / полный кузов)</li>
-                <li>Цифровые панели</li>
-                <li>Подогрев сидений/руля/зеркал</li>
+                <li>Оклейка / окраска</li>
+                <li>Бронеплёнка: в круг / зоны риска / полиуретановая</li>
+                <li>Цифровые / приборные панели</li>
+                <li>Подогрев сидений, руля, зеркал</li>
               </ul>
             </div>
           </div>
@@ -1351,12 +1351,8 @@
         </div>
         <div class="vid-cap"><div class="vid-name">Видеоотзыв</div><div class="vid-car">Атлет-Авто · отзыв клиента</div></div>
       </div>
-      <div class="vid-card reveal" style="transition-delay:.40s" data-vid="REPLACE_VIDEO_ID_6">
-        <img src="images/previews/preview_6.jpg" alt="Видеоотзыв 6">
-        <div class="vid-ov">
-          <button class="play-btn" aria-label="Смотреть"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
-        </div>
-        <div class="vid-cap"><div class="vid-name">Видеоотзыв</div><div class="vid-car">Атлет-Авто · отзыв клиента</div></div>
+      <div class="vid-card reveal" style="transition-delay:.40s; cursor:default; overflow:hidden;">
+        <video src="videos/review1.mp4" controls playsinline preload="metadata" poster="images/previews/preview_real1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
       </div>
     </div>
   </div>
