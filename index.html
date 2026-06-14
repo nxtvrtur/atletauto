@@ -159,12 +159,13 @@ section { padding: 96px 0; }
   overflow: hidden; padding-top: var(--nh);
 }
 .hero-bg {
-  position: absolute; inset: 0;
-  background-image: url('images/catalog/kia.jpg');
-  background-size: cover; background-position: center 42%;
-  transform: scale(1.05); animation: hZoom 14s ease-out forwards;
+  position: absolute; inset: 0; overflow: hidden; background: var(--bg);
 }
-@keyframes hZoom { from { transform: scale(1.05); } to { transform: scale(1); } }
+.hero-vid {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  transform: scale(1.06); animation: hZoom 20s ease-out forwards;
+}
+@keyframes hZoom { from { transform: scale(1.06); } to { transform: scale(1); } }
 .hero-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(105deg, rgba(13,11,10,.96) 0%, rgba(13,11,10,.78) 55%, rgba(13,11,10,.45) 100%);
@@ -584,7 +585,11 @@ section { padding: 96px 0; }
 
 <!-- ============================================================ HERO -->
 <section class="hero" id="home">
-  <div class="hero-bg"></div>
+  <div class="hero-bg">
+    <video class="hero-vid" autoplay muted loop playsinline preload="auto" poster="images/hero-poster.jpg">
+      <source src="videos/hero.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="hero-overlay"></div>
   <div class="container hero-inner">
     <div class="hero-toggle">
