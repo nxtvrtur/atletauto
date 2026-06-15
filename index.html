@@ -1458,11 +1458,22 @@ function slideS(dir){
    SCROLL REVEAL
 ================================================================ */
 (function(){
-  if(!('IntersectionObserver' in window)){ document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible')}); return; }
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
-  },{threshold:0, rootMargin:'0px 0px -10% 0px'});
-  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  function revealNow(){
+    var h = window.innerHeight || document.documentElement.clientHeight;
+    var els = document.querySelectorAll('.reveal:not(.visible)');
+    for(var i=0;i<els.length;i++){
+      var t = els[i].getBoundingClientRect().top;
+      if(t < h - 60) els[i].classList.add('visible');
+    }
+  }
+  window.addEventListener('scroll', revealNow, {passive:true});
+  window.addEventListener('resize', revealNow, {passive:true});
+  window.addEventListener('load', revealNow);
+  revealNow();
+  // safety net: if anything still hidden shortly after load, just show it
+  setTimeout(function(){ document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){
+    if(el.getBoundingClientRect().top < (window.innerHeight||0)) el.classList.add('visible');
+  }); }, 1200);
 })();
 
 /* ================================================================
