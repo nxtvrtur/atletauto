@@ -303,11 +303,14 @@ section { padding: 96px 0; }
 @media (max-width: 520px) { .cars-grid { grid-template-columns: 1fr; } }
 
 .cc {
+  display: block; color: inherit;
   background: var(--bg-r); border: 1px solid var(--b); border-radius: var(--r);
   overflow: hidden; transition: border-color .25s, transform .25s, box-shadow .25s; cursor: pointer;
 }
 @media (pointer: coarse) { .cc { cursor: pointer; } }
 .cc:hover { border-color: var(--or); transform: translateY(-5px); box-shadow: 0 18px 44px rgba(0,0,0,.4), var(--or-glow); }
+.cc-count { position: absolute; top: 12px; right: 12px; background: rgba(13,11,10,.78); backdrop-filter: blur(8px); border: 1px solid var(--b2); border-radius: 100px; padding: 4px 11px; font-family: var(--fm); font-size: 10px; letter-spacing: .08em; color: var(--w); display: inline-flex; align-items: center; gap: 5px; }
+.cc-count::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--or); }
 .cc-img { aspect-ratio: 16/10; overflow: hidden; position: relative; }
 .cc-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
 .cc:hover .cc-img img { transform: scale(1.06); }
@@ -672,171 +675,171 @@ section { padding: 96px 0; }
 
     <div class="cat-panel active" id="cp-0">
       <div class="cars-grid">
-        <div class="cc" onclick="carWA('Nissan Note (1 600 000 ₽, Япония)','order')">
-          <div class="cc-img"><img src="images/catalog2/nissan-note.jpg" alt="Nissan Note" loading="lazy"><span class="cc-badge">Япония</span></div>
-          <div class="cc-body"><div class="cc-name">Nissan Note</div><div class="cc-spec">2024 · гибрид · 1.2 л</div><div class="cc-price"><span>от</span> 1 600 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Suzuki Fronx (1 870 000 ₽, Япония)','order')">
-          <div class="cc-img"><img src="images/catalog2/suzuki-fronx.jpg" alt="Suzuki Fronx" loading="lazy"><span class="cc-badge">Япония</span></div>
-          <div class="cc-body"><div class="cc-name">Suzuki Fronx</div><div class="cc-spec">2025 · 4WD · 1.5 бензин</div><div class="cc-price"><span>от</span> 1 870 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Toyota C-HR (1 650 000 ₽, Япония)','order')">
-          <div class="cc-img"><img src="images/catalog2/toyota-chr.jpg" alt="Toyota C-HR" loading="lazy"><span class="cc-badge">Япония</span></div>
-          <div class="cc-body"><div class="cc-name">Toyota C-HR</div><div class="cc-spec">2023 · 1.2 бензин · кроссовер</div><div class="cc-price"><span>от</span> 1 650 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Toyota Corolla Axio (1 250 000 ₽, Япония)','order')">
-          <div class="cc-img"><img src="images/catalog2/toyota-axio.jpg" alt="Toyota Corolla Axio" loading="lazy"><span class="cc-badge">Япония</span></div>
-          <div class="cc-body"><div class="cc-name">Toyota Corolla Axio</div><div class="cc-spec">2023 · 1.5 бензин · седан</div><div class="cc-price"><span>от</span> 1 250 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Toyota Corolla Cross (2 100 000 ₽, Япония)','order')">
-          <div class="cc-img"><img src="images/catalog2/toyota-corolla-cross.jpg" alt="Toyota Corolla Cross" loading="lazy"><span class="cc-badge">Япония</span></div>
-          <div class="cc-body"><div class="cc-name">Toyota Corolla Cross</div><div class="cc-spec">2023 · 4WD · 1.8 гибрид</div><div class="cc-price"><span>от</span> 2 100 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Toyota Noah (3 700 000 ₽, Япония)','order')">
-          <div class="cc-img"><img src="images/catalog2/toyota-noah.jpg" alt="Toyota Noah" loading="lazy"><span class="cc-badge">Япония</span></div>
-          <div class="cc-body"><div class="cc-name">Toyota Noah</div><div class="cc-spec">2025 · 4WD · 1.8 гибрид · минивэн</div><div class="cc-price"><span>от</span> 3 700 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Toyota Raize (1 470 000 ₽, Япония)','order')">
-          <div class="cc-img"><img src="images/catalog2/toyota-raize.jpg" alt="Toyota Raize" loading="lazy"><span class="cc-badge">Япония</span></div>
-          <div class="cc-body"><div class="cc-name">Toyota Raize</div><div class="cc-spec">2023 · 1.2 бензин · кроссовер</div><div class="cc-price"><span>от</span> 1 470 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Toyota Sienta (1 370 000 ₽, Япония)','order')">
-          <div class="cc-img"><img src="images/catalog2/toyota-sienta.jpg" alt="Toyota Sienta" loading="lazy"><span class="cc-badge">Япония</span></div>
-          <div class="cc-body"><div class="cc-name">Toyota Sienta</div><div class="cc-spec">2022 · 1.5 бензин · минивэн</div><div class="cc-price"><span>от</span> 1 370 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Toyota Voxy (3 800 000 ₽, Япония)','order')">
-          <div class="cc-img"><img src="images/catalog2/toyota-voxy.jpg" alt="Toyota Voxy" loading="lazy"><span class="cc-badge">Япония</span></div>
-          <div class="cc-body"><div class="cc-name">Toyota Voxy</div><div class="cc-spec">2025 · 4WD · 1.8 гибрид · минивэн</div><div class="cc-price"><span>от</span> 3 800 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Toyota Yaris (1 150 000 ₽, Япония)','order')">
-          <div class="cc-img"><img src="images/catalog2/toyota-yaris.jpg" alt="Toyota Yaris" loading="lazy"><span class="cc-badge">Япония</span></div>
-          <div class="cc-body"><div class="cc-name">Toyota Yaris</div><div class="cc-spec">2022 · 4WD · 1.5 бензин</div><div class="cc-price"><span>от</span> 1 150 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Suzuki Jimny Nomade (2 350 000 ₽, Япония)','order')">
+        <a class="cc" href="car.html?id=nissan-note">
+          <div class="cc-img"><img src="images/cars/nissan-note/01.jpg" alt="Nissan Note" loading="lazy"><span class="cc-badge">Япония</span><span class="cc-count">8 фото</span></div>
+          <div class="cc-body"><div class="cc-name">Nissan Note</div><div class="cc-spec">2024 · 1.2 л · гибрид · передний</div><div class="cc-price"><span>от</span> 1 600 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=suzuki-fronx">
+          <div class="cc-img"><img src="images/cars/suzuki-fronx/01.jpg" alt="Suzuki Fronx" loading="lazy"><span class="cc-badge">Япония</span><span class="cc-count">11 фото</span></div>
+          <div class="cc-body"><div class="cc-name">Suzuki Fronx</div><div class="cc-spec">2025 · 1.5 л · бензин · полный (4WD)</div><div class="cc-price"><span>от</span> 1 870 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=toyota-chr">
+          <div class="cc-img"><img src="images/cars/toyota-chr/01.jpg" alt="Toyota C-HR" loading="lazy"><span class="cc-badge">Япония</span><span class="cc-count">11 фото</span></div>
+          <div class="cc-body"><div class="cc-name">Toyota C-HR</div><div class="cc-spec">2023 · 1.2 л · бензин · передний</div><div class="cc-price"><span>от</span> 1 650 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=toyota-axio">
+          <div class="cc-img"><img src="images/cars/toyota-axio/01.jpg" alt="Toyota Corolla Axio" loading="lazy"><span class="cc-badge">Япония</span><span class="cc-count">9 фото</span></div>
+          <div class="cc-body"><div class="cc-name">Toyota Corolla Axio</div><div class="cc-spec">2023 · 1.5 л · бензин · передний</div><div class="cc-price"><span>от</span> 1 250 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=toyota-corolla-cross">
+          <div class="cc-img"><img src="images/cars/toyota-corolla-cross/01.jpg" alt="Toyota Corolla Cross" loading="lazy"><span class="cc-badge">Япония</span><span class="cc-count">11 фото</span></div>
+          <div class="cc-body"><div class="cc-name">Toyota Corolla Cross</div><div class="cc-spec">2023 · 1.8 л · гибрид · полный (4WD)</div><div class="cc-price"><span>от</span> 2 100 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=toyota-noah">
+          <div class="cc-img"><img src="images/cars/toyota-noah/01.jpg" alt="Toyota Noah" loading="lazy"><span class="cc-badge">Япония</span><span class="cc-count">7 фото</span></div>
+          <div class="cc-body"><div class="cc-name">Toyota Noah</div><div class="cc-spec">2025 · 1.8 л · гибрид · полный (4WD)</div><div class="cc-price"><span>от</span> 3 700 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=toyota-raize">
+          <div class="cc-img"><img src="images/cars/toyota-raize/01.jpg" alt="Toyota Raize" loading="lazy"><span class="cc-badge">Япония</span><span class="cc-count">11 фото</span></div>
+          <div class="cc-body"><div class="cc-name">Toyota Raize</div><div class="cc-spec">2023 · 1.2 л · бензин · передний</div><div class="cc-price"><span>от</span> 1 470 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=toyota-sienta">
+          <div class="cc-img"><img src="images/cars/toyota-sienta/01.jpg" alt="Toyota Sienta" loading="lazy"><span class="cc-badge">Япония</span><span class="cc-count">11 фото</span></div>
+          <div class="cc-body"><div class="cc-name">Toyota Sienta</div><div class="cc-spec">2022 · 1.5 л · бензин · передний</div><div class="cc-price"><span>от</span> 1 370 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=toyota-voxy">
+          <div class="cc-img"><img src="images/cars/toyota-voxy/01.jpg" alt="Toyota Voxy" loading="lazy"><span class="cc-badge">Япония</span><span class="cc-count">11 фото</span></div>
+          <div class="cc-body"><div class="cc-name">Toyota Voxy</div><div class="cc-spec">2025 · 1.8 л · гибрид · полный (4WD)</div><div class="cc-price"><span>от</span> 3 800 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=toyota-yaris">
+          <div class="cc-img"><img src="images/cars/toyota-yaris/01.jpg" alt="Toyota Yaris" loading="lazy"><span class="cc-badge">Япония</span><span class="cc-count">11 фото</span></div>
+          <div class="cc-body"><div class="cc-name">Toyota Yaris</div><div class="cc-spec">2022 · 1.5 л · бензин · полный (4WD)</div><div class="cc-price"><span>от</span> 1 150 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=suzuki-jimny-nomade">
           <div class="cc-img cc-noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.8A2 2 0 018.5 7h7a2 2 0 011.9 1.2L19 13"/><path d="M3 13h18v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg><span class="nph">Фото по запросу</span><span class="cc-badge">Под заказ</span></div>
-          <div class="cc-body"><div class="cc-name">Suzuki Jimny Nomade</div><div class="cc-spec">2026 · 4WD · 1.5 · 101 л.с. · автомат</div><div class="cc-price"><span>от</span> 2 350 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Honda WR-V (2 000 000 ₽, Япония)','order')">
+          <div class="cc-body"><div class="cc-name">Suzuki Jimny Nomade</div><div class="cc-spec">2026 · 1.5 л · бензин · 101 л.с.</div><div class="cc-price"><span>от</span> 2 350 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=honda-wrv">
           <div class="cc-img cc-noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.8A2 2 0 018.5 7h7a2 2 0 011.9 1.2L19 13"/><path d="M3 13h18v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg><span class="nph">Фото по запросу</span><span class="cc-badge">Под заказ</span></div>
-          <div class="cc-body"><div class="cc-name">Honda WR-V</div><div class="cc-spec">2025 · 1.5 · 118 л.с. · вариатор</div><div class="cc-price"><span>от</span> 2 000 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Honda Vezel (2 300 000 ₽, Япония)','order')">
+          <div class="cc-body"><div class="cc-name">Honda WR-V</div><div class="cc-spec">2025 · 1.5 л · бензин · 118 л.с.</div><div class="cc-price"><span>от</span> 2 000 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=honda-vezel">
           <div class="cc-img cc-noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.8A2 2 0 018.5 7h7a2 2 0 011.9 1.2L19 13"/><path d="M3 13h18v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg><span class="nph">Фото по запросу</span><span class="cc-badge">Под заказ</span></div>
-          <div class="cc-body"><div class="cc-name">Honda Vezel</div><div class="cc-spec">2025 · полный · 1.5 · 118 л.с. · новый</div><div class="cc-price"><span>от</span> 2 300 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Mitsubishi Eclipse Cross (2 540 000 ₽, Япония)','order')">
+          <div class="cc-body"><div class="cc-name">Honda Vezel</div><div class="cc-spec">2025 · 1.5 л · бензин · 118 л.с.</div><div class="cc-price"><span>от</span> 2 300 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=mitsubishi-eclipse-cross">
           <div class="cc-img cc-noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.8A2 2 0 018.5 7h7a2 2 0 011.9 1.2L19 13"/><path d="M3 13h18v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg><span class="nph">Фото по запросу</span><span class="cc-badge">Под заказ</span></div>
-          <div class="cc-body"><div class="cc-name">Mitsubishi Eclipse Cross</div><div class="cc-spec">2024 · полный · 1.5 · 150 л.с.</div><div class="cc-price"><span>от</span> 2 540 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Mazda 3 (1 900 000 ₽, Япония)','order')">
+          <div class="cc-body"><div class="cc-name">Mitsubishi Eclipse Cross</div><div class="cc-spec">2024 · 1.5 л · бензин · 150 л.с.</div><div class="cc-price"><span>от</span> 2 540 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=mazda-3-jp">
           <div class="cc-img cc-noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.8A2 2 0 018.5 7h7a2 2 0 011.9 1.2L19 13"/><path d="M3 13h18v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg><span class="nph">Фото по запросу</span><span class="cc-badge">Под заказ</span></div>
-          <div class="cc-body"><div class="cc-name">Mazda 3</div><div class="cc-spec">2025 · 1.5 · 111 л.с. · автомат</div><div class="cc-price"><span>от</span> 1 900 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Honda Freed (1 850 000 ₽, Япония)','order')">
+          <div class="cc-body"><div class="cc-name">Mazda 3</div><div class="cc-spec">2025 · 1.5 л · бензин · 111 л.с.</div><div class="cc-price"><span>от</span> 1 900 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=honda-freed">
           <div class="cc-img cc-noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.8A2 2 0 018.5 7h7a2 2 0 011.9 1.2L19 13"/><path d="M3 13h18v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg><span class="nph">Фото по запросу</span><span class="cc-badge">Под заказ</span></div>
-          <div class="cc-body"><div class="cc-name">Honda Freed</div><div class="cc-spec">2025 · 1.5 · 118 л.с. · минивэн</div><div class="cc-price"><span>от</span> 1 850 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Daihatsu Copen (1 450 000 ₽, Япония)','order')">
+          <div class="cc-body"><div class="cc-name">Honda Freed</div><div class="cc-spec">2025 · 1.5 л · бензин · 118 л.с.</div><div class="cc-price"><span>от</span> 1 850 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=daihatsu-copen">
           <div class="cc-img cc-noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.8A2 2 0 018.5 7h7a2 2 0 011.9 1.2L19 13"/><path d="M3 13h18v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg><span class="nph">Фото по запросу</span><span class="cc-badge">Под заказ</span></div>
-          <div class="cc-body"><div class="cc-name">Daihatsu Copen</div><div class="cc-spec">2025 · новый · кабриолет</div><div class="cc-price"><span>от</span> 1 450 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Mazda Roadster (2 100 000 ₽, Япония)','order')">
+          <div class="cc-body"><div class="cc-name">Daihatsu Copen</div><div class="cc-spec">2025 · передний · кабриолет</div><div class="cc-price"><span>от</span> 1 450 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=mazda-roadster">
           <div class="cc-img cc-noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.8A2 2 0 018.5 7h7a2 2 0 011.9 1.2L19 13"/><path d="M3 13h18v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg><span class="nph">Фото по запросу</span><span class="cc-badge">Под заказ</span></div>
-          <div class="cc-body"><div class="cc-name">Mazda Roadster</div><div class="cc-spec">2025 · задний · 1.5 · 131 л.с. · родстер</div><div class="cc-price"><span>от</span> 2 100 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Honda N-WGN (1 350 000 ₽, Япония)','order')">
+          <div class="cc-body"><div class="cc-name">Mazda Roadster</div><div class="cc-spec">2025 · 1.5 л · бензин · 131 л.с.</div><div class="cc-price"><span>от</span> 2 100 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=honda-nwgn">
           <div class="cc-img cc-noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.8A2 2 0 018.5 7h7a2 2 0 011.9 1.2L19 13"/><path d="M3 13h18v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg><span class="nph">Фото по запросу</span><span class="cc-badge">Под заказ</span></div>
-          <div class="cc-body"><div class="cc-name">Honda N-WGN</div><div class="cc-spec">2026 · 0.7 · 64 л.с. · кэй-кар</div><div class="cc-price"><span>от</span> 1 350 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Toyota Roomy (1 800 000 ₽, Япония)','order')">
+          <div class="cc-body"><div class="cc-name">Honda N-WGN</div><div class="cc-spec">2026 · 0.7 л · бензин · 64 л.с.</div><div class="cc-price"><span>от</span> 1 350 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=toyota-roomy">
           <div class="cc-img cc-noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.8A2 2 0 018.5 7h7a2 2 0 011.9 1.2L19 13"/><path d="M3 13h18v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg><span class="nph">Фото по запросу</span><span class="cc-badge">Под заказ</span></div>
-          <div class="cc-body"><div class="cc-name">Toyota Roomy</div><div class="cc-spec">2025 · 1.0 · 98 л.с. · новый</div><div class="cc-price"><span>от</span> 1 800 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
+          <div class="cc-body"><div class="cc-name">Toyota Roomy</div><div class="cc-spec">2025 · 1.0 л · бензин · 98 л.с.</div><div class="cc-price"><span>от</span> 1 800 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
       </div>
     </div>
 
     <div class="cat-panel" id="cp-1">
       <div class="cars-grid">
-        <div class="cc" onclick="carWA('Volkswagen Golf (Китай/Европа)','order')">
-          <div class="cc-img"><img src="images/catalog2/vw-golf.jpg" alt="Volkswagen Golf" loading="lazy"><span class="cc-badge">В пути</span></div>
-          <div class="cc-body"><div class="cc-name">Volkswagen Golf</div><div class="cc-spec">Китай · хэтчбек</div><div class="cc-price req">Цена по запросу</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Volkswagen Tharu XR (Китай/Европа)','order')">
-          <div class="cc-img"><img src="images/catalog2/vw-tharu-xr.jpg" alt="Volkswagen Tharu XR" loading="lazy"><span class="cc-badge">В пути</span></div>
-          <div class="cc-body"><div class="cc-name">Volkswagen Tharu XR</div><div class="cc-spec">Китай · кроссовер</div><div class="cc-price req">Цена по запросу</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Volkswagen Tayron (дорест) (Китай/Европа)','order')">
-          <div class="cc-img"><img src="images/catalog2/vw-tayron-pre.jpg" alt="Volkswagen Tayron (дорест)" loading="lazy"><span class="cc-badge">В пути</span></div>
-          <div class="cc-body"><div class="cc-name">Volkswagen Tayron (дорест)</div><div class="cc-spec">Китай · кроссовер</div><div class="cc-price req">Цена по запросу</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Toyota Yaris L (Китай/Европа)','order')">
-          <div class="cc-img"><img src="images/catalog2/toyota-yaris-l.jpg" alt="Toyota Yaris L" loading="lazy"><span class="cc-badge">В пути</span></div>
-          <div class="cc-body"><div class="cc-name">Toyota Yaris L</div><div class="cc-spec">Китай · седан</div><div class="cc-price req">Цена по запросу</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Volkswagen Tayron (рест) (Китай/Европа)','order')">
-          <div class="cc-img"><img src="images/catalog2/vw-tayron-fl.jpg" alt="Volkswagen Tayron (рест)" loading="lazy"><span class="cc-badge">В пути</span></div>
-          <div class="cc-body"><div class="cc-name">Volkswagen Tayron (рест)</div><div class="cc-spec">Китай · кроссовер</div><div class="cc-price req">Цена по запросу</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Volkswagen Tharu (Китай/Европа)','order')">
-          <div class="cc-img"><img src="images/catalog2/vw-tharu.jpg" alt="Volkswagen Tharu" loading="lazy"><span class="cc-badge">В пути</span></div>
-          <div class="cc-body"><div class="cc-name">Volkswagen Tharu</div><div class="cc-spec">Китай · кроссовер</div><div class="cc-price req">Цена по запросу</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('BMW 3 серии (Китай/Европа)','order')">
-          <div class="cc-img"><img src="images/catalog2/bmw-3.jpg" alt="BMW 3 серии" loading="lazy"><span class="cc-badge">В пути</span></div>
-          <div class="cc-body"><div class="cc-name">BMW 3 серии</div><div class="cc-spec">седан</div><div class="cc-price req">Цена по запросу</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('BMW X1 (Китай/Европа)','order')">
-          <div class="cc-img"><img src="images/catalog2/bmw-x1.jpg" alt="BMW X1" loading="lazy"><span class="cc-badge">В пути</span></div>
-          <div class="cc-body"><div class="cc-name">BMW X1</div><div class="cc-spec">кроссовер</div><div class="cc-price req">Цена по запросу</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Toyota bZ3X (Китай/Европа)','order')">
-          <div class="cc-img"><img src="images/catalog2/toyota-bz3x.jpg" alt="Toyota bZ3X" loading="lazy"><span class="cc-badge">В пути</span></div>
-          <div class="cc-body"><div class="cc-name">Toyota bZ3X</div><div class="cc-spec">Китай · электро · кроссовер</div><div class="cc-price req">Цена по запросу</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Volkswagen Lamando (Китай/Европа)','order')">
-          <div class="cc-img"><img src="images/catalog2/vw-lamando.jpg" alt="Volkswagen Lamando" loading="lazy"><span class="cc-badge">В пути</span></div>
-          <div class="cc-body"><div class="cc-name">Volkswagen Lamando</div><div class="cc-spec">Китай · седан</div><div class="cc-price req">Цена по запросу</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Jetta VS8 (2 050 000 ₽, Китай)','order')">
+        <a class="cc" href="car.html?id=vw-golf">
+          <div class="cc-img"><img src="images/cars/vw-golf/01.jpg" alt="Volkswagen Golf" loading="lazy"><span class="cc-badge">В пути</span><span class="cc-count">7 фото</span></div>
+          <div class="cc-body"><div class="cc-name">Volkswagen Golf</div><div class="cc-spec">Китай · хэтчбек</div><div class="cc-price req">Цена по запросу</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=vw-tharu-xr">
+          <div class="cc-img"><img src="images/cars/vw-tharu-xr/01.jpg" alt="Volkswagen Tharu XR" loading="lazy"><span class="cc-badge">В пути</span><span class="cc-count">11 фото</span></div>
+          <div class="cc-body"><div class="cc-name">Volkswagen Tharu XR</div><div class="cc-spec">Китай · кроссовер</div><div class="cc-price req">Цена по запросу</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=vw-tayron-pre">
+          <div class="cc-img"><img src="images/cars/vw-tayron-pre/01.jpg" alt="Volkswagen Tayron (дорест)" loading="lazy"><span class="cc-badge">В пути</span><span class="cc-count">12 фото</span></div>
+          <div class="cc-body"><div class="cc-name">Volkswagen Tayron (дорест)</div><div class="cc-spec">Китай · кроссовер</div><div class="cc-price req">Цена по запросу</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=toyota-yaris-l">
+          <div class="cc-img"><img src="images/cars/toyota-yaris-l/01.jpg" alt="Toyota Yaris L" loading="lazy"><span class="cc-badge">В пути</span><span class="cc-count">12 фото</span></div>
+          <div class="cc-body"><div class="cc-name">Toyota Yaris L</div><div class="cc-spec">Китай · седан</div><div class="cc-price req">Цена по запросу</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=vw-tayron-fl">
+          <div class="cc-img"><img src="images/cars/vw-tayron-fl/01.jpg" alt="Volkswagen Tayron (рест)" loading="lazy"><span class="cc-badge">В пути</span><span class="cc-count">12 фото</span></div>
+          <div class="cc-body"><div class="cc-name">Volkswagen Tayron (рест)</div><div class="cc-spec">Китай · кроссовер</div><div class="cc-price req">Цена по запросу</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=vw-tharu">
+          <div class="cc-img"><img src="images/cars/vw-tharu/01.jpg" alt="Volkswagen Tharu" loading="lazy"><span class="cc-badge">В пути</span><span class="cc-count">12 фото</span></div>
+          <div class="cc-body"><div class="cc-name">Volkswagen Tharu</div><div class="cc-spec">Китай · кроссовер</div><div class="cc-price req">Цена по запросу</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=bmw-3">
+          <div class="cc-img"><img src="images/cars/bmw-3/01.jpg" alt="BMW 3 серии" loading="lazy"><span class="cc-badge">В пути</span><span class="cc-count">12 фото</span></div>
+          <div class="cc-body"><div class="cc-name">BMW 3 серии</div><div class="cc-spec">седан</div><div class="cc-price req">Цена по запросу</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=bmw-x1">
+          <div class="cc-img"><img src="images/cars/bmw-x1/01.jpg" alt="BMW X1" loading="lazy"><span class="cc-badge">В пути</span><span class="cc-count">12 фото</span></div>
+          <div class="cc-body"><div class="cc-name">BMW X1</div><div class="cc-spec">кроссовер</div><div class="cc-price req">Цена по запросу</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=toyota-bz3x">
+          <div class="cc-img"><img src="images/cars/toyota-bz3x/01.jpg" alt="Toyota bZ3X" loading="lazy"><span class="cc-badge">В пути</span><span class="cc-count">12 фото</span></div>
+          <div class="cc-body"><div class="cc-name">Toyota bZ3X</div><div class="cc-spec">Китай · электро · кроссовер</div><div class="cc-price req">Цена по запросу</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=vw-lamando">
+          <div class="cc-img"><img src="images/cars/vw-lamando/01.jpg" alt="Volkswagen Lamando" loading="lazy"><span class="cc-badge">В пути</span><span class="cc-count">12 фото</span></div>
+          <div class="cc-body"><div class="cc-name">Volkswagen Lamando</div><div class="cc-spec">Китай · седан</div><div class="cc-price req">Цена по запросу</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=jetta-vs8">
           <div class="cc-img cc-noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.8A2 2 0 018.5 7h7a2 2 0 011.9 1.2L19 13"/><path d="M3 13h18v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg><span class="nph">Фото по запросу</span><span class="cc-badge">Под заказ</span></div>
-          <div class="cc-body"><div class="cc-name">Jetta VS8</div><div class="cc-spec">2026 · 1.4 бензин · 140 л.с. · АКПП</div><div class="cc-price"><span>от</span> 2 050 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('BYD Leopard 3 (4 450 000 ₽, Китай)','order')">
+          <div class="cc-body"><div class="cc-name">Jetta VS8</div><div class="cc-spec">2026 · 1.4 л · бензин · 140 л.с.</div><div class="cc-price"><span>от</span> 2 050 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=byd-leopard-3">
           <div class="cc-img cc-noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.8A2 2 0 018.5 7h7a2 2 0 011.9 1.2L19 13"/><path d="M3 13h18v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg><span class="nph">Фото по запросу</span><span class="cc-badge">Под заказ</span></div>
-          <div class="cc-body"><div class="cc-name">BYD Leopard 3</div><div class="cc-spec">2026 · электро · 422 л.с. · 501 км · полный</div><div class="cc-price"><span>от</span> 4 450 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Toyota Camry (3 800 000 ₽, Китай)','order')">
+          <div class="cc-body"><div class="cc-name">BYD Leopard 3</div><div class="cc-spec">2026 · электро · 422 л.с.</div><div class="cc-price"><span>от</span> 4 450 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=toyota-camry">
           <div class="cc-img cc-noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.8A2 2 0 018.5 7h7a2 2 0 011.9 1.2L19 13"/><path d="M3 13h18v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg><span class="nph">Фото по запросу</span><span class="cc-badge">Под заказ</span></div>
-          <div class="cc-body"><div class="cc-name">Toyota Camry</div><div class="cc-spec">2026 · 2.0 · 173 л.с. · вариатор</div><div class="cc-price"><span>от</span> 3 800 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Toyota Corolla (1 550 000 ₽, Китай)','order')">
+          <div class="cc-body"><div class="cc-name">Toyota Camry</div><div class="cc-spec">2026 · 2.0 л · бензин · 173 л.с.</div><div class="cc-price"><span>от</span> 3 800 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=toyota-corolla-cn">
           <div class="cc-img cc-noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.8A2 2 0 018.5 7h7a2 2 0 011.9 1.2L19 13"/><path d="M3 13h18v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg><span class="nph">Фото по запросу</span><span class="cc-badge">Под заказ</span></div>
-          <div class="cc-body"><div class="cc-name">Toyota Corolla</div><div class="cc-spec">2026 · 1.2 · 116 л.с. · вариатор</div><div class="cc-price"><span>от</span> 1 550 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Hyundai Elantra (1 650 000 ₽, Китай)','order')">
+          <div class="cc-body"><div class="cc-name">Toyota Corolla</div><div class="cc-spec">2026 · 1.2 л · бензин · 116 л.с.</div><div class="cc-price"><span>от</span> 1 550 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=hyundai-elantra">
           <div class="cc-img cc-noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.8A2 2 0 018.5 7h7a2 2 0 011.9 1.2L19 13"/><path d="M3 13h18v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg><span class="nph">Фото по запросу</span><span class="cc-badge">Под заказ</span></div>
-          <div class="cc-body"><div class="cc-name">Hyundai Elantra</div><div class="cc-spec">2026 · 1.5 · 115 л.с. · вариатор</div><div class="cc-price"><span>от</span> 1 650 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Haval H6 (1 690 000 ₽, Китай)','order')">
+          <div class="cc-body"><div class="cc-name">Hyundai Elantra</div><div class="cc-spec">2026 · 1.5 л · бензин · 115 л.с.</div><div class="cc-price"><span>от</span> 1 650 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=haval-h6">
           <div class="cc-img cc-noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.8A2 2 0 018.5 7h7a2 2 0 011.9 1.2L19 13"/><path d="M3 13h18v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg><span class="nph">Фото по запросу</span><span class="cc-badge">Под заказ</span></div>
-          <div class="cc-body"><div class="cc-name">Haval H6</div><div class="cc-spec">2026 · 1.5 · 150 л.с. · робот</div><div class="cc-price"><span>от</span> 1 690 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('BYD Seagull (1 350 000 ₽, Китай)','order')">
+          <div class="cc-body"><div class="cc-name">Haval H6</div><div class="cc-spec">2026 · 1.5 л · бензин · 150 л.с.</div><div class="cc-price"><span>от</span> 1 690 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=byd-seagull">
           <div class="cc-img cc-noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.8A2 2 0 018.5 7h7a2 2 0 011.9 1.2L19 13"/><path d="M3 13h18v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg><span class="nph">Фото по запросу</span><span class="cc-badge">Под заказ</span></div>
-          <div class="cc-body"><div class="cc-name">BYD Seagull</div><div class="cc-spec">2026 · электро · 75 л.с. · 305 км</div><div class="cc-price"><span>от</span> 1 350 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('Volkswagen Bora (1 650 000 ₽, Китай)','order')">
+          <div class="cc-body"><div class="cc-name">BYD Seagull</div><div class="cc-spec">2026 · электро · 75 л.с.</div><div class="cc-price"><span>от</span> 1 350 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=vw-bora">
           <div class="cc-img cc-noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.8A2 2 0 018.5 7h7a2 2 0 011.9 1.2L19 13"/><path d="M3 13h18v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg><span class="nph">Фото по запросу</span><span class="cc-badge">Под заказ</span></div>
-          <div class="cc-body"><div class="cc-name">Volkswagen Bora</div><div class="cc-spec">2026 · 1.2 · 116 л.с. · робот</div><div class="cc-price"><span>от</span> 1 650 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('GAC AION S (1 650 000 ₽, Китай)','order')">
+          <div class="cc-body"><div class="cc-name">Volkswagen Bora</div><div class="cc-spec">2026 · 1.2 л · бензин · 116 л.с.</div><div class="cc-price"><span>от</span> 1 650 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=gac-aion-s">
           <div class="cc-img cc-noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.8A2 2 0 018.5 7h7a2 2 0 011.9 1.2L19 13"/><path d="M3 13h18v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg><span class="nph">Фото по запросу</span><span class="cc-badge">Под заказ</span></div>
-          <div class="cc-body"><div class="cc-name">GAC AION S</div><div class="cc-spec">2026 · электро · 136 л.с. · 505 км</div><div class="cc-price"><span>от</span> 1 650 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
-        <div class="cc" onclick="carWA('BYD Yuan Up (1 700 000 ₽, Китай)','order')">
+          <div class="cc-body"><div class="cc-name">GAC AION S</div><div class="cc-spec">2026 · электро · 136 л.с.</div><div class="cc-price"><span>от</span> 1 650 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
+        <a class="cc" href="car.html?id=byd-yuan-up">
           <div class="cc-img cc-noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.8A2 2 0 018.5 7h7a2 2 0 011.9 1.2L19 13"/><path d="M3 13h18v4a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H6v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg><span class="nph">Фото по запросу</span><span class="cc-badge">Под заказ</span></div>
-          <div class="cc-body"><div class="cc-name">BYD Yuan Up</div><div class="cc-spec">2026 · электро · 95 л.с.</div><div class="cc-price"><span>от</span> 1 700 000 ₽</div><div class="cc-cta">Узнать подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        </div>
+          <div class="cc-body"><div class="cc-name">BYD Yuan Up</div><div class="cc-spec">2026 · электро · 95 л.с.</div><div class="cc-price"><span>от</span> 1 700 000 ₽</div><div class="cc-cta">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </a>
       </div>
     </div>
 
@@ -1507,5 +1510,6 @@ function carWA(name,type){
   window.open('https://wa.me/79510248318?text='+encodeURIComponent(msg),'_blank');
 }
 </script>
+<script src="cars.js"></script>
 </body>
 </html>
