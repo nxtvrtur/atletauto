@@ -33,7 +33,7 @@
   --ease: cubic-bezier(.4,0,.2,1);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 112px; }
 body { font-family: var(--fb); background: var(--bg); color: var(--w); overflow-x: hidden; cursor: none; }
 @media (pointer: coarse) { body { cursor: auto; } }
 img { display: block; max-width: 100%; }
@@ -106,14 +106,27 @@ section { padding: 96px 0; }
 /* ================================================================
    NAV
 ================================================================ */
+.site-head { position: fixed; top: 0; left: 0; right: 0; z-index: 200; }
+.topbar { background: #0a0908; border-bottom: 1px solid var(--b); font-size: 12.5px; }
+.topbar-inner { display: flex; align-items: center; justify-content: space-between; height: 38px; }
+.tb-left { display: flex; align-items: center; gap: 18px; }
+.tb-city { display: inline-flex; align-items: center; gap: 6px; color: var(--m); }
+.tb-city svg { width: 13px; height: 13px; color: var(--or); }
+.tb-phone { color: var(--w); font-weight: 600; letter-spacing: .02em; transition: color .2s; }
+.tb-phone:hover { color: var(--or); }
+.tb-right { display: flex; align-items: center; gap: 16px; }
+.tb-msg { color: var(--m); transition: color .2s; }
+.tb-msg:hover { color: var(--or); }
+@media (max-width: 600px) { .topbar { font-size: 12px; } .tb-city { display: none; } .tb-left, .tb-right { gap: 12px; } .topbar-inner { height: 34px; } }
 .nav {
-  position: fixed; top: 0; left: 0; right: 0; height: var(--nh); z-index: 200;
+  position: relative; height: var(--nh);
   display: flex; align-items: center;
-  background: rgba(13,11,10,.72); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  background: rgba(13,11,10,.82); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--b); transition: background .3s;
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
-.nav-logo img { height: 34px; width: auto; }
+.nav-logo img { height: 52px; width: auto; }
+@media (max-width: 600px) { .nav-logo img { height: 44px; } }
 .nav-links { display: flex; gap: 36px; list-style: none; }
 .nav-links a {
   font-size: 14px; font-weight: 500; color: var(--m); letter-spacing: .02em;
@@ -153,7 +166,8 @@ section { padding: 96px 0; }
 .mob-overlay a:hover { color: var(--or); }
 .mob-overlay .mob-wa-link { font-size: 18px; font-family: var(--fb); color: #25D366 !important; display: flex; align-items: center; gap: 8px; margin-top: 16px; }
 .mob-overlay .mob-wa-link svg { width: 20px; height: 20px; }
-@media (max-width: 900px) { .nav-links, .nav-wa { display: none; } .nav-burger { display: flex; } }
+@media (max-width: 900px) { .nav-links { display: none; } .nav-burger { display: flex; } }
+@media (max-width: 600px) { .nav-wa { padding: 9px 14px; font-size: 12px; } .nav-wa svg { display: none; } }
 
 /* ================================================================
    HERO
@@ -161,7 +175,7 @@ section { padding: 96px 0; }
 .hero {
   position: relative; min-height: 100svh; display: flex;
   flex-direction: column; justify-content: center;
-  overflow: hidden; padding-top: var(--nh);
+  overflow: hidden; padding-top: calc(var(--nh) + 38px);
 }
 .hero-bg {
   position: absolute; inset: 0; overflow: hidden; background: var(--bg);
@@ -196,9 +210,9 @@ section { padding: 96px 0; }
 @keyframes hFade { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
 
 .hero-title {
-  font-family: var(--fd); font-size: clamp(50px, 7.8vw, 118px); font-weight: 900;
-  line-height: .91; text-transform: uppercase; letter-spacing: -.01em;
-  max-width: 840px; margin-bottom: 26px;
+  font-family: var(--fd); font-size: clamp(38px, 5.2vw, 78px); font-weight: 900;
+  line-height: .96; text-transform: uppercase; letter-spacing: -.01em;
+  max-width: 760px; margin-bottom: 24px;
 }
 .hero-title em { font-style: italic; color: var(--or); }
 .hero-sub { font-size: clamp(15px,1.5vw,18px); line-height: 1.65; color: var(--m); max-width: 560px; margin-bottom: 38px; }
@@ -219,7 +233,7 @@ section { padding: 96px 0; }
   .stat:nth-child(2n) { border-right: none; }
   .stat:nth-last-child(-n+2) { border-bottom: none; }
   .stat-n { font-size: 22px; }
-  .hero-title { font-size: clamp(44px, 11vw, 72px); }
+  .hero-title { font-size: clamp(32px, 8.5vw, 52px); }
 }
 
 /* ================================================================
@@ -442,6 +456,9 @@ section { padding: 96px 0; }
 }
 .soc-btn:hover { border-color: var(--or); background: var(--or-dim); transform: translateY(-3px); }
 .soc-btn svg { width: 19px; height: 19px; flex-shrink: 0; }
+.soc-collage { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.soc-collage img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; border: 1px solid var(--b); transition: transform .4s var(--ease); }
+.soc-collage img:hover { transform: scale(1.03); }
 
 /* ================================================================
    PROCESS VIDEO (merged timeline) + GUARANTEES
@@ -505,7 +522,7 @@ section { padding: 96px 0; }
 .fc-req { font-size: 13px; line-height: 1.7; color: var(--m); }
 .fc-req b { color: rgba(255,255,255,.78); font-weight: 500; }
 .footer-logo { margin-bottom: 14px; }
-.footer-logo img { height: 30px; width: auto; }
+.footer-logo img { height: 46px; width: auto; }
 .footer-tag { font-size: 13px; color: var(--m); line-height: 1.65; max-width: 240px; }
 .fc-title { font-family: var(--fm); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--or); margin-bottom: 14px; }
 .fc-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
@@ -546,6 +563,7 @@ section { padding: 96px 0; }
 .tm-info { flex: 1; min-width: 0; }
 .tm-role { font-family: var(--fm); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--m); margin-bottom: 5px; }
 .tm-phone { font-family: var(--fd); font-size: 21px; font-weight: 900; letter-spacing: .01em; line-height: 1; margin-bottom: 13px; white-space: nowrap; }
+.tm-name2 { font-family: var(--fd); font-size: 20px; font-weight: 900; text-transform: uppercase; line-height: 1.05; }
 .tm-links { display: flex; flex-wrap: wrap; gap: 9px; }
 .tm-link {
   display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px;
@@ -585,7 +603,7 @@ section { padding: 96px 0; }
 <nav class="mob-overlay" id="mobOv">
   <a href="#catalog" onclick="closeMob()">Каталог</a>
   <a href="#adapt" onclick="closeMob()">Услуги</a>
-  <a href="#stories" onclick="closeMob()">Кейсы</a>
+  <a href="#stories" onclick="closeMob()">Выдачи</a>
   <a href="#team" onclick="closeMob()">Команда</a>
   <a href="#form" onclick="closeMob()">Заявка</a>
   <a href="https://wa.me/79510248318" target="_blank" class="mob-wa-link" onclick="closeMob()">
@@ -594,30 +612,45 @@ section { padding: 96px 0; }
   </a>
 </nav>
 
-<!-- NAV -->
-<header class="nav">
-  <div class="container nav-inner">
-    <a href="#" class="nav-logo">
-      <img src="images/tild6366-6165-4432-b831-663033633230_LOGO.PNG" alt="Атлет-Авто">
-    </a>
-    <div class="nav-seg">
-      <button class="nseg active" data-f="auto" onclick="navFunnel('auto')">Авто</button>
-      <button class="nseg" data-f="biz" onclick="navFunnel('biz')">Спецтехника</button>
+<!-- HEADER -->
+<header class="site-head">
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="tb-left">
+        <span class="tb-city"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Владивосток</span>
+        <a href="tel:+78006001838" class="tb-phone">8 800 600-18-38</a>
+      </div>
+      <div class="tb-right">
+        <a href="https://t.me/atletauto" target="_blank" class="tb-msg">Telegram</a>
+        <a href="https://max.ru/atletauto" target="_blank" class="tb-msg">MAX</a>
+        <a href="https://wa.me/79510248318" target="_blank" class="tb-msg">WhatsApp</a>
+      </div>
     </div>
-    <ul class="nav-links">
-      <li><a href="#catalog">Каталог</a></li>
-      <li><a href="#adapt">Услуги</a></li>
-      <li><a href="#stories">Кейсы</a></li>
-      <li><a href="#team">Команда</a></li>
-      <li><a href="#contacts">О нас</a></li>
-    </ul>
-    <a href="https://wa.me/79510248318" target="_blank" class="nav-wa">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.89C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
-      WhatsApp
-    </a>
-    <button class="nav-burger" id="burger" onclick="toggleMob()" aria-label="Меню">
-      <span></span><span></span><span></span>
-    </button>
+  </div>
+  <div class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="images/tild6366-6165-4432-b831-663033633230_LOGO.PNG" alt="Атлет-Авто">
+      </a>
+      <div class="nav-seg">
+        <button class="nseg active" data-f="auto" onclick="navFunnel('auto')">Авто</button>
+        <button class="nseg" data-f="biz" onclick="navFunnel('biz')">Спецтехника</button>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#catalog">Каталог</a></li>
+        <li><a href="#adapt">Услуги</a></li>
+        <li><a href="#stories">Выдачи</a></li>
+        <li><a href="#team">Команда</a></li>
+        <li><a href="#contacts">О нас</a></li>
+      </ul>
+      <a href="#form" class="nav-wa">
+        Бесплатный просчёт
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <button class="nav-burger" id="burger" onclick="toggleMob()" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -636,7 +669,7 @@ section { padding: 96px 0; }
     </div>
     <div class="hero-panel active" id="hp-auto">
       <h1 class="hero-title">Автомобили<br>из Азии. <em>От подбора</em><br>до первого<br>запуска в России.</h1>
-      <p class="hero-sub">Мы не просто привозим авто. Мы адаптируем его под российскую зиму, переводим на русский язык, защищаем кузов и отдаём вам ключи от машины, которая на&nbsp;100% готова к&nbsp;трассе.</p>
+      <p class="hero-sub">Мы не просто привозим автомобиль. Мы адаптируем его под российскую зиму, переводим на русский язык, защищаем кузов и отдаём вам ключи от машины, которая на&nbsp;100% готова к&nbsp;российским дорогам.</p>
       <div class="hero-cta">
         <a href="#form" class="btn-primary">Подобрать авто <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         <a href="#catalog" class="btn-ghost">Смотреть каталог</a>
@@ -893,7 +926,7 @@ section { padding: 96px 0; }
           <li>Прогрев двигателя через штатный таймер или приложение</li>
         </ul>
       </div>
-      <div class="ap-photo"><img src="images/catalog/bmw.jpg" alt="Зимняя адаптация" loading="lazy"></div>
+      <div class="ap-photo"><img src="images/showroom.jpg" alt="Зимняя адаптация" loading="lazy" style="object-position:center"></div>
     </div>
 
     <div class="ap container" data-i="1">
@@ -1022,8 +1055,8 @@ section { padding: 96px 0; }
   <div class="container">
     <div class="stories-hd">
       <div>
-        <p class="section-label reveal">Истории клиентов</p>
-        <h2 class="section-title reveal d1" style="margin-bottom:0">Реальные кейсы</h2>
+        <p class="section-label reveal">Наши клиенты</p>
+        <h2 class="section-title reveal d1" style="margin-bottom:0">Выдача авто<br>нашим клиентам</h2>
       </div>
       <div class="sarrows">
         <button class="sarr" onclick="slideS(-1)" aria-label="Назад"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></button>
@@ -1059,119 +1092,49 @@ section { padding: 96px 0; }
 <!-- ============================================================ TEAM -->
 <section class="team" id="team">
   <div class="container">
-    <p class="section-label reveal">Команда</p>
-    <h2 class="section-title reveal d1">Менеджеры на связи</h2>
+    <p class="section-label reveal">Наша команда</p>
+    <h2 class="section-title reveal d1">Кто ведёт<br>вашу сделку</h2>
     <div class="team-grid">
 
       <div class="tm reveal">
         <div class="tm-ava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
         <div class="tm-info">
-          <div class="tm-role">Менеджер</div>
-          <div class="tm-phone">+7 951 012-71-98</div>
-          <div class="tm-links">
-            <a href="tel:+79510127198" class="tm-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>Звонок</a>
-            <a href="https://wa.me/79510127198" target="_blank" class="tm-link wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.89C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01z"/></svg>WhatsApp</a>
-          </div>
+          <div class="tm-role">Руководство</div>
+          <div class="tm-name2">Директор</div>
         </div>
       </div>
-
       <div class="tm reveal d1">
         <div class="tm-ava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
         <div class="tm-info">
-          <div class="tm-role">Менеджер</div>
-          <div class="tm-phone">+7 951 016-52-78</div>
-          <div class="tm-links">
-            <a href="tel:+79510165278" class="tm-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>Звонок</a>
-            <a href="https://wa.me/79510165278" target="_blank" class="tm-link wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.89C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01z"/></svg>WhatsApp</a>
-          </div>
+          <div class="tm-role">Руководство</div>
+          <div class="tm-name2">Заместитель директора</div>
         </div>
       </div>
-
       <div class="tm reveal d2">
         <div class="tm-ava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
         <div class="tm-info">
-          <div class="tm-role">Менеджер</div>
-          <div class="tm-phone">+7 908 451-74-39</div>
-          <div class="tm-links">
-            <a href="tel:+79084517439" class="tm-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>Звонок</a>
-            <a href="https://wa.me/79084517439" target="_blank" class="tm-link wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.89C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01z"/></svg>WhatsApp</a>
-          </div>
+          <div class="tm-role">Отдел продаж</div>
+          <div class="tm-name2">Начальник отдела</div>
         </div>
       </div>
-
       <div class="tm reveal d3">
         <div class="tm-ava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
         <div class="tm-info">
-          <div class="tm-role">Менеджер</div>
-          <div class="tm-phone">+7 951 025-75-66</div>
-          <div class="tm-links">
-            <a href="tel:+79510257566" class="tm-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>Звонок</a>
-            <a href="https://wa.me/79510257566" target="_blank" class="tm-link wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.89C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01z"/></svg>WhatsApp</a>
-          </div>
+          <div class="tm-role">Подбор и логистика</div>
+          <div class="tm-name2">Менеджеры</div>
         </div>
       </div>
-
       <div class="tm reveal d4">
         <div class="tm-ava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
         <div class="tm-info">
-          <div class="tm-role">Менеджер</div>
-          <div class="tm-phone">+7 951 024-85-74</div>
-          <div class="tm-links">
-            <a href="tel:+79510248574" class="tm-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>Звонок</a>
-            <a href="https://wa.me/79510248574" target="_blank" class="tm-link wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.89C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01z"/></svg>WhatsApp</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="tm reveal d5">
-        <div class="tm-ava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-        <div class="tm-info">
-          <div class="tm-role">Менеджер</div>
-          <div class="tm-phone">+7 951 019-68-94</div>
-          <div class="tm-links">
-            <a href="tel:+79510196894" class="tm-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>Звонок</a>
-            <a href="https://wa.me/79510196894" target="_blank" class="tm-link wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.89C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01z"/></svg>WhatsApp</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="tm reveal d6">
-        <div class="tm-ava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-        <div class="tm-info">
-          <div class="tm-role">Менеджер</div>
-          <div class="tm-phone">+7 951 025-64-14</div>
-          <div class="tm-links">
-            <a href="tel:+79510256414" class="tm-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>Звонок</a>
-            <a href="https://wa.me/79510256414" target="_blank" class="tm-link wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.89C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01z"/></svg>WhatsApp</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="tm reveal">
-        <div class="tm-ava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-        <div class="tm-info">
-          <div class="tm-role">Менеджер</div>
-          <div class="tm-phone">+7 908 454-50-22</div>
-          <div class="tm-links">
-            <a href="tel:+79084545022" class="tm-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>Звонок</a>
-            <a href="https://wa.me/79084545022" target="_blank" class="tm-link wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.89C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01z"/></svg>WhatsApp</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="tm reveal">
-        <div class="tm-ava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-        <div class="tm-info">
-          <div class="tm-role">Менеджер</div>
-          <div class="tm-phone">+7 908 454-10-22</div>
-          <div class="tm-links">
-            <a href="tel:+79084541022" class="tm-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>Звонок</a>
-            <a href="https://wa.me/79084541022" target="_blank" class="tm-link wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.89C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01z"/></svg>WhatsApp</a>
-          </div>
+          <div class="tm-role">Таможня и оформление</div>
+          <div class="tm-name2">Специалисты</div>
         </div>
       </div>
 
     </div>
+    <p class="reveal" style="text-align:center;color:var(--m);font-size:14px;margin-top:34px">Официально трудоустроенный штат · работаем по договору с ООО «АТЛЕТ АВТО»</p>
+    <div class="reveal" style="text-align:center;margin-top:18px"><a href="https://wa.me/79510248318" target="_blank" class="btn-ghost">Связаться с командой →</a></div>
   </div>
 </section>
 
@@ -1200,15 +1163,13 @@ section { padding: 96px 0; }
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
             Instagram
           </a>
-          <a href="https://dzen.ru/atletauto" target="_blank" class="soc-btn">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm.94 11.06c2.7.16 4.84 2.3 5 5h-1.88a3.13 3.13 0 00-3.12-3.12V11.06zm-1.88 0v1.88A3.13 3.13 0 007.94 16.06H6.06c.16-2.7 2.3-4.84 5-5zm0-1.88c-2.7-.16-4.84-2.3-5-5h1.88a3.13 3.13 0 003.12 3.12V9.18zm1.88 0V7.06A3.13 3.13 0 0016.06 3.94h1.88c-.16 2.7-2.3 4.84-5 5z"/></svg>
-            Дзен
-          </a>
         </div>
       </div>
-      <div class="ms-media">
-        <video src="videos/review2.mp4" controls playsinline preload="metadata" poster="images/previews/preview_real2.jpg"></video>
-        <div class="vid-lbl">Авто-блог об импорте</div>
+      <div class="soc-collage">
+        <img src="images/showroom.jpg" alt="" loading="lazy">
+        <img src="images/cars/toyota-voxy/01.jpg" alt="" loading="lazy">
+        <img src="images/cars/bmw-x1/01.jpg" alt="" loading="lazy">
+        <img src="images/cars/toyota-corolla-cross/01.jpg" alt="" loading="lazy">
       </div>
     </div>
   </div>
@@ -1261,7 +1222,7 @@ section { padding: 96px 0; }
         <div><div class="ci-label">Телефон</div><div class="ci-val"><a href="tel:+78006001838">+7 (800) 600-18-38</a></div></div>
         <div><div class="ci-label">WhatsApp</div><div class="ci-val"><a href="https://wa.me/79510248318" target="_blank">Написать сейчас →</a></div></div>
         <div><div class="ci-label">Telegram</div><div class="ci-val"><a href="https://t.me/atletauto" target="_blank">@atletauto</a></div></div>
-        <div><div class="ci-label">Режим работы</div><div class="ci-val">Пн–Пт 10:00–18:00</div></div>
+        <div><div class="ci-label">Режим работы</div><div class="ci-val">Пн–Пт 11:00–19:00</div></div>
       </div>
       <div class="map-embed reveal d2">
         <iframe src="https://maps.google.com/maps?q=Владивосток,+Запорожская+87а&output=embed&hl=ru&z=16" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -1283,7 +1244,7 @@ section { padding: 96px 0; }
         <ul class="fc-links">
           <li><a href="#catalog">Каталог</a></li>
           <li><a href="#adapt">Услуги</a></li>
-          <li><a href="#stories">Кейсы</a></li>
+          <li><a href="#stories">Выдачи</a></li>
           <li><a href="#process">Как работаем</a></li>
           <li><a href="#form">Оставить заявку</a></li>
         </ul>
@@ -1304,7 +1265,7 @@ section { padding: 96px 0; }
           <b>ИНН</b> 2540285298<br>
           <b>ОГРН</b> 1242500012810<br>
           <b>Адрес:</b> Владивосток, ул. Запорожская, 87а, офис 8<br>
-          <b>Часы:</b> Пн–Пт 10:00–18:00
+          <b>Часы:</b> Пн–Пт 11:00–19:00
         </p>
       </div>
     </div>
