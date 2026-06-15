@@ -526,9 +526,7 @@ section { padding: 96px 0; }
    TEAM
 ================================================================ */
 .team { background: var(--bg-r); border-top: 1px solid var(--b); }
-.team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
-@media (max-width: 860px) { .team-grid { grid-template-columns: repeat(2,1fr); } }
-@media (max-width: 520px) { .team-grid { grid-template-columns: 1fr; } }
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
 .tm {
   background: var(--bg); border: 1px solid var(--b); border-radius: var(--r2);
   padding: 24px 22px; display: flex; align-items: center; gap: 18px;
@@ -546,7 +544,7 @@ section { padding: 96px 0; }
 .tm-info { flex: 1; min-width: 0; }
 .tm-role { font-family: var(--fm); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--m); margin-bottom: 5px; }
 .tm-phone { font-family: var(--fd); font-size: 21px; font-weight: 900; letter-spacing: .01em; line-height: 1; margin-bottom: 13px; white-space: nowrap; }
-.tm-links { display: flex; gap: 9px; }
+.tm-links { display: flex; flex-wrap: wrap; gap: 9px; }
 .tm-link {
   display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px;
   border: 1px solid var(--b2); border-radius: 8px; color: var(--m);
