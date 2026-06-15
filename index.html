@@ -214,9 +214,11 @@ section { padding: 96px 0; }
 .stat-n { font-family: var(--fm); font-size: clamp(18px,2.2vw,26px); font-weight: 500; color: var(--or); line-height: 1; margin-bottom: 4px; }
 .stat-l { font-size: 11px; color: var(--m); text-transform: uppercase; letter-spacing: .1em; }
 @media (max-width: 600px) {
-  .hero-stats-inner { flex-wrap: wrap; }
-  .stat { min-width: 50%; flex: none; }
+  .hero-stats-inner { display: grid; grid-template-columns: 1fr 1fr; }
+  .stat { padding: 15px 8px; min-height: 76px; border-right: 1px solid var(--b); border-bottom: 1px solid var(--b); }
   .stat:nth-child(2n) { border-right: none; }
+  .stat:nth-last-child(-n+2) { border-bottom: none; }
+  .stat-n { font-size: 22px; }
   .hero-title { font-size: clamp(44px, 11vw, 72px); }
 }
 
@@ -654,7 +656,7 @@ section { padding: 96px 0; }
       <div class="hero-stats-inner">
         <div class="stat"><span class="stat-n">6 лет</span><span class="stat-l">на рынке</span></div>
         <div class="stat"><span class="stat-n">500+</span><span class="stat-l">привезённых авто</span></div>
-        <div class="stat"><span class="stat-n">Офиц.</span><span class="stat-l">импортёр · ИНН 2540285298</span></div>
+        <div class="stat"><span class="stat-n">Офиц.</span><span class="stat-l">импортёр</span></div>
         <div class="stat"><span class="stat-n">Под ключ</span><span class="stat-l">таможня и ЭПТС</span></div>
       </div>
     </div>
