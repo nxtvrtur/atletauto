@@ -553,12 +553,13 @@ section { padding: 96px 0; }
 }
 .tm:hover { border-color: var(--or); transform: translateY(-5px); box-shadow: 0 18px 44px rgba(0,0,0,.42), var(--or-glow); }
 .tm-ava {
-  width: 54px; height: 54px; border-radius: 50%; flex-shrink: 0;
-  background: var(--or-dim); border: 1px solid rgba(43,92,230,.35); color: var(--or);
-  display: flex; align-items: center; justify-content: center;
-  transition: background .3s, color .3s, transform .3s var(--ease);
+  width: 64px; height: 64px; border-radius: 50%; flex-shrink: 0;
+  background: var(--or-dim); border: 2px solid rgba(255,255,255,.08); color: var(--or);
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+  transition: border-color .3s, transform .3s var(--ease);
 }
-.tm:hover .tm-ava { background: var(--or); color: #fff; transform: scale(1.06); }
+.tm:hover .tm-ava { border-color: var(--or); transform: scale(1.06); }
+.tm-ava img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 .tm-ava svg { width: 24px; height: 24px; }
 .tm-info { flex: 1; min-width: 0; }
 .tm-role { font-family: var(--fm); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--m); margin-bottom: 5px; }
@@ -591,6 +592,24 @@ section { padding: 96px 0; }
 }
 @keyframes wap { 0% { transform: scale(1); opacity: .7; } 70% { transform: scale(1.6); opacity: 0; } 100% { transform: scale(1.6); opacity: 0; } }
 .wa-float svg { width: 28px; height: 28px; color: #fff; }
+/* ================================================================
+   BLOG PREVIEW
+================================================================ */
+.blog-preview { background: var(--bg); border-top: 1px solid var(--b); }
+.blog-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-bottom: 36px; }
+.bc { background: var(--bg-r); border: 1px solid var(--b); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .2s, transform .2s; text-decoration: none; }
+.bc:hover { border-color: rgba(255,77,0,.35); transform: translateY(-4px); }
+.bc-top { padding: 20px 20px 0; flex: 1; }
+.bc-badge { display: inline-block; font-family: var(--fm); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; background: rgba(255,77,0,.1); border: 1px solid rgba(255,77,0,.2); color: var(--or); padding: 3px 8px; border-radius: 4px; margin-bottom: 14px; }
+.bc-title { font-family: var(--fd); font-weight: 900; font-size: 18px; text-transform: uppercase; line-height: 1.15; letter-spacing: .02em; color: var(--t); margin-bottom: 10px; }
+.bc-desc { font-size: 13px; color: var(--m); line-height: 1.6; }
+.bc-foot { padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--b); margin-top: 16px; }
+.bc-author { display: flex; align-items: center; gap: 8px; font-family: var(--fm); font-size: 11px; color: var(--m); }
+.bc-ava { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; border: 1px solid var(--b); }
+.bc-arrow { color: var(--or); transition: transform .2s; }
+.bc:hover .bc-arrow { transform: translateX(4px); }
+@media (max-width: 900px) { .blog-cards { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .blog-cards { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -605,6 +624,7 @@ section { padding: 96px 0; }
   <a href="#adapt" onclick="closeMob()">Услуги</a>
   <a href="#stories" onclick="closeMob()">Выдачи</a>
   <a href="#team" onclick="closeMob()">Команда</a>
+  <a href="blog.html" onclick="closeMob()">Блог</a>
   <a href="#form" onclick="closeMob()">Заявка</a>
   <a href="https://wa.me/79510248318" target="_blank" class="mob-wa-link" onclick="closeMob()">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.89C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
@@ -1097,44 +1117,92 @@ section { padding: 96px 0; }
     <div class="team-grid">
 
       <div class="tm reveal">
-        <div class="tm-ava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="tm-ava"><img src="images/team/dmitriy.jpg" alt="Дмитрий" loading="lazy"></div>
         <div class="tm-info">
           <div class="tm-role">Руководство</div>
-          <div class="tm-name2">Директор</div>
+          <div class="tm-name2">Дмитрий</div>
+          <div class="tm-links" style="margin-top:10px">
+            <a class="tm-link wa" href="https://wa.me/79084545022" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.89C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+              +7 (908) 454-50-22
+            </a>
+          </div>
         </div>
       </div>
+
       <div class="tm reveal d1">
-        <div class="tm-ava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="tm-ava"><img src="images/team/kirill.jpg" alt="Кирилл" loading="lazy"></div>
         <div class="tm-info">
-          <div class="tm-role">Руководство</div>
-          <div class="tm-name2">Заместитель директора</div>
+          <div class="tm-role">Продажи · Премиум</div>
+          <div class="tm-name2">Кирилл</div>
+          <div class="tm-links" style="margin-top:10px">
+            <a class="tm-link wa" href="https://wa.me/79510165278" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.89C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+              +7 (951) 016-52-78
+            </a>
+          </div>
         </div>
       </div>
+
       <div class="tm reveal d2">
-        <div class="tm-ava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-        <div class="tm-info">
-          <div class="tm-role">Отдел продаж</div>
-          <div class="tm-name2">Начальник отдела</div>
-        </div>
-      </div>
-      <div class="tm reveal d3">
-        <div class="tm-ava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="tm-ava"><img src="images/team/pavel.jpg" alt="Павел" loading="lazy"></div>
         <div class="tm-info">
           <div class="tm-role">Подбор и логистика</div>
-          <div class="tm-name2">Менеджеры</div>
+          <div class="tm-name2">Павел</div>
+          <div class="tm-links" style="margin-top:10px">
+            <a class="tm-link wa" href="https://wa.me/79084541022" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.89C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+              +7 (908) 454-10-22
+            </a>
+          </div>
         </div>
       </div>
-      <div class="tm reveal d4">
-        <div class="tm-ava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+
+      <div class="tm reveal d3">
+        <div class="tm-ava"><img src="images/team/alexander2.jpg" alt="Александр" loading="lazy"></div>
         <div class="tm-info">
-          <div class="tm-role">Таможня и оформление</div>
-          <div class="tm-name2">Специалисты</div>
+          <div class="tm-role">Клиентский сервис</div>
+          <div class="tm-name2">Александр</div>
+          <div class="tm-links" style="margin-top:10px">
+            <a class="tm-link wa" href="https://wa.me/79510248574" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.89C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+              +7 (951) 024-85-74
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tm reveal d4">
+        <div class="tm-ava"><img src="images/team/alexander.jpg" alt="Александр" loading="lazy"></div>
+        <div class="tm-info">
+          <div class="tm-role">Аналитика рынка</div>
+          <div class="tm-name2">Александр</div>
+          <div class="tm-links" style="margin-top:10px">
+            <a class="tm-link wa" href="https://wa.me/79084516127" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.89C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+              +7 (908) 451-61-27
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tm reveal d5">
+        <div class="tm-ava"><img src="images/team/maxim.jpg" alt="Максим" loading="lazy"></div>
+        <div class="tm-info">
+          <div class="tm-role">Операции и логистика</div>
+          <div class="tm-name2">Максим</div>
+          <div class="tm-links" style="margin-top:10px">
+            <a class="tm-link wa" href="https://wa.me/79025408838" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.89C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+              WhatsApp
+            </a>
+          </div>
         </div>
       </div>
 
     </div>
     <p class="reveal" style="text-align:center;color:var(--m);font-size:14px;margin-top:34px">Официально трудоустроенный штат · работаем по договору с ООО «АТЛЕТ АВТО»</p>
-    <div class="reveal" style="text-align:center;margin-top:18px"><a href="https://wa.me/79510248318" target="_blank" class="btn-ghost">Связаться с командой →</a></div>
+    <div class="reveal" style="text-align:center;margin-top:18px"><a href="https://wa.me/79025408838" target="_blank" class="btn-ghost">Написать любому из команды →</a></div>
   </div>
 </section>
 
@@ -1171,6 +1239,74 @@ section { padding: 96px 0; }
         <img src="images/cars/bmw-x1/01.jpg" alt="" loading="lazy">
         <img src="images/cars/toyota-corolla-cross/01.jpg" alt="" loading="lazy">
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ BLOG PREVIEW -->
+<section class="blog-preview reveal" id="blog">
+  <div class="container">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:40px;flex-wrap:wrap">
+      <div>
+        <p class="section-label">Экспертный блог</p>
+        <h2 class="section-title" style="margin-bottom:0">Читайте наши<br>статьи об импорте</h2>
+      </div>
+      <a href="blog.html" class="btn-ghost" style="flex-shrink:0">Все статьи →</a>
+    </div>
+
+    <div class="blog-cards">
+
+      <a class="bc" href="blog/parallel-import-scenarios.html">
+        <div class="bc-top">
+          <span class="bc-badge">Аналитика · Рынок</span>
+          <div class="bc-title">Параллельный импорт: 3 сценария до 2028 года</div>
+          <p class="bc-desc">Базовый, стрессовый и оптимистичный — что произойдёт с ценами, сроками и доступностью брендов в каждом сценарии.</p>
+        </div>
+        <div class="bc-foot">
+          <div class="bc-author">
+            <img class="bc-ava" src="images/team/alexander.jpg" alt="Александр" loading="lazy">
+            Александр
+          </div>
+          <div class="bc-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="bc" href="blog/real-price-breakdown.html">
+        <div class="bc-top">
+          <span class="bc-badge">Цены · Прозрачность</span>
+          <div class="bc-title">Из чего состоит цена авто из-за рубежа</div>
+          <p class="bc-desc">Разбираем смету по статьям: логистика, таможня, маржа компании. Где прячется настоящая «накрутка» и как её проверить.</p>
+        </div>
+        <div class="bc-foot">
+          <div class="bc-author">
+            <img class="bc-ava" src="images/team/kirill.jpg" alt="Кирилл" loading="lazy">
+            Кирилл
+          </div>
+          <div class="bc-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="bc" href="blog/customs-payments-security.html">
+        <div class="bc-top">
+          <span class="bc-badge">Безопасность · Юридика</span>
+          <div class="bc-title">Таможня и платежи: как защитить сделку</div>
+          <p class="bc-desc">Юридический и финансовый контур безопасной покупки. Чек-лист: как отличить надёжную компанию от случайных игроков.</p>
+        </div>
+        <div class="bc-foot">
+          <div class="bc-author">
+            <img class="bc-ava" src="images/team/maxim.jpg" alt="Максим" loading="lazy">
+            Максим
+          </div>
+          <div class="bc-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
@@ -1246,6 +1382,7 @@ section { padding: 96px 0; }
           <li><a href="#adapt">Услуги</a></li>
           <li><a href="#stories">Выдачи</a></li>
           <li><a href="#process">Как работаем</a></li>
+          <li><a href="blog.html">Блог</a></li>
           <li><a href="#form">Оставить заявку</a></li>
         </ul>
       </div>
