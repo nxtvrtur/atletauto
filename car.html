@@ -30,7 +30,7 @@ button{background:none;border:none;cursor:pointer;font-family:var(--fb);color:in
 @media(max-width:900px){.wrap{grid-template-columns:1fr;gap:32px;}}
 /* gallery */
 .gal-main{position:relative;border-radius:var(--r2);overflow:hidden;border:1px solid var(--b);background:var(--bg-r);aspect-ratio:16/10;}
-.gal-main img{width:100%;height:100%;object-fit:cover;}
+.gal-main img{width:100%;height:100%;object-fit:contain;}
 .gal-arrow{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:rgba(13,11,10,.6);backdrop-filter:blur(8px);border:1px solid var(--b2);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .2s,border-color .2s;}
 .gal-arrow:hover{background:var(--or);border-color:transparent;}
 .gal-arrow svg{width:20px;height:20px;}
