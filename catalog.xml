@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<yml_catalog date="2026-06-17 21:25">
+<yml_catalog date="2026-06-18 00:45">
   <shop>
     <name>Атлет-Авто</name>
     <company>ООО Атлет Авто</company>
@@ -302,7 +302,7 @@
         <param name="Кузов">седан</param>
         <param name="Страна">Китай</param>
       </offer>
-      <offer id="suzuki-jimny-nomade" available="true">
+      <offer id="suzuki-jimny-nomade" available="false">
         <price>2350000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
@@ -317,7 +317,7 @@
         <param name="КПП">автомат</param>
         <param name="Пробег">~1 000 км</param>
       </offer>
-      <offer id="honda-wrv" available="true">
+      <offer id="honda-wrv" available="false">
         <price>2000000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
@@ -332,7 +332,7 @@
         <param name="КПП">вариатор</param>
         <param name="Пробег">~5 000 км</param>
       </offer>
-      <offer id="honda-vezel" available="true">
+      <offer id="honda-vezel" available="false">
         <price>2300000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
@@ -347,7 +347,7 @@
         <param name="КПП">вариатор</param>
         <param name="Пробег">0 · новый</param>
       </offer>
-      <offer id="mitsubishi-eclipse-cross" available="true">
+      <offer id="mitsubishi-eclipse-cross" available="false">
         <price>2540000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
@@ -362,7 +362,7 @@
         <param name="КПП">вариатор</param>
         <param name="Пробег">~8 000 км</param>
       </offer>
-      <offer id="mazda-3-jp" available="true">
+      <offer id="mazda-3-jp" available="false">
         <price>1900000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
@@ -377,7 +377,7 @@
         <param name="КПП">автомат</param>
         <param name="Пробег">~3 000 км</param>
       </offer>
-      <offer id="honda-freed" available="true">
+      <offer id="honda-freed" available="false">
         <price>1850000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
@@ -393,7 +393,7 @@
         <param name="Кузов">минивэн</param>
         <param name="Пробег">~13 000 км</param>
       </offer>
-      <offer id="daihatsu-copen" available="true">
+      <offer id="daihatsu-copen" available="false">
         <price>1450000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
@@ -406,7 +406,7 @@
         <param name="Кузов">кабриолет</param>
         <param name="Пробег">0 · новый</param>
       </offer>
-      <offer id="mazda-roadster" available="true">
+      <offer id="mazda-roadster" available="false">
         <price>2100000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
@@ -422,7 +422,7 @@
         <param name="Кузов">родстер</param>
         <param name="Пробег">~8 000 км</param>
       </offer>
-      <offer id="honda-nwgn" available="true">
+      <offer id="honda-nwgn" available="false">
         <price>1350000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
@@ -438,7 +438,7 @@
         <param name="Кузов">кэй-кар</param>
         <param name="Пробег">~1 000 км</param>
       </offer>
-      <offer id="toyota-roomy" available="true">
+      <offer id="toyota-roomy" available="false">
         <price>1800000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
@@ -453,7 +453,7 @@
         <param name="КПП">вариатор</param>
         <param name="Пробег">0 · новый</param>
       </offer>
-      <offer id="jetta-vs8" available="true">
+      <offer id="jetta-vs8" available="false">
         <price>2050000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
@@ -467,7 +467,7 @@
         <param name="КПП">АКПП 6</param>
         <param name="Привод">передний</param>
       </offer>
-      <offer id="byd-leopard-3" available="true">
+      <offer id="byd-leopard-3" available="false">
         <price>4450000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
@@ -481,7 +481,7 @@
         <param name="Запас хода">501 км</param>
         <param name="Привод">полный</param>
       </offer>
-      <offer id="toyota-camry" available="true">
+      <offer id="toyota-camry" available="false">
         <price>3800000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
@@ -495,7 +495,7 @@
         <param name="КПП">вариатор</param>
         <param name="Привод">передний</param>
       </offer>
-      <offer id="toyota-corolla-cn" available="true">
+      <offer id="toyota-corolla-cn" available="false">
         <price>1550000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
@@ -509,7 +509,7 @@
         <param name="КПП">вариатор</param>
         <param name="Привод">передний</param>
       </offer>
-      <offer id="hyundai-elantra" available="true">
+      <offer id="hyundai-elantra" available="false">
         <price>1650000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
@@ -523,7 +523,7 @@
         <param name="КПП">вариатор</param>
         <param name="Привод">передний</param>
       </offer>
-      <offer id="haval-h6" available="true">
+      <offer id="haval-h6" available="false">
         <price>1690000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
@@ -537,7 +537,7 @@
         <param name="КПП">робот 7</param>
         <param name="Привод">передний</param>
       </offer>
-      <offer id="byd-seagull" available="true">
+      <offer id="byd-seagull" available="false">
         <price>1350000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
@@ -551,7 +551,7 @@
         <param name="Запас хода">305 км</param>
         <param name="Привод">передний</param>
       </offer>
-      <offer id="vw-bora" available="true">
+      <offer id="vw-bora" available="false">
         <price>1650000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
@@ -565,7 +565,7 @@
         <param name="КПП">робот 7</param>
         <param name="Привод">передний</param>
       </offer>
-      <offer id="gac-aion-s" available="true">
+      <offer id="gac-aion-s" available="false">
         <price>1650000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
@@ -579,7 +579,7 @@
         <param name="Запас хода">505 км</param>
         <param name="Привод">передний</param>
       </offer>
-      <offer id="byd-yuan-up" available="true">
+      <offer id="byd-yuan-up" available="false">
         <price>1700000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
@@ -737,7 +737,7 @@
         <categoryId>3</categoryId>
         <name>BMW 4 серии · 2023 · 2.0 л · бензин</name>
         <description>Год: 2023 · Двигатель: 2.0 л · бензин · Мощность: 184 л.с. · Привод: задний · КПП: АКПП · Страна: Корея</description>
-        <picture>https://atletauto.ru/images/cars/bmw-4-kr/01.jpg</picture>
+        <picture>https://atletauto.ru/images/catalog/kr1-bmw-4.jpeg</picture>
         <url>https://atletauto.ru/car.html?id=bmw-4-kr</url>
         <param name="Год">2023</param>
         <param name="Двигатель">2.0 л · бензин</param>
@@ -752,7 +752,7 @@
         <categoryId>3</categoryId>
         <name>BMW 5 серии · 2023 · 2.0 л · бензин</name>
         <description>Год: 2023 · Двигатель: 2.0 л · бензин · Мощность: 188 л.с. · Привод: задний · КПП: АКПП · Страна: Корея</description>
-        <picture>https://atletauto.ru/images/cars/bmw-5-kr/01.jpg</picture>
+        <picture>https://atletauto.ru/images/catalog/kr1-bmw-5.jpeg</picture>
         <url>https://atletauto.ru/car.html?id=bmw-5-kr</url>
         <param name="Год">2023</param>
         <param name="Двигатель">2.0 л · бензин</param>
@@ -767,7 +767,7 @@
         <categoryId>3</categoryId>
         <name>Kia Seltos · 2023 · 2.0 л · бензин</name>
         <description>Год: 2023 · Двигатель: 2.0 л · бензин · Мощность: 149 л.с. · Привод: передний · КПП: вариатор · Страна: Корея</description>
-        <picture>https://atletauto.ru/images/cars/kia-seltos/01.jpg</picture>
+        <picture>https://atletauto.ru/images/catalog/kr1-kia-seltos-2-0-2wd.jpeg</picture>
         <url>https://atletauto.ru/car.html?id=kia-seltos</url>
         <param name="Год">2023</param>
         <param name="Двигатель">2.0 л · бензин</param>
@@ -782,7 +782,7 @@
         <categoryId>3</categoryId>
         <name>Kia Sportage · 2024 · 1.6 л · бензин</name>
         <description>Год: 2024 · Двигатель: 1.6 л · бензин · Мощность: 180 л.с. · Привод: передний · КПП: АКПП · Страна: Корея</description>
-        <picture>https://atletauto.ru/images/cars/kia-sportage/01.jpg</picture>
+        <picture>https://atletauto.ru/images/catalog/kr1-kia-sportage.jpeg</picture>
         <url>https://atletauto.ru/car.html?id=kia-sportage</url>
         <param name="Год">2024</param>
         <param name="Двигатель">1.6 л · бензин</param>
@@ -797,7 +797,7 @@
         <categoryId>3</categoryId>
         <name>Kia Tasman · 2.5 л · бензин</name>
         <description>Двигатель: 2.5 л · бензин · Мощность: 281 л.с. · Привод: полный · КПП: автомат · Кузов: пикап · Страна: Корея</description>
-        <picture>https://atletauto.ru/images/cars/kia-tasman/01.jpg</picture>
+        <picture>https://atletauto.ru/images/catalog/kr1-kia-tasman.jpeg</picture>
         <url>https://atletauto.ru/car.html?id=kia-tasman</url>
         <param name="Двигатель">2.5 л · бензин</param>
         <param name="Мощность">281 л.с.</param>
@@ -812,7 +812,7 @@
         <categoryId>3</categoryId>
         <name>Mercedes E Class · 2024 · 2.0 л · бензин</name>
         <description>Год: 2024 · Двигатель: 2.0 л · бензин · Мощность: 204 л.с. · Привод: задний · КПП: автомат · Страна: Корея</description>
-        <picture>https://atletauto.ru/images/cars/mercedes-e-class/01.jpg</picture>
+        <picture>https://atletauto.ru/images/catalog/kr1-mersedes-e-class.jpeg</picture>
         <url>https://atletauto.ru/car.html?id=mercedes-e-class</url>
         <param name="Год">2024</param>
         <param name="Двигатель">2.0 л · бензин</param>
@@ -827,7 +827,7 @@
         <categoryId>3</categoryId>
         <name>Samsung QM6 · 2022 · 2.0 л · бензин</name>
         <description>Год: 2022 · Двигатель: 2.0 л · бензин · Мощность: 144 л.с. · Привод: передний · КПП: вариатор · Страна: Корея</description>
-        <picture>https://atletauto.ru/images/cars/samsung-qm6/01.jpg</picture>
+        <picture>https://atletauto.ru/images/catalog/kr1-samsung-qm6-2-0-gde-re-2wd.jpeg</picture>
         <url>https://atletauto.ru/car.html?id=samsung-qm6</url>
         <param name="Год">2022</param>
         <param name="Двигатель">2.0 л · бензин</param>
@@ -842,7 +842,7 @@
         <categoryId>3</categoryId>
         <name>Samsung SM6 · 2023 · 1.3 л · бензин</name>
         <description>Год: 2023 · Двигатель: 1.3 л · бензин · Мощность: 156 л.с. · Привод: передний · КПП: робот · Страна: Корея</description>
-        <picture>https://atletauto.ru/images/cars/samsung-sm6/01.jpg</picture>
+        <picture>https://atletauto.ru/images/catalog/kr1-samsung-sm6-1-3-tce-re.jpeg</picture>
         <url>https://atletauto.ru/car.html?id=samsung-sm6</url>
         <param name="Год">2023</param>
         <param name="Двигатель">1.3 л · бензин</param>
@@ -857,7 +857,7 @@
         <categoryId>3</categoryId>
         <name>BMW X4 · 2024 · 2.0 л · бензин</name>
         <description>Год: 2024 · Двигатель: 2.0 л · бензин · Мощность: 184 л.с. · Привод: полный · КПП: АКПП · Страна: Корея</description>
-        <picture>https://atletauto.ru/images/cars/bmw-x4-kr/01.jpg</picture>
+        <picture>https://atletauto.ru/images/catalog/kr1-x4.jpeg</picture>
         <url>https://atletauto.ru/car.html?id=bmw-x4-kr</url>
         <param name="Год">2024</param>
         <param name="Двигатель">2.0 л · бензин</param>
@@ -872,7 +872,7 @@
         <categoryId>3</categoryId>
         <name>BMW X6 · 2024 · 3.0 л · дизель</name>
         <description>Год: 2024 · Двигатель: 3.0 л · дизель · Мощность: 286 л.с. · Привод: полный · КПП: автомат · Страна: Корея</description>
-        <picture>https://atletauto.ru/images/cars/bmw-x6-kr/01.jpg</picture>
+        <picture>https://atletauto.ru/images/catalog/kr1-x6.jpeg</picture>
         <url>https://atletauto.ru/car.html?id=bmw-x6-kr</url>
         <param name="Год">2024</param>
         <param name="Двигатель">3.0 л · дизель</param>
@@ -880,6 +880,893 @@
         <param name="Привод">полный</param>
         <param name="КПП">автомат</param>
         <param name="Страна">Корея</param>
+      </offer>
+      <offer id="bmw-3-jp" available="true">
+        <price>2500000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>BMW 3 серии (Япония) · 2018 · 2.0 л · бензин</name>
+        <description>Год: 2018 · Двигатель: 2.0 л · бензин · Мощность: 156 л.с. · Привод: задний · Кузов: седан · Страна: Япония</description>
+        <picture>https://atletauto.ru/images/cars/bmw-3-jp/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=bmw-3-jp</url>
+        <param name="Год">2018</param>
+        <param name="Двигатель">2.0 л · бензин</param>
+        <param name="Мощность">156 л.с.</param>
+        <param name="Привод">задний</param>
+        <param name="Кузов">седан</param>
+        <param name="Страна">Япония</param>
+      </offer>
+      <offer id="daihatsu-copen-jp" available="true">
+        <price>1450000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Daihatsu Copen · 2021 · 0.66 л · турбо</name>
+        <description>Год: 2021 · Двигатель: 0.66 л · турбо · Мощность: 64 л.с. · Привод: задний · Кузов: кабриолет · Страна: Япония</description>
+        <picture>https://atletauto.ru/images/cars/daihatsu-copen-jp/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=daihatsu-copen-jp</url>
+        <param name="Год">2021</param>
+        <param name="Двигатель">0.66 л · турбо</param>
+        <param name="Мощность">64 л.с.</param>
+        <param name="Привод">задний</param>
+        <param name="Кузов">кабриолет</param>
+        <param name="Страна">Япония</param>
+      </offer>
+      <offer id="honda-freed-gb3" available="true">
+        <price>1400000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Honda Freed GB-3 · 2020 · 1.5 л · бензин</name>
+        <description>Год: 2020 · Двигатель: 1.5 л · бензин · Мощность: 118 л.с. · Привод: передний · Кузов: минивэн · Страна: Япония</description>
+        <picture>https://atletauto.ru/images/cars/honda-freed-gb3/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=honda-freed-gb3</url>
+        <param name="Год">2020</param>
+        <param name="Двигатель">1.5 л · бензин</param>
+        <param name="Мощность">118 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">минивэн</param>
+        <param name="Страна">Япония</param>
+      </offer>
+      <offer id="honda-freed-gb5" available="true">
+        <price>1600000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Honda Freed GB-5 (4WD) · 2020 · 1.5 л · бензин</name>
+        <description>Год: 2020 · Двигатель: 1.5 л · бензин · Мощность: 118 л.с. · Привод: полный (4WD) · Кузов: минивэн · Страна: Япония</description>
+        <picture>https://atletauto.ru/images/cars/honda-freed-gb5/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=honda-freed-gb5</url>
+        <param name="Год">2020</param>
+        <param name="Двигатель">1.5 л · бензин</param>
+        <param name="Мощность">118 л.с.</param>
+        <param name="Привод">полный (4WD)</param>
+        <param name="Кузов">минивэн</param>
+        <param name="Страна">Япония</param>
+      </offer>
+      <offer id="honda-nbox" available="true">
+        <price>1100000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Honda N-Box · 2021 · 0.66 л · бензин</name>
+        <description>Год: 2021 · Двигатель: 0.66 л · бензин · Мощность: 58 л.с. · Привод: передний · Кузов: кэй-кар · Страна: Япония</description>
+        <picture>https://atletauto.ru/images/cars/honda-nbox/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=honda-nbox</url>
+        <param name="Год">2021</param>
+        <param name="Двигатель">0.66 л · бензин</param>
+        <param name="Мощность">58 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">кэй-кар</param>
+        <param name="Страна">Япония</param>
+      </offer>
+      <offer id="honda-stepwgn" available="true">
+        <price>1900000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Honda Stepwgn · 2020 · 1.5 л · бензин</name>
+        <description>Год: 2020 · Двигатель: 1.5 л · бензин · Мощность: 150 л.с. · Привод: передний · Кузов: минивэн · Страна: Япония</description>
+        <picture>https://atletauto.ru/images/cars/honda-stepwgn/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=honda-stepwgn</url>
+        <param name="Год">2020</param>
+        <param name="Двигатель">1.5 л · бензин</param>
+        <param name="Мощность">150 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">минивэн</param>
+        <param name="Страна">Япония</param>
+      </offer>
+      <offer id="mercedes-c-jp" available="true">
+        <price>2800000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Mercedes C-Class (Япония) · 2020 · 1.5 л · бензин</name>
+        <description>Год: 2020 · Двигатель: 1.5 л · бензин · Мощность: 184 л.с. · Привод: задний · Кузов: седан · Страна: Япония</description>
+        <picture>https://atletauto.ru/images/cars/mercedes-c-jp/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=mercedes-c-jp</url>
+        <param name="Год">2020</param>
+        <param name="Двигатель">1.5 л · бензин</param>
+        <param name="Мощность">184 л.с.</param>
+        <param name="Привод">задний</param>
+        <param name="Кузов">седан</param>
+        <param name="Страна">Япония</param>
+      </offer>
+      <offer id="subaru-xv" available="true">
+        <price>1850000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Subaru XV · 2020 · 1.6 л · бензин</name>
+        <description>Год: 2020 · Двигатель: 1.6 л · бензин · Мощность: 114 л.с. · Привод: полный (4WD) · Кузов: кроссовер · Страна: Япония</description>
+        <picture>https://atletauto.ru/images/cars/subaru-xv/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=subaru-xv</url>
+        <param name="Год">2020</param>
+        <param name="Двигатель">1.6 л · бензин</param>
+        <param name="Мощность">114 л.с.</param>
+        <param name="Привод">полный (4WD)</param>
+        <param name="Кузов">кроссовер</param>
+        <param name="Страна">Япония</param>
+      </offer>
+      <offer id="toyota-roomy-jp" available="true">
+        <price>1000000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Toyota Roomy · 2022 · 1.0 л · бензин</name>
+        <description>Год: 2022 · Двигатель: 1.0 л · бензин · Мощность: 69 л.с. · Привод: передний · Кузов: компактвэн · Страна: Япония</description>
+        <picture>https://atletauto.ru/images/cars/toyota-roomy-jp/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=toyota-roomy-jp</url>
+        <param name="Год">2022</param>
+        <param name="Двигатель">1.0 л · бензин</param>
+        <param name="Мощность">69 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">компактвэн</param>
+        <param name="Страна">Япония</param>
+      </offer>
+      <offer id="toyota-yaris-cross" available="true">
+        <price>2100000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Toyota Yaris Cross · 2023 · 1.5 л · гибрид</name>
+        <description>Год: 2023 · Двигатель: 1.5 л · гибрид · Мощность: 116 л.с. · Привод: полный (E-Four) · Кузов: кроссовер · Страна: Япония</description>
+        <picture>https://atletauto.ru/images/cars/toyota-yaris-cross/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=toyota-yaris-cross</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">1.5 л · гибрид</param>
+        <param name="Мощность">116 л.с.</param>
+        <param name="Привод">полный (E-Four)</param>
+        <param name="Кузов">кроссовер</param>
+        <param name="Страна">Япония</param>
+      </offer>
+      <offer id="honda-fit" available="true">
+        <price>1310000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Honda Fit 2022 · 2022 · 1.3 л · бензин</name>
+        <description>Год: 2022 · Двигатель: 1.3 л · бензин · Привод: передний · Кузов: хэтчбек · Страна: Япония</description>
+        <picture>https://atletauto.ru/images/cars/honda-fit/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=honda-fit</url>
+        <param name="Год">2022</param>
+        <param name="Двигатель">1.3 л · бензин</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">хэтчбек</param>
+        <param name="Страна">Япония</param>
+      </offer>
+      <offer id="honda-nwgn-jp" available="true">
+        <price>550000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Honda N-WGN 2018 · 2018 · 0.66 л · бензин</name>
+        <description>Год: 2018 · Двигатель: 0.66 л · бензин · Привод: полный (4WD) · Кузов: кэй-кар · Страна: Япония</description>
+        <picture>https://atletauto.ru/images/cars/honda-nwgn-jp/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=honda-nwgn-jp</url>
+        <param name="Год">2018</param>
+        <param name="Двигатель">0.66 л · бензин</param>
+        <param name="Привод">полный (4WD)</param>
+        <param name="Кузов">кэй-кар</param>
+        <param name="Страна">Япония</param>
+      </offer>
+      <offer id="honda-stream" available="true">
+        <price>1150000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Honda Stream 2015 · 2015 · 1.8 л · бензин</name>
+        <description>Год: 2015 · Двигатель: 1.8 л · бензин · Привод: полный (4WD) · Кузов: минивэн · Страна: Япония</description>
+        <picture>https://atletauto.ru/images/cars/honda-stream/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=honda-stream</url>
+        <param name="Год">2015</param>
+        <param name="Двигатель">1.8 л · бензин</param>
+        <param name="Привод">полный (4WD)</param>
+        <param name="Кузов">минивэн</param>
+        <param name="Страна">Япония</param>
+      </offer>
+      <offer id="nissan-ad" available="true">
+        <price>710000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Nissan AD 2022 · 2022 · 1.5 л · бензин</name>
+        <description>Год: 2022 · Двигатель: 1.5 л · бензин · Привод: передний · Кузов: универсал · Страна: Япония</description>
+        <picture>https://atletauto.ru/images/cars/nissan-ad/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=nissan-ad</url>
+        <param name="Год">2022</param>
+        <param name="Двигатель">1.5 л · бензин</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">универсал</param>
+        <param name="Страна">Япония</param>
+      </offer>
+      <offer id="nissan-wingroad" available="true">
+        <price>880000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Nissan Wingroad 2017 · 2017 · 1.5 л · бензин</name>
+        <description>Год: 2017 · Двигатель: 1.5 л · бензин · Привод: передний · Кузов: универсал · Страна: Япония</description>
+        <picture>https://atletauto.ru/images/cars/nissan-wingroad/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=nissan-wingroad</url>
+        <param name="Год">2017</param>
+        <param name="Двигатель">1.5 л · бензин</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">универсал</param>
+        <param name="Страна">Япония</param>
+      </offer>
+      <offer id="toyota-noah-2018" available="true">
+        <price>2050000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Toyota Noah 2018 · 2018 · 2.0 л · бензин</name>
+        <description>Год: 2018 · Двигатель: 2.0 л · бензин · Привод: полный (4WD) · Кузов: минивэн · Страна: Япония</description>
+        <picture>https://atletauto.ru/images/cars/toyota-noah-2018/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=toyota-noah-2018</url>
+        <param name="Год">2018</param>
+        <param name="Двигатель">2.0 л · бензин</param>
+        <param name="Привод">полный (4WD)</param>
+        <param name="Кузов">минивэн</param>
+        <param name="Страна">Япония</param>
+      </offer>
+      <offer id="toyota-corolla-fielder" available="true">
+        <price>1190000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Toyota Corolla Fielder 2021 · 2021 · 1.5 л · бензин</name>
+        <description>Год: 2021 · Двигатель: 1.5 л · бензин · Привод: полный (4WD) · Кузов: универсал · Страна: Япония</description>
+        <picture>https://atletauto.ru/images/cars/toyota-corolla-fielder/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=toyota-corolla-fielder</url>
+        <param name="Год">2021</param>
+        <param name="Двигатель">1.5 л · бензин</param>
+        <param name="Привод">полный (4WD)</param>
+        <param name="Кузов">универсал</param>
+        <param name="Страна">Япония</param>
+      </offer>
+      <offer id="toyota-probox" available="true">
+        <price>980000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Toyota Probox 2021 · 2021 · 1.5 л · бензин</name>
+        <description>Год: 2021 · Двигатель: 1.5 л · бензин · Привод: передний · Кузов: универсал · Страна: Япония</description>
+        <picture>https://atletauto.ru/images/cars/toyota-probox/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=toyota-probox</url>
+        <param name="Год">2021</param>
+        <param name="Двигатель">1.5 л · бензин</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">универсал</param>
+        <param name="Страна">Япония</param>
+      </offer>
+      <offer id="toyota-rush" available="true">
+        <price>1250000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Toyota Rush 2016 · 2016 · 1.5 л · бензин</name>
+        <description>Год: 2016 · Двигатель: 1.5 л · бензин · Привод: полный (4WD) · Кузов: кроссовер · Страна: Япония</description>
+        <picture>https://atletauto.ru/images/cars/toyota-rush/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=toyota-rush</url>
+        <param name="Год">2016</param>
+        <param name="Двигатель">1.5 л · бензин</param>
+        <param name="Привод">полный (4WD)</param>
+        <param name="Кузов">кроссовер</param>
+        <param name="Страна">Япония</param>
+      </offer>
+      <offer id="toyota-wish" available="true">
+        <price>1190000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Toyota Wish 2017 · 2017 · 1.8 л · бензин</name>
+        <description>Год: 2017 · Двигатель: 1.8 л · бензин · Привод: полный (4WD) · Кузов: минивэн · Страна: Япония</description>
+        <picture>https://atletauto.ru/images/cars/toyota-wish/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=toyota-wish</url>
+        <param name="Год">2017</param>
+        <param name="Двигатель">1.8 л · бензин</param>
+        <param name="Привод">полный (4WD)</param>
+        <param name="Кузов">минивэн</param>
+        <param name="Страна">Япония</param>
+      </offer>
+      <offer id="kia-k3" available="true">
+        <price>1600000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <name>Kia K3 · 2023 · 1.6 л · бензин</name>
+        <description>Год: 2023 · Двигатель: 1.6 л · бензин · Мощность: 123 л.с. · Привод: передний · Кузов: седан · Страна: Корея</description>
+        <picture>https://atletauto.ru/images/cars/kia-k3/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=kia-k3</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">1.6 л · бензин</param>
+        <param name="Мощность">123 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">седан</param>
+        <param name="Страна">Корея</param>
+      </offer>
+      <offer id="bmw-1-kr" available="true">
+        <price>3200000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <name>BMW 1 серии (Корея) · 2023 · 1.5 л · бензин</name>
+        <description>Год: 2023 · Двигатель: 1.5 л · бензин · Мощность: 140 л.с. · Привод: передний · Кузов: хэтчбек · Страна: Корея</description>
+        <picture>https://atletauto.ru/images/cars/bmw-1-kr/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=bmw-1-kr</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">1.5 л · бензин</param>
+        <param name="Мощность">140 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">хэтчбек</param>
+        <param name="Страна">Корея</param>
+      </offer>
+      <offer id="hyundai-avante" available="true">
+        <price>1700000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <name>Hyundai Avante · 2023 · 1.6 л · бензин</name>
+        <description>Год: 2023 · Двигатель: 1.6 л · бензин · Мощность: 123 л.с. · Привод: передний · Кузов: седан · Страна: Корея</description>
+        <picture>https://atletauto.ru/images/cars/hyundai-avante/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=hyundai-avante</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">1.6 л · бензин</param>
+        <param name="Мощность">123 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">седан</param>
+        <param name="Страна">Корея</param>
+      </offer>
+      <offer id="hyundai-kona-2" available="true">
+        <price>1950000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <name>Hyundai Kona · 2023 · 2.0 л · бензин</name>
+        <description>Год: 2023 · Двигатель: 2.0 л · бензин · Мощность: 149 л.с. · Привод: передний · Кузов: кроссовер · Страна: Корея</description>
+        <picture>https://atletauto.ru/images/cars/hyundai-kona-2/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=hyundai-kona-2</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">2.0 л · бензин</param>
+        <param name="Мощность">149 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">кроссовер</param>
+        <param name="Страна">Корея</param>
+      </offer>
+      <offer id="hyundai-venue-2" available="true">
+        <price>1720000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <name>Hyundai Venue · 2023 · 1.6 л · бензин</name>
+        <description>Год: 2023 · Двигатель: 1.6 л · бензин · Мощность: 123 л.с. · Привод: передний · Кузов: кроссовер · Страна: Корея</description>
+        <picture>https://atletauto.ru/images/cars/hyundai-venue-2/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=hyundai-venue-2</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">1.6 л · бензин</param>
+        <param name="Мощность">123 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">кроссовер</param>
+        <param name="Страна">Корея</param>
+      </offer>
+      <offer id="kia-morning-2" available="true">
+        <price>1080000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <name>Kia Morning · 2023 · 1.0 л · бензин</name>
+        <description>Год: 2023 · Двигатель: 1.0 л · бензин · Мощность: 76 л.с. · Привод: передний · Кузов: хэтчбек · Страна: Корея</description>
+        <picture>https://atletauto.ru/images/cars/kia-morning-2/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=kia-morning-2</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">1.0 л · бензин</param>
+        <param name="Мощность">76 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">хэтчбек</param>
+        <param name="Страна">Корея</param>
+      </offer>
+      <offer id="kia-ray-2" available="true">
+        <price>1120000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <name>Kia Ray · 2023 · 1.0 л · бензин</name>
+        <description>Год: 2023 · Двигатель: 1.0 л · бензин · Мощность: 76 л.с. · Привод: передний · Кузов: хэтчбек · Страна: Корея</description>
+        <picture>https://atletauto.ru/images/cars/kia-ray-2/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=kia-ray-2</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">1.0 л · бензин</param>
+        <param name="Мощность">76 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">хэтчбек</param>
+        <param name="Страна">Корея</param>
+      </offer>
+      <offer id="kia-seltos-2" available="true">
+        <price>2000000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <name>Kia Seltos · 2023 · 2.0 л · бензин</name>
+        <description>Год: 2023 · Двигатель: 2.0 л · бензин · Мощность: 149 л.с. · Привод: передний · Кузов: кроссовер · Страна: Корея</description>
+        <picture>https://atletauto.ru/images/cars/kia-seltos-2/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=kia-seltos-2</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">2.0 л · бензин</param>
+        <param name="Мощность">149 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">кроссовер</param>
+        <param name="Страна">Корея</param>
+      </offer>
+      <offer id="hyundai-tucson" available="true">
+        <price>2850000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <name>Hyundai Tucson · 2023 · 2.0 л · дизель</name>
+        <description>Год: 2023 · Двигатель: 2.0 л · дизель · Мощность: 155 л.с. · Привод: передний · Кузов: кроссовер · Страна: Корея</description>
+        <picture>https://atletauto.ru/images/cars/hyundai-tucson/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=hyundai-tucson</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">2.0 л · дизель</param>
+        <param name="Мощность">155 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">кроссовер</param>
+        <param name="Страна">Корея</param>
+      </offer>
+      <offer id="vw-tiguan-kr" available="true">
+        <price>3500000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <name>VW Tiguan (Корея) · 2023 · 2.0 л · бензин</name>
+        <description>Год: 2023 · Двигатель: 2.0 л · бензин · Мощность: 150 л.с. · Привод: полный · Кузов: кроссовер · Страна: Корея</description>
+        <picture>https://atletauto.ru/images/cars/vw-tiguan-kr/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=vw-tiguan-kr</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">2.0 л · бензин</param>
+        <param name="Мощность">150 л.с.</param>
+        <param name="Привод">полный</param>
+        <param name="Кузов">кроссовер</param>
+        <param name="Страна">Корея</param>
+      </offer>
+      <offer id="geely-coolray" available="true">
+        <price>1600000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <name>Geely Coolray · 2023 · 1.5 л · бензин</name>
+        <description>Год: 2023 · Двигатель: 1.5 л · бензин · Мощность: 150 л.с. · Привод: передний · Кузов: кроссовер · Страна: Китай</description>
+        <picture>https://atletauto.ru/images/cars/geely-coolray/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=geely-coolray</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">1.5 л · бензин</param>
+        <param name="Мощность">150 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">кроссовер</param>
+        <param name="Страна">Китай</param>
+      </offer>
+      <offer id="mercedes-c-cn" available="true">
+        <price>3200000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <name>Mercedes C-Class (Китай) · 2022 · 1.5 л · бензин</name>
+        <description>Год: 2022 · Двигатель: 1.5 л · бензин · Мощность: 184 л.с. · Привод: задний · Кузов: седан · Страна: Китай</description>
+        <picture>https://atletauto.ru/images/cars/mercedes-c-cn/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=mercedes-c-cn</url>
+        <param name="Год">2022</param>
+        <param name="Двигатель">1.5 л · бензин</param>
+        <param name="Мощность">184 л.с.</param>
+        <param name="Привод">задний</param>
+        <param name="Кузов">седан</param>
+        <param name="Страна">Китай</param>
+      </offer>
+      <offer id="nissan-altima" available="true">
+        <price>1800000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <name>Nissan Altima · 2022 · 2.0 л · бензин</name>
+        <description>Год: 2022 · Двигатель: 2.0 л · бензин · Мощность: 150 л.с. · Привод: передний · Кузов: седан · Страна: Китай</description>
+        <picture>https://atletauto.ru/images/cars/nissan-altima/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=nissan-altima</url>
+        <param name="Год">2022</param>
+        <param name="Двигатель">2.0 л · бензин</param>
+        <param name="Мощность">150 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">седан</param>
+        <param name="Страна">Китай</param>
+      </offer>
+      <offer id="wuling-victory" available="true">
+        <price>2200000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <name>Wuling Victory · 2023 · 1.5 л · бензин</name>
+        <description>Год: 2023 · Двигатель: 1.5 л · бензин · Мощность: 147 л.с. · Привод: передний · Кузов: минивэн · Страна: Китай</description>
+        <picture>https://atletauto.ru/images/cars/wuling-victory/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=wuling-victory</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">1.5 л · бензин</param>
+        <param name="Мощность">147 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">минивэн</param>
+        <param name="Страна">Китай</param>
+      </offer>
+      <offer id="audi-a3-cn" available="true">
+        <price>2100000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <name>Audi A3 (Китай) · 2023 · 1.4 л · бензин</name>
+        <description>Год: 2023 · Двигатель: 1.4 л · бензин · Мощность: 150 л.с. · Привод: передний · Кузов: седан · Страна: Китай</description>
+        <picture>https://atletauto.ru/images/cars/audi-a3-cn/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=audi-a3-cn</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">1.4 л · бензин</param>
+        <param name="Мощность">150 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">седан</param>
+        <param name="Страна">Китай</param>
+      </offer>
+      <offer id="audi-q3-cn" available="true">
+        <price>2800000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <name>Audi Q3 (Китай) · 2023 · 1.4 л · бензин</name>
+        <description>Год: 2023 · Двигатель: 1.4 л · бензин · Мощность: 150 л.с. · Привод: передний · Кузов: кроссовер · Страна: Китай</description>
+        <picture>https://atletauto.ru/images/cars/audi-q3-cn/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=audi-q3-cn</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">1.4 л · бензин</param>
+        <param name="Мощность">150 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">кроссовер</param>
+        <param name="Страна">Китай</param>
+      </offer>
+      <offer id="bmw-1-cn" available="true">
+        <price>2800000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <name>BMW 1 серии (Китай) · 2022 · 1.5 л · бензин</name>
+        <description>Год: 2022 · Двигатель: 1.5 л · бензин · Мощность: 140 л.с. · Привод: передний · Кузов: хэтчбек · Страна: Китай</description>
+        <picture>https://atletauto.ru/images/cars/bmw-1-cn/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=bmw-1-cn</url>
+        <param name="Год">2022</param>
+        <param name="Двигатель">1.5 л · бензин</param>
+        <param name="Мощность">140 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">хэтчбек</param>
+        <param name="Страна">Китай</param>
+      </offer>
+      <offer id="bmw-2-cn" available="true">
+        <price>2400000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <name>BMW 2 серии · 2021 · 2.0 л · бензин</name>
+        <description>Год: 2021 · Двигатель: 2.0 л · бензин · Мощность: 184 л.с. · Привод: задний · Кузов: купе · Страна: Китай</description>
+        <picture>https://atletauto.ru/images/cars/bmw-2-cn/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=bmw-2-cn</url>
+        <param name="Год">2021</param>
+        <param name="Двигатель">2.0 л · бензин</param>
+        <param name="Мощность">184 л.с.</param>
+        <param name="Привод">задний</param>
+        <param name="Кузов">купе</param>
+        <param name="Страна">Китай</param>
+      </offer>
+      <offer id="li6" available="true">
+        <price>4500000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <name>Li Auto L6 · 2024 · гибрид</name>
+        <description>Год: 2024 · Тип: гибрид · Мощность: 450 л.с. · Привод: полный · Кузов: кроссовер · Страна: Китай</description>
+        <picture>https://atletauto.ru/images/cars/li6/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=li6</url>
+        <param name="Год">2024</param>
+        <param name="Тип">гибрид</param>
+        <param name="Мощность">450 л.с.</param>
+        <param name="Привод">полный</param>
+        <param name="Кузов">кроссовер</param>
+        <param name="Страна">Китай</param>
+      </offer>
+      <offer id="mercedes-a-cn" available="true">
+        <price>2800000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <name>Mercedes A-Class (Китай) · 2023 · 1.3 л · бензин</name>
+        <description>Год: 2023 · Двигатель: 1.3 л · бензин · Мощность: 136 л.с. · Привод: передний · Кузов: хэтчбек · Страна: Китай</description>
+        <picture>https://atletauto.ru/images/cars/mercedes-a-cn/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=mercedes-a-cn</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">1.3 л · бензин</param>
+        <param name="Мощность">136 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">хэтчбек</param>
+        <param name="Страна">Китай</param>
+      </offer>
+      <offer id="audi-a3-cn2" available="true">
+        <price>2050000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <name>Audi A3 (Китай) · 2022 · 1.4 л · бензин</name>
+        <description>Год: 2022 · Двигатель: 1.4 л · бензин · Мощность: 150 л.с. · Привод: передний · Кузов: седан · Страна: Китай</description>
+        <picture>https://atletauto.ru/images/cars/audi-a3-cn2/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=audi-a3-cn2</url>
+        <param name="Год">2022</param>
+        <param name="Двигатель">1.4 л · бензин</param>
+        <param name="Мощность">150 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">седан</param>
+        <param name="Страна">Китай</param>
+      </offer>
+      <offer id="audi-q2-cn" available="true">
+        <price>2200000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <name>Audi Q2 · 2022 · 1.0 л · бензин</name>
+        <description>Год: 2022 · Двигатель: 1.0 л · бензин · Мощность: 116 л.с. · Привод: передний · Кузов: кроссовер · Страна: Китай</description>
+        <picture>https://atletauto.ru/images/cars/audi-q2-cn/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=audi-q2-cn</url>
+        <param name="Год">2022</param>
+        <param name="Двигатель">1.0 л · бензин</param>
+        <param name="Мощность">116 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">кроссовер</param>
+        <param name="Страна">Китай</param>
+      </offer>
+      <offer id="audi-q3-cn2" available="true">
+        <price>2750000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <name>Audi Q3 (Китай) · 2023 · 1.4 л · бензин</name>
+        <description>Год: 2023 · Двигатель: 1.4 л · бензин · Мощность: 150 л.с. · Привод: передний · Кузов: кроссовер · Страна: Китай</description>
+        <picture>https://atletauto.ru/images/cars/audi-q3-cn2/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=audi-q3-cn2</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">1.4 л · бензин</param>
+        <param name="Мощность">150 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">кроссовер</param>
+        <param name="Страна">Китай</param>
+      </offer>
+      <offer id="byd-han" available="true">
+        <price>3100000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <name>BYD Han · 2023 · электро</name>
+        <description>Год: 2023 · Тип: электро · Мощность: 517 л.с. · Запас хода: 605 км · Привод: полный · Страна: Китай</description>
+        <picture>https://atletauto.ru/images/cars/byd-han/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=byd-han</url>
+        <param name="Год">2023</param>
+        <param name="Тип">электро</param>
+        <param name="Мощность">517 л.с.</param>
+        <param name="Запас хода">605 км</param>
+        <param name="Привод">полный</param>
+        <param name="Страна">Китай</param>
+      </offer>
+      <offer id="byd-song-plus" available="true">
+        <price>2200000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <name>BYD Song Plus DM-i · 2023 · гибрид</name>
+        <description>Год: 2023 · Тип: гибрид · Мощность: 197 л.с. · Привод: передний · Кузов: кроссовер · Страна: Китай</description>
+        <picture>https://atletauto.ru/images/cars/byd-song-plus/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=byd-song-plus</url>
+        <param name="Год">2023</param>
+        <param name="Тип">гибрид</param>
+        <param name="Мощность">197 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">кроссовер</param>
+        <param name="Страна">Китай</param>
+      </offer>
+      <offer id="hyundai-elantra-cn" available="true">
+        <price>1700000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <name>Hyundai Elantra (в наличии) · 2023 · 1.5 л · бензин</name>
+        <description>Год: 2023 · Двигатель: 1.5 л · бензин · Мощность: 115 л.с. · Привод: передний · Кузов: седан · Страна: Китай</description>
+        <picture>https://atletauto.ru/images/cars/hyundai-elantra-cn/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=hyundai-elantra-cn</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">1.5 л · бензин</param>
+        <param name="Мощность">115 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">седан</param>
+        <param name="Страна">Китай</param>
+      </offer>
+      <offer id="hyundai-custo" available="true">
+        <price>2800000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <name>Hyundai Custo · 2023 · 2.0 л · бензин</name>
+        <description>Год: 2023 · Двигатель: 2.0 л · бензин · Мощность: 180 л.с. · Привод: передний · Кузов: минивэн · Страна: Китай</description>
+        <picture>https://atletauto.ru/images/cars/hyundai-custo/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=hyundai-custo</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">2.0 л · бензин</param>
+        <param name="Мощность">180 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">минивэн</param>
+        <param name="Страна">Китай</param>
+      </offer>
+      <offer id="kia-sportage-cn" available="true">
+        <price>2800000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <name>Kia Sportage (Китай) · 2023 · 1.5 л · турбо</name>
+        <description>Год: 2023 · Двигатель: 1.5 л · турбо · Мощность: 170 л.с. · Привод: передний · Кузов: кроссовер · Страна: Китай</description>
+        <picture>https://atletauto.ru/images/cars/kia-sportage-cn/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=kia-sportage-cn</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">1.5 л · турбо</param>
+        <param name="Мощность">170 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">кроссовер</param>
+        <param name="Страна">Китай</param>
+      </offer>
+      <offer id="nissan-altima-2" available="true">
+        <price>1850000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <name>Nissan Altima · 2023 · 2.0 л · бензин</name>
+        <description>Год: 2023 · Двигатель: 2.0 л · бензин · Мощность: 150 л.с. · Привод: передний · Кузов: седан · Страна: Китай</description>
+        <picture>https://atletauto.ru/images/cars/nissan-altima-2/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=nissan-altima-2</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">2.0 л · бензин</param>
+        <param name="Мощность">150 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">седан</param>
+        <param name="Страна">Китай</param>
+      </offer>
+      <offer id="vw-passat-cn" available="true">
+        <price>2500000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <name>Volkswagen Passat · 2023 · 1.4 л · бензин</name>
+        <description>Год: 2023 · Двигатель: 1.4 л · бензин · Мощность: 150 л.с. · Привод: передний · Кузов: седан · Страна: Китай</description>
+        <picture>https://atletauto.ru/images/cars/vw-passat-cn/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=vw-passat-cn</url>
+        <param name="Год">2023</param>
+        <param name="Двигатель">1.4 л · бензин</param>
+        <param name="Мощность">150 л.с.</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">седан</param>
+        <param name="Страна">Китай</param>
+      </offer>
+      <offer id="audi-a4-jp" available="true">
+        <price>1600000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Audi A4 (Япония) · 2019 · 1.4 л · бензин</name>
+        <description>Год: 2019 · Двигатель: 1.4 л · бензин · Мощность: 150 л.с. · Пробег: 46 000 км · Привод: передний</description>
+        <picture>https://atletauto.ru/images/catalog/audi.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=audi-a4-jp</url>
+        <param name="Год">2019</param>
+        <param name="Двигатель">1.4 л · бензин</param>
+        <param name="Мощность">150 л.с.</param>
+        <param name="Пробег">46 000 км</param>
+        <param name="Привод">передний</param>
+      </offer>
+      <offer id="bmw-x1-jp" available="true">
+        <price>1750000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>BMW X1 (Япония) · 2020 · 1.5 л · бензин</name>
+        <description>Год: 2020 · Двигатель: 1.5 л · бензин · Мощность: 140 л.с. · Пробег: 26 000 км · Привод: передний</description>
+        <picture>https://atletauto.ru/images/cars/bmw-x1/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=bmw-x1-jp</url>
+        <param name="Год">2020</param>
+        <param name="Двигатель">1.5 л · бензин</param>
+        <param name="Мощность">140 л.с.</param>
+        <param name="Пробег">26 000 км</param>
+        <param name="Привод">передний</param>
+      </offer>
+      <offer id="bmw-x2-jp" available="true">
+        <price>1400000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>BMW X2 (Япония) · 2019 · 1.5 л · бензин</name>
+        <description>Год: 2019 · Двигатель: 1.5 л · бензин · Мощность: 140 л.с. · Пробег: 28 000 км · Привод: передний</description>
+        <picture>https://atletauto.ru/images/catalog/bmw.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=bmw-x2-jp</url>
+        <param name="Год">2019</param>
+        <param name="Двигатель">1.5 л · бензин</param>
+        <param name="Мощность">140 л.с.</param>
+        <param name="Пробег">28 000 км</param>
+        <param name="Привод">передний</param>
+      </offer>
+      <offer id="honda-s660" available="true">
+        <price>1050000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Honda S660 · 2018 · 0.66 л · турбо</name>
+        <description>Год: 2018 · Двигатель: 0.66 л · турбо · Мощность: 64 л.с. · Пробег: 30 000 км · Привод: задний · Кузов: родстер</description>
+        <picture>https://atletauto.ru/images/catalog/jpd-roadster.jpeg</picture>
+        <url>https://atletauto.ru/car.html?id=honda-s660</url>
+        <param name="Год">2018</param>
+        <param name="Двигатель">0.66 л · турбо</param>
+        <param name="Мощность">64 л.с.</param>
+        <param name="Пробег">30 000 км</param>
+        <param name="Привод">задний</param>
+        <param name="Кузов">родстер</param>
+      </offer>
+      <offer id="nissan-juke" available="true">
+        <price>1000000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Nissan Juke · 2018 · 1.5 л · бензин</name>
+        <description>Год: 2018 · Двигатель: 1.5 л · бензин · Мощность: 114 л.с. · Пробег: 48 000 км · Привод: передний · Кузов: кроссовер</description>
+        <picture>https://atletauto.ru/images/catalog/nissan.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=nissan-juke</url>
+        <param name="Год">2018</param>
+        <param name="Двигатель">1.5 л · бензин</param>
+        <param name="Мощность">114 л.с.</param>
+        <param name="Пробег">48 000 км</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">кроссовер</param>
+      </offer>
+      <offer id="vw-t-cross" available="true">
+        <price>1200000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>VW T-Cross · 2022 · 1.0 л · бензин</name>
+        <description>Год: 2022 · Двигатель: 1.0 л · бензин · Мощность: 116 л.с. · Пробег: 27 000 км · Привод: передний · Кузов: кроссовер</description>
+        <picture>https://atletauto.ru/images/catalog/ch-vw-bora.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=vw-t-cross</url>
+        <param name="Год">2022</param>
+        <param name="Двигатель">1.0 л · бензин</param>
+        <param name="Мощность">116 л.с.</param>
+        <param name="Пробег">27 000 км</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">кроссовер</param>
+      </offer>
+      <offer id="vw-t-roc" available="true">
+        <price>1400000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>VW T-Roc · 2022 · 1.5 л · бензин</name>
+        <description>Год: 2022 · Двигатель: 1.5 л · бензин · Мощность: 150 л.с. · Пробег: 31 000 км · Привод: передний · Кузов: кроссовер</description>
+        <picture>https://atletauto.ru/images/catalog/ch-vw-bora.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=vw-t-roc</url>
+        <param name="Год">2022</param>
+        <param name="Двигатель">1.5 л · бензин</param>
+        <param name="Мощность">150 л.с.</param>
+        <param name="Пробег">31 000 км</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">кроссовер</param>
+      </offer>
+      <offer id="audi-q2-jp" available="true">
+        <price>1350000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Audi Q2 (Япония) · 2020 · 1.0 л · бензин</name>
+        <description>Год: 2020 · Двигатель: 1.0 л · бензин · Мощность: 116 л.с. · Пробег: 25 000 км · Привод: передний · Кузов: кроссовер</description>
+        <picture>https://atletauto.ru/images/cars/audi-q2-cn/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=audi-q2-jp</url>
+        <param name="Год">2020</param>
+        <param name="Двигатель">1.0 л · бензин</param>
+        <param name="Мощность">116 л.с.</param>
+        <param name="Пробег">25 000 км</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">кроссовер</param>
+      </offer>
+      <offer id="audi-q3-jp" available="true">
+        <price>2100000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Audi Q3 (Япония) · 2021 · 1.5 л · бензин</name>
+        <description>Год: 2021 · Двигатель: 1.5 л · бензин · Мощность: 150 л.с. · Пробег: 33 000 км · Привод: передний · Кузов: кроссовер</description>
+        <picture>https://atletauto.ru/images/cars/audi-q3-cn/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=audi-q3-jp</url>
+        <param name="Год">2021</param>
+        <param name="Двигатель">1.5 л · бензин</param>
+        <param name="Мощность">150 л.с.</param>
+        <param name="Пробег">33 000 км</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">кроссовер</param>
+      </offer>
+      <offer id="bmw-1-jp" available="true">
+        <price>1600000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>BMW 1 серии (Япония) · 2021 · 1.5 л · бензин</name>
+        <description>Год: 2021 · Двигатель: 1.5 л · бензин · Мощность: 140 л.с. · Пробег: 22 000 км · Привод: передний · Кузов: хэтчбек</description>
+        <picture>https://atletauto.ru/images/cars/bmw-1-kr/01.jpg</picture>
+        <url>https://atletauto.ru/car.html?id=bmw-1-jp</url>
+        <param name="Год">2021</param>
+        <param name="Двигатель">1.5 л · бензин</param>
+        <param name="Мощность">140 л.с.</param>
+        <param name="Пробег">22 000 км</param>
+        <param name="Привод">передний</param>
+        <param name="Кузов">хэтчбек</param>
       </offer>
     </offers>
   </shop>
