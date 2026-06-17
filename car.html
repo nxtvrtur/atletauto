@@ -27,7 +27,21 @@ button{background:none;border:none;cursor:pointer;font-family:var(--fb);color:in
 .back svg{width:16px;height:16px;}
 /* layout */
 .wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:start;padding-bottom:80px;}
-@media(max-width:900px){.wrap{grid-template-columns:1fr;gap:32px;}}
+@media(max-width:900px){
+  .wrap{grid-template-columns:1fr;gap:24px;padding-bottom:48px;}
+  .info{position:static;}
+  .back{padding:18px 0 14px;}
+  .i-name{font-size:clamp(26px,7vw,40px);}
+  .i-price{font-size:28px;}
+  .btn-primary,.btn-ghost{padding:14px 20px;font-size:14px;}
+  .gal-arrow{width:36px;height:36px;}
+  .gal-arrow svg{width:16px;height:16px;}
+  .gal-prev{left:10px;}.gal-next{right:10px;}
+  .gal-thumb{flex:0 0 72px;height:48px;}
+  .gal-thumbs{gap:6px;margin-top:8px;}
+  .i-specs{margin-bottom:20px;}
+  .i-trust{margin-top:16px;}
+}
 /* gallery */
 .gal-main{position:relative;border-radius:var(--r2);overflow:hidden;border:1px solid var(--b);background:var(--bg-r);aspect-ratio:4/3;max-height:460px;}
 .gal-main img{width:100%;height:100%;object-fit:contain;}
