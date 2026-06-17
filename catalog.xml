@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<yml_catalog date="2026-06-16 18:40">
+<yml_catalog date="2026-06-17 21:25">
   <shop>
     <name>Атлет-Авто</name>
     <company>ООО Атлет Авто</company>
@@ -8,8 +8,8 @@
       <currency id="RUB" rate="1"/>
     </currencies>
     <categories>
-      <category id="1">Япония</category>
-      <category id="2">Китай и Европа</category>
+      <category id="1">Япония · В наличии</category>
+      <category id="2">Китай · В наличии</category>
       <category id="3">Корея</category>
       <category id="4">Под заказ</category>
     </categories>
@@ -18,7 +18,7 @@
         <price>1600000</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
-        <name>Nissan Note</name>
+        <name>Nissan Note · 2024 · 1.2 л · гибрид</name>
         <description>Год: 2024 · Двигатель: 1.2 л · гибрид · Привод: передний · Пробег: ~1 000 км · Страна: Япония</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/jp-note.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=nissan-note</url>
@@ -32,7 +32,7 @@
         <price>1870000</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
-        <name>Suzuki Fronx</name>
+        <name>Suzuki Fronx · 2025 · 1.5 л · бензин</name>
         <description>Год: 2025 · Двигатель: 1.5 л · бензин · Привод: полный (4WD) · Страна: Япония</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/jp-fronx.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=suzuki-fronx</url>
@@ -45,7 +45,7 @@
         <price>1650000</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
-        <name>Toyota C-HR</name>
+        <name>Toyota C-HR · 2023 · 1.2 л · бензин</name>
         <description>Год: 2023 · Двигатель: 1.2 л · бензин · Привод: передний · Кузов: кроссовер · Страна: Япония</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/jp-c-hr.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=toyota-chr</url>
@@ -59,7 +59,7 @@
         <price>1250000</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
-        <name>Toyota Corolla Axio</name>
+        <name>Toyota Corolla Axio · 2023 · 1.5 л · бензин</name>
         <description>Год: 2023 · Двигатель: 1.5 л · бензин · Привод: передний · Кузов: седан · Страна: Япония</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/jp-axio.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=toyota-axio</url>
@@ -73,7 +73,7 @@
         <price>2100000</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
-        <name>Toyota Corolla Cross</name>
+        <name>Toyota Corolla Cross · 2023 · 1.8 л · гибрид</name>
         <description>Год: 2023 · Двигатель: 1.8 л · гибрид · Привод: полный (4WD) · Кузов: кроссовер · Страна: Япония</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/jp-cros.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=toyota-corolla-cross</url>
@@ -87,7 +87,7 @@
         <price>3700000</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
-        <name>Toyota Noah</name>
+        <name>Toyota Noah · 2025 · 1.8 л · гибрид</name>
         <description>Год: 2025 · Двигатель: 1.8 л · гибрид · Привод: полный (4WD) · Кузов: минивэн · Страна: Япония</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/jp-noah-2.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=toyota-noah</url>
@@ -101,7 +101,7 @@
         <price>1470000</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
-        <name>Toyota Raize</name>
+        <name>Toyota Raize · 2023 · 1.2 л · бензин</name>
         <description>Год: 2023 · Двигатель: 1.2 л · бензин · Привод: передний · Кузов: кроссовер · Страна: Япония</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/jp-toyota-raize.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=toyota-raize</url>
@@ -115,7 +115,7 @@
         <price>1370000</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
-        <name>Toyota Sienta</name>
+        <name>Toyota Sienta · 2022 · 1.5 л · бензин</name>
         <description>Год: 2022 · Двигатель: 1.5 л · бензин · Привод: передний · Кузов: минивэн · Страна: Япония</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/jp-sienta.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=toyota-sienta</url>
@@ -129,7 +129,7 @@
         <price>3800000</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
-        <name>Toyota Voxy</name>
+        <name>Toyota Voxy · 2025 · 1.8 л · гибрид</name>
         <description>Год: 2025 · Двигатель: 1.8 л · гибрид · Привод: полный (4WD) · Кузов: минивэн · Страна: Япония</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/jp-voksi.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=toyota-voxy</url>
@@ -143,7 +143,7 @@
         <price>1150000</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
-        <name>Toyota Yaris</name>
+        <name>Toyota Yaris · 2022 · 1.5 л · бензин</name>
         <description>Год: 2022 · Двигатель: 1.5 л · бензин · Привод: полный (4WD) · Страна: Япония</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/jp-toyota-yaris.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=toyota-yaris</url>
@@ -156,7 +156,7 @@
         <price>1900000</price>
         <currencyId>RUB</currencyId>
         <categoryId>2</categoryId>
-        <name>Volkswagen Golf</name>
+        <name>Volkswagen Golf · 2022 · 1.4 л · бензин</name>
         <description>Год: 2022 · Двигатель: 1.4 л · бензин · Мощность: 150 л.с. · Привод: передний · Кузов: хэтчбек · Страна: Китай</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/cars/vw-golf/01.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=vw-golf</url>
@@ -171,7 +171,7 @@
         <price>1700000</price>
         <currencyId>RUB</currencyId>
         <categoryId>2</categoryId>
-        <name>Volkswagen Tharu XR</name>
+        <name>Volkswagen Tharu XR · 2022 · 1.4 л · бензин</name>
         <description>Год: 2022 · Двигатель: 1.4 л · бензин · Мощность: 150 л.с. · Привод: передний · Кузов: кроссовер · Страна: Китай</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/cars/vw-tharu-xr/01.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=vw-tharu-xr</url>
@@ -186,7 +186,7 @@
         <price>1959167</price>
         <currencyId>RUB</currencyId>
         <categoryId>2</categoryId>
-        <name>Volkswagen Tayron (дорест)</name>
+        <name>Volkswagen Tayron (дорест) · 2022 · 1.4 л · бензин</name>
         <description>Год: 2022 · Двигатель: 1.4 л · бензин · Мощность: 150 л.с. · Привод: передний · Кузов: кроссовер · Страна: Китай</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/cars/vw-tayron-pre/01.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=vw-tayron-pre</url>
@@ -201,7 +201,7 @@
         <price>1140000</price>
         <currencyId>RUB</currencyId>
         <categoryId>2</categoryId>
-        <name>Toyota Yaris L</name>
+        <name>Toyota Yaris L · 2022 · 1.5 л · бензин</name>
         <description>Год: 2022 · Двигатель: 1.5 л · бензин · Мощность: 112 л.с. · Привод: передний · Кузов: седан · Страна: Китай</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/cars/toyota-yaris-l/01.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=toyota-yaris-l</url>
@@ -216,7 +216,7 @@
         <price>2333000</price>
         <currencyId>RUB</currencyId>
         <categoryId>2</categoryId>
-        <name>Volkswagen Tayron (рест)</name>
+        <name>Volkswagen Tayron (рест) · 2023 · 1.4 л · бензин</name>
         <description>Год: 2023 · Двигатель: 1.4 л · бензин · Мощность: 150 л.с. · Привод: передний · Кузов: кроссовер · Страна: Китай</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/cars/vw-tayron-fl/01.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=vw-tayron-fl</url>
@@ -231,7 +231,7 @@
         <price>1850000</price>
         <currencyId>RUB</currencyId>
         <categoryId>2</categoryId>
-        <name>Volkswagen Tharu</name>
+        <name>Volkswagen Tharu · 2025 · 1.5 л · бензин</name>
         <description>Год: 2025 · Двигатель: 1.5 л · бензин · Мощность: 110 л.с. · Привод: передний · Кузов: кроссовер · Страна: Китай</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/cars/vw-tharu/01.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=vw-tharu</url>
@@ -246,7 +246,7 @@
         <price>3100000</price>
         <currencyId>RUB</currencyId>
         <categoryId>2</categoryId>
-        <name>BMW 3 серии</name>
+        <name>BMW 3 серии · 2023 · 2.0 л · бензин</name>
         <description>Год: 2023 · Двигатель: 2.0 л · бензин · Мощность: 156 л.с. · Привод: задний · Кузов: седан · Страна: Китай</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/cars/bmw-3/01.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=bmw-3</url>
@@ -261,7 +261,7 @@
         <price>2800000</price>
         <currencyId>RUB</currencyId>
         <categoryId>2</categoryId>
-        <name>BMW X1</name>
+        <name>BMW X1 · 2023 · 1.5 л · бензин</name>
         <description>Год: 2023 · Двигатель: 1.5 л · бензин · Мощность: 156 л.с. · Привод: передний · Кузов: кроссовер · Страна: Китай</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/cars/bmw-x1/01.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=bmw-x1</url>
@@ -276,7 +276,7 @@
         <price>2000000</price>
         <currencyId>RUB</currencyId>
         <categoryId>2</categoryId>
-        <name>Toyota bZ3X</name>
+        <name>Toyota bZ3X · 2025 · электро</name>
         <description>Год: 2025 · Тип: электро · Мощность: 204 л.с. · Привод: передний · Кузов: кроссовер · Страна: Китай</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/cars/toyota-bz3x/01.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=toyota-bz3x</url>
@@ -291,7 +291,7 @@
         <price>1532367</price>
         <currencyId>RUB</currencyId>
         <categoryId>2</categoryId>
-        <name>Volkswagen Lamando</name>
+        <name>Volkswagen Lamando · 2022 · 1.4 л · бензин</name>
         <description>Год: 2022 · Двигатель: 1.4 л · бензин · Мощность: 150 л.с. · Привод: передний · Кузов: седан · Страна: Китай</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/cars/vw-lamando/01.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=vw-lamando</url>
@@ -302,11 +302,11 @@
         <param name="Кузов">седан</param>
         <param name="Страна">Китай</param>
       </offer>
-      <offer id="suzuki-jimny-nomade" available="false">
+      <offer id="suzuki-jimny-nomade" available="true">
         <price>2350000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
-        <name>Suzuki Jimny Nomade</name>
+        <name>Suzuki Jimny Nomade · 2026 · 1.5 л · бензин</name>
         <description>Год: 2026 · Двигатель: 1.5 л · бензин · Мощность: 101 л.с. · Привод: полный (4WD) · КПП: автомат · Пробег: ~1 000 км</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/jpd-jimny.jpeg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=suzuki-jimny-nomade</url>
@@ -317,11 +317,11 @@
         <param name="КПП">автомат</param>
         <param name="Пробег">~1 000 км</param>
       </offer>
-      <offer id="honda-wrv" available="false">
+      <offer id="honda-wrv" available="true">
         <price>2000000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
-        <name>Honda WR-V</name>
+        <name>Honda WR-V · 2025 · 1.5 л · бензин</name>
         <description>Год: 2025 · Двигатель: 1.5 л · бензин · Мощность: 118 л.с. · Привод: передний · КПП: вариатор · Пробег: ~5 000 км</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/jpd-wrv.jpeg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=honda-wrv</url>
@@ -332,11 +332,11 @@
         <param name="КПП">вариатор</param>
         <param name="Пробег">~5 000 км</param>
       </offer>
-      <offer id="honda-vezel" available="false">
+      <offer id="honda-vezel" available="true">
         <price>2300000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
-        <name>Honda Vezel</name>
+        <name>Honda Vezel · 2025 · 1.5 л · бензин</name>
         <description>Год: 2025 · Двигатель: 1.5 л · бензин · Мощность: 118 л.с. · Привод: полный · КПП: вариатор · Пробег: 0 · новый</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/jpd-vezel.jpeg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=honda-vezel</url>
@@ -347,11 +347,11 @@
         <param name="КПП">вариатор</param>
         <param name="Пробег">0 · новый</param>
       </offer>
-      <offer id="mitsubishi-eclipse-cross" available="false">
+      <offer id="mitsubishi-eclipse-cross" available="true">
         <price>2540000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
-        <name>Mitsubishi Eclipse Cross</name>
+        <name>Mitsubishi Eclipse Cross · 2024 · 1.5 л · бензин</name>
         <description>Год: 2024 · Двигатель: 1.5 л · бензин · Мощность: 150 л.с. · Привод: полный · КПП: вариатор · Пробег: ~8 000 км</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/jpd-eclipse-cross.jpeg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=mitsubishi-eclipse-cross</url>
@@ -362,11 +362,11 @@
         <param name="КПП">вариатор</param>
         <param name="Пробег">~8 000 км</param>
       </offer>
-      <offer id="mazda-3-jp" available="false">
+      <offer id="mazda-3-jp" available="true">
         <price>1900000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
-        <name>Mazda 3</name>
+        <name>Mazda 3 · 2025 · 1.5 л · бензин</name>
         <description>Год: 2025 · Двигатель: 1.5 л · бензин · Мощность: 111 л.с. · Привод: передний · КПП: автомат · Пробег: ~3 000 км</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/jpd-mazda3.jpeg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=mazda-3-jp</url>
@@ -377,11 +377,11 @@
         <param name="КПП">автомат</param>
         <param name="Пробег">~3 000 км</param>
       </offer>
-      <offer id="honda-freed" available="false">
+      <offer id="honda-freed" available="true">
         <price>1850000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
-        <name>Honda Freed</name>
+        <name>Honda Freed · 2025 · 1.5 л · бензин</name>
         <description>Год: 2025 · Двигатель: 1.5 л · бензин · Мощность: 118 л.с. · Привод: передний · КПП: вариатор · Кузов: минивэн · Пробег: ~13 000 км</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/jpd-freed.jpeg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=honda-freed</url>
@@ -393,11 +393,11 @@
         <param name="Кузов">минивэн</param>
         <param name="Пробег">~13 000 км</param>
       </offer>
-      <offer id="daihatsu-copen" available="false">
+      <offer id="daihatsu-copen" available="true">
         <price>1450000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
-        <name>Daihatsu Copen</name>
+        <name>Daihatsu Copen · 2025</name>
         <description>Год: 2025 · Привод: передний · Кузов: кабриолет · Пробег: 0 · новый</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/jpd-copen.jpeg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=daihatsu-copen</url>
@@ -406,11 +406,11 @@
         <param name="Кузов">кабриолет</param>
         <param name="Пробег">0 · новый</param>
       </offer>
-      <offer id="mazda-roadster" available="false">
+      <offer id="mazda-roadster" available="true">
         <price>2100000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
-        <name>Mazda Roadster</name>
+        <name>Mazda Roadster · 2025 · 1.5 л · бензин</name>
         <description>Год: 2025 · Двигатель: 1.5 л · бензин · Мощность: 131 л.с. · Привод: задний · КПП: автомат · Кузов: родстер · Пробег: ~8 000 км</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/jpd-roadster.jpeg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=mazda-roadster</url>
@@ -422,11 +422,11 @@
         <param name="Кузов">родстер</param>
         <param name="Пробег">~8 000 км</param>
       </offer>
-      <offer id="honda-nwgn" available="false">
+      <offer id="honda-nwgn" available="true">
         <price>1350000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
-        <name>Honda N-WGN</name>
+        <name>Honda N-WGN · 2026 · 0.7 л · бензин</name>
         <description>Год: 2026 · Двигатель: 0.7 л · бензин · Мощность: 64 л.с. · Привод: передний · КПП: вариатор · Кузов: кэй-кар · Пробег: ~1 000 км</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/jpd-nwgn.jpeg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=honda-nwgn</url>
@@ -438,11 +438,11 @@
         <param name="Кузов">кэй-кар</param>
         <param name="Пробег">~1 000 км</param>
       </offer>
-      <offer id="toyota-roomy" available="false">
+      <offer id="toyota-roomy" available="true">
         <price>1800000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
-        <name>Toyota Roomy</name>
+        <name>Toyota Roomy · 2025 · 1.0 л · бензин</name>
         <description>Год: 2025 · Двигатель: 1.0 л · бензин · Мощность: 98 л.с. · Привод: передний · КПП: вариатор · Пробег: 0 · новый</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/jpd-roomy.jpeg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=toyota-roomy</url>
@@ -453,11 +453,11 @@
         <param name="КПП">вариатор</param>
         <param name="Пробег">0 · новый</param>
       </offer>
-      <offer id="jetta-vs8" available="false">
+      <offer id="jetta-vs8" available="true">
         <price>2050000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
-        <name>Jetta VS8</name>
+        <name>Jetta VS8 · 2026 · 1.4 л · бензин</name>
         <description>Год: 2026 · Двигатель: 1.4 л · бензин · Мощность: 140 л.с. · КПП: АКПП 6 · Привод: передний</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/ch-jetta-vs8.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=jetta-vs8</url>
@@ -467,11 +467,11 @@
         <param name="КПП">АКПП 6</param>
         <param name="Привод">передний</param>
       </offer>
-      <offer id="byd-leopard-3" available="false">
+      <offer id="byd-leopard-3" available="true">
         <price>4450000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
-        <name>BYD Leopard 3</name>
+        <name>BYD Leopard 3 · 2026 · электро</name>
         <description>Год: 2026 · Тип: электро · Мощность: 422 л.с. · Запас хода: 501 км · Привод: полный</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/ch-byd-leopard3.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=byd-leopard-3</url>
@@ -481,11 +481,11 @@
         <param name="Запас хода">501 км</param>
         <param name="Привод">полный</param>
       </offer>
-      <offer id="toyota-camry" available="false">
+      <offer id="toyota-camry" available="true">
         <price>3800000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
-        <name>Toyota Camry</name>
+        <name>Toyota Camry · 2026 · 2.0 л · бензин</name>
         <description>Год: 2026 · Двигатель: 2.0 л · бензин · Мощность: 173 л.с. · КПП: вариатор · Привод: передний</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/ch-toyota-camry.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=toyota-camry</url>
@@ -495,11 +495,11 @@
         <param name="КПП">вариатор</param>
         <param name="Привод">передний</param>
       </offer>
-      <offer id="toyota-corolla-cn" available="false">
+      <offer id="toyota-corolla-cn" available="true">
         <price>1550000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
-        <name>Toyota Corolla</name>
+        <name>Toyota Corolla · 2026 · 1.2 л · бензин</name>
         <description>Год: 2026 · Двигатель: 1.2 л · бензин · Мощность: 116 л.с. · КПП: вариатор · Привод: передний</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/ch-toyota-corolla.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=toyota-corolla-cn</url>
@@ -509,11 +509,11 @@
         <param name="КПП">вариатор</param>
         <param name="Привод">передний</param>
       </offer>
-      <offer id="hyundai-elantra" available="false">
+      <offer id="hyundai-elantra" available="true">
         <price>1650000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
-        <name>Hyundai Elantra</name>
+        <name>Hyundai Elantra · 2026 · 1.5 л · бензин</name>
         <description>Год: 2026 · Двигатель: 1.5 л · бензин · Мощность: 115 л.с. · КПП: вариатор · Привод: передний</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/ch-hyundai-elantra.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=hyundai-elantra</url>
@@ -523,11 +523,11 @@
         <param name="КПП">вариатор</param>
         <param name="Привод">передний</param>
       </offer>
-      <offer id="haval-h6" available="false">
+      <offer id="haval-h6" available="true">
         <price>1690000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
-        <name>Haval H6</name>
+        <name>Haval H6 · 2026 · 1.5 л · бензин</name>
         <description>Год: 2026 · Двигатель: 1.5 л · бензин · Мощность: 150 л.с. · КПП: робот 7 · Привод: передний</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/ch-haval-h6.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=haval-h6</url>
@@ -537,11 +537,11 @@
         <param name="КПП">робот 7</param>
         <param name="Привод">передний</param>
       </offer>
-      <offer id="byd-seagull" available="false">
+      <offer id="byd-seagull" available="true">
         <price>1350000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
-        <name>BYD Seagull</name>
+        <name>BYD Seagull · 2026 · электро</name>
         <description>Год: 2026 · Тип: электро · Мощность: 75 л.с. · Запас хода: 305 км · Привод: передний</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/ch-byd-seagull.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=byd-seagull</url>
@@ -551,11 +551,11 @@
         <param name="Запас хода">305 км</param>
         <param name="Привод">передний</param>
       </offer>
-      <offer id="vw-bora" available="false">
+      <offer id="vw-bora" available="true">
         <price>1650000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
-        <name>Volkswagen Bora</name>
+        <name>Volkswagen Bora · 2026 · 1.2 л · бензин</name>
         <description>Год: 2026 · Двигатель: 1.2 л · бензин · Мощность: 116 л.с. · КПП: робот 7 · Привод: передний</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/ch-vw-bora.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=vw-bora</url>
@@ -565,11 +565,11 @@
         <param name="КПП">робот 7</param>
         <param name="Привод">передний</param>
       </offer>
-      <offer id="gac-aion-s" available="false">
+      <offer id="gac-aion-s" available="true">
         <price>1650000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
-        <name>GAC AION S</name>
+        <name>GAC AION S · 2026 · электро</name>
         <description>Год: 2026 · Тип: электро · Мощность: 136 л.с. · Запас хода: 505 км · Привод: передний</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/ch-gac-aion-s.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=gac-aion-s</url>
@@ -579,11 +579,11 @@
         <param name="Запас хода">505 км</param>
         <param name="Привод">передний</param>
       </offer>
-      <offer id="byd-yuan-up" available="false">
+      <offer id="byd-yuan-up" available="true">
         <price>1700000</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
-        <name>BYD Yuan Up</name>
+        <name>BYD Yuan Up · 2026 · электро</name>
         <description>Год: 2026 · Тип: электро · Мощность: 95 л.с. · Привод: передний</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/ch-byd-yuan-up.jpeg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=byd-yuan-up</url>
@@ -596,7 +596,7 @@
         <price>1800000</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
-        <name>Chevrolet Trailblazer</name>
+        <name>Chevrolet Trailblazer · 2023 · 1.3 л · бензин</name>
         <description>Год: 2023 · Двигатель: 1.3 л · бензин · Мощность: 156 л.с. · Страна: Корея</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/kr-chevrolet-trailblazer.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=chevrolet-trailblazer</url>
@@ -609,7 +609,7 @@
         <price>1900000</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
-        <name>Hyundai Kona</name>
+        <name>Hyundai Kona · 2023 · 2.0 л · бензин</name>
         <description>Год: 2023 · Двигатель: 2.0 л · бензин · Мощность: 149 л.с. · Кузов: кроссовер · Страна: Корея</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/kr-hyundai-kona.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=hyundai-kona</url>
@@ -623,7 +623,7 @@
         <price>2500000</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
-        <name>Hyundai Sonata</name>
+        <name>Hyundai Sonata · 2023 · 2.0 л · бензин</name>
         <description>Год: 2023 · Двигатель: 2.0 л · бензин · Мощность: 160 л.с. · Кузов: седан · Страна: Корея</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/kr-hyundai-sonata.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=hyundai-sonata</url>
@@ -637,7 +637,7 @@
         <price>1700000</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
-        <name>Hyundai Venue</name>
+        <name>Hyundai Venue · 2023 · 1.6 л · бензин</name>
         <description>Год: 2023 · Двигатель: 1.6 л · бензин · Мощность: 123 л.с. · Кузов: кроссовер · Страна: Корея</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/kr-hyundai-venue.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=hyundai-venue</url>
@@ -651,7 +651,7 @@
         <price>2506000</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
-        <name>Kia K5</name>
+        <name>Kia K5 · 2023 · 2.0 л · бензин</name>
         <description>Год: 2023 · Двигатель: 2.0 л · бензин · Мощность: 160 л.с. · Кузов: седан · Страна: Корея</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/kr-kia-k5.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=kia-k5</url>
@@ -665,7 +665,7 @@
         <price>1068000</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
-        <name>Kia Morning</name>
+        <name>Kia Morning · 2023 · 1.0 л · бензин</name>
         <description>Год: 2023 · Двигатель: 1.0 л · бензин · Мощность: 76 л.с. · Кузов: хэтчбек · Страна: Корея</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/kr-kia-morning.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=kia-morning</url>
@@ -679,7 +679,7 @@
         <price>1106000</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
-        <name>Kia Ray</name>
+        <name>Kia Ray · 2023 · 1.0 л · бензин</name>
         <description>Год: 2023 · Двигатель: 1.0 л · бензин · Мощность: 76 л.с. · Кузов: хэтчбек · Страна: Корея</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/kr-kia-ray.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=kia-ray</url>
@@ -693,7 +693,7 @@
         <price>3300000</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
-        <name>Ssangyong Actyon</name>
+        <name>Ssangyong Actyon · 2025 · 1.5 л · бензин</name>
         <description>Год: 2025 · Двигатель: 1.5 л · бензин · Мощность: 170 л.с. · Кузов: кроссовер · Страна: Корея</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/kr-ssangyong-actyon.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=ssangyong-actyon</url>
@@ -707,7 +707,7 @@
         <price>1600000</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
-        <name>Ssangyong KORANDO</name>
+        <name>Ssangyong KORANDO · 2022 · 1.6 л · дизель</name>
         <description>Год: 2022 · Двигатель: 1.6 л · дизель · Мощность: 136 л.с. · Кузов: кроссовер · Страна: Корея</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/kr-ssangyong-korando.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=ssangyong-korando</url>
@@ -721,7 +721,7 @@
         <price>3300000</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
-        <name>Ssangyong Torres</name>
+        <name>Ssangyong Torres · 2025 · 1.5 л · бензин</name>
         <description>Год: 2025 · Двигатель: 1.5 л · бензин · Мощность: 170 л.с. · Кузов: кроссовер · Страна: Корея</description>
         <picture>https://nxtvrtur.github.io/atletauto/images/catalog/kr-ssangyong-torres.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=ssangyong-torres</url>
@@ -735,9 +735,9 @@
         <price>4580000</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
-        <name>BMW 4 серии</name>
+        <name>BMW 4 серии · 2023 · 2.0 л · бензин</name>
         <description>Год: 2023 · Двигатель: 2.0 л · бензин · Мощность: 184 л.с. · Привод: задний · КПП: АКПП · Страна: Корея</description>
-        <picture>https://nxtvrtur.github.io/atletauto/images/catalog/kr1-bmw-4.jpeg</picture>
+        <picture>https://nxtvrtur.github.io/atletauto/images/cars/bmw-4-kr/01.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=bmw-4-kr</url>
         <param name="Год">2023</param>
         <param name="Двигатель">2.0 л · бензин</param>
@@ -750,9 +750,9 @@
         <price>4700000</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
-        <name>BMW 5 серии</name>
+        <name>BMW 5 серии · 2023 · 2.0 л · бензин</name>
         <description>Год: 2023 · Двигатель: 2.0 л · бензин · Мощность: 188 л.с. · Привод: задний · КПП: АКПП · Страна: Корея</description>
-        <picture>https://nxtvrtur.github.io/atletauto/images/catalog/kr1-bmw-5.jpeg</picture>
+        <picture>https://nxtvrtur.github.io/atletauto/images/cars/bmw-5-kr/01.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=bmw-5-kr</url>
         <param name="Год">2023</param>
         <param name="Двигатель">2.0 л · бензин</param>
@@ -765,9 +765,9 @@
         <price>1985000</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
-        <name>Kia Seltos</name>
+        <name>Kia Seltos · 2023 · 2.0 л · бензин</name>
         <description>Год: 2023 · Двигатель: 2.0 л · бензин · Мощность: 149 л.с. · Привод: передний · КПП: вариатор · Страна: Корея</description>
-        <picture>https://nxtvrtur.github.io/atletauto/images/catalog/kr1-kia-seltos-2-0-2wd.jpeg</picture>
+        <picture>https://nxtvrtur.github.io/atletauto/images/cars/kia-seltos/01.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=kia-seltos</url>
         <param name="Год">2023</param>
         <param name="Двигатель">2.0 л · бензин</param>
@@ -780,9 +780,9 @@
         <price>3240000</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
-        <name>Kia Sportage</name>
+        <name>Kia Sportage · 2024 · 1.6 л · бензин</name>
         <description>Год: 2024 · Двигатель: 1.6 л · бензин · Мощность: 180 л.с. · Привод: передний · КПП: АКПП · Страна: Корея</description>
-        <picture>https://nxtvrtur.github.io/atletauto/images/catalog/kr1-kia-sportage.jpeg</picture>
+        <picture>https://nxtvrtur.github.io/atletauto/images/cars/kia-sportage/01.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=kia-sportage</url>
         <param name="Год">2024</param>
         <param name="Двигатель">1.6 л · бензин</param>
@@ -795,9 +795,9 @@
         <price>5200000</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
-        <name>Kia Tasman</name>
+        <name>Kia Tasman · 2.5 л · бензин</name>
         <description>Двигатель: 2.5 л · бензин · Мощность: 281 л.с. · Привод: полный · КПП: автомат · Кузов: пикап · Страна: Корея</description>
-        <picture>https://nxtvrtur.github.io/atletauto/images/catalog/kr1-kia-tasman.jpeg</picture>
+        <picture>https://nxtvrtur.github.io/atletauto/images/cars/kia-tasman/01.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=kia-tasman</url>
         <param name="Двигатель">2.5 л · бензин</param>
         <param name="Мощность">281 л.с.</param>
@@ -810,9 +810,9 @@
         <price>5210000</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
-        <name>Mercedes E Class</name>
+        <name>Mercedes E Class · 2024 · 2.0 л · бензин</name>
         <description>Год: 2024 · Двигатель: 2.0 л · бензин · Мощность: 204 л.с. · Привод: задний · КПП: автомат · Страна: Корея</description>
-        <picture>https://nxtvrtur.github.io/atletauto/images/catalog/kr1-mersedes-e-class.jpeg</picture>
+        <picture>https://nxtvrtur.github.io/atletauto/images/cars/mercedes-e-class/01.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=mercedes-e-class</url>
         <param name="Год">2024</param>
         <param name="Двигатель">2.0 л · бензин</param>
@@ -825,9 +825,9 @@
         <price>1970000</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
-        <name>Samsung QM6</name>
+        <name>Samsung QM6 · 2022 · 2.0 л · бензин</name>
         <description>Год: 2022 · Двигатель: 2.0 л · бензин · Мощность: 144 л.с. · Привод: передний · КПП: вариатор · Страна: Корея</description>
-        <picture>https://nxtvrtur.github.io/atletauto/images/catalog/kr1-samsung-qm6-2-0-gde-re-2wd.jpeg</picture>
+        <picture>https://nxtvrtur.github.io/atletauto/images/cars/samsung-qm6/01.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=samsung-qm6</url>
         <param name="Год">2022</param>
         <param name="Двигатель">2.0 л · бензин</param>
@@ -840,9 +840,9 @@
         <price>1595000</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
-        <name>Samsung SM6</name>
+        <name>Samsung SM6 · 2023 · 1.3 л · бензин</name>
         <description>Год: 2023 · Двигатель: 1.3 л · бензин · Мощность: 156 л.с. · Привод: передний · КПП: робот · Страна: Корея</description>
-        <picture>https://nxtvrtur.github.io/atletauto/images/catalog/kr1-samsung-sm6-1-3-tce-re.jpeg</picture>
+        <picture>https://nxtvrtur.github.io/atletauto/images/cars/samsung-sm6/01.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=samsung-sm6</url>
         <param name="Год">2023</param>
         <param name="Двигатель">1.3 л · бензин</param>
@@ -855,9 +855,9 @@
         <price>4980000</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
-        <name>BMW X4</name>
+        <name>BMW X4 · 2024 · 2.0 л · бензин</name>
         <description>Год: 2024 · Двигатель: 2.0 л · бензин · Мощность: 184 л.с. · Привод: полный · КПП: АКПП · Страна: Корея</description>
-        <picture>https://nxtvrtur.github.io/atletauto/images/catalog/kr1-x4.jpeg</picture>
+        <picture>https://nxtvrtur.github.io/atletauto/images/cars/bmw-x4-kr/01.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=bmw-x4-kr</url>
         <param name="Год">2024</param>
         <param name="Двигатель">2.0 л · бензин</param>
@@ -870,9 +870,9 @@
         <price>10190000</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
-        <name>BMW X6</name>
+        <name>BMW X6 · 2024 · 3.0 л · дизель</name>
         <description>Год: 2024 · Двигатель: 3.0 л · дизель · Мощность: 286 л.с. · Привод: полный · КПП: автомат · Страна: Корея</description>
-        <picture>https://nxtvrtur.github.io/atletauto/images/catalog/kr1-x6.jpeg</picture>
+        <picture>https://nxtvrtur.github.io/atletauto/images/cars/bmw-x6-kr/01.jpg</picture>
         <url>https://nxtvrtur.github.io/atletauto/car.html?id=bmw-x6-kr</url>
         <param name="Год">2024</param>
         <param name="Двигатель">3.0 л · дизель</param>
