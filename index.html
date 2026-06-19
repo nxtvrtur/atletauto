@@ -545,15 +545,15 @@ section { padding: 96px 0; }
    TEAM
 ================================================================ */
 .team { background: var(--bg-r); border-top: 1px solid var(--b); }
-.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px; }
 .tm {
   background: var(--bg); border: 1px solid var(--b); border-radius: var(--r2);
-  padding: 24px 22px; display: flex; align-items: center; gap: 18px;
+  padding: 24px 22px; display: flex; align-items: center; gap: 20px;
   transition: border-color .3s var(--ease), transform .3s var(--ease), box-shadow .3s var(--ease);
 }
 .tm:hover { border-color: var(--or); transform: translateY(-5px); box-shadow: 0 18px 44px rgba(0,0,0,.42), var(--or-glow); }
 .tm-ava {
-  width: 96px; height: 96px; border-radius: 50%; flex-shrink: 0;
+  width: 192px; height: 192px; border-radius: 50%; flex-shrink: 0;
   background: var(--or-dim); border: 2px solid rgba(255,255,255,.08); color: var(--or);
   display: flex; align-items: center; justify-content: center; overflow: hidden;
   transition: border-color .3s, transform .3s var(--ease);
@@ -1350,6 +1350,20 @@ section { padding: 96px 0; }
       </div>
 
       <div class="tm reveal d5">
+        <div class="tm-ava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <div class="tm-info">
+          <div class="tm-name2">Игорь</div>
+          <div style="font-size:12px;color:var(--m);margin-top:4px;margin-bottom:8px">Менеджер по продажам</div>
+          <div class="tm-links">
+            <span class="tm-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" width="15" height="15"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18a2 2 0 012-.22h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.84a16 16 0 006.29 6.29l1.13-1.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              +7 (908) 451-58-39
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tm reveal">
         <div class="tm-ava"><img src="images/team/maxim.jpg" alt="Максим" loading="lazy"></div>
         <div class="tm-info">
           <div class="tm-name2">Максим</div>
