@@ -545,7 +545,8 @@ section { padding: 96px 0; }
    TEAM
 ================================================================ */
 .team { background: var(--bg-r); border-top: 1px solid var(--b); }
-.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px; }
+.team-grid { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+.tm { flex: 0 0 calc(33.333% - 11px); min-width: 280px; box-sizing: border-box; }
 .tm {
   background: var(--bg); border: 1px solid var(--b); border-radius: var(--r2);
   padding: 24px 22px; display: flex; align-items: center; gap: 20px;
@@ -569,7 +570,7 @@ section { padding: 96px 0; }
 .tm-link {
   display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px;
   border: 1px solid var(--b2); border-radius: 8px; color: var(--m);
-  font-size: 12px; font-weight: 600; letter-spacing: .02em;
+  font-size: 12px; font-weight: 600; letter-spacing: .02em; white-space: nowrap;
   transition: border-color .2s, color .2s, background .2s, transform .2s;
 }
 .tm-link:hover { border-color: var(--or); color: var(--w); background: var(--or-dim); transform: translateY(-2px); }
