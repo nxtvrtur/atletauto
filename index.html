@@ -546,15 +546,15 @@ section { padding: 96px 0; }
 ================================================================ */
 .team { background: var(--bg-r); border-top: 1px solid var(--b); }
 .team-grid { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
-.tm { flex: 0 0 calc(33.333% - 11px); min-width: 280px; box-sizing: border-box; }
+.tm { flex: 0 0 calc(25% - 12px); min-width: 220px; box-sizing: border-box; }
 .tm {
   background: var(--bg); border: 1px solid var(--b); border-radius: var(--r2);
-  padding: 24px 22px; display: flex; align-items: center; gap: 20px;
+  padding: 28px 20px 24px; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center;
   transition: border-color .3s var(--ease), transform .3s var(--ease), box-shadow .3s var(--ease);
 }
 .tm:hover { border-color: var(--or); transform: translateY(-5px); box-shadow: 0 18px 44px rgba(0,0,0,.42), var(--or-glow); }
 .tm-ava {
-  width: 192px; height: 192px; border-radius: 50%; flex-shrink: 0;
+  width: 140px; height: 140px; border-radius: 50%; flex-shrink: 0;
   background: var(--or-dim); border: 2px solid rgba(255,255,255,.08); color: var(--or);
   display: flex; align-items: center; justify-content: center; overflow: hidden;
   transition: border-color .3s, transform .3s var(--ease);
@@ -562,11 +562,11 @@ section { padding: 96px 0; }
 .tm:hover .tm-ava { border-color: var(--or); transform: scale(1.06); }
 .tm-ava img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 .tm-ava svg { width: 24px; height: 24px; }
-.tm-info { flex: 1; min-width: 0; }
+.tm-info { width: 100%; }
 .tm-role { font-family: var(--fm); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--m); margin-bottom: 5px; }
 .tm-phone { font-family: var(--fd); font-size: 21px; font-weight: 900; letter-spacing: .01em; line-height: 1; margin-bottom: 13px; white-space: nowrap; }
 .tm-name2 { font-family: var(--fd); font-size: 20px; font-weight: 900; text-transform: uppercase; line-height: 1.05; }
-.tm-links { display: flex; flex-wrap: wrap; gap: 9px; }
+.tm-links { display: flex; flex-wrap: wrap; gap: 9px; justify-content: center; margin-top: 4px; }
 .tm-link {
   display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px;
   border: 1px solid var(--b2); border-radius: 8px; color: var(--m);
