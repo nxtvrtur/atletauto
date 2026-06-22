@@ -1801,6 +1801,17 @@ function phoneMask(e){
 }
 
 /* ================================================================
+   TELEGRAM SEND
+================================================================ */
+function sendTG(msg){
+  fetch('https://api.telegram.org/bot8808402219:AAE_PCzd6tDAlJMcibi6D12yfI9DSS29DCc/sendMessage',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({chat_id:4474291992,text:msg})
+  });
+}
+
+/* ================================================================
    FORM SUBMIT
 ================================================================ */
 function submitLead(e){
@@ -1811,13 +1822,14 @@ function submitLead(e){
   var msgr=document.getElementById('fmsg').value;
   var budget=document.getElementById('fb2').value;
   var comment=document.getElementById('fcom').value.trim();
-  var msg='Здравствуйте! Меня зовут '+name+'.\nТелефон: '+phone;
-  if(car)msg+='\nАвто: '+car;
-  if(budget)msg+='\nБюджет: '+budget;
-  if(msgr)msg+='\nСвязь: '+msgr;
-  if(comment)msg+='\nКомментарий: '+comment;
-  if(msgr==='Telegram'){ window.open('https://t.me/atletauto','_blank'); return; }
-  window.open('https://wa.me/79510248318?text='+encodeURIComponent(msg),'_blank');
+  var msg='📋 Новая заявка с сайта\n👤 Имя: '+name+'\n📞 Телефон: '+phone;
+  if(car)msg+='\n🚗 Авто: '+car;
+  if(budget)msg+='\n💰 Бюджет: '+budget;
+  if(msgr)msg+='\n💬 Связь: '+msgr;
+  if(comment)msg+='\n📝 Комментарий: '+comment;
+  sendTG(msg);
+  var btn=e.target.querySelector('button[type=submit]');
+  if(btn){btn.textContent='✓ Заявка отправлена';btn.disabled=true;}
 }
 
 /* ================================================================
@@ -1825,9 +1837,11 @@ function submitLead(e){
 ================================================================ */
 function carWA(name,type){
   var msg=type==='order'
-    ?'Здравствуйте! Хочу узнать стоимость '+name+' под заказ. Какие сроки и цена?'
-    :'Здравствуйте! Меня интересует '+name+' в наличии. Расскажите подробнее?';
-  window.open('https://wa.me/79510248318?text='+encodeURIComponent(msg),'_blank');
+    ?'📋 Заявка с сайта\n🚗 Авто: '+name+'\nТип: Под заказ'
+    :type==='spec'
+    ?'📋 Заявка с сайта\n🚗 Техника: '+name+'\nТип: Запрос КП'
+    :'📋 Заявка с сайта\n🚗 Авто: '+name+'\nТип: В наличии';
+  sendTG(msg);
 }
 </script>
 <script src="cars.js"></script>
