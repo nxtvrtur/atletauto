@@ -731,6 +731,7 @@ section { padding: 96px 0; }
       <button class="htb" onclick="heroSwitch('biz',this)">Для бизнеса (Спецтехника)</button>
     </div>
     <div class="hero-panel active" id="hp-auto">
+      <p style="font-family:var(--fm);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--or);margin-bottom:16px">Атлет Авто · Почувствуй силу Азии</p>
       <h1 class="hero-title">Автомобили<br>из Азии. <em>От подбора</em><br>до первого<br>запуска в России.</h1>
       <p class="hero-sub">Мы не просто привозим автомобиль. Мы адаптируем его под российскую зиму, переводим на русский язык, защищаем кузов и отдаём вам ключи от машины, которая на&nbsp;100% готова к&nbsp;российским дорогам.</p>
       <div class="hero-cta">
@@ -751,7 +752,7 @@ section { padding: 96px 0; }
     <div class="container">
       <div class="hero-stats-inner">
         <div class="stat"><span class="stat-n">6 лет</span><span class="stat-l">на рынке</span></div>
-        <div class="stat"><span class="stat-n">500+</span><span class="stat-l">привезённых авто</span></div>
+        <div class="stat"><span class="stat-n">5 000+</span><span class="stat-l">привезённых авто</span></div>
         <div class="stat"><span class="stat-n">Офиц.</span><span class="stat-l">импортёр</span></div>
         <div class="stat"><span class="stat-n">Под ключ</span><span class="stat-l">таможня и ЭПТС</span></div>
       </div>
@@ -766,7 +767,7 @@ section { padding: 96px 0; }
     <h2 class="section-title">Автомобили</h2>
     <div class="cat-tabs-wrap">
       <button class="ctb active" onclick="catTab(0,this)">Япония</button>
-      <button class="ctb" onclick="catTab(1,this)">Китай и Европа</button>
+      <button class="ctb" onclick="catTab(1,this)">Китай</button>
       <button class="ctb" onclick="catTab(2,this)">Корея</button>
     </div>
 
@@ -1027,7 +1028,7 @@ section { padding: 96px 0; }
     </div>
 
         <div style="text-align:center;margin-top:40px">
-      <a href="https://wa.me/79510248318?text=Здравствуйте%21+Пришлите%2C+пожалуйста%2C+полный+каталог+авто." target="_blank" class="btn-ghost">Запросить полный каталог →</a>
+      <button onclick="sendTG('📋 Запрос полного каталога авто с сайта atletauto.ru');this.textContent='✓ Запрос отправлен';this.disabled=true;" class="btn-ghost">Запросить полный каталог →</button>
     </div>
   </div>
 </section>
@@ -1191,7 +1192,7 @@ section { padding: 96px 0; }
           </div>
           <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:10px 14px">
             <span style="font-size:13px;color:var(--m)">свыше 2 500 000 ₽</span>
-            <span style="font-family:var(--fd);font-size:18px;font-weight:900;color:var(--w)">2% от стоимости</span>
+            <span style="font-family:var(--fd);font-size:15px;font-weight:900;color:var(--w)">2% от стоимости авто под ключ до Вл-ка</span>
           </div>
         </div>
       </div>
