@@ -1069,6 +1069,71 @@ section { padding: 96px 0; }
   </div>
 </section>
 
+<!-- ============================================================ MOTO -->
+<style>
+.moto-split{display:grid;grid-template-columns:1.15fr 1fr;gap:28px;align-items:stretch}
+.moto-photo{background:linear-gradient(150deg,#f4f5f7,#dfe3e8);border:1px solid var(--b);border-radius:var(--r2);overflow:hidden;display:flex;align-items:center;justify-content:center;padding:18px}
+.moto-photo img{width:100%;height:100%;object-fit:contain}
+.moto-side{background:var(--bg-r);border:1px solid var(--b);border-radius:var(--r2);padding:30px 30px 26px;display:flex;flex-direction:column}
+.moto-name{font-family:var(--fd);font-size:clamp(26px,3vw,38px);font-weight:900;text-transform:uppercase;line-height:1;margin-bottom:6px}
+.moto-sub{font-size:13px;color:var(--m);margin-bottom:20px}
+.moto-specs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--b);border:1px solid var(--b);border-radius:12px;overflow:hidden;margin-bottom:20px}
+.moto-specs div{background:var(--bg-r);padding:12px 14px}
+.ms-l{display:block;font-size:11px;color:var(--m);margin-bottom:3px}
+.ms-v{display:block;font-family:var(--fd);font-size:18px;font-weight:900}
+.moto-price{display:flex;align-items:baseline;gap:10px;margin-top:auto;padding-top:6px}
+.moto-price b{font-family:var(--fd);font-size:34px;font-weight:900;color:#4A7BFF}
+.moto-price span{font-size:12px;color:var(--m)}
+.moto-thumbs{display:flex;gap:12px;margin-top:16px}
+.moto-thumbs div{flex:1;aspect-ratio:4/3;border-radius:12px;overflow:hidden;border:1px solid var(--b);background:#eef0f3}
+.moto-thumbs img{width:100%;height:100%;object-fit:contain;padding:6px}
+@media(max-width:900px){.moto-split{grid-template-columns:1fr}}
+@media(max-width:520px){.moto-specs{grid-template-columns:1fr}}
+</style>
+<section id="moto" class="reveal" style="border-top:1px solid var(--b)">
+  <div class="container">
+    <p class="section-label"><span style="color:#4A7BFF">⚡</span> Электромотоцикл из Китая · в наличии</p>
+    <h2 class="section-title">Мото<br>под ключ</h2>
+    <p style="font-size:15px;color:var(--m);max-width:620px;margin:-14px 0 34px">Внедорожный электромотоцикл с прямым приводом. Бесшумный, без бензина и выхлопа, с быстросъёмной батареей. Цена — с&nbsp;доставкой.</p>
+
+    <div class="moto-split">
+      <div class="moto-photo"><img src="images/moto/tye-main.jpg" alt="Электромотоцикл TYE 5 кВт" loading="lazy"></div>
+
+      <div class="moto-side">
+        <div class="moto-name">TYE Enduro 5 кВт</div>
+        <div class="moto-sub">Внедорожный · прямой привод · быстрая замена батареи</div>
+
+        <div class="moto-specs">
+          <div><span class="ms-l">Запас хода</span><span class="ms-v">150 км</span></div>
+          <div><span class="ms-l">Мотор</span><span class="ms-v">5 кВт · пик 30</span></div>
+          <div><span class="ms-l">Макс. скорость</span><span class="ms-v">120 км/ч</span></div>
+          <div><span class="ms-l">Разгон 0–100</span><span class="ms-v">4 сек</span></div>
+          <div><span class="ms-l">Батарея</span><span class="ms-v">72V · 60–73 Ач</span></div>
+          <div><span class="ms-l">Замена АКБ</span><span class="ms-v">60 сек</span></div>
+          <div><span class="ms-l">Зарядка</span><span class="ms-v">1–6 часов</span></div>
+          <div><span class="ms-l">Вес</span><span class="ms-v">110 кг</span></div>
+          <div><span class="ms-l">Клиренс</span><span class="ms-v">318 мм</span></div>
+          <div><span class="ms-l">Колёса</span><span class="ms-v">21″ / 18″</span></div>
+        </div>
+
+        <div class="moto-price"><b>350 000 ₽</b><span>с доставкой</span></div>
+        <div style="margin-top:16px">
+          <button onclick="motoLead()" class="btn-primary" style="width:100%;justify-content:center">Оставить заявку
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+
+        <div class="moto-thumbs">
+          <div><img src="images/moto/tye-2.jpg" alt="TYE Enduro" loading="lazy"></div>
+          <div><img src="images/moto/tye-3.jpg" alt="TYE Enduro" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:12px;color:var(--m2);margin-top:18px">Аккумуляторы CATL / BYD / EVE · тормоза диск/диск · рама сталь Q345b + кованый алюминий 6061. Техника внедорожная, не предназначена для дорог общего пользования.</p>
+  </div>
+</section>
+
 <!-- ============================================================ ADAPTATION -->
 <section class="adapt" id="adapt">
   <div class="adapt-head">
@@ -1940,6 +2005,13 @@ function carWA(name,type){
     ?'📋 Заявка с сайта\n🚗 Техника: '+name+'\nТип: Запрос КП'
     :'📋 Заявка с сайта\n🚗 Авто: '+name+'\nТип: В наличии';
   sendTG(msg);
+}
+function motoLead(){
+  var fc=document.getElementById('fc');
+  if(fc)fc.value='Электромотоцикл TYE Enduro 5 кВт (350 000 ₽ с доставкой)';
+  var form=document.getElementById('form');
+  if(form)form.scrollIntoView({behavior:'smooth',block:'center'});
+  setTimeout(function(){var fn=document.getElementById('fn');if(fn)fn.focus();},600);
 }
 function evLead(name,price){
   var fc=document.getElementById('fc');
