@@ -481,7 +481,8 @@ section { padding: 96px 0; }
 /* ================================================================
    PROCESS VIDEO (merged timeline) + GUARANTEES
 ================================================================ */
-.process-vid { margin: 56px auto 0; max-width: 360px; position: relative; border-radius: var(--r2); overflow: hidden; border: 1px solid var(--b2); background: var(--bg); }
+.process-vids { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 56px auto 0; max-width: 760px; }
+.process-vid { flex: 1 1 320px; max-width: 360px; position: relative; border-radius: var(--r2); overflow: hidden; border: 1px solid var(--b2); background: var(--bg); }
 .process-vid video { width: 100%; display: block; }
 .guar { background: var(--bg-r); border-top: 1px solid var(--b); }
 .guar-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
@@ -1258,7 +1259,7 @@ section { padding: 96px 0; }
       <div class="ps">
         <span class="ps-num">02</span>
         <div class="ps-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg></div>
-        <div class="ps-content"><div class="ps-title">Выкуп и фотоотчёт</div><div class="ps-desc">Выкупаем на нашем юрлице в Азии, присылаем подробный фотоотчёт состояния</div></div>
+        <div class="ps-content"><div class="ps-title">Выкуп и фотоотчёт</div><div class="ps-desc">Выкупаем автомобиль и присылаем подробный фотоотчёт состояния</div></div>
       </div>
       <div class="ps">
         <span class="ps-num">03</span>
@@ -1268,7 +1269,7 @@ section { padding: 96px 0; }
       <div class="ps">
         <span class="ps-num">04</span>
         <div class="ps-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 20s2-2 6-2 6 2 10 2 6-2 6-2"/><path d="M4 12l-2 8"/><path d="M20 12l2 8"/><path d="M6 12h12l2-9H4l2 9z"/></svg></div>
-        <div class="ps-content"><div class="ps-title">Логистика (море / ж-д)</div><div class="ps-desc">Доставка RoRo или контейнером до Владивостока. Трекинг онлайн</div></div>
+        <div class="ps-content"><div class="ps-title">Логистика (море / ж-д)</div><div class="ps-desc">Доставка до Владивостока. Трекинг онлайн</div></div>
       </div>
       <div class="ps">
         <span class="ps-num">05</span>
@@ -1281,9 +1282,15 @@ section { padding: 96px 0; }
         <div class="ps-content"><div class="ps-title">Выдача готового авто</div><div class="ps-desc">Детейлинг, помощь с постановкой на учёт, передача ключей</div></div>
       </div>
     </div>
-    <div class="process-vid">
-      <video src="videos/review1.mp4" controls playsinline preload="metadata" poster="images/previews/preview_real1.jpg"></video>
-      <div class="vid-lbl">Как мы отправляем ваши авто — отгрузка из Кореи</div>
+    <div class="process-vids">
+      <div class="process-vid">
+        <video src="videos/review1.mp4" controls playsinline preload="metadata" poster="images/previews/preview_real1.jpg"></video>
+        <div class="vid-lbl">Как мы отправляем ваши авто — отгрузка из Кореи</div>
+      </div>
+      <div class="process-vid">
+        <video src="videos/delivery.mp4" controls playsinline preload="metadata" poster="images/previews/preview_delivery.jpg"></video>
+        <div class="vid-lbl">Доставка авто клиентам — автовоз в пути</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1429,20 +1436,6 @@ section { padding: 96px 0; }
             <span class="tm-link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" width="15" height="15"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18a2 2 0 012-.22h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.84a16 16 0 006.29 6.29l1.13-1.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
               +7 (951) 016-52-78
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div class="tm reveal d2">
-        <div class="tm-ava"><img src="images/team/dmitriy2.jpg" alt="Дмитрий" loading="lazy"></div>
-        <div class="tm-info">
-          <div class="tm-name2">Дмитрий</div>
-          <div style="font-size:12px;color:var(--m);margin-top:4px;margin-bottom:8px">Менеджер по продажам</div>
-          <div class="tm-links">
-            <span class="tm-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" width="15" height="15"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18a2 2 0 012-.22h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.84a16 16 0 006.29 6.29l1.13-1.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              +7 (908) 451-74-39
             </span>
           </div>
         </div>
