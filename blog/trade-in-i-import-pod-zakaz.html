@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trade-in и импорт под заказ: связка для салона — Атлет-Авто Блог</title>
+<meta name="description" content="Как автосалону совместить trade-in и импорт из Китая, Кореи и Японии через Владивосток: где маржа, где риск, что подписывать и что спрашивать.">
+<link rel="icon" href="../images/tild6436-3536-4334-b835-393235303734_favicon-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@900&family=IBM+Plex+Mono:wght@400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--or:#FF4D00;--bg:#0D0B0A;--bg-r:#131211;--b:rgba(255,255,255,.07);--fd:'Barlow Condensed',sans-serif;--fm:'IBM Plex Mono',monospace;--fb:'Outfit',sans-serif;--m:rgba(255,255,255,.5);--t:#fff}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--t);font-family:var(--fb);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--or);text-decoration:none}a:hover{text-decoration:underline}
+.blog-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,11,10,.93);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--b);height:60px;display:flex;align-items:center;padding:0 28px;gap:16px}
+.blog-nav .back{color:var(--m);font-family:var(--fm);font-size:12px;letter-spacing:.06em;display:flex;align-items:center;gap:8px;transition:color .2s;text-decoration:none}
+.blog-nav .back:hover{color:var(--or);text-decoration:none}
+.nav-sep{color:var(--b);font-size:18px}
+.nav-crumb{font-family:var(--fm);font-size:12px;letter-spacing:.06em;color:var(--m);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-logo{margin-left:auto;font-family:var(--fd);font-weight:900;font-size:20px;letter-spacing:.02em;color:var(--t);text-decoration:none;flex-shrink:0}
+.nav-logo span{color:var(--or)}
+.article-wrap{max-width:760px;margin:0 auto;padding:88px 24px 80px}
+.art-label{font-family:var(--fm);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--or);margin-bottom:20px;display:flex;align-items:center;gap:16px}
+.art-label::after{content:'';display:block;flex:1;height:1px;background:var(--b)}
+h1.art-title{font-family:var(--fd);font-weight:900;font-size:clamp(32px,5vw,52px);line-height:1.05;letter-spacing:.01em;text-transform:uppercase;margin-bottom:28px}
+.art-meta{display:flex;align-items:center;gap:20px;padding:16px 0;border-top:1px solid var(--b);border-bottom:1px solid var(--b);margin-bottom:48px;font-family:var(--fm);font-size:12px;color:var(--m);flex-wrap:wrap}
+.art-author{display:flex;align-items:center;gap:10px}
+.art-avatar{width:36px;height:36px;border-radius:50%;background:var(--bg-r);border:1px solid var(--b);object-fit:cover;flex-shrink:0}
+.art-author-name{color:var(--t)}
+.art-meta-sep{color:var(--b)}
+.art-body p{margin-bottom:20px;font-size:17px;color:rgba(255,255,255,.85);max-width:680px}
+.art-body h2{font-family:var(--fd);font-weight:900;font-size:clamp(22px,3vw,30px);text-transform:uppercase;letter-spacing:.03em;margin:52px 0 16px;color:var(--t);line-height:1.1}
+.art-body h3{font-family:var(--fd);font-weight:900;font-size:clamp(18px,2.5vw,24px);text-transform:uppercase;letter-spacing:.03em;margin:32px 0 12px;color:var(--or);line-height:1.1}
+.art-body ul,.art-body ol{padding-left:20px;margin-bottom:20px}
+.art-body li{font-size:17px;color:rgba(255,255,255,.85);margin-bottom:10px}
+.art-body .disclaimer{font-size:13px;color:var(--m);font-family:var(--fm);padding:20px;border:1px solid var(--b);border-radius:8px;margin-top:48px;line-height:1.6}
+.checklist{background:var(--bg-r);border:1px solid var(--b);border-radius:10px;padding:24px 28px;margin:24px 0}
+.checklist h3{margin-top:0!important}
+.checklist li{padding-left:8px}
+.art-cta{background:var(--bg-r);border:1px solid var(--b);border-radius:12px;padding:36px;margin-top:60px;text-align:center}
+.art-cta h3{font-family:var(--fd);font-weight:900;font-size:clamp(22px,3vw,28px);text-transform:uppercase;margin-bottom:12px;color:var(--t)}
+.art-cta p{color:var(--m);margin-bottom:24px;font-size:15px}
+.btn-or{display:inline-flex;align-items:center;gap:10px;background:var(--or);color:#fff;font-family:var(--fd);font-weight:900;font-size:16px;text-transform:uppercase;letter-spacing:.06em;padding:14px 28px;border-radius:6px;text-decoration:none;transition:opacity .2s}
+.btn-or:hover{opacity:.85;text-decoration:none}
+.art-back{display:inline-flex;align-items:center;gap:8px;font-family:var(--fm);font-size:12px;color:var(--m);text-decoration:none;letter-spacing:.06em;margin-top:48px;transition:color .2s}
+.art-back:hover{color:var(--or)}
+.art-footer{background:var(--bg-r);border-top:1px solid var(--b);padding:28px 24px;text-align:center;font-family:var(--fm);font-size:12px;color:var(--m)}
+.art-footer a{color:var(--m);text-decoration:none}
+.art-footer a:hover{color:var(--or)}
+@media(max-width:600px){.article-wrap{padding:80px 20px 60px}.art-cta{padding:24px}}
+</style>
+</head>
+<body>
+
+<nav class="blog-nav">
+  <a class="back" href="../index.html">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    На сайт
+  </a>
+  <span class="nav-sep">/</span>
+  <span class="nav-crumb">Trade-in и импорт под заказ: связка для салона</span>
+  <a class="nav-logo" href="../index.html">АТЛЕТ<span>·</span>АВТО</a>
+</nav>
+
+<main>
+  <div class="article-wrap">
+
+    <p class="art-label">Партнёрам</p>
+    <h1 class="art-title">Trade-in и импорт под заказ: связка для автосалона</h1>
+
+    <div class="art-meta">
+      <div class="art-author">
+        <img class="art-avatar" src="../images/team/pavel.jpg" alt="Павел">
+        <span>Автор: <span class="art-author-name">Павел</span></span>
+      </div>
+      <span class="art-meta-sep">·</span>
+      <span>Партнёрская программа и работа с B2B</span>
+    </div>
+
+    <div class="art-body">
+
+      <h2>Почему связка вообще работает</h2>
+      <p>У салона есть поток людей, которые приходят сдать свою машину. Часть из них уходит ни с чем: на площадке нет того, что человек хочет, или есть, но дороже, чем он готов платить. Импорт под заказ закрывает именно этот разрыв.</p>
+      <p>Схема простая. Клиент сдаёт свой автомобиль в trade-in, получает деньги или зачёт, и на эту сумму заходит в предоплату по машине, которую вы привозите из Китая, Кореи или Японии. Вы не морозите оборот в закупке под витрину — машина покупается уже под подписанный заказ.</p>
+      <p>Дальше выигрывают обе стороны сделки. Салон получает вторую маржу с того же клиента: на выкупе его машины и на сопровождении импорта. Клиент получает нужную комплектацию, а не «что было на площадке».</p>
+
+      <h2>Где здесь деньги салона</h2>
+      <p>Считать надо по трём точкам, а не по одной.</p>
+      <ul>
+      <li><strong>Маржа на trade-in.</strong> Обычная ваша механика: разница между оценкой и последующей продажей сданного автомобиля.</li>
+      <li><strong>Партнёрское вознаграждение с импорта.</strong> Фиксированная сумма или процент с каждой отправленной сделки — обсуждается в договоре, зависит от объёма и от того, кто ведёт клиента.</li>
+      <li><strong>Сопутствующее.</strong> Установка допоборудования, зимний пакет и русификация, страховка, постановка на учёт. Всё это делается уже у вас в городе, когда машина приехала.</li>
+      </ul>
+      <p>Отдельный плюс — оборачиваемость. Импорт под заказ не занимает место на площадке и не требует выкупа заранее. Вы платите за лот только тогда, когда заказ подтверждён и есть предоплата от клиента.</p>
+
+      <h3>Кому идти в эту схему</h3>
+      <p>Хорошо ложится на салоны с живым потоком trade-in, на автоподборщиков с базой клиентов и на брокеров, которые уже продают финансовые продукты вокруг машины. Плохо работает у тех, кто хочет разово попробовать: импорт — это ритм, а не единичная сделка.</p>
+
+      <h2>Где закопаны риски</h2>
+      <p>Здесь без иллюзий. Три вещи ломают сделки чаще всего.</p>
+      <h3>1. Разрыв по времени</h3>
+      <p>Машину клиента вы забираете сегодня, а импортная приезжает через несколько недель — ориентировочно от полутора до трёх месяцев с момента подтверждения заказа до вручения в вашем городе, но это именно ориентир. Сроки плавают от сезона, загрузки направления и очереди на оформление. Клиент всё это время без машины и без денег.</p>
+      <p>Лечится двумя способами: подменный автомобиль на период ожидания или честный график с контрольными точками, который вы даёте на входе. Подробнее про то, как формируется срок, мы разбирали в материале <a href="skolko-zhdat-mashinu-iz-kitaya.html">сколько ждать машину из Китая</a>.</p>
+      <h3>2. Курс и итоговая сумма</h3>
+      <p>Смета импорта живая до момента выкупа лота. Никогда не называйте клиенту «финальную цену под ключ» до фиксации. Правильная формулировка — расчёт действителен ограниченное время, дальше пересчёт. Если ваш менеджер пообещал цифру «навсегда», разницу вы заплатите из своей маржи.</p>
+      <h3>3. Состояние привозного автомобиля</h3>
+      <p>Клиент, разочарованный машиной, — это возврат, отзывы и конец потока. Поэтому приёмка во Владивостоке должна быть не формальной: осмотр, фото и видео дефектов, проверка комплектности до отправки в ваш город. Что именно смотрят на базе — в статье про <a href="priemka-avto-vo-vladivostoke.html">приёмку авто во Владивостоке</a>.</p>
+
+      <h2>Что подписывать</h2>
+      <p>Договор с клиентом на импорт — не тот же документ, что купля-продажа с площадки. Проверьте, что в нём есть эти пункты.</p>
+      <div class="checklist">
+      <h3>ЧЕКЛИСТ ДОГОВОРА НА ИМПОРТ ПОД ЗАКАЗ</h3>
+      <ul>
+      <li>Предмет заказа описан параметрами: марка, модель, год, пробег, объём, комплектация, допустимый разброс.</li>
+      <li>Указано, что цена расчётная и фиксируется в момент выкупа лота; прописан порядок пересчёта.</li>
+      <li>Перечислено, что входит в сумму, а что оплачивается отдельно: доставка по России, СБКТС и ЭПТС, утильсбор, хранение, постановка на учёт.</li>
+      <li>Прописаны ориентировочные сроки этапов и оговорка про сезон и загрузку направления — без обещаний в точных днях.</li>
+      <li>Есть порядок приёмки: фото- и видеофиксация, срок предъявления претензий по внешнему состоянию.</li>
+      <li>Указано, что делать при отказе клиента после выкупа лота — размер удержания и порядок реализации машины.</li>
+      <li>Trade-in оформлен отдельным документом, а зачёт суммы в предоплату прописан явно.</li>
+      <li>Названо лицо, которое несёт ответственность за таможенное оформление, и по каким документам.</li>
+      </ul>
+      </div>
+      <p>Отдельно про партнёрский договор с импортёром. Там смотрите на три вещи: когда возникает право на вознаграждение, кто общается с конечным клиентом, и что происходит, если сделка сорвалась на середине.</p>
+
+      <h2>Что спрашивать у партнёра до старта</h2>
+      <ol>
+      <li>Есть ли собственная база в порту или машины стоят на чужих площадках? От этого зависят хранение и скорость.</li>
+      <li>Кто и как отправляет автомобиль в мой город — автовоз или ЖД, и кто выбирает способ. Разницу мы разбирали в материале <a href="zhd-ili-avtovoz.html">ЖД или автовоз</a>.</li>
+      <li>Что входит в расчёт, а что появится потом. Скрытые статьи — главная причина скандалов с клиентом.</li>
+      <li>Как оформляются документы. Любые предложения занизить стоимость в декларации, «распилы» и сомнительные ЭПТС — повод закончить разговор. Расплачиваться будет ваш салон своей репутацией и деньгами клиента.</li>
+      <li>Кто отвечает перед клиентом за дефект, обнаруженный при выдаче.</li>
+      </ol>
+
+      <h2>Как запустить без потерь</h2>
+      <p>Не переводите весь поток сразу. Возьмите две-три сделки с лояльными клиентами, пройдите цикл целиком — от расчёта до вручения — и зафиксируйте, где просели по коммуникации. После этого пишите скрипт для менеджеров и ставьте импорт в стандартную воронку рядом с <a href="../catalog.html">подбором по каталогу</a>.</p>
+      <p>Ещё один практический момент: обучите менеджеров считать смету, а не пересылать клиента «специалисту». Продаёт тот, кто может при клиенте назвать вилку и объяснить, из чего она складывается. Как устроена партнёрская механика с нашей стороны — в отдельном разборе <a href="partnerskaya-programma-kak-rabotaet.html">партнёрской программы</a>. Другие материалы для партнёров собраны в <a href="../blog.html">блоге</a>.</p>
+
+      <h2>Частые вопросы</h2>
+      <h3>Нужно ли салону выкупать импортную машину на себя?</h3>
+      <p>Не обязательно. Работают обе модели: вы либо заводите сделку как посредник и получаете вознаграждение, либо выкупаете лот на юрлицо и продаёте сами с полной маржой. Вторая даёт больше денег и больше риска.</p>
+      <h3>Что делать, если клиент передумал, когда машина уже куплена?</h3>
+      <p>Именно поэтому в договоре должно быть удержание и порядок реализации. Практика такая: невозвратная часть предоплаты покрывает расходы, а сама машина выставляется на продажу. Без этого пункта убыток ваш.</p>
+      <h3>Можно ли зачесть trade-in полностью в стоимость импорта?</h3>
+      <p>Да, если сумма сдаваемого автомобиля покрывает нужную предоплату. Чаще получается частичный зачёт плюс доплата. Оценивайте сданную машину консервативно — до приезда импортной пройдёт время, и рынок может уйти.</p>
+      <h3>Сколько стоит вход в партнёрскую программу?</h3>
+      <p>Вход не оплачивается, работа идёт по договору со сделки. Ориентировочные суммы вознаграждения обсуждаются под ваш объём и город — единой цифры для всех нет.</p>
+
+      <p>Больше о том, как устроена логистика через порт и почему точка входа именно здесь — в материале <a href="../index.html">о работе компании</a>.</p>
+
+      <p class="disclaimer">Все суммы, сроки и условия в статье приведены ориентировочно и носят справочный характер. Итоговая стоимость и сроки зависят от конкретного автомобиля, его габаритов, сезона, загрузки направления, курса валют и момента сделки. Точный расчёт возможен только по конкретному лоту на дату обращения.</p>
+
+    </div>
+
+    <div class="art-cta">
+      <h3>Хотите считать импорт как свой продукт?</h3>
+      <p>Подключим ваш салон к партнёрской программе: расчёт под конкретный лот, база во Владивостоке, приёмка и отправка клиенту в ваш город. Напишите — покажем условия и посчитаем первую сделку.</p>
+      <a class="btn-or" href="https://vk.me/atletauto" target="_blank">
+        Получить расчёт
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <a class="art-back" href="../blog.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Все статьи
+    </a>
+
+  </div>
+</main>
+
+<footer class="art-footer">
+  <p>© 2026 <a href="../index.html">Атлет-Авто</a> · Владивосток · Импорт автомобилей из Китая, Кореи и Японии</p>
+</footer>
+
+</body>
+</html>
