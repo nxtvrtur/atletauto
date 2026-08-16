@@ -1147,6 +1147,39 @@ section { padding: 96px 0; }
   </div>
 </section>
 
+<!-- ============================================================ MINIVANS -->
+<style>
+.mv-cover{border-radius:var(--r2);overflow:hidden;border:1px solid var(--b);margin-bottom:28px;max-width:560px}
+.mv-cover img{width:100%;display:block}
+.mv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.mvc{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--b);cursor:pointer;background:#fff;transition:transform .25s var(--ease),box-shadow .25s,border-color .25s}
+.mvc:hover{transform:translateY(-5px);border-color:var(--or);box-shadow:0 18px 44px rgba(0,0,0,.4),var(--or-glow)}
+.mvc img{width:100%;display:block;transition:transform .5s var(--ease)}
+.mvc:hover img{transform:scale(1.04)}
+.mvc-cta{position:absolute;left:0;right:0;bottom:0;padding:16px 14px 12px;background:linear-gradient(to top,rgba(9,10,16,.92),transparent);display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:600;color:#fff;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s}
+.mvc:hover .mvc-cta{opacity:1;transform:translateY(0)}
+.mvc-cta svg{width:15px;height:15px}
+@media(max-width:900px){.mv-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.mv-grid{grid-template-columns:1fr}.mvc-cta{opacity:1;transform:none}}
+</style>
+<section id="minivans" class="reveal" style="border-top:1px solid var(--b)">
+  <div class="container">
+    <p class="section-label">Подборка · правый руль</p>
+    <h2 class="section-title">ТОП-5 минивэнов<br>для семьи</h2>
+    <p style="font-size:15px;color:var(--m);max-width:620px;margin:-14px 0 30px">Надёжные и вместительные минивэны из Японии — для семьи и путешествий. Цены под ключ, привозим на заказ.</p>
+
+    <div class="mv-cover reveal"><img src="images/minivans/cover.jpg" alt="ТОП-5 надёжных минивэнов для семьи и путешествий" loading="lazy"></div>
+
+    <div class="mv-grid">
+      <div class="mvc" onclick="minivanLead('Toyota Esquire 2021','2 100 000 ₽')"><img src="images/minivans/esquire.jpg" alt="Toyota Esquire 2021 — 2 100 000 ₽" loading="lazy"><div class="mvc-cta">Оставить заявку <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      <div class="mvc" onclick="minivanLead('Nissan Serena 2023','2 067 000 ₽')"><img src="images/minivans/serena.jpg" alt="Nissan Serena 2023 — 2 067 000 ₽" loading="lazy"><div class="mvc-cta">Оставить заявку <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      <div class="mvc" onclick="minivanLead('Toyota Noah 2021','1 945 000 ₽')"><img src="images/minivans/noah.jpg" alt="Toyota Noah 2021 — 1 945 000 ₽" loading="lazy"><div class="mvc-cta">Оставить заявку <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      <div class="mvc" onclick="minivanLead('Toyota Voxy 2021','2 000 000 ₽')"><img src="images/minivans/voxy.jpg" alt="Toyota Voxy 2021 — 2 000 000 ₽" loading="lazy"><div class="mvc-cta">Оставить заявку <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      <div class="mvc" onclick="minivanLead('Honda Step Wagon 2022','1 790 000 ₽')"><img src="images/minivans/stepwagon.jpg" alt="Honda Step Wagon 2022 — 1 790 000 ₽" loading="lazy"><div class="mvc-cta">Оставить заявку <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============================================================ ADAPTATION -->
 <section class="adapt" id="adapt">
   <div class="adapt-head">
@@ -2000,6 +2033,13 @@ function carWA(name,type){
 function motoLead(){
   var fc=document.getElementById('fc');
   if(fc)fc.value='Электромотоцикл TYE Enduro 5 кВт (350 000 ₽ с доставкой)';
+  var form=document.getElementById('form');
+  if(form)form.scrollIntoView({behavior:'smooth',block:'center'});
+  setTimeout(function(){var fn=document.getElementById('fn');if(fn)fn.focus();},600);
+}
+function minivanLead(name,price){
+  var fc=document.getElementById('fc');
+  if(fc)fc.value=name+' (минивэн, '+price+')';
   var form=document.getElementById('form');
   if(form)form.scrollIntoView({behavior:'smooth',block:'center'});
   setTimeout(function(){var fn=document.getElementById('fn');if(fn)fn.focus();},600);
