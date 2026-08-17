@@ -161,7 +161,12 @@ button{background:none;border:none;cursor:pointer;font-family:var(--fb);color:in
 <script src="cars.js"></script>
 <script>
 (function(){
-  var id=new URLSearchParams(location.search).get('id');
+  // Принимаем и id, и slug. Главная строит ссылки как ?id=, полный каталог —
+  // как ?slug=, и из-за этого расхождения ВСЕ 120 машин каталога открывались
+  // страницей «Авто не найдено». Читаем оба: ссылки с ?slug= уже могли уйти
+  // клиентам в переписку, и ломать их нельзя.
+  var q=new URLSearchParams(location.search);
+  var id=q.get('id')||q.get('slug');
   var car=(window.CARS||[]).find(function(c){return c.slug===id;});
   var app=document.getElementById('app');
   if(!car){ app.innerHTML='<div class="notfound"><h1>Авто не найдено</h1><a href="index.html#catalog">← Вернуться в каталог</a></div>'; document.title='Не найдено — Атлет-Авто'; return; }
