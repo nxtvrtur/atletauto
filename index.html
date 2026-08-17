@@ -518,6 +518,15 @@ section { padding: 96px 0; }
 .ff select option { background: #1a1816; color: var(--w); }
 .ff textarea { resize: vertical; min-height: 86px; }
 .ff-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+/* Ловушка для ботов: поле уезжает за край экрана, а не прячется display:none —
+   часть скриптов пропускает невидимые поля, но заполняет отрисованные. Человек
+   его не видит и не поймает табом, скринридер пропускает по aria-hidden. */
+.lf-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; opacity: 0; }
+.lf-msg { font-size: 13px; line-height: 1.5; margin-top: -4px; }
+.lf-msg.err { color: #FF6B5A; }
+.lf-msg.ok { color: #4ADE80; }
+.lf-msg a { color: inherit; text-decoration: underline; }
+.lf-cf { min-height: 0; }
 @media (max-width: 768px) { .form-wrap { grid-template-columns: 1fr; gap: 40px; } .ff-row { grid-template-columns: 1fr; } .lead-form { padding: 24px 18px; } }
 
 /* ================================================================
@@ -635,26 +644,10 @@ section { padding: 96px 0; }
 @media (max-width: 900px) { .blog-cards { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .blog-cards { grid-template-columns: 1fr; } }
   </style>
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(109942494, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/109942494" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-<script type="text/javascript" src="https://one.botfaqtor.ru/one.js" async></script>
-<link rel="stylesheet" href="https://envybox.io/widget/cbk/cbk.css">
-<script type="text/javascript" src="https://envybox.io/widget/cbk/cbk.js?wcb_code=cb514734ac775bc400ddfb64a6af94b1" async></script>
+<!-- Метрика 109942494, BotFaqtor и виджет EnvyBox подключены выше, в начале
+     <head>. Здесь стоял их второй экземпляр: счётчик считал каждый визит
+     дважды (а с ним отказы и цели), BotFaqtor грузился с двух адресов,
+     обратный звонок инициализировался дважды. Убрано 17.08.2026. -->
 <!-- Pixel DataLeads -->
 <script type="text/javascript">
 (function (d, w) {
@@ -1737,10 +1730,13 @@ section { padding: 96px 0; }
             <div class="ff"><label for="fb2">Бюджет</label><select id="fb2"><option value="">Обсудим</option><option>До 2 000 000 ₽</option><option>2 – 4 000 000 ₽</option><option>4 – 6 000 000 ₽</option><option>6 – 10 000 000 ₽</option><option>Свыше 10 млн ₽</option></select></div>
           </div>
           <div class="ff"><label for="fcom">Комментарий <span style="opacity:.6">(необязательно)</span></label><textarea id="fcom" placeholder="Семейный гибрид, 6 мест, до конца лета…"></textarea></div>
+          <div class="lf-trap" aria-hidden="true"><label for="fx_note">Не заполняйте это поле</label><input id="fx_note" name="fx_note" type="text" tabindex="-1" autocomplete="off"></div>
+          <div class="lf-cf" id="cfbox"></div>
           <button type="submit" class="btn-primary" style="margin-top:4px">
             Оставить заявку
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>
+          <div class="lf-msg" id="fmsg" role="status" aria-live="polite"></div>
         </form>
       </div>
     </div>
@@ -1991,45 +1987,122 @@ function phoneMask(e){
 }
 
 /* ================================================================
-   TELEGRAM SEND
+   ЗАЯВКА
+   Отправляем на свой сервер, а не в Telegram из браузера. Токен бота в
+   исходнике страницы означал, что писать в группу заявок можно вообще мимо
+   формы — никакая капча этого не закрывает. Барьеры (ловушка, время
+   заполнения, капча, лимиты по адресу и номеру) проверяются на сервере,
+   здесь только то, что честный браузер обязан прислать.
 ================================================================ */
-function sendTG(msg){
-  var url='https://api.telegram.org/bot8808402219:AAE_PCzd6tDAlJMcibi6D12yfI9DSS29DCc/sendMessage'
-    +'?chat_id=-1004474291992&text='+encodeURIComponent(msg);
-  fetch(url).catch(function(){});
+var LEAD_URL='https://app.atletauto.ru/lead';
+var CF_SITEKEY='0x4AAAAAAEStvIRu7eqn6X-r';   /* Turnstile, виджет «atletauto.ru - lead form»; пусто = капча выключена */
+
+/* Отсчёт идёт с ПЕРВОГО касания формы, а не с загрузки страницы: страницу
+   открывают и оставляют в фоне на сутки, а бот заполняет всё за миллисекунды. */
+var leadTouch=0, cfToken='', cfWidget=null;
+(function(){
+  var f=document.querySelector('.lead-form'); if(!f) return;
+  var mark=function(){ if(!leadTouch) leadTouch=Date.now(); };
+  f.addEventListener('focusin',mark); f.addEventListener('input',mark);
+})();
+
+/* Капчу подключаем скриптом, а не в разметке: пока ключа нет, страница не
+   тянет ничего лишнего, а включение — это одна строка выше. */
+(function(){
+  if(!CF_SITEKEY) return;
+  window.cfLoaded=function(){
+    cfWidget=turnstile.render('#cfbox',{sitekey:CF_SITEKEY,theme:'dark',size:'flexible',
+      appearance:'interaction-only',   /* человек видит окошко только если он подозрителен */
+      callback:function(t){cfToken=t;},
+      'error-callback':function(){cfToken='';},
+      'expired-callback':function(){cfToken='';}});
+  };
+  var s=document.createElement('script');
+  s.src='https://challenges.cloudflare.com/turnstile/v0/api.js?onload=cfLoaded&render=explicit';
+  s.async=true; s.defer=true; document.head.appendChild(s);
+})();
+
+function cfWait(){
+  if(!CF_SITEKEY) return Promise.resolve('');
+  if(cfToken) return Promise.resolve(cfToken);
+  return new Promise(function(done){
+    var t0=Date.now();
+    try{ if(window.turnstile && cfWidget!==null) turnstile.execute(cfWidget); }catch(e){}
+    var iv=setInterval(function(){
+      if(cfToken || Date.now()-t0>9000){ clearInterval(iv); done(cfToken); }
+    },200);
+  });
 }
 
-/* ================================================================
-   FORM SUBMIT
-================================================================ */
+/* utm держим всю сессию: человек приходит по объявлению, ходит по сайту и
+   оставляет заявку уже без метки в адресе — а видеть, какая кампания привела
+   клиента, а какая мусор, нужно именно в заявке. */
+function leadUtm(){
+  try{
+    var q=new URLSearchParams(location.search), keys=['source','medium','campaign','term','content'], u={}, got=false;
+    for(var i=0;i<keys.length;i++){ var v=q.get('utm_'+keys[i]); if(v){ u[keys[i]]=v.slice(0,80); got=true; } }
+    if(got){ sessionStorage.setItem('aa_utm',JSON.stringify(u)); return u; }
+    return JSON.parse(sessionStorage.getItem('aa_utm')||'{}');
+  }catch(e){ return {}; }
+}
+
+function leadMsg(html,cls){
+  var el=document.getElementById('fmsg'); if(!el) return;
+  el.className='lf-msg'+(cls?' '+cls:''); el.innerHTML=html||'';
+}
+
+var LEAD_FAIL='Заявка не отправилась. Позвоните <a href="tel:+78006001838">8 800 600-18-38</a>'
+  +' или напишите в <a href="https://wa.me/79510248318" target="_blank" rel="noopener">WhatsApp</a>.';
+
 function submitLead(e){
   e.preventDefault();
-  var name=document.getElementById('fn').value.trim();
-  var phone=document.getElementById('fp').value.trim();
-  var car=document.getElementById('fc').value.trim();
-
-  var budget=document.getElementById('fb2').value;
-  var comment=document.getElementById('fcom').value.trim();
-  var msg='📋 Новая заявка с сайта\n👤 Имя: '+name+'\n📞 Телефон: '+phone;
-  if(car)msg+='\n🚗 Авто: '+car;
-  if(budget)msg+='\n💰 Бюджет: '+budget;
-  if(comment)msg+='\n📝 Комментарий: '+comment;
-  sendTG(msg);
   var btn=e.target.querySelector('button[type=submit]');
-  if(btn){btn.textContent='✓ Заявка отправлена';btn.disabled=true;}
+  var back=btn?btn.innerHTML:'';
+  /* Токен капчи одноразовый: после любой неудачи просим новый, иначе повторная
+     отправка уйдёт с погашенным и сервер её молча отклонит. */
+  var stop=function(html){
+    leadMsg(html,'err');
+    if(btn){btn.disabled=false;btn.innerHTML=back;}
+    cfToken=''; try{ if(window.turnstile && cfWidget!==null) turnstile.reset(cfWidget); }catch(e){}
+  };
+  if(btn){ btn.disabled=true; btn.textContent='Отправляем…'; }
+  leadMsg('');
+
+  cfWait().then(function(token){
+    if(CF_SITEKEY && !token){ stop('Проверка «вы не робот» не прошла. '+LEAD_FAIL); return; }
+    var trap=document.getElementById('fx_note');
+    return fetch(LEAD_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+      name:   document.getElementById('fn').value.trim(),
+      phone:  document.getElementById('fp').value.trim(),
+      car:    document.getElementById('fc').value.trim(),
+      budget: document.getElementById('fb2').value,
+      comment:document.getElementById('fcom').value.trim(),
+      t:      leadTouch?Date.now()-leadTouch:0,
+      fx_note:trap?trap.value:'',
+      cf:     token,
+      utm:    leadUtm(),
+      page:   location.pathname
+    })}).then(function(r){
+      return r.json().catch(function(){ return {}; }).then(function(j){
+        if(r.ok && j.ok){
+          if(btn){ btn.textContent='✓ Заявка отправлена'; }
+          leadMsg('Менеджер свяжется в течение 15 минут в рабочее время.','ok');
+          /* Цель в Метрике — по факту принятой заявки, а не по клику: только
+             такую цифру можно давать Директу для оптимизации. */
+          try{ if(window.ym) ym(109942494,'reachGoal','lead'); }catch(_){}
+          return;
+        }
+        /* Ошибку в конкретном поле показываем человеку — молча съеденная
+           заявка выглядит как отправленная и теряется навсегда. */
+        stop(j && j.error ? j.error : LEAD_FAIL);
+      });
+    }).catch(function(){ stop(LEAD_FAIL); });
+  });
 }
 
 /* ================================================================
    CAR CTA
 ================================================================ */
-function carWA(name,type){
-  var msg=type==='order'
-    ?'📋 Заявка с сайта\n🚗 Авто: '+name+'\nТип: Под заказ'
-    :type==='spec'
-    ?'📋 Заявка с сайта\n🚗 Техника: '+name+'\nТип: Запрос КП'
-    :'📋 Заявка с сайта\n🚗 Авто: '+name+'\nТип: В наличии';
-  sendTG(msg);
-}
 function motoLead(){
   var fc=document.getElementById('fc');
   if(fc)fc.value='Электромотоцикл TYE Enduro 5 кВт (350 000 ₽ с доставкой)';
