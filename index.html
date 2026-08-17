@@ -1176,6 +1176,27 @@ section { padding: 96px 0; }
 .moto-thumbs img{width:100%;height:100%;object-fit:contain;padding:6px}
 @media(max-width:900px){.moto-split{grid-template-columns:1fr}}
 @media(max-width:520px){.moto-specs{grid-template-columns:1fr}}
+
+/* ── Догоняющее окно ────────────────────────────────────────────────────────
+   Человек досмотрел каталог и уходит, не оставив заявку. Окно ловит его один
+   раз: на компьютере — по уходу курсора за верхний край (тянется к вкладкам),
+   на телефоне — после 60% прокрутки, потому что «увести курсор» там нечем.
+   Показ один раз в трое суток и никогда — если заявка уже отправлена. */
+.pop-bg{position:fixed;inset:0;z-index:9998;background:rgba(5,4,4,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .25s var(--ease)}
+.pop-bg.on{opacity:1;pointer-events:auto}
+.pop{position:fixed;z-index:9999;left:50%;top:50%;transform:translate(-50%,-46%) scale(.98);width:min(460px,calc(100vw - 32px));background:var(--bg-r);border:1px solid var(--b2);border-radius:var(--r2);padding:30px 28px 26px;opacity:0;pointer-events:none;transition:opacity .25s var(--ease),transform .25s var(--ease);max-height:calc(100vh - 32px);overflow:auto}
+.pop.on{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+.pop-x{position:absolute;top:14px;right:16px;width:32px;height:32px;border-radius:50%;border:1px solid var(--b);color:var(--m);font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center}
+.pop-x:hover{color:var(--w);border-color:var(--b2)}
+.pop-label{font-family:var(--fm);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--or);margin-bottom:10px}
+.pop h3{font-family:var(--fd);font-size:clamp(26px,6vw,34px);font-weight:900;text-transform:uppercase;line-height:1.02;margin-bottom:10px}
+.pop p{font-size:14px;color:var(--m);line-height:1.5;margin-bottom:18px}
+.pop input[type=text],.pop input[type=tel]{width:100%;background:var(--bg);border:1px solid var(--b);border-radius:10px;padding:13px 14px;color:var(--w);font:inherit;font-size:15px;margin-bottom:10px}
+.pop input::placeholder{color:var(--m2)}
+.pop input:focus{outline:none;border-color:var(--or)}
+.pop .btn-primary{width:100%;justify-content:center;margin-top:4px}
+.pop-fine{font-size:12px;color:var(--m2);margin:12px 0 0;line-height:1.45}
+@media(max-width:520px){.pop{padding:26px 20px 22px}}
 </style>
 <section id="moto" class="reveal" style="border-top:1px solid var(--b)">
   <div class="container">
@@ -2222,5 +2243,130 @@ function evLead(name,price){
 }
 </script>
 <script src="cars.js"></script>
+<!-- ============================================================ ДОГОНЯЮЩЕЕ ОКНО -->
+<div class="pop-bg" id="popbg" hidden></div>
+<div class="pop" id="pop" role="dialog" aria-modal="true" aria-labelledby="pop-h" hidden>
+  <button class="pop-x" id="pop-x" aria-label="Закрыть">×</button>
+  <p class="pop-label">Атлет Авто · Владивосток</p>
+  <h3 id="pop-h">Посчитать вашу машину?</h3>
+  <p>Оставьте телефон — пришлём расчёт под ключ с пошлиной, утильсбором и доставкой. Без звонков-каруселей: один менеджер, один ответ.</p>
+  <form id="pop-form" novalidate>
+    <input id="pop-name" type="text" placeholder="Имя" autocomplete="name" required>
+    <input id="pop-phone" type="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+    <div class="lf-trap" aria-hidden="true"><label for="pop-note">Не заполняйте это поле</label><input id="pop-note" type="text" tabindex="-1" autocomplete="off"></div>
+    <label class="lf-agree" for="pop-agree">
+      <input id="pop-agree" type="checkbox" required>
+      <span>Согласен на обработку персональных данных и с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a></span>
+    </label>
+    <button type="submit" class="btn-primary">Получить расчёт →</button>
+    <div class="lf-msg" id="pop-msg" role="status" aria-live="polite"></div>
+  </form>
+  <p class="pop-fine">Обычно отвечаем в течение 15 минут в рабочее время.</p>
+</div>
+
+<script>
+/* ================================================================
+   ДОГОНЯЮЩЕЕ ОКНО
+   Заявку шлём ТЕМ ЖЕ путём, что и основная форма: тот же адрес
+   app.atletauto.ru/lead, та же ловушка, та же капча (cfWait переиспользует
+   уже отрисованный виджет — второй экземпляр Turnstile на странице не нужен)
+   и то же согласие на обработку ПД. Иначе окно стало бы дырой в обход всей
+   защиты, ради которой форму и переделывали.
+   Метка page:'popup' — чтобы в таблице заявок было видно, что привело именно
+   окно, и можно было честно решить, окупается оно или раздражает.
+================================================================ */
+(function(){
+  var bg=document.getElementById('popbg'), box=document.getElementById('pop');
+  if(!bg||!box) return;
+  var KEY='aa_pop_seen', DAYS=3, shown=false, armed=false;
+
+  function seenRecently(){
+    try{
+      if(localStorage.getItem('aa_lead_sent')) return true;      /* заявка уже есть — не мешаем */
+      var t=+(localStorage.getItem(KEY)||0);
+      return t && (Date.now()-t) < DAYS*864e5;
+    }catch(e){ return false; }
+  }
+  function open(){
+    if(shown||seenRecently()) return;
+    /* Не выскакиваем поверх формы: человек и так её заполняет. */
+    var f=document.querySelector('.lead-form');
+    if(f){ var r=f.getBoundingClientRect(); if(r.top < innerHeight && r.bottom > 0) return; }
+    shown=true;
+    try{ localStorage.setItem(KEY, String(Date.now())); }catch(e){}
+    bg.hidden=false; box.hidden=false;
+    requestAnimationFrame(function(){ bg.classList.add('on'); box.classList.add('on'); });
+    setTimeout(function(){ var n=document.getElementById('pop-name'); if(n) n.focus(); }, 260);
+  }
+  function close(){
+    bg.classList.remove('on'); box.classList.remove('on');
+    setTimeout(function(){ bg.hidden=true; box.hidden=true; }, 260);
+  }
+  document.getElementById('pop-x').addEventListener('click', close);
+  bg.addEventListener('click', close);
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && !box.hidden) close(); });
+
+  /* Оружие даём не сразу: окно, выпрыгнувшее на третьей секунде, читается как
+     реклама, а не как предложение. */
+  setTimeout(function(){ armed=true; }, 20000);
+
+  /* Компьютер: курсор ушёл за верхний край окна — человек тянется к вкладкам. */
+  document.addEventListener('mouseout', function(e){
+    if(!armed || e.relatedTarget || e.clientY > 8) return;
+    open();
+  });
+  /* Телефон: курсора нет, поэтому ловим по глубине прокрутки. */
+  var ticking=false;
+  addEventListener('scroll', function(){
+    if(!armed || ticking) return;
+    ticking=true;
+    requestAnimationFrame(function(){
+      ticking=false;
+      var h=document.documentElement.scrollHeight-innerHeight;
+      if(h>0 && (scrollY/h) > 0.6) open();
+    });
+  }, {passive:true});
+
+  document.getElementById('pop-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name=document.getElementById('pop-name'), phone=document.getElementById('pop-phone'),
+        agree=document.getElementById('pop-agree'), trap=document.getElementById('pop-note'),
+        btn=e.target.querySelector('button[type=submit]'), msg=document.getElementById('pop-msg');
+    var say=function(html,cls){ msg.className='lf-msg'+(cls?' '+cls:''); msg.innerHTML=html; };
+    if(!name.value.trim()||!phone.value.trim()){ say('Заполните имя и телефон','err'); return; }
+    if(!agree.checked){ say('Нужно согласие на обработку персональных данных','err'); return; }
+    var back=btn.innerHTML;
+    btn.disabled=true; btn.textContent='Отправляем…'; say('');
+    /* Токен капчи одноразовый — на любой неудаче просим новый, иначе повторная
+       отправка уйдёт с погашенным и сервер молча её отклонит. */
+    var fail=function(t){ say(t||('Не отправилось. Позвоните: <a href="tel:+78006001838">8 800 600-18-38</a>'),'err');
+      btn.disabled=false; btn.innerHTML=back;
+      try{ cfToken=''; if(window.turnstile && cfWidget!==null) turnstile.reset(cfWidget); }catch(_){}
+    };
+    cfWait().then(function(token){
+      if(CF_SITEKEY && !token){ fail('Проверка «вы не робот» не прошла. Позвоните: <a href="tel:+78006001838">8 800 600-18-38</a>'); return; }
+      return fetch(LEAD_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+        name:name.value.trim(), phone:phone.value.trim(), car:'', budget:'', comment:'догоняющее окно',
+        t: leadTouch?Date.now()-leadTouch:20000,
+        fx_note: trap?trap.value:'', cf: token, consent: !!agree.checked,
+        utm: leadUtm(), page:'popup'
+      })}).then(function(r){
+        return r.json().catch(function(){ return {}; }).then(function(j){
+          if(r.ok && j.ok){
+            try{ localStorage.setItem('aa_lead_sent','1'); }catch(_){}
+            btn.textContent='✓ Заявка отправлена';
+            say('Менеджер свяжется в течение 15 минут в рабочее время.','ok');
+            try{ if(window.ym) ym(109942494,'reachGoal','lead'); }catch(_){}
+            setTimeout(close, 2600);
+            return;
+          }
+          fail(j && j.error ? j.error : null);
+        });
+      }).catch(function(){ fail(); });
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
