@@ -2028,8 +2028,11 @@ function cfWait(){
   return new Promise(function(done){
     var t0=Date.now();
     try{ if(window.turnstile && cfWidget!==null) turnstile.execute(cfWidget); }catch(e){}
+    /* Замер на живом сайте: чистый посетитель получает токен за ~5 с, поэтому
+       ждём с запасом. Пока ждём, на кнопке «Отправляем…» — лучше подождать,
+       чем отказать человеку из-за медленного мобильного интернета. */
     var iv=setInterval(function(){
-      if(cfToken || Date.now()-t0>9000){ clearInterval(iv); done(cfToken); }
+      if(cfToken || Date.now()-t0>25000){ clearInterval(iv); done(cfToken); }
     },200);
   });
 }
