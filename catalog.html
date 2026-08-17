@@ -37,6 +37,13 @@ body::before{content:'';position:fixed;inset:-50%;width:200%;height:200%;z-index
 .nav-links a:hover{color:var(--w)}
 .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--or);color:#fff;padding:11px 22px;border-radius:8px;font-size:14px;font-weight:600;transition:background .2s,transform .2s}
 .btn-primary:hover{background:#4674f0;transform:translateY(-2px)}
+/* Шапка на телефоне. Правил не было вовсе: логотип, четыре ссылки и кнопка
+   складывались в 660 пикселей, и на 375 «Бесплатный просчёт» — единственное
+   действие страницы — уезжал за правый край экрана. Ссылки прячем, как это уже
+   сделано на главной (там их заменяет бургер), а кнопку ужимаем: на каталоге
+   меню не нужно, нужен путь к заявке. */
+@media(max-width:900px){.nav-inner{gap:16px;padding:0 16px;justify-content:space-between}.nav-links{display:none}}
+@media(max-width:600px){.nav-logo img{height:30px}.nav-inner .btn-primary{margin-left:0!important;padding:10px 14px;font-size:12px}}
 
 .container{max-width:1280px;margin:0 auto;padding:0 32px}
 @media(max-width:640px){.container{padding:0 16px}}
