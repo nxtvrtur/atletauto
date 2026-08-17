@@ -533,6 +533,10 @@ section { padding: 96px 0; }
    часть скриптов пропускает невидимые поля, но заполняет отрисованные. Человек
    его не видит и не поймает табом, скринридер пропускает по aria-hidden. */
 .lf-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; opacity: 0; }
+.lf-agree { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.45; color: var(--m); cursor: pointer; user-select: none; }
+.lf-agree input { flex: none; width: 17px; height: 17px; margin-top: 1px; accent-color: var(--or); cursor: pointer; }
+.lf-agree a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.lf-agree a:hover { color: var(--w); }
 .lf-msg { font-size: 13px; line-height: 1.5; margin-top: -4px; }
 .lf-msg.err { color: #FF6B5A; }
 .lf-msg.ok { color: #4ADE80; }
@@ -1790,6 +1794,14 @@ section { padding: 96px 0; }
           </div>
           <div class="ff"><label for="fcom">Комментарий <span style="opacity:.6">(необязательно)</span></label><textarea id="fcom" placeholder="Семейный гибрид, 6 мест, до конца лета…"></textarea></div>
           <div class="lf-trap" aria-hidden="true"><label for="fx_note">Не заполняйте это поле</label><input id="fx_note" name="fx_note" type="text" tabindex="-1" autocomplete="off"></div>
+          <!-- Согласие на обработку ПД. Не формальность: имя и телефон — это
+               персональные данные, и 152-ФЗ требует согласия ДО отправки, причём
+               действием человека, а не мелким текстом под кнопкой. required
+               гасит отправку силами браузера, до нашего обработчика. -->
+          <label class="lf-agree" for="fagree">
+            <input id="fagree" type="checkbox" required>
+            <span>Согласен на обработку персональных данных и с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a></span>
+          </label>
           <div class="lf-cf" id="cfbox"></div>
           <button type="submit" class="btn-primary" style="margin-top:4px">
             Оставить заявку
@@ -2141,6 +2153,10 @@ function submitLead(e){
       comment:document.getElementById('fcom').value.trim(),
       t:      leadTouch?Date.now()-leadTouch:0,
       fx_note:trap?trap.value:'',
+      /* Согласие на ПД. Браузер без галочки форму не отправит, но на сервер её
+         всё равно везём: там она пишется в базу — это и есть доказательство,
+         что человек согласился, а не мы так решили. */
+      consent:!!(document.getElementById('fagree')||{}).checked,
       cf:     token,
       utm:    leadUtm(),
       page:   location.pathname
