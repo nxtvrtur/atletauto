@@ -99,7 +99,7 @@ b = re.sub(r'<p class="section-label">Все статьи · \d+ материа�
 open(os.path.join(SITE, "blog.html"), "w", encoding="utf-8").write(b)
 
 today = datetime.date.today().isoformat()
-urls = ["", "catalog.html", "blog.html", "privacy.html"] + \
+urls = ["", "catalog.html", "catalog-order.html", "blog.html", "privacy.html"] + \
        ["blog/%s" % os.path.basename(f) for f in sorted(glob.glob(BLOG_DIR + "/*.html"))]
 sm = ['<?xml version="1.0" encoding="UTF-8"?>',
       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']

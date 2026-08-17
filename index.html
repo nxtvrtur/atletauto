@@ -90,6 +90,17 @@ section { padding: 96px 0; }
   font-family: var(--fm); font-size: 11px; letter-spacing: .2em;
   text-transform: uppercase; color: var(--or); margin-bottom: 12px;
 }
+/* Место под встроенный каталог. Виджет рисует свои внутренние отступы сам —
+   32px, ниже 600px 18px, — а у .container сайта 24px. Из-за этого каталог
+   съезжал относительно заголовка секции. Тянуть слот наружу отрицательными
+   полями нельзя: документ становится на 8px шире вьюпорта (проверено).
+   Поэтому наоборот — в этой секции подгоняем отступы контейнера под виджет,
+   а слот берёт ту же max-width, что и .container. Тогда и заголовок, и
+   каталог считают поля одинаково на любой ширине. */
+.emb-slot { max-width: 1200px; margin: 0 auto; }
+#catalog-order .container { padding: 0 32px; }
+@media (max-width: 599px) { #catalog-order .container { padding: 0 18px; } }
+
 .section-title {
   font-family: var(--fd); font-size: clamp(42px,5.5vw,76px); font-weight: 900;
   line-height: .95; text-transform: uppercase; letter-spacing: -.01em; margin-bottom: 48px;
@@ -707,6 +718,7 @@ section { padding: 96px 0; }
       </div>
       <ul class="nav-links">
         <li><a href="#catalog">Каталог</a></li>
+        <li><a href="#catalog-order">Под заказ</a></li>
         <li><a href="#adapt">Услуги</a></li>
         <li><a href="#stories">Выдачи</a></li>
         <li><a href="#team">Команда</a></li>
@@ -1036,6 +1048,53 @@ section { padding: 96px 0; }
         <div style="text-align:center;margin-top:40px">
       <a href="catalog.html" class="btn-ghost">Полный каталог →</a>
     </div>
+  </div>
+</section>
+
+<!-- ============================================================ UNDER ORDER -->
+<section id="catalog-order" class="reveal" style="border-top:1px solid var(--b)">
+  <div class="container">
+    <p class="section-label">Под заказ · площадки Кореи и Китая</p>
+    <h2 class="section-title">Весь рынок<br>под заказ</h2>
+    <p style="font-size:15px;color:var(--m);max-width:620px;margin:-14px 0 34px">Тысячи лотов с площадок Кореи и Китая. Цена сразу под&nbsp;ключ — с&nbsp;пошлиной, утильсбором и доставкой. Откройте машину: расчёт и контакты внутри.</p>
+  </div>
+
+  <!-- Место под каталог. Ширина 1216px = 1152 контента + 64 внутренних отступа
+       виджета, ровно как у .container (1200 − 24×2). Свой padding не задаём —
+       иначе удвоится с отступами внутри виджета. Ни height, ни overflow:
+       высоту виджет подгоняет сам.
+       Оформление — токены сайта; card/text/muted/line НЕ передаём, они уходят
+       и в карточку-слой, а та тёмную тему не включает (подписи и телефон стали
+       бы нечитаемыми). Ленивую загрузку не выключаем: на главной каталог
+       грузится только когда до него домотали.
+
+       data-limit="6" — тизер, и это не вкусовщина: без него виджет отдаёт
+       тридцать лотов, на телефоне они встают в одну колонку и секция вырастает
+       до 13 419 пикселей. Всё, что ниже (услуги, гарантии, команда, блог,
+       форма), уезжало на полтора десятка экранов — лендинг переставал
+       дочитываться. Шесть карточек дают 2 800 пикселей.
+       data-more-url — куда виджет уводит по кнопке «Смотреть весь каталог».
+       Адрес держим ЗДЕСЬ, а не внутри виджета: кадр в песочнице и сам увести
+       посетителя не может, он лишь просит родителя перейти по этому адресу. -->
+  <div class="emb-slot">
+    <script src="https://importdare.ru/embed/catalog.js"
+            data-partner="atletauto"
+            data-theme="dark"
+            data-accent="#2B5CE6"
+            data-ink="#FFFFFF"
+            data-bg="#0D0B0A"
+            data-radius="12"
+            data-gfont="Outfit:wght@300;400;500;600"
+            data-limit="6"
+            data-more-url="catalog-order.html"
+            data-scroll-offset="112"></script>
+  </div>
+
+  <!-- Дубль ссылки снаружи кадра оставлен намеренно: кнопка «Смотреть весь
+       каталог» живёт ВНУТРИ виджета, и если он не поднимется (CSP, блокировщик
+       у посетителя), выход на полный каталог должен остаться на странице. -->
+  <div class="container" style="text-align:center;margin-top:40px">
+    <a href="catalog-order.html" class="btn-ghost">Открыть каталог отдельной страницей →</a>
   </div>
 </section>
 
