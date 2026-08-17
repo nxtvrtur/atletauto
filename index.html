@@ -714,7 +714,7 @@ section { padding: 96px 0; }
       </div>
       <ul class="nav-links">
         <li><a href="#catalog">Каталог</a></li>
-        <li><a href="catalog-order.html">Под заказ</a></li>
+        <li><a href="#catalog-order">Под заказ</a></li>
         <li><a href="#adapt">Услуги</a></li>
         <li><a href="#stories">Выдачи</a></li>
         <li><a href="#team">Команда</a></li>
@@ -1041,10 +1041,42 @@ section { padding: 96px 0; }
       </div>
     </div>
 
-        <div style="text-align:center;margin-top:40px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <div style="text-align:center;margin-top:40px">
       <a href="catalog.html" class="btn-ghost">Полный каталог →</a>
-      <a href="catalog-order.html" class="btn-ghost">Под заказ: Корея и Китай →</a>
     </div>
+  </div>
+</section>
+
+<!-- ============================================================ UNDER ORDER -->
+<section id="catalog-order" class="reveal" style="border-top:1px solid var(--b)">
+  <div class="container">
+    <p class="section-label">Под заказ · площадки Кореи и Китая</p>
+    <h2 class="section-title">Весь рынок<br>под заказ</h2>
+    <p style="font-size:15px;color:var(--m);max-width:620px;margin:-14px 0 34px">Тысячи лотов с площадок Кореи и Китая. Цена сразу под&nbsp;ключ — с&nbsp;пошлиной, утильсбором и доставкой. Откройте машину: расчёт и контакты внутри.</p>
+  </div>
+
+  <!-- Место под каталог. Ширина 1216px = 1152 контента + 64 внутренних отступа
+       виджета, ровно как у .container (1200 − 24×2). Свой padding не задаём —
+       иначе удвоится с отступами внутри виджета. Ни height, ни overflow:
+       высоту виджет подгоняет сам.
+       Оформление — токены сайта; card/text/muted/line НЕ передаём, они уходят
+       и в карточку-слой, а та тёмную тему не включает (подписи и телефон стали
+       бы нечитаемыми). Ленивую загрузку не выключаем: на главной каталог
+       грузится только когда до него домотали. -->
+  <div style="max-width:1216px;margin:0 auto">
+    <script src="https://importdare.ru/embed/catalog.js"
+            data-partner="atletauto"
+            data-theme="dark"
+            data-accent="#2B5CE6"
+            data-ink="#FFFFFF"
+            data-bg="#0D0B0A"
+            data-radius="12"
+            data-gfont="Outfit:wght@300;400;500;600"
+            data-scroll-offset="112"></script>
+  </div>
+
+  <div class="container" style="text-align:center;margin-top:40px">
+    <a href="catalog-order.html" class="btn-ghost">Открыть каталог отдельной страницей →</a>
   </div>
 </section>
 
