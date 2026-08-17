@@ -49,8 +49,11 @@ body::before{content:'';position:fixed;inset:-50%;width:200%;height:200%;z-index
   .btn-primary{margin-left:auto;padding:10px 16px;font-size:13px}
 }
 
+/* Отступы контейнера намеренно совпадают с внутренними отступами виджета
+   (32px, ниже 600px — 18px). Иначе каталог съезжает относительно заголовков:
+   контейнер и виджет считали бы поля по-разному. */
 .container{max-width:1280px;margin:0 auto;padding:0 32px}
-@media(max-width:640px){.container{padding:0 16px}}
+@media(max-width:599px){.container{padding:0 18px}}
 
 /* page header */
 .page-header{padding:calc(var(--nh) + 56px) 0 36px}

@@ -90,6 +90,17 @@ section { padding: 96px 0; }
   font-family: var(--fm); font-size: 11px; letter-spacing: .2em;
   text-transform: uppercase; color: var(--or); margin-bottom: 12px;
 }
+/* Место под встроенный каталог. Виджет рисует свои внутренние отступы сам —
+   32px, ниже 600px 18px, — а у .container сайта 24px. Из-за этого каталог
+   съезжал относительно заголовка секции. Тянуть слот наружу отрицательными
+   полями нельзя: документ становится на 8px шире вьюпорта (проверено).
+   Поэтому наоборот — в этой секции подгоняем отступы контейнера под виджет,
+   а слот берёт ту же max-width, что и .container. Тогда и заголовок, и
+   каталог считают поля одинаково на любой ширине. */
+.emb-slot { max-width: 1200px; margin: 0 auto; }
+#catalog-order .container { padding: 0 32px; }
+@media (max-width: 599px) { #catalog-order .container { padding: 0 18px; } }
+
 .section-title {
   font-family: var(--fd); font-size: clamp(42px,5.5vw,76px); font-weight: 900;
   line-height: .95; text-transform: uppercase; letter-spacing: -.01em; margin-bottom: 48px;
@@ -1063,7 +1074,7 @@ section { padding: 96px 0; }
        и в карточку-слой, а та тёмную тему не включает (подписи и телефон стали
        бы нечитаемыми). Ленивую загрузку не выключаем: на главной каталог
        грузится только когда до него домотали. -->
-  <div style="max-width:1216px;margin:0 auto">
+  <div class="emb-slot">
     <script src="https://importdare.ru/embed/catalog.js"
             data-partner="atletauto"
             data-theme="dark"
