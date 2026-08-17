@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Авто под заказ из Кореи и Китая — Атлет Авто · Владивосток</title>
-  <meta name="description" content="Живой каталог автомобилей с площадок Кореи и Китая. Цена сразу под ключ: пошлина, утильсбор, доставка. Атлет Авто — импорт под ключ во Владивостоке.">
-  <link rel="canonical" href="https://atletauto.ru/catalog-order.html">
+  <title>Чехлы на сиденья по лекалам вашей машины — Атлет Авто · Владивосток</title>
+  <meta name="description" content="Модельные авточехлы из экокожи, алькантары и велюра по лекалам вашей машины. Соберите комплект в конструкторе: раскладка, материалы, цвет, вышивка — цена появится сразу.">
+  <link rel="canonical" href="https://atletauto.ru/chehly.html">
   <link rel="icon" href="images/tild6436-3536-4334-b835-393235303734_favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,19 +39,14 @@ body::before{content:'';position:fixed;inset:-50%;width:200%;height:200%;z-index
 .nav-links a[aria-current="page"]{color:var(--w)}
 .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--or);color:#fff;padding:11px 22px;border-radius:8px;font-size:14px;font-weight:600;transition:background .2s,transform .2s}
 .btn-primary:hover{background:#4674f0;transform:translateY(-2px)}
-/* планшет: ссылки ещё влезают, просто ужимаем промежутки */
 @media(max-width:900px){.nav-links{gap:18px}}
-/* телефон: ссылки прячем — остаются логотип и кнопка просчёта.
-   Иначе строка меню не влезает и уезжает за край. */
+/* телефон: ссылки прячем — остаются логотип и кнопка просчёта */
 @media(max-width:760px){
   .nav-inner{gap:16px}
   .nav-links{display:none}
   .btn-primary{margin-left:auto;padding:10px 16px;font-size:13px}
 }
 
-/* Отступы контейнера намеренно совпадают с внутренними отступами виджета
-   (32px, ниже 600px — 18px). Иначе каталог съезжает относительно заголовков:
-   контейнер и виджет считали бы поля по-разному. */
 .container{max-width:1280px;margin:0 auto;padding:0 32px}
 @media(max-width:599px){.container{padding:0 18px}}
 
@@ -61,16 +56,14 @@ body::before{content:'';position:fixed;inset:-50%;width:200%;height:200%;z-index
 .page-header p{font-size:15px;color:var(--m);max-width:640px;line-height:1.55}
 .page-label{font-family:var(--fm);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--or);margin-bottom:14px}
 
-/* сноска про Японию — она у нас в наличии, а не под заказ */
-.jp-note{display:block;max-width:640px;margin-top:20px;padding:11px 16px;border:1px solid var(--b);border-radius:var(--r);background:var(--bg-r);font-size:13.5px;color:var(--m);line-height:1.5}
-.jp-note a{color:var(--or);font-weight:600;margin-left:4px}
-.jp-note a:hover{text-decoration:underline}
+/* три коротких факта над конструктором — чтобы человек понимал, что собирает */
+.ch-facts{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.ch-fact{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--b);border-radius:var(--r);background:var(--bg-r);font-size:13.5px;color:var(--m)}
+.ch-fact svg{flex:none;color:var(--or)}
 
-/* место под каталог: только max-width и центрирование.
-   Внутренние отступы (32px, на мобильном 18px) рисует сам виджет,
-   поэтому здесь padding не задаём — иначе он удвоится.
-   Ни width, ни height, ни overflow — высоту виджет подгоняет сам. */
-.catalog-slot{max-width:1280px;margin:0 auto}
+/* Место под конструктор. Внутренние отступы рисует сам виджет, поэтому здесь
+   ни padding, ни height: высоту он подгоняет сам сообщением наружу. */
+.chehly-slot{max-width:1280px;margin:0 auto}
 
 /* хвост страницы */
 .end-cta{border-top:1px solid var(--b);margin-top:56px;padding:64px 0 80px;text-align:center}
@@ -103,9 +96,8 @@ body::before{content:'';position:fixed;inset:-50%;width:200%;height:200%;z-index
     <div class="nav-links">
       <a href="index.html">Главная</a>
       <a href="catalog.html">В наличии</a>
-      <a href="catalog-order.html" aria-current="page">Под заказ</a>
-      <a href="chehly.html">Чехлы</a>
-      <a href="index.html#guarantees">Гарантии</a>
+      <a href="catalog-order.html">Под заказ</a>
+      <a href="chehly.html" aria-current="page">Чехлы</a>
       <a href="index.html#team">Команда</a>
     </div>
     <a href="index.html#form" class="btn-primary" style="flex-shrink:0">Бесплатный просчёт →</a>
@@ -114,45 +106,38 @@ body::before{content:'';position:fixed;inset:-50%;width:200%;height:200%;z-index
 
 <div class="page-header">
   <div class="container">
-    <p class="page-label">Атлет Авто · Под заказ</p>
-    <h1>Авто под заказ</h1>
-    <p>Площадки Кореи и Китая целиком — тысячи лотов. Цена в карточке сразу под&nbsp;ключ. Фильтруйте по марке, бюджету и году, открывайте карточку — расчёт и контакты внутри.</p>
-    <p class="jp-note">Япония — у нас в наличии и в пути. <a href="catalog.html">Смотреть каталог в наличии →</a></p>
+    <p class="page-label">Атлет Авто · Салон</p>
+    <h1>Чехлы на сиденья</h1>
+    <p>Модельные авточехлы из экокожи, алькантары и велюра — по лекалам вашей машины, а не «универсальные на резинке». Соберите комплект в конструкторе: раскладка, материалы, цвет, рисунок и вышивка. Цена появится сразу, без «оставьте номер, посчитаем».</p>
+    <div class="ch-facts">
+      <span class="ch-fact"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>По лекалам конкретной модели</span>
+      <span class="ch-fact"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Экокожа, алькантара, велюр</span>
+      <span class="ch-fact"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Вышивка логотипа или имени</span>
+    </div>
   </div>
 </div>
 
-<div class="catalog-slot">
-  <!-- Каталог. Оформление подобрано под токены сайта:
-       theme=dark  — тёмная палитра виджета, она почти совпадает с нашей
-                     (её card #141414 против нашего --bg-r #131211,
-                      рамки rgba(255,255,255,.07) — ровно наш --b);
-       bg          — фон ставим свой точно, чтобы полоса виджета не отличалась
-                     от страницы (у виджета по умолчанию #0a0a0a);
-       accent/ink  — наш --or и белый текст на нём, как у .btn-primary;
-       radius      — наш --r, 12px;
-       gfont       — Outfit, тот же шрифт, что и у всей страницы.
-       ВАЖНО: card/card2/text/muted/line здесь НЕ задаём. Эти же значения
-       уходят в карточку-слой, а она (в отличие от каталога) tёмную тему не
-       включает, и тёмные токены сделали бы её подписи и телефон нечитаемыми.
-       Карточка открывается в своей светлой палитре — с нашим акцентом. -->
-  <script src="https://importdare.ru/embed/catalog.js"
+<div class="chehly-slot">
+  <!-- Конструктор чехлов. Подключается одной строкой, оформление — токенами сайта:
+       theme=dark — тёмная палитра, как у всей страницы;
+       accent/ink — наш --or и белый текст на нём, как у .btn-primary;
+       partner    — по слагу сервер подставляет наши контакты, а заявка приходит
+                    помеченной как наша, а не общая заявка ДАРЭ.
+       Высоту кадр сообщает сам, поэтому ни height, ни overflow здесь нет. -->
+  <script src="https://importdare.ru/embed/chehly.js"
           data-partner="atletauto"
           data-theme="dark"
           data-accent="#2B5CE6"
           data-ink="#FFFFFF"
-          data-bg="#0D0B0A"
-          data-radius="12"
-          data-gfont="Outfit:wght@300;400;500;600"
-          data-lazy="off"
-          data-scroll-offset="86"></script>
+          data-min-height="820"></script>
 </div>
 
 <section class="end-cta">
   <div class="container">
-    <h2>Не нашли нужную?</h2>
-    <p>Скажите марку, бюджет и сроки — подберём варианты с площадок и посчитаем итог под ключ до Владивостока.</p>
+    <h2>Не нашли свою модель?</h2>
+    <p>Напишите марку, год и комплектацию — подскажем, есть ли лекала, и посчитаем комплект под вашу машину.</p>
     <div class="end-cta-row">
-      <a href="index.html#form" class="btn-primary">Бесплатный просчёт →</a>
+      <a href="index.html#form" class="btn-primary">Оставить заявку →</a>
       <a href="tel:+78006001838" class="btn-ghost">8 800 600-18-38</a>
     </div>
   </div>
